@@ -1,0 +1,64 @@
+<includes>	
+	<include name="PageLabel">
+		<posx>34</posx>
+		<posy>20</posy>
+		<width>950</width>
+		<aligny>center</aligny>
+		<font>special</font>
+		<textcolor>Color1</textcolor>
+		<include>transition3</include>
+	</include>
+<!-- VIDEO PAGELABELS -->			
+	<include name="videoPageLabel">
+		<posx>34</posx>
+		<posy>25</posy>
+		<width>1000</width>
+		<aligny>center</aligny>
+		<font>special</font>
+		<textcolor>Color1</textcolor>
+		<include>transition3</include>
+		<visible>!Container.Scrolling</visible>
+	</include>
+<!-- Copied From "videoPageLabel" -->
+    <include name="videoFanartPageLabels">
+        <posx>34</posx>
+		<posy>25</posy>
+		<width>950</width>
+		<aligny>center</aligny>
+		<font>special</font>
+		<textcolor>Color1</textcolor>
+		<include>transition3</include>
+		<visible>!Container.Scrolling</visible>
+    </include>
+
+    <include name="videoLibPageLabels">       
+<!-- video -->
+		<control type="label">
+			<label>[COLOR=ffA1927F]$INFO[Container.FirstTitle][/COLOR]</label>
+			<include>videoPageLabel</include>
+			<visible>!Window.IsActive(2003)</visible>
+		</control>	
+<!-- pictures -->		
+        <control type="label">
+            <description>programs</description>
+            <label>[UPPERCASE]$LOCALIZE[1][/UPPERCASE]</label>
+            <include>videoFanartPageLabels</include>
+            <visible>Control.IsVisible(50) + Window.IsActive(10002)</visible>
+        </control>
+	</include>
+	<include name="videoLibPageLabels2">       
+<!-- video -->
+		<control type="label">
+			<label>$INFO[Container.FirstTitle] [COLOR=ffA1927F]$INFO[Container.SecondTitle][/COLOR]</label>
+			<include>videoPageLabel</include>
+			<visible>!Window.IsActive(2003)</visible>
+		</control>	
+<!-- pictures -->		
+        <control type="label">
+            <description>programs</description>
+            <label>[UPPERCASE]$LOCALIZE[1][/UPPERCASE]</label>
+            <include>videoFanartPageLabels</include>
+            <visible>Control.IsVisible(50) + Window.IsActive(10002)</visible>
+        </control>
+	</include>
+</includes>

@@ -1,0 +1,127 @@
+<window id="12">
+	<defaultcontrol>888</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<include>themeBackground2</include>
+		<include>allscreens</include>
+		<!-- custom grainy edition logo addition, found in Includes.xml -->
+		<include>grainyeditionlogo</include>
+		<control type="image">
+			<posx>90</posx>
+			<posy>590</posy>
+			<width>224</width>
+			<texture>logos/refocuslogo.png</texture>
+			<aspectratio align="right">keep</aspectratio>
+			<include>transition2</include>
+		</control>
+		<control type="image">
+			<posx>120</posx>
+			<posy>620</posy>
+			<width>193</width>
+			<height>70</height>
+			<texture>home/forplexlogo.png</texture>
+			<aspectratio align="right">keep</aspectratio>
+			<include>transition2</include>
+		</control>
+		<control type="group">
+			<control type="label">
+				<include>PageLabel</include>
+				<label>$LOCALIZE[10507] </label>
+				<visible>Window.IsActive(settings)</visible>
+			</control>
+			<control type="label">
+				<include>PageLabel</include>
+				<label>$LOCALIZE[5] [COLOR=Color2]$LOCALIZE[480][/COLOR]</label>
+				<visible>Window.IsActive(appearancesettings)</visible>
+			</control>
+			<control type="label">
+				<include>PageLabel</include>
+				<label>$LOCALIZE[157] [COLOR=Color2]$LOCALIZE[5][/COLOR]</label>
+				<visible>Window.IsActive(videossettings)</visible>
+			</control>
+			<control type="label">
+				<include>PageLabel</include>
+				<label>$LOCALIZE[0] [COLOR=Color2]$LOCALIZE[5][/COLOR]</label>
+				<visible>Window.IsActive(programssettings)</visible>
+			</control>
+			<control type="label">
+				<include>PageLabel</include>
+				<label>$LOCALIZE[2] [COLOR=Color2]$LOCALIZE[5][/COLOR]</label>
+				<visible>Window.IsActive(musicsettings)</visible>
+			</control>
+			<control type="label">
+				<include>PageLabel</include>
+				<label>$LOCALIZE[1] [COLOR=Color2]$LOCALIZE[5][/COLOR]</label>
+				<visible>Window.IsActive(picturessettings)</visible>
+			</control>
+			<control type="label">
+				<include>PageLabel</include>
+				<label>$LOCALIZE[705] [COLOR=Color2]$LOCALIZE[5][/COLOR]</label>
+				<visible>Window.IsActive(networksettings)</visible>
+			</control>
+			<control type="label"><include>PageLabel</include><label>$LOCALIZE[12600] [COLOR=Color2]$LOCALIZE[5][/COLOR]</label>&gt;
+				<visible>Window.IsActive(weathersettings)</visible></control>
+			<control type="label">
+				<include>PageLabel</include>
+				<label>$LOCALIZE[13000] [COLOR=Color2]$LOCALIZE[5][/COLOR]</label>
+				<visible>Window.IsActive(systemsettings)</visible>
+			</control>
+		</control>
+		<control type="group">
+			<control type="grouplist" id="3">
+				<description>button area</description>
+				<posx>15</posx>
+				<posy>125</posy>
+				<height>410</height>
+				<itemgap>0</itemgap>
+				<onleft>5</onleft>
+				<onright>5</onright>
+				<onup>3</onup>
+				<ondown>3</ondown>
+				<include>transition2</include>
+				<visible>!Window.IsActive(progressdialog)</visible>
+			</control>
+			<control type="grouplist" id="5">
+				<description>control area</description>
+				<posx>340</posx>
+				<posy>90</posy>
+				<width>850</width>
+				<height>600</height>
+				<itemgap>0</itemgap>
+				<onleft>3</onleft>
+				<onright>3</onright>
+				<onup>5</onup>
+				<ondown>5</ondown>
+				<include>transition2</include>
+				<visible>!Window.IsActive(progressdialog)</visible>
+			</control>
+			<control type="button" id="7">
+				<description>Default Button</description>
+				<include>settingsButton</include>
+			</control>
+			<control type="radiobutton" id="8">
+				<description>Default RadioButton</description>
+				<include>settingsButton</include>
+			</control>
+			<control type="spincontrolex" id="9">
+				<description>Default SpinControlex</description>
+				<include>settingsButton</include>
+			</control>
+			<control type="button" id="10">
+				<description>Default Category Button</description>
+				<label>[UPPERCASE]224[/UPPERCASE]</label>
+				<include>categoryButton</include>
+			</control>
+		</control>
+		<control type="image">
+			<posx>311</posx>
+			<posy>15</posy>
+			<height>1192</height>
+			<width>29</width>
+			<texture>settings/separator.png</texture>
+			<aspectratio align="right">stretch</aspectratio>
+			<include>transition2</include>
+			<visible>!Window.IsActive(progressdialog)</visible>
+		</control>
+	</controls>
+</window>

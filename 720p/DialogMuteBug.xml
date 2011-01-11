@@ -1,0 +1,22 @@
+<window id="113">
+	<defaultcontrol>-</defaultcontrol>
+	<controls>
+		<control type="image">
+			<posx>60r</posx>
+			<posy>60</posy>
+            <width>35</width>
+			<height>35</height>
+			<texture>dialogs/mutedicon.png</texture>
+            <include>notificationBottom</include>
+		</control>
+		<control type="label" id="0">
+			<posx>70r</posx>
+            <posy>60</posy>
+            <description>Label</description>
+			<label>MUTE</label>
+            <height>35</height>
+            <width>110</width>
+			<include>notificationBottom</include>
+		</control>
+	</controls>
+</window>

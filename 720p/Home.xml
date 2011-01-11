@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<window id="0">
+	<defaultcontrol always="true">300</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<!-- BACKGROUND MEDIA -->
+		<include>slideshows</include>
+		<!-- GRAINY BACKGROUND FOR THE HOME SCREEN ONLY, IS CALLED FROM Includes.xml -->
+		<include>grainyeditionthemeoverlay</include>
+		<control type="multiimage" id="1">
+			<include>screentype</include>
+			<aspectratio>scale</aspectratio>
+			<imagepath background="true">$INFO[Skin.String(weatherFanartPath)]/$INFO[Weather.FanartCode]</imagepath>
+			<timeperimage>7000</timeperimage>
+			<fadetime>850</fadetime>
+			<randomize>true</randomize>
+			<loop>yes</loop>
+			<include>fadeinout</include>
+			<visible allowhiddenfocus="true">Container(300).HasFocus(6) + Skin.HasSetting(weatherFanart)</visible>
+		</control>
+		<control type="largeimage">
+			<include>screentype</include>
+			<aspectratio>scale</aspectratio>
+			<texture>$INFO[MusicPlayer.Property(Fanart_Image)]</texture>
+			<fadetime>850</fadetime>
+			<visible allowhiddenfocus="true">Container(300).HasFocus(12) + Skin.HasSetting(homemenuNP)</visible>
+			<include>fadeinout</include>
+		</control>
+		<control type="largeimage">
+			<include>screentype</include>
+			<aspectratio>scale</aspectratio>
+			<texture background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
+			<fadetime>1400</fadetime>
+			<include>fadeinout</include>
+		</control>
+		<control type="image">
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio align="left">stretch</aspectratio>
+			<texture>home/menuBackground.png</texture>
+		</control>
+		<control type="image" id="1">
+			<include>screentype</include>
+			<texture>home/homeOverlay.png</texture>
+			<include>fadeinout</include>
+			<visible>Window.IsActive(133) | Window.IsActive(112)</visible>
+		</control>
+		<control type="image" id="1">
+			<include>screentype</include>
+			<texture>home/homeOverlay.png</texture>
+			<include>fadeinout</include>
+			<visible>Window.IsActive(133) | Window.IsActive(112) | Window.IsActive(107)</visible>
+		</control>
+		<!-- TIME -->
+		<include condition="!Skin.HasSetting(homeTime) + ![Window.IsActive(10112) | Window.IsActive(10133) | Window.IsActive(107)]">libClock</include>
+		<!-- MOD CALL MENU GRAINY EDITION -->
+		<include condition="!Skin.HasSetting(originalhome)">HomeMenu</include>
+		<include condition="Skin.HasSetting(originalhome)">HomeMenu_Original</include>
+		<!-- MOD CALL MENU END -->
+		<!-- Plex Logo, deactivated -->
+		<!-- <control type="group">
+		<visible>![Skin.HasSetting(originalhome) | Skin.HasSetting(plexhomelogo)]</visible>
+		<control type="image">
+			<posx>30</posx>
+			<posy>30</posy>
+			<width>224</width>
+			<texture>logos/refocuslogo.png</texture>
+			<aspectratio align="right">keep</aspectratio>
+			<include>transition2</include>
+		</control>
+		<control type="image">
+			<posx>60</posx>
+			<posy>60</posy>
+			<width>193</width>
+			<height>70</height>
+			<texture>home/forplexlogo.png</texture>
+			<aspectratio align="right">keep</aspectratio>
+			<include>transition2</include>
+		</control>
+	</control> -->
+		<!-- RSS FEED -->
+		<control type="group">
+			<posy>685</posy>
+			<visible>!Skin.HasSetting(enableRSSFeed) + ![Window.IsActive(10133) | Window.IsActive(10112)]</visible>
+			<animation effect="slide" start="0,100" end="0,0" time="200" tween="Quadratic" easing="In">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,100" time="200" tween="Quadratic" easing="Out">WindowClose</animation>
+			<control type="image">
+				<height>38</height>
+				<texture border="9">home/rssBackground.png</texture>
+				<include>screenwidth</include>
+				<visible>!Skin.HasSetting(enableRSSFeed)</visible>
+			</control>
+			<control type="rss" id="1">
+				<posy>1</posy>
+				<include>screenwidth</include>
+				<font>normalLow</font>
+				<urlset>1</urlset>
+				<height>32</height>
+				<aligny>center</aligny>
+				<textcolor>Color1</textcolor>
+				<titlecolor>Color2</titlecolor>
+				<headlinecolor>Color1</headlinecolor>
+				<highlightcolor>Focused</highlightcolor>
+				<include>fadeinout</include>
+			</control>
+		</control>
+	</controls>
+</window>

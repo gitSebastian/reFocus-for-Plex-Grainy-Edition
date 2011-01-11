@@ -1,0 +1,94 @@
+<includes>
+	<include name="LibraryMusicMenu">
+		
+		<control type="group" id="300">
+			<posx>-275</posx>
+			<posy>20</posy>
+			<visible allowhiddenfocus="true">ControlGroup(300).HasFocus(0)</visible>
+			<onright>50</onright>
+			<include>pagemenus</include>
+			<include>transition2</include>
+			
+			<control type="button" id="1">
+				<description>Choose Viewtype</description>
+				<label>[UPPERCASE]$LOCALIZE[31930][/UPPERCASE]</label>
+				<onleft>1</onleft>
+				<onright>50</onright>
+				<onup>30</onup>
+				<ondown>30</ondown>
+				<onclick>SetFocus(40)</onclick>
+				<include>contextButton</include>
+				<visible allowhiddenfocus="true">![ControlGroup(40).HasFocus() | ControlGroup(80).HasFocus()]</visible>
+			</control>
+			
+			<control type="grouplist" id="40">
+				<onup>40</onup>
+				<ondown>40</ondown>
+				<onleft>1</onleft>
+				<onright>1</onright>
+				<itemgap>-125</itemgap>
+				<visible allowhiddenfocus="true">ControlGroup(40).HasFocus()</visible>
+				
+				<control type="button" id="41">
+					<label>[UPPERCASE]$LOCALIZE[535][/UPPERCASE]</label>
+					<onleft>1</onleft>
+					<onright>1</onright>
+					<onup>1</onup>
+					<onclick>Container.SetViewMode(50)</onclick>
+					<include>contextButton</include>
+				</control>
+				<!--<control type="button" id="47">
+					<label>[UPPERCASE]$LOCALIZE[537][/UPPERCASE]</label>
+					<onleft>1</onleft>
+					<onright>1</onright>
+					<onclick>Container.SetViewMode(51)</onclick>
+					<include>contextButton</include>
+				</control>-->
+				<control type="button" id="43">
+					<label>[UPPERCASE]$LOCALIZE[31003][/UPPERCASE]</label>
+					<onleft>1</onleft>
+					<onright>1</onright>
+					<onclick>Container.SetViewMode(52)</onclick>
+					<include>contextButton</include>
+					<visible>![Container.Content(artists)]</visible>
+				</control>
+				<control type="button" id="44">
+					<label>[UPPERCASE]$LOCALIZE[31003][/UPPERCASE]</label>
+					<onleft>1</onleft>
+					<onright>1</onright>
+					<onclick>Container.SetViewMode(55)</onclick>
+					<include>contextButton</include>
+					<visible>Container.Content(artists)</visible>
+				</control>
+				<control type="button" id="45">
+					<label>[UPPERCASE]$LOCALIZE[31014][/UPPERCASE]</label>
+					<onleft>1</onleft>
+					<onright>1</onright>
+					<onclick>Container.SetViewMode(572)</onclick>
+					<include>contextButton</include>
+					<visible>Container.Content(albums)</visible>
+				</control>
+				<control type="button" id="48">
+					<label>next</label>
+					<onleft>1</onleft>
+					<onright>1</onright>
+					<onclick>Container.NextViewMode</onclick>
+					<include>contextButton</include>
+				</control>
+			</control>
+			
+			<control type="button" id="30">
+				<description>Favourites Button</description>
+				<posy>43</posy>
+				<label>1036</label>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<onclick>ActivateWindow(Favourites)</onclick>
+				<onup>1</onup>
+				<ondown>1</ondown>
+				<include>contextButton</include>
+				<visible>![ControlGroup(40).HasFocus() | ControlGroup(80).HasFocus()]</visible>
+			</control>				
+		</control>
+	</include>
+</includes>

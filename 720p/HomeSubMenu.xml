@@ -1,0 +1,204 @@
+<includes>
+	<include name="homeSubMenu">
+	
+	<control type="group" id="1100">
+		<posy>100</posy>
+
+<!-- PLUG-IN SUBMENU ----------------------------------------------------------------------------------------------->	
+			<control type="list" id="1110">
+				<posx>-800</posx>
+				<width>900</width>
+				<height>650</height>
+				<onup>1110</onup>
+				<ondown>1110</ondown>
+				<onleft>9000</onleft>
+				<orientation>vertical</orientation>
+				<scrolltime>150</scrolltime>
+				<include>homeSubFocus</include>
+				<include>homeMenusLayout</include>
+				<visible allowhiddenfocus="true">Container(9000).HasFocus(1)</visible>
+				<content>
+					<item id="1">
+						<label>Video Plug-ins</label>
+						<onclick>ActivateWindow(6)</onclick>
+					</item>
+					<item id="2">
+						<label>Music Plug-ins</label>
+						<onclick>ActivateWindow(MyMusic)</onclick>
+					</item>
+					<item id="3">
+						<label>Picture Plug-ins</label>
+						<onclick>ActivateWindow(2)</onclick>
+					</item>
+					<item id="99">
+					<label>31976</label>
+					<onclick>Plex.ActivateWindow(1,plex://localhost/system/appstore,return)</onclick>
+				<visible>Skin.HasSetting(plexonlineaccessories)</visible>
+				</item>
+				</content>
+			</control>
+
+            <!-- PLUG-IN SUBMENU ----------------------------------------------------------------------------------------------->	
+			<control type="list" id="1120">
+				<posx>-800</posx>
+				<width>900</width>
+				<height>900</height>
+				<onup>1120</onup>
+				<ondown>1120</ondown>
+				<onleft>300</onleft>
+				<orientation>vertical</orientation>
+				<scrolltime>150</scrolltime>
+				<include>homeSubFocus</include>
+				<include>homeMenusLayout</include>
+				<visible allowhiddenfocus="true">Container(9000).HasFocus(2)</visible>
+				<content>
+					<item id="1">
+						<label>Artists</label>
+						<onclick>ActivateWindow(10501,plex://localhost./music/iTunes/Artists,return)</onclick>
+					</item>
+					<item id="2">
+						<label>Compilations</label>
+						<onclick>ActivateWindow(10501,plex://localhost./music/iTunes/Compilations,return)</onclick>
+					</item>
+					<item id="3">
+						<label>Tracks</label>
+						<onclick>ActivateWindow(10501,plex://localhost./music/iTunes/Tracks,return)</onclick>
+					</item>
+					<item id="3">
+						<label>Playlists</label>
+						<onclick>ActivateWindow(10501,plex://localhost./music/iTunes/Playlists,return)</onclick>
+					</item>
+				</content>
+			</control>
+
+<!-- ACCESSORIES SUBMENU ----------------------------------------------------------------------------------------------->	
+			<control type="list" id="1140">
+				<posx>-800</posx>
+				<width>900</width>
+				<height>650</height>
+				<onup>1140</onup>
+				<ondown>1140</ondown>
+				<onleft>9000</onleft>
+				<orientation>vertical</orientation>
+				<scrolltime>150</scrolltime>
+				<visible allowhiddenfocus="true">Container(9000).HasFocus(4)</visible>
+				<include>homeSubFocus</include>
+				<include>homeMenusLayout</include>
+				<content>
+					<item id="1">
+						<label>$LOCALIZE[1036]</label>
+						<onclick>ActivateWindow(Favourites)</onclick>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+						<visible>!Skin.HasSetting(homemenuFavourites)</visible>
+					</item>
+					<item id="2">
+						<label>$LOCALIZE[0]</label>
+						<onclick>ActivateWindow(Programs,Addons,return)</onclick>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+						<visible>!Skin.HasSetting(homemenuPrograms)</visible>
+					</item>
+					<item id="3">
+						<label>$LOCALIZE[8]</label>
+						<onclick>ActivateWindow(2600)</onclick>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+						<visible>!Skin.HasSetting(homemenuWeather)</visible>
+					</item>
+				</content>
+			</control>
+		
+		
+<!-- SETTINGS SUBMENU ----------------------------------------------------------------------------------------------->	
+			<control type="list" id="1150">
+				<posx>-800</posx>
+				<posy>-0</posy>
+				<width>900</width>
+				<height>650</height>
+				<onup>1150</onup>
+				<ondown>1150</ondown>
+				<onleft>9000</onleft>
+				<orientation>vertical</orientation>
+				<scrolltime>150</scrolltime>
+				<visible allowhiddenfocus="true">Container(9000).HasFocus(5)</visible>
+				<include>homeSubFocus</include>
+				<include>homeMenusLayout</include>
+				<content>
+					<item id="0">
+						<label>$LOCALIZE[166]</label>
+						<onclick>ActivateWindow(59)</onclick>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+					</item>
+					<item id="1">
+						<label>$LOCALIZE[480]</label>
+						<onclick>ActivateWindow(appearancesettings)</onclick>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+					</item>
+					<item id="2">
+						<label>$LOCALIZE[1212]</label>
+						<onclick>ActivateWindow(videossettings)</onclick>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+					</item>
+					<item id="4">
+						<label>$LOCALIZE[10005]</label>
+						<onclick>ActivateWindow(musicsettings)</onclick>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+					</item>
+					<item id="5">
+						<label>$LOCALIZE[10002]</label>
+						<onclick>ActivateWindow(picturessettings)</onclick>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+					</item>
+					<!--item id="7">
+						<label>Update Plex</label>
+						<onclick>ActivateWindow(networksettings)</onclick>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+					</item-->
+					<item id="8">
+						<label>$LOCALIZE[8]</label>
+						<onclick>ActivateWindow(weathersettings)</onclick>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+					</item>
+					<item id="9">
+						<label>$LOCALIZE[13000]</label>
+						<onclick>ActivateWindow(systemsettings)</onclick>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+					</item>
+				</content>
+			</control>
+
+
+<!-- EXIT SUBMENU ----------------------------------------------------------------------------------------------->	
+			<control type="list" id="1160">
+				<posx>-800</posx>
+				<width>900</width>
+				<height>650</height>
+				<onup>1160</onup>
+				<ondown>1160</ondown>
+				<onleft>9000</onleft>
+				<orientation>vertical</orientation>
+				<scrolltime>150</scrolltime>
+				<visible allowhiddenfocus="true">Container(9000).HasFocus(11)</visible>
+				<include>homeSubFocus</include>
+				<include>homeMenusLayout</include>
+				<content>
+					<item id="1">
+						<label>Quit Plex</label>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+						<onclick>dialog.close(all,true)</onclick>
+						<onclick>Plex.Shutdown()</onclick>
+					</item>
+					<item id="2">
+						<label>Sleep System</label>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+						<onclick>XBMC.SleepSystem()</onclick>
+					</item>
+					<item id="3">
+						<label>Shutdown</label>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+						<onclick>XBMC.ShutDownSystem()</onclick>
+						<visible>System.CanSuspend</visible>
+					</item>
+				</content>
+			</control>
+		</control>
+	</include>
+</includes>

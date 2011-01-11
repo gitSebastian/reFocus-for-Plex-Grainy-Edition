@@ -1,0 +1,52 @@
+<window id="106">
+	<defaultcontrol>1000</defaultcontrol>
+	<include>dialogOpen</include>
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+		<origin x="455" y="100" />
+	</coordinates>
+	<controls>
+		<control type="image" id="997">
+			<description>background top image</description>
+			<posx>1</posx>
+			<posy>-30</posy>
+			<width>368</width>
+			<height>39</height>
+			<texture border="29,29,29,0">dialogs/dialogtop.png</texture>
+		</control>
+
+		<control type="image" id="999">
+			<description>background image</description>
+			<posx>1</posx>
+			<posy>-10</posy>
+			<width>368</width>
+			<texture border="29">dialogs/dialogmiddle.png</texture>
+		</control>
+		<control type="image" id="998">
+			<description>background bottom image</description>
+			<posx>1</posx>
+			<posy>145</posy>
+			<width>368</width>
+			<height>39</height>
+			<texture border="45,0,45,0">dialogs/dialogbottom.png</texture>
+		</control>
+		
+		<control type="image" id="1">
+			<posx>18</posx>
+			<posy>0</posy>
+			<width>335</width>
+			<height>1</height>
+			<texture>dialogs/separator.png</texture>
+		</control>
+		
+		<control type="button" id="1000">
+			<description>button template</description>
+			<posx>18</posx>
+			<posy>0</posy>
+			<width>335</width>
+			<include>contextMenuButton</include>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,447 @@
+<?xml version="1.0"?>
+<window id="59">
+	<defaultcontrol always="true">10</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<include>grainyeditionthemeoverlay</include>
+		<include>allscreens</include>
+		<control type="label">
+			<include>PageLabel</include>
+			<label>$LOCALIZE[5] [COLOR=ffA1927F]$LOCALIZE[166][/COLOR]</label>
+		</control>
+		<control type="image">
+			<posx>90</posx>
+			<posy>590</posy>
+			<width>224</width>
+			<texture>logos/refocuslogo.png</texture>
+			<aspectratio align="right">keep</aspectratio>
+			<include>transition2</include>
+		</control>
+		<control type="image">
+			<posx>120</posx>
+			<posy>620</posy>
+			<width>193</width>
+			<height>70</height>
+			<texture>home/forplexlogo.png</texture>
+			<aspectratio align="right">keep</aspectratio>
+			<include>transition2</include>
+		</control>
+		<!-- CATEGORIES -->
+		<control type="group" id="9001">
+			<posx>15</posx>
+			<posy>125</posy>
+			<include>transition2</include>
+			<control type="button" id="10">
+				<description>Home Settings</description>
+				<label>$LOCALIZE[31124]</label>
+				<onfocus>Skin.SetString(SkinSettings,1)</onfocus>
+				<onright>100</onright>
+				<onup>17</onup>
+				<ondown>11</ondown>
+				<include>categoryButton</include>
+			</control>
+			<control type="button" id="11">
+				<description>Home Menu Settings</description>
+				<posy>42</posy>
+				<label>$LOCALIZE[31961]</label>
+				<onfocus>Skin.SetString(SkinSettings,2)</onfocus>
+				<onright>200</onright>
+				<onup>10</onup>
+				<ondown>14</ondown>
+				<include>categoryButton</include>
+			</control>
+			<control type="button" id="14">
+				<description>Fanart Settings</description>
+				<posy>84</posy>
+				<label>Fanart</label>
+				<onfocus>Skin.SetString(SkinSettings,5)</onfocus>
+				<onright>500</onright>
+				<onup>11</onup>
+				<ondown>15</ondown>
+				<include>categoryButton</include>
+			</control>
+			<control type="button" id="15">
+				<description>View Settings</description>
+				<posy>126</posy>
+				<label>$LOCALIZE[31015]</label>
+				<onfocus>Skin.SetString(SkinSettings,6)</onfocus>
+				<onright>600</onright>
+				<onup>14</onup>
+				<ondown>17</ondown>
+				<include>categoryButton</include>
+			</control>
+			<!-- MOD a separate skin theme setting main menu item, the contents are dynamic -->
+			<control type="button" id="17">
+				<description>Extra grainy Settings</description>
+				<posy>168</posy>
+				<label>Extra Grainy Settings</label>
+				<onfocus>Skin.SetString(SkinSettings,7)</onfocus>
+				<onright>700</onright>
+				<onup>15</onup>
+				<ondown>18</ondown>
+				<include>categoryButton</include>
+			</control>
+			<!-- MOD the "about" menu item has been moved to next position -->
+			<control type="button" id="18">
+				<description>Skin credits</description>
+				<posy>210</posy>
+				<label>$LOCALIZE[31909] reFocus</label>
+				<onfocus>Skin.SetString(SkinSettings,8)</onfocus>
+				<onup>17</onup>
+				<ondown>10</ondown>
+				<include>categoryButton</include>
+			</control>
+		</control>
+		<!-- HOME SCREEN SETTINGS -->
+		<control type="grouplist" id="100">
+			<posx>340</posx>
+			<posy>93</posy>
+			<width>850</width>
+			<height>600</height>
+			<onleft>9001</onleft>
+			<onright>9001</onright>
+			<onup>100</onup>
+			<ondown>100</ondown>
+			<!--<include>pageslide</include>-->
+			<itemgap>0</itemgap>
+			<visible>Skin.String(SkinSettings,1)</visible>
+			<include>transition2</include>
+			<control type="radiobutton" id="101">
+				<label>31936</label>
+				<onclick>Skin.ToggleSetting(FanartSlideShow)</onclick>
+				<selected>!Skin.HasSetting(FanartSlideShow)</selected>
+				<include>settingsButton</include>
+			</control>
+			<control type="button" id="102">
+				<label>31937</label>
+				<onclick>Skin.SetPath(SlideShow)</onclick>
+				<label2>[COLOR=Label-alt]$INFO[Skin.String(SlideShow)][/COLOR]</label2>
+				<enable>Skin.HasSetting(FanartSlideShow)</enable>
+				<include>settingsButton</include>
+			</control>
+			<control type="radiobutton" id="104">
+				<description>disable RSS</description>
+				<label>31977</label>
+				<onclick>Skin.ToggleSetting(enableRSSFeed)</onclick>
+				<selected>Skin.HasSetting(enableRSSFeed)</selected>
+				<include>settingsButton</include>
+			</control>
+			<control type="radiobutton" id="105">
+				<description>show time</description>
+				<label>31907</label>
+				<onclick>Skin.ToggleSetting(homeTime)</onclick>
+				<selected>Skin.HasSetting(homeTime)</selected>
+				<include>settingsButton</include>
+			</control>
+			<control type="radiobutton" id="107">
+				<description>Original Home Screen</description>
+				<label>Use Legacy reFocus Home Screen (left side menu only)</label>
+				<onclick>Skin.ToggleSetting(originalhome)</onclick>
+				<selected>Skin.HasSetting(originalhome)</selected>
+				<include>settingsButton</include>
+			</control>
+		</control>
+		<!-- HOME MENU SETTINGS -->
+		<control type="grouplist" id="200">
+			<posx>340</posx>
+			<posy>93</posy>
+			<width>850</width>
+			<height>595</height>
+			<onleft>9001</onleft>
+			<onright>9001</onright>
+			<onup>200</onup>
+			<ondown>200</ondown>
+			<itemgap>0</itemgap>
+			<visible>Skin.String(SkinSettings,2)</visible>
+			<include>transition2</include>
+			<!--<control type="radiobutton" id="299">
+				<description>show iTunes entry</description>
+				<label>Show iTunes in Main Menu</label>
+				<onclick>Skin.ToggleSetting(iTunesHome)</onclick>
+				<selected>Skin.HasSetting(iTunesHome)</selected>
+				<include>settingsButton</include>
+				<enable>Skin.HasSetting(dummy)</enable>
+			</control>-->
+			<control type="radiobutton" id="202">
+				<description>show favourites entry</description>
+				<label>31959</label>
+				<onclick>Skin.ToggleSetting(homemenuFavourites)</onclick>
+				<selected>Skin.HasSetting(homemenuFavourites)</selected>
+				<include>settingsButton</include>
+			</control>
+			<control type="radiobutton" id="203">
+				<description>show programs entry</description>
+				<label>31956</label>
+				<onclick>Skin.ToggleSetting(homemenuPrograms)</onclick>
+				<selected>Skin.HasSetting(homemenuPrograms)</selected>
+				<include>settingsButton</include>
+			</control>
+			<!--<control type="radiobutton" id="204">
+				<description>show now playing entry</description>
+				<label>31947</label>
+				<onclick>Skin.ToggleSetting(homemenuNP)</onclick>
+				<selected>Skin.HasSetting(homemenuNP)</selected>
+				<include>settingsButton</include>
+			</control>-->
+			<control type="radiobutton" id="205">
+				<description>show weather entry</description>
+				<label>31957</label>
+				<onclick>Skin.ToggleSetting(homemenuWeather)</onclick>
+				<selected>Skin.HasSetting(homemenuWeather)</selected>
+				<include>settingsButton</include>
+			</control>
+			<control type="radiobutton" id="206">
+				<description>show exit entry</description>
+				<label>31958</label>
+				<onclick>Skin.ToggleSetting(homemenuExit)</onclick>
+				<selected>!Skin.HasSetting(homemenuExit)</selected>
+				<include>settingsButton</include>
+			</control>
+			<control type="radiobutton" id="209">
+				<description>Plex Online Accessories</description>
+				<label>Hide Plex Online from Main Menu</label>
+				<onclick>Skin.ToggleSetting(plexonlineaccessories)</onclick>
+				<selected>Skin.HasSetting(plexonlineaccessories)</selected>
+				<include>settingsButton</include>
+			</control>
+			<!--<control type="radiobutton" id="210">
+				<description>favorites on top toggle</description>
+				<label>List Favorites on top of Home Menu</label>
+				<onclick>Skin.ToggleSetting(FavouritesonTop)</onclick>
+				<selected>Skin.HasSetting(FavouritesonTop)</selected>
+				<include>settingsButton</include>
+				<enable>Skin.HasSetting(dummy)</enable>
+			</control>-->
+		</control>
+		<!-- FANART SETTINGS -->
+		<control type="grouplist" id="500">
+			<posx>340</posx>
+			<posy>93</posy>
+			<width>850</width>
+			<height>605</height>
+			<onleft>9001</onleft>
+			<onright>9001</onright>
+			<onup>500</onup>
+			<ondown>500</ondown>
+			<itemgap>0</itemgap>
+			<visible>Skin.String(SkinSettings,5)</visible>
+			<include>transition2</include>
+			<control type="radiobutton" id="501">
+				<label>31099</label>
+				<onclick>Skin.ToggleSetting(FanartGlobal)</onclick>
+				<selected>Skin.HasSetting(FanartGlobal)</selected>
+				<include>settingsButton</include>
+			</control>
+			<!-- weather fanart is deactivated -->
+			<!--<control type="button" id="503">
+				<description>enable weather fanart</description>
+				<label>weather fanart is deactivated in grainy edition</label>
+				<onclick>Skin.ToggleSetting(weatherFanart)</onclick>
+				<enable>Skin.HasSetting(dummy)</enable>
+				<include>settingsButton</include>
+			</control>-->
+			<control type="radiobutton" id="505">
+				<label>Use Fanart in Music Visualisation Screen</label>
+				<onclick>Skin.ToggleSetting(musicVis)</onclick>
+				<onclick>Skin.ToggleSetting(musicVisBlend)</onclick>
+				<selected>Skin.HasSetting(musicVis)</selected>
+				<include>settingsButton</include>
+			</control>
+			<control type="radiobutton" id="506">
+				<label>Blend Music Visualisation and Fanart</label>
+				<onclick>Skin.ToggleSetting(musicVisBlend)</onclick>
+				<selected>Skin.HasSetting(musicVisBlend)</selected>
+				<enable>Skin.HasSetting(musicVis)</enable>
+				<include>settingsButton</include>
+			</control>
+		</control>
+		<!-- VIEW SETTINGS -->
+		<control type="grouplist" id="600">
+			<posx>340</posx>
+			<posy>93</posy>
+			<width>850</width>
+			<height>605</height>
+			<onleft>9001</onleft>
+			<onright>9001</onright>
+			<onup>600</onup>
+			<ondown>600</ondown>
+			<itemgap>0</itemgap>
+			<visible>Skin.String(SkinSettings,6)</visible>
+			<include>transition2</include>
+			<control type="radiobutton" id="601">
+				<description>scrollbars</description>
+				<label>31097</label>
+				<onclick>Skin.ToggleSetting(scrollbar)</onclick>
+				<selected>Skin.HasSetting(scrollbar)</selected>
+				<include>settingsButton</include>
+			</control>
+			<control type="radiobutton" id="602">
+				<description>scrollbars hide</description>
+				<label>&#xB7; $LOCALIZE[31055]</label>
+				<onclick>Skin.ToggleSetting(scrollbarHide)</onclick>
+				<selected>Skin.HasSetting(scrollbarHide)</selected>
+				<enable>Skin.HasSetting(scrollbar)</enable>
+				<include>settingsButton</include>
+			</control>
+			<control type="radiobutton" id="604">
+				<description>keyboard</description>
+				<label>$LOCALIZE[31035]</label>
+				<onclick>Skin.ToggleSetting(keyboardButtons)</onclick>
+				<selected>!Skin.HasSetting(keyboardButtons)</selected>
+				<include>settingsButton</include>
+			</control>
+			<!--<control type="radiobutton" id="605">
+				<description>media overlays</description>
+				<label>31025</label>
+				<onclick>Skin.ToggleSetting(overlay)</onclick>
+				<selected>!Skin.HasSetting(overlay)</selected>
+				<include>settingsButton</include>
+			</control>-->
+			<control type="radiobutton" id="609">
+				<label>Unwatched Icon : show for Movies</label>
+				<onclick>Skin.ToggleSetting(overlayMovies)</onclick>
+				<selected>Skin.HasSetting(overlayMovies)</selected>
+				<include>settingsButton</include>
+			</control>
+			<control type="radiobutton" id="610">
+				<label>Unwatched Icon : show for TV Shows and Seasons</label>
+				<onclick>Skin.ToggleSetting(overlayTVSHows)</onclick>
+				<selected>Skin.HasSetting(overlayTVSHows)</selected>
+				<include>settingsButton</include>
+			</control>
+			<control type="radiobutton" id="611">
+				<label>Unwatched Icon : show for TV Show Episodes</label>
+				<onclick>Skin.ToggleSetting(overlayEpisodes)</onclick>
+				<selected>Skin.HasSetting(overlayEpisodes)</selected>
+				<include>settingsButton</include>
+			</control>
+			<!--<control type="radiobutton" id="612">
+				<label>31920</label>
+				<onclick>Skin.ToggleSetting(overlayFiles)</onclick>
+				<selected>Skin.HasSetting(overlayFiles)</selected>
+				<include>settingsButton</include>
+			</control>-->
+			<!--<control type="radiobutton" id="613">
+				<description>video behind background</description>
+				<label>31028</label>
+				<onclick>Skin.ToggleSetting(backgroundVideoGlobal)</onclick>
+				<selected>Skin.HasSetting(backgroundVideoGlobal)</selected>
+				<include>settingsButton</include>
+			</control>-->
+			<control type="radiobutton" id="615">
+				<label>HD Icon : show for all movies (in List and Thumbnails views)</label>
+				<onclick>Skin.ToggleSetting(enablehdflags)</onclick>
+				<selected>Skin.HasSetting(enablehdflags)</selected>
+				<include>settingsButton</include>
+				<enable>!Skin.HasSetting(onlyfocusflagpanel)</enable>
+			</control>
+			<control type="radiobutton" id="616">
+				<label>HD Icon : show only for Focused Item (in List and Thumbnails views)</label>
+				<onclick>Skin.ToggleSetting(onlyfocusflagpanel)</onclick>
+				<selected>Skin.HasSetting(onlyfocusflagpanel)</selected>
+				<include>settingsButton</include>
+				<enable>!Skin.HasSetting(enablehdflags)</enable>
+			</control>
+			<control type="radiobutton" id="617">
+				<label>Hide Ratings</label>
+				<onclick>Skin.ToggleSetting(hideratings)</onclick>
+				<selected>Skin.HasSetting(hideratings)</selected>
+				<include>settingsButton</include>
+			</control>
+		</control>
+		<!-- EXTRA THEME SETTINGS -->
+		<control type="grouplist" id="700">
+			<posx>340</posx>
+			<posy>93</posy>
+			<width>850</width>
+			<height>605</height>
+			<onleft>9001</onleft>
+			<onright>9001</onright>
+			<onup>700</onup>
+			<ondown>700</ondown>
+			<itemgap>0</itemgap>
+			<visible>Skin.String(SkinSettings,7)</visible>
+			<include>transition2</include>
+			<control type="radiobutton" id="702">
+				<description>use mixed case font</description>
+				<label>&#xB7; use mixed case text for media Titles and Descriptions</label>
+				<onclick>Skin.ToggleSetting(usecapitalisation)</onclick>
+				<selected>Skin.HasSetting(usecapitalisation)</selected>
+				<font>normal</font>
+				<include>settingsButton</include>
+			</control>
+			<!-- MOD SKIN SETTING EXPERIMENTAL TESTING -->
+			<!--<control type="radiobutton" id="707">
+				<description>Purist no clutter setting</description>
+				<label>&#xB7; show media flags only in "detailed info" ("i") window</label>
+				<onclick>Skin.ToggleSetting(showclutternolove)</onclick>
+				<selected>Skin.HasSetting(showclutternolove)</selected>
+				<include>settingsButton</include>
+			</control>-->
+			<!-- MOD SKIN SETTING EXPERIMENTAL TESTING -->
+			<control type="radiobutton" id="708">
+				<description>Stretch the posters instead of scaling</description>
+				<label>&#xB7; stretch the posters (if you must, but you shouldn't)</label>
+				<onclick>Skin.ToggleSetting(grainystretchthemposters)</onclick>
+				<selected>Skin.HasSetting(grainystretchthemposters)</selected>
+				<include>settingsButton</include>
+			</control>
+			<!-- MOD SKIN SETTING EXPERIMENTAL TESTING -->
+			<control type="radiobutton" id="709">
+				<description>Deactivate the new style big list</description>
+				<label>&#xB7; don't use the new style grainy edition big list (for tv show episodes)</label>
+				<onclick>Skin.ToggleSetting(dontusegrainynewbiglist)</onclick>
+				<selected>Skin.HasSetting(dontusegrainynewbiglist)</selected>
+				<include>settingsButton</include>
+			</control>
+			<control type="button" id="717">
+				<description>Credits Grainy Edition</description>
+				<label>[CR]&#xB7; about [B]reFocus - Grainy Edition[/B] : v2.0[CR][CR][B]reFocus for Plex - Grainy Edition[/B] is modified and maintained by [B]Sebastian (se.bastian)[/B].[CR]Please come and discuss it in the Plex community Forums (in reFocus skin section).[CR]There you can also follow the latest updates and news.[CR][CR][B]For the always latest version, please download from git :[/B] [CR]https://github.com/gitSebastian/reFocus-for-Plex-Grainy-Edition[CR][CR]Thank's to [B]jeroen[/B] for creating the original skin, and [B]El Massman[/B] for it's port to Plex,[CR]and to [B]damon5334[/B] for picking up and maintaining the latest official branch.[CR]And [B]thank YOU[/B] for considering Grainy Edition to be worthy of your delicate eyes.</label>
+				<font>medium</font>
+				<include>grainybeigetext</include>
+				<enable>Skin.HasSetting(dummy)</enable>
+				<include>settingsButton</include>
+			</control>
+		</control>
+
+		<control type="image">
+			<posx>311</posx>
+			<posy>35</posy>
+			<height>1192</height>
+			<width>29</width>
+			<texture>settings/separator.png</texture>
+			<aspectratio align="right">stretch</aspectratio>
+			<include>transition2</include>
+		</control>
+		<!-- SKIN CREDITS -->
+		<control type="group" id="800">
+			<posx>365</posx>
+			<posy>70</posy>
+			<visible>Skin.String(SkinSettings,8)</visible>
+			<include>transition2</include>
+			<control type="textbox">
+				<label>31000</label>
+				<width>850</width>
+				<height>300</height>
+				<onleft>15</onleft>
+				<align>left</align>
+				<textcolor>Color1</textcolor>
+				<font>mediumLow</font>
+				<include>textBox</include>
+			</control>
+			<control type="textbox">
+				<label>31978</label>
+				<posy>200</posy>
+				<width>850</width>
+				<height>300</height>
+				<onleft>15</onleft>
+				<align>left</align>
+				<textcolor>Color1</textcolor>
+				<font>mediumLow</font>
+				<include>textBox</include>
+			</control>
+		</control>
+		<!-- custom grainy edition logo addition, found in Includes.xml -->
+		<include>grainyeditionlogo</include>
+	</controls>
+</window>
