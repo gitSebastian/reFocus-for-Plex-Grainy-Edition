@@ -140,6 +140,13 @@
 				<selected>Skin.HasSetting(originalhome)</selected>
 				<include>settingsButton</include>
 			</control>
+			<control type="radiobutton" id="110">
+				<description>Disable logo</description>
+				<label>Hide logo "reFocus for Plex"</label>
+				<onclick>Skin.ToggleSetting(hideplexhomelogo)</onclick>
+				<selected>Skin.HasSetting(hideplexhomelogo)</selected>
+				<include>settingsButton</include>
+			</control>
 		</control>
 		<!-- HOME MENU SETTINGS -->
 		<control type="grouplist" id="200">
@@ -195,6 +202,13 @@
 				<label>31958</label>
 				<onclick>Skin.ToggleSetting(homemenuExit)</onclick>
 				<selected>!Skin.HasSetting(homemenuExit)</selected>
+				<include>settingsButton</include>
+			</control>
+			<control type="radiobutton" id="208">
+				<description>settings screen toggle</description>
+				<label>31125</label>
+				<onclick>Skin.ToggleSetting(homemenuSettings)</onclick>
+				<selected>Skin.HasSetting(homemenuSettings)</selected>
 				<include>settingsButton</include>
 			</control>
 			<control type="radiobutton" id="209">

@@ -230,7 +230,7 @@
 				</item>
 				<item id="5">
 					<label>$LOCALIZE[5]</label>
-					<onclick>SetFocus(1150)</onclick>
+					<onclick>ActivateWindow(4)</onclick>
 					<visible>Skin.HasSetting(homemenuSettings)</visible>
 				</item>
 				<item id="5">
