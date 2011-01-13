@@ -260,19 +260,19 @@
 			<include>infoDialogHide</include>
 			<include>contextMenuHide</include>
 			<visible>!IsEmpty(ListItem.Title) + [Control.IsVisible(52) | Control.IsVisible(55)] + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]</visible>
-			<!-- mod : the studio flag has been deactivated since it's shown now wih other flags -->
-			<!-- <control type="group">
+			<!-- studio flag on the left -->
+			<control type="group">
 				<posx>60</posx>
 				<posy>459</posy> 
 				<include>studioFlags52</include>
-			</control> -->
+				<visible>Skin.HasSetting(slidestudioshowleft)</visible>
+			</control>
 			<!-- mod : the typeflags has been changed to one more complete, can be found in IncludesFlags.xml -->
-			<!-- conditional, can be hidden with a setting in "custom1_ThemeSettings.xml" -->
+			<!-- conditional, visibility can be controlled via menu -->
 			<control type="group">
 				<posx>222</posx>
 				<posy>645</posy>
-				<include>typeFlagsInfo</include>
-				<visible>!Skin.HasSetting(showclutternolove)</visible>
+				<include>typeFlagsInfoSlides</include>
 			</control>
 		</control>
 		<include>view_SlidePoster</include>
@@ -421,11 +421,19 @@
 			<include>contextMenuHide</include>
 			<posx>240</posx>
 			<posy>410</posy>
+			<!-- Focused TITLE -->
 			<control type="label">
 				<width>1080</width>
 				<label>$INFO[ListItem.Title]</label>
 				<include>Heading</include>
-				<visible>!IsEmpty(ListItem.Title)</visible>
+				<visible>!IsEmpty(ListItem.Title) + IsEmpty(Container.Property(mixedParents))</visible>
+			</control>
+			<!-- Focused TITLE with show name -->
+			<control type="label">
+				<width>1080</width>
+				<label>$INFO[ListItem.TVShowTitle] : $INFO[ListItem.Title]</label>
+				<include>Heading</include>
+				<visible>!IsEmpty(ListItem.Title) + !IsEmpty(Container.Property(mixedParents))</visible>
 			</control>
 			<control type="label">
 				<posy>35</posy>
@@ -434,7 +442,7 @@
 				<align>left</align>
 				<include>Heading3</include>
 				<visible>!IsEmpty(ListItem.Title)</visible>
-			</control>
+			</control>	
 			<control type="label">
 				<posy>35</posy>
 				<width>980</width>
@@ -487,14 +495,14 @@
 				<visible>Skin.HasSetting(usecapitalisation)</visible>
 			</control>
 		</control>
-		<!-- media flags -->
+		<!-- media flags, optional -->
 		<control type="group">
 			<include>transition3</include>
 			<include>infoDialogHide</include>
 			<include>contextMenuHide</include>
 			<posx>232</posx>
 			<posy>645</posy>
-			<include>typeFlagsInfo</include>
+			<include>typeFlagsInfoSlides</include>
 			<visible>Control.IsVisible(58)</visible>
 		</control>
 		<include>view_SlideEpisode</include>
@@ -548,6 +556,16 @@
 				<width>750</width>
 				<visible>!IsEmpty(ListItem.Property(UnWatchedEpisodes))</visible>
 			</control>
+		</control>
+		<!-- studio flags, optional -->
+		<control type="group">
+			<posx>200r</posx>
+			<posy>630</posy>
+			<include>flags57</include>
+			<include>transition3</include>
+			<include>contextMenuHide</include>
+			<include>infoDialogHide</include>
+			<visible>Control.IsVisible(57) + !IsEmpty(ListItem.Title) + Skin.HasSetting(thumbnailsshowstudioflag)</visible>
 		</control>
 		<!-- with info -->
 		<control type="grouplist" id="1000">

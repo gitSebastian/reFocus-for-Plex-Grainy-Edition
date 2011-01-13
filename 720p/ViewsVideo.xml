@@ -547,24 +547,45 @@
 					<include>listMenuFocus</include>
 				</control>
 			</focusedlayout>
+			<!-- tv show episodes -->
 			<itemlayout condition="Container.Content(episodes)" width="560" height="69">
-				<!-- original small caps -->
+				<!-- title -->
+				<!-- original small case -->
 				<control type="label">
 					<posx>40</posx>
 					<width>440</width>
 					<label>$INFO[ListItem.Title]</label>
 					<font>bigLow</font>
 					<include>listMenu</include>
-					<visible>!Skin.HasSetting(usecapitalisation)</visible>
+					<visible>!Skin.HasSetting(usecapitalisation) + IsEmpty(Container.Property(mixedParents))</visible>
 				</control>
-				<!-- use capitalisation -->
+				<!-- use mixed -->
 				<control type="label">
 					<posx>40</posx>
 					<width>440</width>
 					<label>$INFO[ListItem.Title]</label>
 					<font>special7</font>
 					<include>listMenu</include>
-					<visible>Skin.HasSetting(usecapitalisation)</visible>
+					<visible>Skin.HasSetting(usecapitalisation) + IsEmpty(Container.Property(mixedParents))</visible>
+				</control>
+				<!-- title with show name -->
+				<!-- original small case -->
+				<control type="label">
+					<posx>40</posx>
+					<width>440</width>
+					<label>$INFO[ListItem.TVShowTitle] : $INFO[ListItem.Title]</label>
+					<font>bigLow</font>
+					<include>listMenu</include>
+					<visible>!Skin.HasSetting(usecapitalisation) + !IsEmpty(Container.Property(mixedParents))</visible>
+				</control>
+				<!-- use mixed case -->
+				<control type="label">
+					<posx>40</posx>
+					<width>440</width>
+					<label>$INFO[ListItem.TVShowTitle] : $INFO[ListItem.Title]</label>
+					<font>special7</font>
+					<include>listMenu</include>
+					<visible>Skin.HasSetting(usecapitalisation) + !IsEmpty(Container.Property(mixedParents))</visible>
 				</control>
 				<!--control type="label">
 					<posx>40</posx>
@@ -620,23 +641,55 @@
 					<visible>!ControlGroup(300).HasFocus</visible>
 					<include>fadeinout</include>
 				</control>
-				<!-- original small caps -->
+				<!-- title -->
+				<!-- original small case -->
 				<control type="label">
 					<posx>40</posx>
 					<width>440</width>
 					<label>$INFO[ListItem.Title]</label>
 					<font>bigLow</font>
 					<include>listMenuFocus</include>
-					<visible>!Skin.HasSetting(usecapitalisation)</visible>
+					<visible>!Skin.HasSetting(usecapitalisation) + IsEmpty(Container.Property(mixedParents))</visible>
 				</control>
-				<!-- use capitalisation -->
+				<!-- use mixed case -->
 				<control type="label">
 					<posx>40</posx>
 					<width>440</width>
 					<label>$INFO[ListItem.Title]</label>
 					<font>special7</font>
 					<include>listMenuFocus</include>
-					<visible>Skin.HasSetting(usecapitalisation)</visible>
+					<visible>Skin.HasSetting(usecapitalisation) + IsEmpty(Container.Property(mixedParents))</visible>
+				</control>
+				<!-- title with show name -->
+				<!-- original small case -->
+				<control type="label">
+					<posx>40</posx>
+					<width>440</width>
+					<label>$INFO[ListItem.TVShowTitle] : $INFO[ListItem.Title]</label>
+					<font>bigLow</font>
+					<include>listMenuFocus</include>
+					<visible>!Skin.HasSetting(usecapitalisation) + !IsEmpty(Container.Property(mixedParents))</visible>
+				</control>
+				<!-- use mixed case -->
+				<control type="label">
+					<posx>40</posx>
+					<width>440</width>
+					<label>$INFO[ListItem.TVShowTitle] : $INFO[ListItem.Title]</label>
+					<font>special7</font>
+					<include>listMenuFocus</include>
+					<visible>Skin.HasSetting(usecapitalisation) + !IsEmpty(Container.Property(mixedParents))</visible>
+				</control>
+				
+				
+				<!-- title with show name -->
+				<!-- original small case -->
+				<control type="label">
+					<posx>40</posx>
+					<width>440</width>
+					<label>$INFO[ListItem.TVShowTitle] : $INFO[ListItem.Title]</label>
+					<font>bigLow</font>
+					<include>listMenu</include>
+					<visible>!Skin.HasSetting(usecapitalisation) + !IsEmpty(Container.Property(mixedParents))</visible>
 				</control>
 				<!--control type="label">
 					<posx>40</posx>
@@ -1859,7 +1912,7 @@
 			<!-- unfocused posters -->
 			<itemlayout height="400" width="213">
 				<control type="image">
-					<width>216</width>
+					<width>193</width>
 					<height>290</height>
 					<texture border="37">frames/posterFrameSmall.png</texture>
 					<aspectratio>stretch</aspectratio>
@@ -1869,7 +1922,7 @@
 				<control type="image">
 					<posx>16</posx>
 					<posy>16</posy>
-					<width>185</width>
+					<width>172</width>
 					<height>259</height>
 					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 					<texture fallback="thumbs/movieSmall.png" diffuse="frames/posterFrameMaskSmall.png">$INFO[ListItem.Thumb]</texture>
@@ -1878,7 +1931,7 @@
 				<control type="image">
 					<posx>16</posx>
 					<posy>16</posy>
-					<width>185</width>
+					<width>172</width>
 					<height>259</height>
 					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 					<texture fallback="thumbs/tvshowSmall.png" diffuse="frames/posterFrameMaskSmall.png">$INFO[ListItem.Thumb]</texture>
@@ -1888,7 +1941,7 @@
 				<control type="image">
 					<posx>16</posx>
 					<posy>16</posy>
-					<width>185</width>
+					<width>172</width>
 					<height>259</height>
 					<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
 					<texture fallback="thumbs/movieSmall.png" diffuse="frames/posterFrameMaskSmall.png">$INFO[ListItem.Thumb]</texture>
@@ -1897,7 +1950,7 @@
 				<control type="image">
 					<posx>16</posx>
 					<posy>16</posy>
-					<width>185</width>
+					<width>172</width>
 					<height>259</height>
 					<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
 					<texture fallback="thumbs/tvshowSmall.png" diffuse="frames/posterFrameMaskSmall.png">$INFO[ListItem.Thumb]</texture>
@@ -1915,7 +1968,7 @@
 			<!-- the focused poster -->
 			<focusedlayout height="400" width="213">
 				<control type="image">
-					<width>216</width>
+					<width>193</width>
 					<height>290</height>
 					<texture border="37">frames/posterFrameSmall.png</texture>
 					<aspectratio>stretch</aspectratio>
@@ -1925,7 +1978,7 @@
 				<control type="image">
 					<posx>16</posx>
 					<posy>16</posy>
-					<width>185</width>
+					<width>172</width>
 					<height>259</height>
 					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 					<texture fallback="thumbs/movieSmall.png" diffuse="frames/posterFrameMaskSmall.png">$INFO[ListItem.Thumb]</texture>
@@ -1935,7 +1988,7 @@
 				<control type="image">
 					<posx>16</posx>
 					<posy>16</posy>
-					<width>185</width>
+					<width>172</width>
 					<height>259</height>
 					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 					<texture fallback="thumbs/tvshowSmall.png" diffuse="frames/posterFrameMaskSmall.png">$INFO[ListItem.Thumb]</texture>
@@ -1946,7 +1999,7 @@
 				<control type="image">
 					<posx>16</posx>
 					<posy>16</posy>
-					<width>185</width>
+					<width>172</width>
 					<height>259</height>
 					<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
 					<texture fallback="thumbs/movieSmall.png" diffuse="frames/posterFrameMaskSmall.png">$INFO[ListItem.Thumb]</texture>
@@ -1956,7 +2009,7 @@
 				<control type="image">
 					<posx>16</posx>
 					<posy>16</posy>
-					<width>185</width>
+					<width>172</width>
 					<height>259</height>
 					<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
 					<texture fallback="thumbs/tvshowSmall.png" diffuse="frames/posterFrameMaskSmall.png">$INFO[ListItem.Thumb]</texture>
@@ -2206,7 +2259,7 @@
 			<animation effect="slide" end="-30" time="150" condition="Container(57).OnNext">Conditional</animation>
 			<itemlayout height="257" width="200">
 				<control type="image">
-					<width>193</width>
+					<width>171</width>
 					<height>257</height>
 					<texture border="48">frames/posterFrameSmall.png</texture>
 					<aspectratio>stretch</aspectratio>
@@ -2217,7 +2270,7 @@
 				<control type="image">
 					<posx>12</posx>
 					<posy>12</posy>
-					<width>169</width>
+					<width>155</width>
 					<height>233</height>
 					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 					<texture fallback="thumbs/tvshowSmall.png" diffuse="frames/posterFrameMaskSmall.png">$INFO[ListItem.Thumb]</texture>
@@ -2226,7 +2279,7 @@
 				<control type="image">
 					<posx>12</posx>
 					<posy>12</posy>
-					<width>169</width>
+					<width>155</width>
 					<height>233</height>
 					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 					<texture fallback="thumbs/movieSmall.png" diffuse="frames/posterFrameMaskSmall.png">$INFO[ListItem.Thumb]</texture>
@@ -2236,7 +2289,7 @@
 				<control type="image">
 					<posx>12</posx>
 					<posy>12</posy>
-					<width>169</width>
+					<width>155</width>
 					<height>233</height>
 					<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
 					<texture fallback="thumbs/tvshowSmall.png" diffuse="frames/posterFrameMaskSmall.png">$INFO[ListItem.Thumb]</texture>
@@ -2245,7 +2298,7 @@
 				<control type="image">
 					<posx>12</posx>
 					<posy>12</posy>
-					<width>169</width>
+					<width>155</width>
 					<height>233</height>
 					<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
 					<texture fallback="thumbs/movieSmall.png" diffuse="frames/posterFrameMaskSmall.png">$INFO[ListItem.Thumb]</texture>
@@ -2273,7 +2326,7 @@
 			<!-- FOCUSED POSTER -->
 			<focusedlayout height="260" width="200">
 				<control type="image">
-					<width>193</width>
+					<width>171</width>
 					<height>257</height>
 					<texture border="48">frames/posterFrameSmall.png</texture>
 					<aspectratio>stretch</aspectratio>
@@ -2282,46 +2335,90 @@
 					<include>focus_ThumbPoster</include>
 				</control>
 				<!-- use scaled focused poster (like it should) -->
+				<!-- with fade -->
 				<control type="image">
 					<posx>12</posx>
 					<posy>12</posy>
-					<width>169</width>
+					<width>155</width>
 					<height>233</height>
 					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 					<texture fallback="thumbs/tvshowSmall.png" diffuse="frames/posterFrameMaskSmall.png">$INFO[ListItem.Thumb]</texture>
 					<include>focus_Poster_GrainyEdition</include>
-					<visible>[Container.Content(tvshows) | Container.Content(seasons)] + !Skin.HasSetting(grainystretchthemposters)</visible>
+					<visible>[Container.Content(tvshows) | Container.Content(seasons)] + !Skin.HasSetting(grainystretchthemposters) + !Skin.HasSetting(givegrainyfadenolove)</visible>
 				</control>
 				<control type="image">
 					<posx>12</posx>
 					<posy>12</posy>
-					<width>169</width>
+					<width>155</width>
 					<height>233</height>
 					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 					<texture fallback="thumbs/movieSmall.png" diffuse="frames/posterFrameMaskSmall.png">$INFO[ListItem.Thumb]</texture>
 					<include>focus_Poster_GrainyEdition</include>
-					<visible>Container.Content(movies) + !Skin.HasSetting(grainystretchthemposters)</visible>
+					<visible>Container.Content(movies) + !Skin.HasSetting(grainystretchthemposters) + !Skin.HasSetting(givegrainyfadenolove)</visible>
 				</control>
-				<!-- use stretched focused poster (yeah, well...) -->
+				<!-- no fade -->
 				<control type="image">
 					<posx>12</posx>
 					<posy>12</posy>
-					<width>169</width>
+					<width>155</width>
+					<height>233</height>
+					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+					<texture fallback="thumbs/tvshowSmall.png" diffuse="frames/posterFrameMaskSmall.png">$INFO[ListItem.Thumb]</texture>
+					<include>focus_PosterNoFade_GrainyEdition</include>
+					<visible>[Container.Content(tvshows) | Container.Content(seasons)] + !Skin.HasSetting(grainystretchthemposters) + Skin.HasSetting(givegrainyfadenolove)</visible>
+				</control>
+				<control type="image">
+					<posx>12</posx>
+					<posy>12</posy>
+					<width>155</width>
+					<height>233</height>
+					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+					<texture fallback="thumbs/movieSmall.png" diffuse="frames/posterFrameMaskSmall.png">$INFO[ListItem.Thumb]</texture>
+					<include>focus_PosterNoFade_GrainyEdition</include>
+					<visible>Container.Content(movies) + !Skin.HasSetting(grainystretchthemposters) + Skin.HasSetting(givegrainyfadenolove)</visible>
+				</control>
+				<!-- use stretched focused poster (yeah, well...) -->
+				<!-- with fade -->
+				<control type="image">
+					<posx>12</posx>
+					<posy>12</posy>
+					<width>155</width>
 					<height>233</height>
 					<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
 					<texture fallback="thumbs/tvshowSmall.png" diffuse="frames/posterFrameMaskSmall.png">$INFO[ListItem.Thumb]</texture>
 					<include>focus_Poster_GrainyEdition</include>
-					<visible>[Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(grainystretchthemposters)</visible>
+					<visible>[Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(grainystretchthemposters) + !Skin.HasSetting(givegrainyfadenolove)</visible>
 				</control>
 				<control type="image">
 					<posx>12</posx>
 					<posy>12</posy>
-					<width>169</width>
+					<width>155</width>
 					<height>233</height>
-					<aspectratio scalediffuse="false" align="center">sstretch</aspectratio>
+					<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
 					<texture fallback="thumbs/movieSmall.png" diffuse="frames/posterFrameMaskSmall.png">$INFO[ListItem.Thumb]</texture>
 					<include>focus_Poster_GrainyEdition</include>
-					<visible>Container.Content(movies) + Skin.HasSetting(grainystretchthemposters)</visible>
+					<visible>Container.Content(movies) + Skin.HasSetting(grainystretchthemposters) + !Skin.HasSetting(givegrainyfadenolove)</visible>
+				</control>
+				<!-- no fade -->
+				<control type="image">
+					<posx>12</posx>
+					<posy>12</posy>
+					<width>155</width>
+					<height>233</height>
+					<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
+					<texture fallback="thumbs/tvshowSmall.png" diffuse="frames/posterFrameMaskSmall.png">$INFO[ListItem.Thumb]</texture>
+					<include>focus_PosterNoFade_GrainyEdition</include>
+					<visible>[Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(grainystretchthemposters) + Skin.HasSetting(givegrainyfadenolove)</visible>
+				</control>
+				<control type="image">
+					<posx>12</posx>
+					<posy>12</posy>
+					<width>155</width>
+					<height>233</height>
+					<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
+					<texture fallback="thumbs/movieSmall.png" diffuse="frames/posterFrameMaskSmall.png">$INFO[ListItem.Thumb]</texture>
+					<include>focus_PosterNoFade_GrainyEdition</include>
+					<visible>Container.Content(movies) + Skin.HasSetting(grainystretchthemposters) + Skin.HasSetting(givegrainyfadenolove)</visible>
 				</control>
 				<!-- end poster scaling -->
 				<!-- unwatched movies & shows -->
@@ -2398,7 +2495,7 @@
 			<!--<animation effect="slide" end="-30" time="150" condition="Container(57).OnNext">Conditional</animation>-->
 			<itemlayout height="190" width="133">
 				<control type="image">
-					<width>128</width>
+					<width>120</width>
 					<height>180</height>
 					<texture border="0">frames/posterframe.png</texture>
 					<aspectratio>keep</aspectratio>
@@ -2409,7 +2506,7 @@
 				<control type="image">
 					<posx>5</posx>
 					<posy>5</posy>
-					<width>118</width>
+					<width>113</width>
 					<height>170</height>
 					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 					<texture fallback="thumbs/tvshowSmall.png" diffuse="frames/posterFrameMask.png">$INFO[ListItem.Thumb]</texture>
@@ -2418,7 +2515,7 @@
 				<control type="image">
 					<posx>5</posx>
 					<posy>5</posy>
-					<width>118</width>
+					<width>113</width>
 					<height>170</height>
 					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 					<texture fallback="thumbs/movieSmall.png" diffuse="frames/posterFrameMask.png">$INFO[ListItem.Thumb]</texture>
@@ -2428,7 +2525,7 @@
 				<control type="image">
 					<posx>5</posx>
 					<posy>5</posy>
-					<width>118</width>
+					<width>113</width>
 					<height>170</height>
 					<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
 					<texture fallback="thumbs/tvshowSmall.png" diffuse="frames/posterFrameMask.png">$INFO[ListItem.Thumb]</texture>
@@ -2437,7 +2534,7 @@
 				<control type="image">
 					<posx>5</posx>
 					<posy>5</posy>
-					<width>118</width>
+					<width>113</width>
 					<height>170</height>
 					<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
 					<texture fallback="thumbs/movieSmall.png" diffuse="frames/posterFrameMask.png">$INFO[ListItem.Thumb]</texture>
@@ -2464,7 +2561,7 @@
 			<!-- focused poster -->
 			<focusedlayout height="190" width="133">
 				<control type="image">
-					<width>128</width>
+					<width>120</width>
 					<height>180</height>
 					<texture border="0">frames/posterframe.png</texture>
 					<aspectratio>keep</aspectratio>
@@ -2472,46 +2569,90 @@
 					<include>focus_ThumbPosterInfo</include>
 				</control>
 				<!-- scale poster -->
+				<!-- with fade -->
 				<control type="image">
 					<posx>5</posx>
 					<posy>5</posy>
-					<width>118</width>
+					<width>113</width>
 					<height>170</height>
 					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 					<texture fallback="thumbs/tvshow.png" diffuse="frames/posterFrameMask.png">$INFO[ListItem.Thumb]</texture>
 					<include>focus_PosterWithInfo_GrainyEdition</include>
-					<visible>Container.Content(tvshows) + !Skin.HasSetting(grainystretchthemposters)</visible>
+					<visible>Container.Content(tvshows) + !Skin.HasSetting(grainystretchthemposters) + !Skin.HasSetting(givegrainyfadenolove)</visible>
 				</control>
 				<control type="image" id="1">
 					<posx>5</posx>
 					<posy>5</posy>
-					<width>118</width>
+					<width>113</width>
 					<height>170</height>
 					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 					<texture fallback="thumbs/movie.png" diffuse="frames/posterFrameMask.png">$INFO[ListItem.Thumb]</texture>
 					<include>focus_PosterWithInfo_GrainyEdition</include>
-					<visible>Container.Content(movies) + !Skin.HasSetting(grainystretchthemposters) + Window.IsActive(24)</visible>
+					<visible>Container.Content(movies) + !Skin.HasSetting(grainystretchthemposters) + Window.IsActive(24) + !Skin.HasSetting(givegrainyfadenolove)</visible>
 				</control>
-				<!-- stretch poster -->
+				<!-- no fade -->
 				<control type="image">
 					<posx>5</posx>
 					<posy>5</posy>
-					<width>118</width>
+					<width>113</width>
+					<height>170</height>
+					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+					<texture fallback="thumbs/tvshow.png" diffuse="frames/posterFrameMask.png">$INFO[ListItem.Thumb]</texture>
+					<include>focus_PosterWithInfoNoFade_GrainyEdition</include>
+					<visible>Container.Content(tvshows) + !Skin.HasSetting(grainystretchthemposters) + Skin.HasSetting(givegrainyfadenolove)</visible>
+				</control>
+				<control type="image" id="1">
+					<posx>5</posx>
+					<posy>5</posy>
+					<width>113</width>
+					<height>170</height>
+					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+					<texture fallback="thumbs/movie.png" diffuse="frames/posterFrameMask.png">$INFO[ListItem.Thumb]</texture>
+					<include>focus_PosterWithInfoNoFade_GrainyEdition</include>
+					<visible>Container.Content(movies) + !Skin.HasSetting(grainystretchthemposters) + Window.IsActive(24) + Skin.HasSetting(givegrainyfadenolove)</visible>
+				</control>
+				<!-- stretch poster -->
+				<!-- with fade -->
+				<control type="image">
+					<posx>5</posx>
+					<posy>5</posy>
+					<width>113</width>
 					<height>170</height>
 					<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
 					<texture fallback="thumbs/tvshow.png" diffuse="frames/posterFrameMask.png">$INFO[ListItem.Thumb]</texture>
 					<include>focus_PosterWithInfo_GrainyEdition</include>
-					<visible>Container.Content(tvshows) + Skin.HasSetting(grainystretchthemposters)</visible>
+					<visible>Container.Content(tvshows) + Skin.HasSetting(grainystretchthemposters) + !Skin.HasSetting(givegrainyfadenolove)</visible>
 				</control>
 				<control type="image">
 					<posx>5</posx>
 					<posy>5</posy>
-					<width>118</width>
+					<width>113</width>
 					<height>170</height>
 					<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
 					<texture fallback="thumbs/movie.png" diffuse="frames/posterFrameMask.png">$INFO[ListItem.Thumb]</texture>
 					<include>focus_PosterWithInfo_GrainyEdition</include>
-					<visible>Container.Content(movies) + Skin.HasSetting(grainystretchthemposters)</visible>
+					<visible>Container.Content(movies) + Skin.HasSetting(grainystretchthemposters) + !Skin.HasSetting(givegrainyfadenolove)</visible>
+				</control>
+				<!-- no fade -->
+				<control type="image">
+					<posx>5</posx>
+					<posy>5</posy>
+					<width>113</width>
+					<height>170</height>
+					<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
+					<texture fallback="thumbs/tvshow.png" diffuse="frames/posterFrameMask.png">$INFO[ListItem.Thumb]</texture>
+					<include>focus_PosterWithInfoNoFade_GrainyEdition</include>
+					<visible>Container.Content(tvshows) + Skin.HasSetting(grainystretchthemposters) + Skin.HasSetting(givegrainyfadenolove)</visible>
+				</control>
+				<control type="image">
+					<posx>5</posx>
+					<posy>5</posy>
+					<width>113</width>
+					<height>170</height>
+					<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
+					<texture fallback="thumbs/movie.png" diffuse="frames/posterFrameMask.png">$INFO[ListItem.Thumb]</texture>
+					<include>focus_PosterWithInfoNoFade_GrainyEdition</include>
+					<visible>Container.Content(movies) + Skin.HasSetting(grainystretchthemposters) + Skin.HasSetting(givegrainyfadenolove)</visible>
 				</control>
 				<control type="image">
 					<posx>101</posx>

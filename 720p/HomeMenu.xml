@@ -7,14 +7,14 @@
 			<posy>-40</posy>
 			<width>910</width>
 			<height>840</height>
-			<onup>-</onup>
-			<ondown>-</ondown>
+			<onup>300</onup>
+			<ondown>300</ondown>
 			<onleft>9000</onleft>
 			<onright>-</onright>
 			<wraparound>true</wraparound>
 			<orientation>vertical</orientation>
 			<focusposition>1</focusposition>
-			<scrolltime>250</scrolltime>
+			<scrolltime>300</scrolltime>
 			<include>transition2</include>
 			<!-- the "fade banner menu when switching focus to left side menu" animation -->
 			<animation effect="fade" start="100" end="15" time="450" condition="Control.HasFocus(9000) | Control.HasFocus(1110) | Control.HasFocus(1140) | Control.HasFocus(1150) | Control.HasFocus(1160)">Conditional</animation>
@@ -88,7 +88,7 @@
 			<focusedlayout width="870" height="230">
 				<control type="group">
 					<animation effect="fade" start="70" end="100" time="0" condition="true">Conditional</animation>
-					<animation effect="zoom" start="100" end="100" time="0" center="false" condition="true">Conditional</animation>
+					<!--<animation effect="zoom" start="100" end="100" time="0" center="false" condition="true">Conditional</animation>-->
 					<control type="image">
 						<posx>43</posx>
 						<posy>0</posy>
@@ -194,7 +194,9 @@
 			<orientation>vertical</orientation>
 			<scrolltime>150</scrolltime>
 			<visible allowhiddenfocus="true">![ControlGroup(1100).HasFocus() | ControlGroup(4000).HasFocus() | ControlGroup(2100).HasFocus()]</visible>
-			<animation effect="fade" start="100" end="20" time="350" condition="Control.HasFocus(300)">Conditional</animation>
+			<!--<animation effect="fade" start="100" end="20" time="350" condition="Control.HasFocus(300)">Conditional</animation>-->
+			<animation effect="fade" start="100" end="0" time="350" condition="Control.HasFocus(300) + Skin.HasSetting(legacymenucopperfieldmode)">Conditional</animation>
+			<animation effect="fade" start="100" end="20" time="350" condition="Control.HasFocus(300) + !Skin.HasSetting(legacymenucopperfieldmode)">Conditional</animation>
 			<include>homeMenuToggle</include>
 			<include>homeMenusLayout</include>
 			<content>

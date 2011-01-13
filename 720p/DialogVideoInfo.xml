@@ -49,7 +49,8 @@
 			<include>videoPageLabel</include>
 			<visible>Container.Content(episodes)</visible>
 		</control>
-		<control type="group">
+		<!-- this seemed to cause overlapping stuff to appear -->
+		<!--<control type="group">
 			<posx>470</posx>
 			<posy>107</posy>
 			<include>transition2</include>
@@ -73,7 +74,7 @@
 				<label>$INFO[ListItem.Property(ReleaseDate)]</label>
 				<visible>Container.Content(movies)</visible>
 			</control>
-		</control>
+		</control>-->
 		<!-- MOVIES -->
 		<control type="grouplist" id="1000">
 			<visible>Container.Content(movies) + !Window.IsActive(101)</visible>

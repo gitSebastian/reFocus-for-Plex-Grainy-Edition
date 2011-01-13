@@ -225,6 +225,86 @@
 			</control>
 		</control>
 	</include>
+	<!-- custom conditional show/hide flag list for slideview -->
+	<include name="typeFlagsInfoSlides">
+		<control type="grouplist" id="100">
+			<width>900</width>
+			<height>64</height>
+			<itemgap>20</itemgap>
+			<orientation>horizontal</orientation>
+			<control type="image">
+				<width>148</width>
+				<height>60</height>
+				<info>ListItem.StarRating</info>
+				<colordiffuse>Color7</colordiffuse>
+				<aspectratio align="center">keep</aspectratio>
+				<visible>!IsEmpty(ListItem.StarRating) + !Skin.HasSetting(slidehiderating)</visible>
+			</control>
+			<!-- resolution -->
+			<control type="image">
+				<width>96</width>
+				<height>64</height>
+				<texture>$INFO[Listitem.Property(mediaTag-videoResolution),flags/resolution/,.png]</texture>
+				<aspectratio align="center">keep</aspectratio>
+				<visible>Container.Content(movies) + !Skin.HasSetting(slidehideresolution)</visible>
+			</control>
+			<control type="image">
+				<width>96</width>
+				<height>64</height>
+				<texture>$INFO[Listitem.Property(mediaTag-videoCodec),flags/type/,.png]</texture>
+				<aspectratio align="center">keep</aspectratio>
+				<colordiffuse>Color7</colordiffuse>
+				<visible>[Container.Content(movies) | Container.Content(episodes)] + !Skin.HasSetting(slidehidevideoinfo)</visible>
+			</control>
+			<control type="image">
+				<width>96</width>
+				<height>64</height>
+				<texture>$INFO[Listitem.Property(mediaTag-audioCodec),flags/type/,.png]</texture>
+				<aspectratio align="center">keep</aspectratio>
+				<colordiffuse>Color7</colordiffuse>
+				<visible>[Container.Content(movies) | Container.Content(episodes)] + !Skin.HasSetting(slidehideaudioinfo)</visible>
+			</control>
+			<control type="image">
+				<width>96</width>
+				<height>64</height>
+				<texture>$INFO[Listitem.Property(mediaTag-aspectRatio),flags/aspect/,.png]</texture>
+				<aspectratio align="center">keep</aspectratio>
+				<colordiffuse>Color7</colordiffuse>
+				<visible>[Container.Content(movies) | Container.Content(episodes)] + !Skin.HasSetting(slidehideaspectratio)</visible>
+			</control>
+			<control type="image">
+				<width>96</width>
+				<height>64</height>
+				<colordiffuse>Color7</colordiffuse>
+				<texture>$INFO[Listitem.Property(mediaTag-Studio),flags/studios/,.png]</texture>
+				<aspectratio align="center">keep</aspectratio>
+				<visible>Container.Content(movies) + !Skin.HasSetting(slidestudioshowleft)</visible>
+			</control>
+			<control type="image">
+				<width>96</width>
+				<height>64</height>
+				<colordiffuse>Color7</colordiffuse>
+				<texture>$INFO[Listitem.Property(mediaTag-Studio),flags/tvshows/,.png]</texture>
+				<aspectratio align="center">keep</aspectratio>
+				<visible>Container.Content(tvshows) + !Skin.HasSetting(slidestudioshowleft)</visible>
+			</control>
+			<control type="image">
+				<width>72</width>
+				<height>64</height>
+				<colordiffuse>Color7</colordiffuse>
+				<texture>$INFO[Listitem.Property(mediaTag-Studio),flags/tvshows/,.png]</texture>
+				<aspectratio align="center">keep</aspectratio>
+				<visible>Container.Content(episodes) + !Skin.HasSetting(slidestudioshowleft)</visible>
+			</control>
+			<control type="image">
+				<width>96</width>
+				<height>64</height>
+				<colordiffuse>Color7</colordiffuse>
+				<texture fallback="flags/default.png">$INFO[Listitem.studio,special://skin/flags/labels/,.png]</texture>
+				<aspectratio align="center">keep</aspectratio>
+			</control>
+		</control>
+	</include>
 	<include name="typeFlagsInfo">
 		<control type="grouplist" id="100">
 			<width>900</width>

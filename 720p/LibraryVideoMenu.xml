@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <includes>
 	<include name="LibraryVideoMenu">
 		<control type="group" id="300">
@@ -11,7 +12,7 @@
 				<description>Choose Viewtype</description>
 				<label>$LOCALIZE[31930]</label>
 				<onright>50</onright>
-				<onup>90</onup>
+				<onup>91</onup>
 				<ondown>30</ondown>
 				<onclick>SetFocus(40)</onclick>
 				<visible allowhiddenfocus="true">!ControlGroup(40).HasFocus()</visible>
@@ -99,6 +100,7 @@
 					<visible>Container.Content(movies)</visible>
 				</control> -->
 			</control>
+			
 			<!-- second level menu for view mode specific options -->
 			<control type="button" id="30">
 				<description>Favourites Button</description>
@@ -112,6 +114,7 @@
 				<include>contextButton</include>
 				<visible>!ControlGroup(40).HasFocus()</visible>
 			</control>
+			<!-- SLIDES -->
 			<control type="button" id="90">
 				<description>SLIDE: use posters</description>
 				<label>$LOCALIZE[31061]</label>
@@ -119,10 +122,22 @@
 				<onleft>2</onleft>
 				<onright>50</onright>
 				<onup>30</onup>
-				<ondown>1</ondown>
+				<ondown>91</ondown>
 				<onclick>Container.SetViewMode(52)</onclick>
+				<onclick>SetFocus(1)</onclick>
 				<onclick>Skin.ToggleSetting(slideViewFanart)</onclick>
 				<selected>Skin.HasSetting(slideViewFanart)</selected>
+				<include>contextButton</include>
+				<visible>Control.IsVisible(55) + [Container.Content(movies) | Container.Content(tvshows)] + !ControlGroup(40).HasFocus()</visible>
+			</control>
+			<control type="button" id="91">
+				<description>SLIDE: extra settings</description>
+				<label>extra options</label>
+				<posy>129</posy>
+				<onleft>2</onleft>
+				<onright>100</onright>
+				<onup>90</onup>
+				<ondown>1</ondown>
 				<include>contextButton</include>
 				<visible>Control.IsVisible(55) + [Container.Content(movies) | Container.Content(tvshows)] + !ControlGroup(40).HasFocus()</visible>
 			</control>
@@ -133,13 +148,26 @@
 				<onleft>2</onleft>
 				<onright>50</onright>
 				<onup>30</onup>
-				<ondown>1</ondown>
+				<ondown>91</ondown>
 				<onclick>Container.SetViewMode(55)</onclick>
+				<onclick>SetFocus(1)</onclick>
 				<onclick>Skin.ToggleSetting(slideViewFanart)</onclick>
 				<selected>!Skin.HasSetting(slideViewFanart)</selected>
 				<include>contextButton</include>
 				<visible>Control.IsVisible(52) + [Container.Content(movies) | Container.Content(tvshows)] + !ControlGroup(40).HasFocus()</visible>
 			</control>
+			<control type="button" id="91">
+				<description>SLIDE: extra settings</description>
+				<label>extra options</label>
+				<posy>129</posy>
+				<onleft>2</onleft>
+				<onright>100</onright>
+				<onup>90</onup>
+				<ondown>1</ondown>
+				<include>contextButton</include>
+				<visible>Control.IsVisible(52) + [Container.Content(movies) | Container.Content(tvshows)] + !ControlGroup(40).HasFocus()</visible>
+			</control>
+			<!-- GALLERY -->
 			<control type="button" id="90">
 				<description>GALLERY: no fullscreen</description>
 				<label>$LOCALIZE[31063]</label>
@@ -151,7 +179,7 @@
 				<onclick>Skin.ToggleSetting(galleryFull)</onclick>
 				<onclick>Container.SetViewMode(53)</onclick>
 				<selected>!Skin.HasSetting(galleryFull)</selected>
-				<include>contextButton</include>
+				<include>contextButtonExtraSettings</include>
 				<visible>Control.IsVisible(56) + [Container.Content(movies) | Container.Content(tvshows)] + !ControlGroup(40).HasFocus()</visible>
 			</control>
 			<!-- gallery fullscreen mode deactivated, it's not usable as is -->
@@ -169,6 +197,7 @@
 				<include>contextButton</include>
 				<visible>Control.IsVisible(53) + [Container.Content(movies) | Container.Content(tvshows)] + !ControlGroup(40).HasFocus()</visible>
 			</control> -->
+			<!-- LIST -->
 			<control type="togglebutton" id="90">
 				<description>LIST: no fanart</description>
 				<label>$LOCALIZE[31061]</label>
@@ -183,6 +212,7 @@
 				<include>contextButton</include>
 				<visible>Control.IsVisible(50) + [Container.Content(movies) | Container.Content(tvshows)] + !ControlGroup(40).HasFocus()</visible>
 			</control>
+			<!-- THUMBNAILS -->
 			<control type="button" id="90">
 				<description>THUMBS: info</description>
 				<label>$LOCALIZE[31975]</label>
@@ -190,10 +220,22 @@
 				<onleft>2</onleft>
 				<onright>50</onright>
 				<onup>30</onup>
-				<ondown>1</ondown>
+				<ondown>91</ondown>
 				<onclick>Skin.ToggleSetting(thumbInfo)</onclick>
+				<onclick>SetFocus(1)</onclick>
 				<onclick>Container.SetViewMode(571)</onclick>
 				<selected>!Skin.HasSetting(thumbInfo)</selected>
+				<include>contextButton</include>
+				<visible>Control.IsVisible(57) + [Container.Content(movies) | Container.Content(tvshows)] + !ControlGroup(40).HasFocus()</visible>
+			</control>
+			<control type="button" id="91">
+				<description>THUMBS: extra settings</description>
+				<label>extra options</label>
+				<posy>129</posy>
+				<onleft>2</onleft>
+				<onright>200</onright>
+				<onup>90</onup>
+				<ondown>1</ondown>
 				<include>contextButton</include>
 				<visible>Control.IsVisible(57) + [Container.Content(movies) | Container.Content(tvshows)] + !ControlGroup(40).HasFocus()</visible>
 			</control>
@@ -204,12 +246,201 @@
 				<onleft>2</onleft>
 				<onright>50</onright>
 				<onup>30</onup>
-				<ondown>1</ondown>
+				<ondown>91</ondown>
 				<onclick>Skin.ToggleSetting(thumbInfo)</onclick>
+				<onclick>SetFocus(1)</onclick>
 				<onclick>Container.SetViewMode(57)</onclick>
 				<selected>Skin.HasSetting(thumbInfo)</selected>
 				<include>contextButton</include>
 				<visible>Control.IsVisible(571) + [Container.Content(movies) | Container.Content(tvshows)] + !ControlGroup(40).HasFocus()</visible>
+			</control>
+			<control type="button" id="91">
+				<description>THUMBS: extra settings</description>
+				<label>extra options</label>
+				<posy>129</posy>
+				<onleft>2</onleft>
+				<onright>200</onright>
+				<onup>90</onup>
+				<ondown>1</ondown>
+				<include>contextButton</include>
+				<visible>Control.IsVisible(571) + [Container.Content(movies) | Container.Content(tvshows)] + !ControlGroup(40).HasFocus()</visible>
+			</control>
+			<!-- SLIDE VIEW POSTERS EXTRA SETTINGS -->
+			<control type="grouplist" id="100">
+				<posx>300</posx>
+				<posy>193</posy>
+				<width>750</width>
+				<height>600</height>
+				<onleft>91</onleft>
+				<onright>50</onright>
+				<onup>100</onup>
+				<ondown>100</ondown>
+				<itemgap>0</itemgap>
+				<visible>[Control.HasFocus(91) | ControlGroup(100).HasFocus()] + Control.IsVisible(52) + [Container.Content(movies) | Container.Content(tvshows)] + !ControlGroup(40).HasFocus()</visible>
+				<include>transition2</include>
+				<control type="radiobutton" id="101">
+					<label>show studio logo at left instead of under the plot</label>
+					<onclick>Container.SetViewMode(52)</onclick>
+					<onclick>Skin.ToggleSetting(slidestudioshowleft)</onclick>
+					<selected>Skin.HasSetting(slidestudioshowleft)</selected>
+					<include>settingsButtonExtra</include>
+				</control>
+				<control type="radiobutton" id="102">
+					<label>hide rating</label>
+					<onclick>Container.SetViewMode(52)</onclick>
+					<onclick>Skin.ToggleSetting(slidehiderating)</onclick>
+					<selected>Skin.HasSetting(slidehiderating)</selected>
+					<include>settingsButtonExtra</include>
+				</control>
+				<control type="radiobutton" id="103">
+					<label>hide resolution</label>
+					<onclick>Container.SetViewMode(52)</onclick>
+					<onclick>Skin.ToggleSetting(slidehideresolution)</onclick>
+					<selected>Skin.HasSetting(slidehideresolution)</selected>
+					<include>settingsButtonExtra</include>
+				</control>
+				<control type="radiobutton" id="104">
+					<label>hide video codec</label>
+					<onclick>Container.SetViewMode(52)</onclick>
+					<onclick>Skin.ToggleSetting(slidehidevideoinfo)</onclick>
+					<selected>Skin.HasSetting(slidehidevideoinfo)</selected>
+					<include>settingsButtonExtra</include>
+				</control>
+				<control type="radiobutton" id="105">
+					<label>hide aspect ratio</label>
+					<onclick>Container.SetViewMode(52)</onclick>
+					<onclick>Skin.ToggleSetting(slidehideaspectratio)</onclick>
+					<selected>Skin.HasSetting(slidehideaspectratio)</selected>
+					<include>settingsButtonExtra</include>
+				</control>
+				<control type="radiobutton" id="106">
+					<label>hide audio codec</label>
+					<onclick>Container.SetViewMode(52)</onclick>
+					<onclick>Skin.ToggleSetting(slidehideaudioinfo)</onclick>
+					<selected>Skin.HasSetting(slidehideaudioinfo)</selected>
+					<include>settingsButtonExtra</include>
+				</control>
+			</control>
+			<!-- SLIDE VIEW FANART EXTRA SETTINGS -->
+			<control type="grouplist" id="100">
+				<posx>300</posx>
+				<posy>193</posy>
+				<width>750</width>
+				<height>600</height>
+				<onleft>91</onleft>
+				<onright>50</onright>
+				<onup>100</onup>
+				<ondown>100</ondown>
+				<itemgap>0</itemgap>
+				<visible>[Control.HasFocus(91) | ControlGroup(100).HasFocus()] + Control.IsVisible(55) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)] + !ControlGroup(40).HasFocus()</visible>
+				<include>transition2</include>
+				<control type="radiobutton" id="101">
+					<label>show studio logo at left instead of under the plot</label>
+					<onclick>Container.SetViewMode(55)</onclick>
+					<onclick>Skin.ToggleSetting(slidestudioshowleft)</onclick>
+					<selected>Skin.HasSetting(slidestudioshowleft)</selected>
+					<include>settingsButtonExtra</include>
+				</control>
+				<control type="radiobutton" id="102">
+					<label>hide rating</label>
+					<onclick>Container.SetViewMode(55)</onclick>
+					<onclick>Skin.ToggleSetting(slidehiderating)</onclick>
+					<selected>Skin.HasSetting(slidehiderating)</selected>
+					<include>settingsButtonExtra</include>
+				</control>
+				<control type="radiobutton" id="103">
+					<label>hide resolution</label>
+					<onclick>Container.SetViewMode(55)</onclick>
+					<onclick>Skin.ToggleSetting(slidehideresolution)</onclick>
+					<selected>Skin.HasSetting(slidehideresolution)</selected>
+					<include>settingsButtonExtra</include>
+				</control>
+				<control type="radiobutton" id="104">
+					<label>hide video codec</label>
+					<onclick>Container.SetViewMode(55)</onclick>
+					<onclick>Skin.ToggleSetting(slidehidevideoinfo)</onclick>
+					<selected>Skin.HasSetting(slidehidevideoinfo)</selected>
+					<include>settingsButtonExtra</include>
+				</control>
+				<control type="radiobutton" id="105">
+					<label>hide aspect ratio</label>
+					<onclick>Container.SetViewMode(55)</onclick>
+					<onclick>Skin.ToggleSetting(slidehideaspectratio)</onclick>
+					<selected>Skin.HasSetting(slidehideaspectratio)</selected>
+					<include>settingsButtonExtra</include>
+				</control>
+				<control type="radiobutton" id="106">
+					<label>hide audio codec</label>
+					<onclick>Container.SetViewMode(55)</onclick>
+					<onclick>Skin.ToggleSetting(slidehideaudioinfo)</onclick>
+					<selected>Skin.HasSetting(slidehideaudioinfo)</selected>
+					<include>settingsButtonExtra</include>
+				</control>
+			</control>
+			<!-- BIG THUMBNAILS VIEW EXTRA SETTINGS -->
+			<control type="grouplist" id="200">
+				<posx>300</posx>
+				<posy>193</posy>
+				<width>750</width>
+				<height>600</height>
+				<onleft>91</onleft>
+				<onright>50</onright>
+				<onup>200</onup>
+				<ondown>200</ondown>
+				<itemgap>0</itemgap>
+				<visible>[Control.HasFocus(91) | ControlGroup(200).HasFocus()] + Control.IsVisible(57) + [Container.Content(movies) | Container.Content(tvshows)] + !ControlGroup(40).HasFocus()</visible>
+				<include>transition2</include>
+				<control type="radiobutton" id="201">
+					<label>deactivate the extra "fade" effect on focused poster</label>
+					<onclick>Container.SetViewMode(57)</onclick>
+					<onclick>Skin.ToggleSetting(givegrainyfadenolove)</onclick>
+					<selected>Skin.HasSetting(givegrainyfadenolove)</selected>
+					<include>settingsButtonExtra</include>
+				</control>
+				<control type="radiobutton" id="202">
+					<label>show studio logo on right bottom corner</label>
+					<onclick>Container.SetViewMode(57)</onclick>
+					<onclick>Skin.ToggleSetting(thumbnailsshowstudioflag)</onclick>
+					<selected>Skin.HasSetting(thumbnailsshowstudioflag)</selected>
+					<include>settingsButtonExtra</include>
+				</control>
+			</control>
+			<!-- THUMBNAILS WITH INFO EXTRA SETTINGS -->
+			<control type="grouplist" id="200">
+				<posx>300</posx>
+				<posy>193</posy>
+				<width>750</width>
+				<height>600</height>
+				<onleft>91</onleft>
+				<onright>50</onright>
+				<onup>200</onup>
+				<ondown>200</ondown>
+				<itemgap>0</itemgap>
+				<visible>[Control.HasFocus(91) | ControlGroup(200).HasFocus()] + Control.IsVisible(571) + [Container.Content(movies) | Container.Content(tvshows)] + !ControlGroup(40).HasFocus()</visible>
+				<include>transition2</include>
+				<control type="radiobutton" id="201">
+					<label>deactivate the extra "fade" effect on focused poster</label>
+					<onclick>Container.SetViewMode(571)</onclick>
+					<onclick>Skin.ToggleSetting(givegrainyfadenolove)</onclick>
+					<selected>Skin.HasSetting(givegrainyfadenolove)</selected>
+					<include>settingsButtonExtra</include>
+				</control>
+				<!--<control type="radiobutton" id="202">
+					<label>show studio logo on right bottom corner</label>
+					<onclick>Container.SetViewMode(571)</onclick>
+					<onclick>Skin.ToggleSetting(thumbnailsshowstudioflag)</onclick>
+					<selected>Skin.HasSetting(thumbnailsshowstudioflag)</selected>
+					<include>settingsButtonExtra</include>
+				</control>-->
+			</control>
+			<!-- dummy focus bg for the "extra options" menu item while in extra options settings -->
+			<control type="image">
+				<posy>129</posy>
+				<width>340</width>
+				<height>170</height>
+				<aspectratio align="left">stretch</aspectratio>
+				<texture border="1">home/menuSelect.png</texture>
+				<visible>[Container.Content(movies) | Container.Content(tvshows)] + [ControlGroup(100).HasFocus() | ControlGroup(200).HasFocus()]</visible>
 			</control>
 		</control>
 	</include>

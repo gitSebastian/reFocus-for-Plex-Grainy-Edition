@@ -1,6 +1,6 @@
+<?xml version="1.0"?>
 <includes>
-
-	<include name="AllViewCommonPageControls">							
+	<include name="AllViewCommonPageControls">
 		<control type="scrollbar" id="23">
 			<description>list</description>
 			<posx>1240</posx>
@@ -153,31 +153,8 @@
 			<enable>Skin.HasSetting(scrollbar)</enable>
 		</control>
 	</include>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<!---------- THUMBNAILS VIEW (MUSIC) ------------------------------------------------------
-	<include name="ThumbnailsMF">
+	<!-- THUMBNAILS VIEW (MUSIC) -->
+	<!--<include name="ThumbnailsMF">
 		<control type="panel" id="59">
 			<viewtype label="Thumbnails">bigicon</viewtype>
 			<posx>35</posx>
@@ -276,11 +253,9 @@
 				</control>
 			</focusedlayout>			
 		</control>
-	</include>---------------------------->
-
-
-<!---------- PLAYLIST VIEW -----------------------------------------------------------------------------
-	<include name="PlaylistView">
+	</include>-->
+	<!-- PLAYLIST VIEW -->
+	<!--<include name="PlaylistView">
 		<control type="fixedlist" id="50">
 			<viewtype label="535">List</viewtype>
 			<posx>620</posx>
@@ -382,7 +357,7 @@
 					<posx>0</posx>
 					<posy>45</posy>
 					<width>600</width>
-					<label>$INFO[ListItem.Year,, • ]$INFO[ListItem.Duration]</label>
+					<label>$INFO[ListItem.Year,, Ã¯ ]$INFO[ListItem.Duration]</label>
 					<font>smallCaps</font>
 					<include>listMenuFocus</include>
 					<visible>!VideoPlayer.Content(episodes)</visible>
@@ -480,13 +455,9 @@
 				</control>
 			</focusedlayout>
 		</control>
-	</include>		----->
-
-
-
-
-<!---------- THUMBNAILS VIEW ------------------------------------------------------------------------------																																
-	<include name="view_Thumbs2">
+	</include>-->
+	<!-- THUMBNAILS VIEW -->
+	<!--<include name="view_Thumbs2">
 		<control type="panel" id="59">
 			<viewtype label="31009">bigicon</viewtype>	
 			<posx>50</posx>
@@ -552,5 +523,5 @@
 				</control>				
 			</focusedlayout>
 		</control>
-	</include>------------->
+	</include>-->
 </includes>

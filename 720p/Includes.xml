@@ -712,6 +712,16 @@
 		<textcolor>Color1</textcolor>
 		<width>850</width>
 	</include>
+	<include name="settingsButtonExtra">
+		<texturefocus border="13,6,13,6">settings/list-focus.png</texturefocus>
+		<texturenofocus>-</texturenofocus>
+		<textoffsetx>30</textoffsetx>
+		<textoffsety>7</textoffsety>
+		<height>46</height>
+		<font>normalLow</font>
+		<textcolor>Color1</textcolor>
+		<width>650</width>
+	</include>
 	<!-- MUSIC OSD / SLIDESHOW -->
 	<include name="musicOSDInfo">
 		<control type="group">
