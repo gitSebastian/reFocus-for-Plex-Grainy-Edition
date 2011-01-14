@@ -191,51 +191,93 @@
 			<include>transition2</include>
 			<include>contextMenuHide</include>
 			<control type="image">
-				<width>483</width>
+				<width>475</width>
 				<height>641</height>
 				<texture border="48">frames/posterFrame3.png</texture>
 				<aspectratio>stretch</aspectratio>
 				<include>thumbFadeTime</include>
 			</control>
+			<!-- scale -->
 			<control type="image">
 				<posx>33</posx>
 				<posy>32</posy>
-				<width>396</width>
+				<width>390</width>
 				<height>585</height>
 				<texture diffuse="frames/posterFrameMask.png" fallback="thumbs/movie.png">$INFO[ListItem.Thumb]</texture>
-				<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 				<include>thumbFadeTime</include>
-				<visible>Container.Content(movies)</visible>
+				<visible>Container.Content(movies) + !Skin.HasSetting(grainystretchthemposters)</visible>
 			</control>
 			<control type="image">
 				<posx>33</posx>
 				<posy>32</posy>
-				<width>396</width>
+				<width>390</width>
 				<height>585</height>
 				<texture diffuse="frames/posterFrameMask.png" fallback="thumbs/tvshow.png">$INFO[ListItem.Thumb]</texture>
-				<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 				<include>thumbFadeTime</include>
-				<visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
+				<visible>Container.Content(tvshows) | Container.Content(seasons) + !Skin.HasSetting(grainystretchthemposters)</visible>
 			</control>
 			<control type="image">
 				<posx>33</posx>
 				<posy>32</posy>
-				<width>396</width>
+				<width>390</width>
 				<height>585</height>
 				<texture diffuse="frames/posterFrameMask.png" fallback="thumbs/tvshow.png">$INFO[Container.TVShowThumb]</texture>
-				<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 				<include>thumbFadeTime</include>
-				<visible>Container.Content(seasons) + IsEmpty(ListItem.Title)</visible>
+				<visible>Container.Content(seasons) + IsEmpty(ListItem.Title) + !Skin.HasSetting(grainystretchthemposters)</visible>
 			</control>
 			<control type="image">
 				<posx>33</posx>
 				<posy>32</posy>
-				<width>396</width>
+				<width>390</width>
 				<height>585</height>
 				<texture diffuse="frames/posterFrameMask.png" fallback="thumbs/actor.png">$INFO[ListItem.Thumb]</texture>
 				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 				<include>thumbFadeTime</include>
-				<visible>Container.Content(actors)</visible>
+				<visible>Container.Content(actors) + !Skin.HasSetting(grainystretchthemposters)</visible>
+			</control>
+			<!-- stretch -->
+			<control type="image">
+				<posx>33</posx>
+				<posy>32</posy>
+				<width>390</width>
+				<height>585</height>
+				<texture diffuse="frames/posterFrameMask.png" fallback="thumbs/movie.png">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">strecth</aspectratio>
+				<include>thumbFadeTime</include>
+				<visible>Container.Content(movies) + Skin.HasSetting(grainystretchthemposters)</visible>
+			</control>
+			<control type="image">
+				<posx>33</posx>
+				<posy>32</posy>
+				<width>390</width>
+				<height>585</height>
+				<texture diffuse="frames/posterFrameMask.png" fallback="thumbs/tvshow.png">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">strecth</aspectratio>
+				<include>thumbFadeTime</include>
+				<visible>Container.Content(tvshows) | Container.Content(seasons) + Skin.HasSetting(grainystretchthemposters)</visible>
+			</control>
+			<control type="image">
+				<posx>33</posx>
+				<posy>32</posy>
+				<width>390</width>
+				<height>585</height>
+				<texture diffuse="frames/posterFrameMask.png" fallback="thumbs/tvshow.png">$INFO[Container.TVShowThumb]</texture>
+				<aspectratio scalediffuse="false" align="center">strecth</aspectratio>
+				<include>thumbFadeTime</include>
+				<visible>Container.Content(seasons) + IsEmpty(ListItem.Title) + Skin.HasSetting(grainystretchthemposters)</visible>
+			</control>
+			<control type="image">
+				<posx>33</posx>
+				<posy>32</posy>
+				<width>390</width>
+				<height>585</height>
+				<texture diffuse="frames/posterFrameMask.png" fallback="thumbs/actor.png">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">strecth</aspectratio>
+				<include>thumbFadeTime</include>
+				<visible>Container.Content(actors) + Skin.HasSetting(grainystretchthemposters)</visible>
 			</control>
 			<!--<control type="image">
 				<posx>403</posx>

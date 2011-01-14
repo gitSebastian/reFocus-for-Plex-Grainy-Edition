@@ -31,8 +31,6 @@
 						<posy>71</posy>
 						<width>830</width>
 						<height>300</height>
-						<!-- <include>dialogWindow</include> -->
-						<!--<include>CustomMainMenuBG</include> HARD CODED UNDERNEATH, NO NEED FOR EXTRA INCLUDESDIALOGS FILE -->
 						<texture border="29">dialogs/homeMenuBGsmall.png</texture>
 						<include>focus_Banner</include>
 					</control>
@@ -72,29 +70,17 @@
 						<include>focus_Banner</include>
 						<visible>Skin.HasSetting(usecapitalisation)</visible>
 					</control>
-					<!--<control type="label">
-						<posx>108</posx>
-						<posy>446</posy>
-						<label>$INFO[ListItem.Label2]</label>
-						<font>mediumCaps</font>
-						<textcolor>Color4</textcolor>
-						<align>right</align>
-						<width>800</width>
-						<include>focus_Banner</include>
-					</control>-->
 				</control>
 			</itemlayout>
 			<!-- Middle / Focused Menu Item, same items apply than for above -->
 			<focusedlayout width="870" height="230">
 				<control type="group">
 					<animation effect="fade" start="70" end="100" time="0" condition="true">Conditional</animation>
-					<!--<animation effect="zoom" start="100" end="100" time="0" center="false" condition="true">Conditional</animation>-->
 					<control type="image">
 						<posx>43</posx>
 						<posy>0</posy>
 						<width>870</width>
 						<height>300</height>
-						<!--<include>CustomMainMenuBG</include>-->
 						<texture border="29">dialogs/homeMenuBG.png</texture>
 						<include>focus_Banner</include>
 					</control>
@@ -154,19 +140,16 @@
 						<include>focus_Banner</include>
 						<visible>Skin.HasSetting(usecapitalisation)</visible>
 					</control>
-					<!--<control type="label">
-						<posx>150</posx>
-						<posy>237</posy>
-						<label>$INFO[ListItem.Label2]</label>
-						<font>mediumCaps</font>
-						<textcolor>Color4</textcolor>
-						<align>right</align>
-						<width>800</width>
-						<include>focus_Banner</include>
-					</control>-->
 				</control>
 			</focusedlayout>
 			<content>
+				<!--<item id="3">
+					<description>iTunes</description>
+					<onclick>Plex.ActivateWindow(10501,http://127.0.0.1:32400/music/iTunes/,return)</onclick>
+					<label>iTunes</label>
+					<image>thumbs/album.png</image>
+					<include>focus_Banner</include>
+				</item>-->
 			</content>
 		</control>
 		<!-- Dynamic Home Edge Shadow -->

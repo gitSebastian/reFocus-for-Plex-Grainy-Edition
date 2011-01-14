@@ -1,3 +1,64 @@
+<?xml version="1.0"?>
 <window type="dialog" id="142">
 	<defaultcontrol always="true">603</defaultcontrol>
+	<controls>
+		<include>clock</include>
+		<!-- background image -->
+		<control type="image" id="1">
+			<posx>0</posx>
+			<posy>630</posy>
+			<include>screenwidth</include>
+			<height>100</height>
+			<texture flipy="false">OSD/fullscreenInfo.png</texture>
+			<visible>[VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(files)] + ![Window.IsActive(2901)]</visible>
+			<animation effect="fade" start="0" end="90" time="250">WindowOpen</animation>
+			<include>videoFullScreenInfo</include>
+		</control>
+		<!-- MOVIES & EPISODES & FILES -->
+		<control type="group" id="1">
+			<posx>30</posx>
+			<posy>545</posy>
+			<visible>[VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(files)] + ![Window.IsActive(2901)]</visible>
+			<include>videoFullScreenInfo</include>
+			<!-- movies & files -->
+			<control type="label" id="1">
+				<width>1060</width>
+				<posy>130</posy>
+				<label>$INFO[Player.Time] &#xB7; $INFO[VideoPlayer.Title]</label>
+				<align>left</align>
+				<textcolor>Color4</textcolor>
+				<font>osd1</font>
+				<visible>VideoPlayer.Content(movies) | VideoPlayer.Content(files)</visible>
+			</control>
+			<!-- episodes -->
+			<control type="label" id="1">
+				<width>1060</width>
+				<posy>130</posy>
+				<label>$INFO[Player.Time] &#xB7; $LOCALIZE[31096] &#xB7; $INFO[VideoPlayer.Title]</label>
+				<align>left</align>
+				<textcolor>Color4</textcolor>
+				<font>osd1</font>
+				<visible>VideoPlayer.Content(episodes)</visible>
+			</control>
+			<!-- duration, shared -->
+			<control type="label" id="1">
+				<posy>130</posy>
+				<posx>30r</posx>
+				<width>150</width>
+				<align>right</align>
+				<label>&#xB7; $INFO[Player.Duration]</label>
+				<textcolor>Color4</textcolor>
+				<font>osd1</font>
+				<visible>VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(files)</visible>
+			</control>
+			<!-- progress bar -->
+			<control type="progress" id="1">
+				<description>Progressbar</description>
+				<posy>165</posy>
+				<width>1220</width>
+				<height>1</height>
+				<info>Player.Progress</info>
+			</control>
+		</control>
+	</controls>
 </window>

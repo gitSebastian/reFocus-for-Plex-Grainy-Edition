@@ -11,7 +11,7 @@
 			<height>250</height>
 			<texture flipy="false">osd/fullscreenInfo1.png</texture>
 			<visible>[VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)] + ![Window.IsActive(2901)]</visible>
-			<animation effect="fade" start="0" end="100" time="250">WindowOpen</animation>
+			<animation effect="fade" start="0" end="90" time="250">WindowOpen</animation>
 			<include>videoFullScreenInfo</include>
 		</control>
 		<!-- audio player -->
