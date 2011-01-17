@@ -13,7 +13,7 @@
 				<description>Choose Viewtype</description>
 				<label>[UPPERCASE]$LOCALIZE[31930][/UPPERCASE]</label>
 				<onleft>1</onleft>
-				<onright>50</onright>
+				<onright>555</onright>
 				<onup>30</onup>
 				<ondown>30</ondown>
 				<onclick>SetFocus(40)</onclick>
@@ -28,13 +28,21 @@
 				<onright>1</onright>
 				<itemgap>-125</itemgap>
 				<visible allowhiddenfocus="true">ControlGroup(40).HasFocus()</visible>
-				
-				<control type="button" id="41">
+				<!-- list -->
+				<!--<control type="button" id="41">
 					<label>[UPPERCASE]$LOCALIZE[535][/UPPERCASE]</label>
 					<onleft>1</onleft>
 					<onright>1</onright>
 					<onup>1</onup>
 					<onclick>Container.SetViewMode(50)</onclick>
+					<include>contextButton</include>
+				</control>-->
+				<!-- LIST ALT -->
+				<control type="button" id="42">
+					<label>New List</label>
+					<onleft>1</onleft>
+					<onright>1</onright>
+					<onclick>Container.SetViewMode(555)</onclick>
 					<include>contextButton</include>
 				</control>
 				<!--<control type="button" id="47">
@@ -44,21 +52,23 @@
 					<onclick>Container.SetViewMode(51)</onclick>
 					<include>contextButton</include>
 				</control>-->
+				<!-- slide -->
 				<control type="button" id="43">
 					<label>[UPPERCASE]$LOCALIZE[31003][/UPPERCASE]</label>
 					<onleft>1</onleft>
 					<onright>1</onright>
 					<onclick>Container.SetViewMode(52)</onclick>
 					<include>contextButton</include>
-					<visible>![Container.Content(artists)]</visible>
+					<visible>Container.Content(albums)</visible>
 				</control>
+				<!-- slide wide -->
 				<control type="button" id="44">
-					<label>[UPPERCASE]$LOCALIZE[31003][/UPPERCASE]</label>
+					<label>slide wide</label>
 					<onleft>1</onleft>
 					<onright>1</onright>
 					<onclick>Container.SetViewMode(55)</onclick>
 					<include>contextButton</include>
-					<visible>Container.Content(artists)</visible>
+					<visible>Container.Content(albums)</visible>
 				</control>
 				<control type="button" id="45">
 					<label>[UPPERCASE]$LOCALIZE[31014][/UPPERCASE]</label>
@@ -68,12 +78,14 @@
 					<include>contextButton</include>
 					<visible>Container.Content(albums)</visible>
 				</control>
+				<!-- next -->
 				<control type="button" id="48">
 					<label>next</label>
 					<onleft>1</onleft>
 					<onright>1</onright>
 					<onclick>Container.NextViewMode</onclick>
 					<include>contextButton</include>
+					<visible>Container.Content(albums) | Container.Content(artists) | Container.Content(songs)</visible>
 				</control>
 			</control>
 			

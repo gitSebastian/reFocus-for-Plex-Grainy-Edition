@@ -4,6 +4,7 @@
 	<controls>
 		<control type="group">
 			<visible>![Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
+			<animation effect="fade" start="0" end="90" time="250">WindowOpen</animation>
 			<include>state_OSD</include>
 			<control type="image" id="1">
 				<width>1280</width>

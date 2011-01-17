@@ -161,14 +161,13 @@
 			<itemgap>0</itemgap>
 			<visible>Skin.String(SkinSettings,2)</visible>
 			<include>transition2</include>
-			<!--<control type="radiobutton" id="299">
+			<control type="radiobutton" id="299">
 				<description>show iTunes entry</description>
-				<label>Show iTunes in Main Menu</label>
+				<label>Show iTunes Shortcuts</label>
 				<onclick>Skin.ToggleSetting(iTunesHome)</onclick>
 				<selected>Skin.HasSetting(iTunesHome)</selected>
 				<include>settingsButton</include>
-				<enable>Skin.HasSetting(dummy)</enable>
-			</control>-->
+			</control>
 			<control type="radiobutton" id="202">
 				<description>show favourites entry</description>
 				<label>31959</label>
@@ -420,14 +419,13 @@
 			
 			<control type="button" id="717">
 				<description>Credits Grainy Edition</description>
-				<label>[CR]&#xB7; about [B]reFocus - Grainy Edition[/B] : v2.1[CR][CR][B]reFocus for Plex - Grainy Edition[/B] is modified and maintained by [B]Sebastian (se.bastian)[/B].[CR]Please come and discuss it in the Plex community Forums (in reFocus skin section).[CR]There you can also follow the latest updates and news.[CR][CR][B]For the always latest version, please download from git :[/B] [CR]https://github.com/gitSebastian/reFocus-for-Plex-Grainy-Edition[CR][CR]Thank's to [B]jeroen[/B] for creating the original skin, and [B]El Massman[/B] for it's port to Plex,[CR]and to [B]damon5334[/B] for picking up and maintaining the latest official branch.[CR]And [B]thank YOU[/B] for considering Grainy Edition to be worthy of your delicate eyes.</label>
+				<label>[CR]&#xB7; about [B]reFocus - Grainy Edition[/B] : v2.2[CR][CR][B]reFocus for Plex - Grainy Edition[/B] is modified and maintained by [B]Sebastian (se.bastian)[/B].[CR]Please come and discuss it in the Plex community Forums (in reFocus skin section).[CR]There you can also follow the latest updates and news.[CR][CR][B]For the always latest version, please use Preen :[/B] [CR]http://www.anomiesoftware.com/Anomie_Software/Preen.html[CR][CR]Thank's to [B]jeroen[/B] for creating the original skin, and [B]El Massman[/B] for it's port to Plex,[CR]and to [B]damon5334[/B] for picking up and maintaining the latest official branch.[CR]And [B]thank YOU[/B] for considering Grainy Edition to be worthy of your delicate eyes.</label>
 				<font>medium</font>
 				<include>grainybeigetext</include>
 				<enable>Skin.HasSetting(dummy)</enable>
 				<include>settingsButton</include>
 			</control>
 		</control>
-
 		<control type="image">
 			<posx>311</posx>
 			<posy>35</posy>

@@ -1,10 +1,9 @@
+<?xml version="1.0"?>
 <includes>
 	<include name="homeSubMenu">
-	
-	<control type="group" id="1100">
-		<posy>100</posy>
-
-<!-- PLUG-IN SUBMENU ----------------------------------------------------------------------------------------------->	
+		<control type="group" id="1100">
+			<posy>100</posy>
+			<!-- PLUG-IN SUBMENU -->
 			<control type="list" id="1110">
 				<posx>-800</posx>
 				<width>900</width>
@@ -25,53 +24,58 @@
 					<item id="2">
 						<label>Music Plug-ins</label>
 						<onclick>ActivateWindow(MyMusic)</onclick>
+						<visible>!Skin.HasSetting(iTunesHome)</visible>
 					</item>
 					<item id="3">
 						<label>Picture Plug-ins</label>
 						<onclick>ActivateWindow(2)</onclick>
 					</item>
 					<item id="99">
-					<label>31976</label>
-					<onclick>Plex.ActivateWindow(1,plex://localhost/system/appstore,return)</onclick>
-				<visible>Skin.HasSetting(plexonlineaccessories)</visible>
-				</item>
+						<label>31976</label>
+						<onclick>Plex.ActivateWindow(1,plex://localhost/system/appstore,return)</onclick>
+						<visible>Skin.HasSetting(plexonlineaccessories)</visible>
+					</item>
 				</content>
 			</control>
-
-            <!-- PLUG-IN SUBMENU ----------------------------------------------------------------------------------------------->	
-			<control type="list" id="1120">
+			<!-- ITUNES SUBMENU -->
+			<control type="list" id="1130">
 				<posx>-800</posx>
 				<width>900</width>
 				<height>900</height>
-				<onup>1120</onup>
-				<ondown>1120</ondown>
-				<onleft>300</onleft>
+				<onup>1130</onup>
+				<ondown>1130</ondown>
+				<onleft>9000</onleft>
 				<orientation>vertical</orientation>
 				<scrolltime>150</scrolltime>
+				<visible allowhiddenfocus="true">Container(9000).HasFocus(2)</visible>
 				<include>homeSubFocus</include>
 				<include>homeMenusLayout</include>
-				<visible allowhiddenfocus="true">Container(9000).HasFocus(2)</visible>
 				<content>
 					<item id="1">
-						<label>Artists</label>
-						<onclick>ActivateWindow(10501,plex://localhost./music/iTunes/Artists,return)</onclick>
+						<label>Playlist now</label>
+						<onclick>ActivateWindow(MusicPlaylist)</onclick>
+						<visible>Player.HasAudio</visible>
 					</item>
 					<item id="2">
-						<label>Compilations</label>
-						<onclick>ActivateWindow(10501,plex://localhost./music/iTunes/Compilations,return)</onclick>
+						<label>Now Playing</label>
+						<onclick>ActivateWindow(NowPlaying)</onclick>
+						<visible>Player.HasAudio</visible>
 					</item>
-					<item id="3">
-						<label>Tracks</label>
-						<onclick>ActivateWindow(10501,plex://localhost./music/iTunes/Tracks,return)</onclick>
-					</item>
-					<item id="3">
+					<item id="4">
 						<label>Playlists</label>
 						<onclick>ActivateWindow(10501,plex://localhost./music/iTunes/Playlists,return)</onclick>
 					</item>
+					<item id="5">
+						<label>Artists</label>
+						<onclick>ActivateWindow(10501,plex://localhost./music/iTunes/Artists,return)</onclick>
+					</item>
+					<item id="6">
+						<label>Main</label>
+						<onclick>ActivateWindow(10501,plex://localhost./music/iTunes,return)</onclick>
+					</item>
 				</content>
 			</control>
-
-<!-- ACCESSORIES SUBMENU ----------------------------------------------------------------------------------------------->	
+			<!-- ACCESSORIES SUBMENU -->
 			<control type="list" id="1140">
 				<posx>-800</posx>
 				<width>900</width>
@@ -105,9 +109,7 @@
 					</item>
 				</content>
 			</control>
-		
-		
-<!-- SETTINGS SUBMENU ----------------------------------------------------------------------------------------------->	
+			<!-- SETTINGS SUBMENU -->
 			<control type="list" id="1150">
 				<posx>-800</posx>
 				<posy>-0</posy>
@@ -164,9 +166,7 @@
 					</item>
 				</content>
 			</control>
-
-
-<!-- EXIT SUBMENU ----------------------------------------------------------------------------------------------->	
+			<!-- EXIT SUBMENU -->
 			<control type="list" id="1160">
 				<posx>-800</posx>
 				<width>900</width>

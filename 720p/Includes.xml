@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <includes>
 	<include file="Defaults.xml">-</include>
 	<include file="Includes_Plex.xml">-</include>
@@ -21,6 +22,7 @@
 	<include file="LibraryMusicMenu.xml">-</include>
 	<include file="LibraryPlaylistMenu.xml">-</include>
 	<include file="LibraryPlaylistMenu.xml">-</include>
+	<include file="NowPlayingNew.xml">-</include>
 	<include file="FilesMenu.xml">-</include>
 	<include file="WeatherMenu.xml">-</include>
 	<include file="InfoDialogMenu.xml">-</include>
@@ -53,7 +55,7 @@
 			<effect type="zoom" time="400" center="640,360" start="50" end="100" tween="cubic" easing="out"/>
 			<effect type="fade" time="400" center="640,360" start="0" end="100"/>
 		</animation>
-	</include>	
+	</include>
 	<!-- custom grainy edition logo addition for theme settings -->
 	<include name="grainyeditionlogo">
 		<control type="image">
@@ -471,7 +473,7 @@
 			<posy>9</posy>
 			<label>$INFO[System.Time]</label>
 			<include>notificationTop</include>
-			<visible>![Player.HasMedia + !Skin.HasSetting(overlay)] + ![Control.IsVisible(56)] + ![Window.IsActive(133) | Window.IsActive(112) | Window.IsActive(107) | Window.IsActive(2004) | Window.IsActive(12600)] + ![Window.IsActive(2) + Control.IsVisible(52)] | Window.IsActive(111)</visible>
+			<visible>![Player.HasMedia + !Skin.HasSetting(overlay) + (!Skin.HasSetting(legacymenucopperfieldmode) + Window.IsActive(Home)] + ![Control.IsVisible(56)] + ![Window.IsActive(133) | Window.IsActive(112) | Window.IsActive(107) | Window.IsActive(2004) | Window.IsActive(12600)] + ![Window.IsActive(2) + Control.IsVisible(52)] | Window.IsActive(111)</visible>
 		</control>
 		<!-- date under the clock -->
 		<control type="label" id="200">
@@ -481,7 +483,7 @@
 			<include>grainybeigetext</include>
 			<font>medium</font>
 			<include>notificationBottom</include>
-			<visible>![Player.HasMedia + !Skin.HasSetting(overlay)] + ![Control.IsVisible(56)] + ![Window.IsActive(133) | Window.IsActive(112) | Window.IsActive(107) | Window.IsActive(2004) | Window.IsActive(12600)] + ![Window.IsActive(2) + Control.IsVisible(52)]</visible>
+			<visible>![Player.HasMedia + !Skin.HasSetting(overlay) + (!Skin.HasSetting(legacymenucopperfieldmode) + Window.IsActive(Home)] + ![Control.IsVisible(56)] + ![Window.IsActive(133) | Window.IsActive(112) | Window.IsActive(107) | Window.IsActive(2004) | Window.IsActive(12600)] + ![Window.IsActive(2) + Control.IsVisible(52)]</visible>
 		</control>
 	</include>
 	<!-- SLIDESHOWS -->

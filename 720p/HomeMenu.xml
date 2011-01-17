@@ -17,7 +17,7 @@
 			<scrolltime>300</scrolltime>
 			<include>transition2</include>
 			<!-- the "fade banner menu when switching focus to left side menu" animation -->
-			<animation effect="fade" start="100" end="15" time="450" condition="Control.HasFocus(9000) | Control.HasFocus(1110) | Control.HasFocus(1140) | Control.HasFocus(1150) | Control.HasFocus(1160)">Conditional</animation>
+			<animation effect="fade" start="100" end="15" time="450" condition="Control.HasFocus(9000) | Control.HasFocus(1110) | Control.HasFocus(1130) | Control.HasFocus(1140) | Control.HasFocus(1150) | Control.HasFocus(1160)">Conditional</animation>
 			<!-- Top & Bottom (unfocused) Menu Items, the sizes and positions are modified and images are new -->
 			<itemlayout width="870" height="240">
 				<control type="group">
@@ -143,13 +143,6 @@
 				</control>
 			</focusedlayout>
 			<content>
-				<!--<item id="3">
-					<description>iTunes</description>
-					<onclick>Plex.ActivateWindow(10501,http://127.0.0.1:32400/music/iTunes/,return)</onclick>
-					<label>iTunes</label>
-					<image>thumbs/album.png</image>
-					<include>focus_Banner</include>
-				</item>-->
 			</content>
 		</control>
 		<!-- Dynamic Home Edge Shadow -->
@@ -165,7 +158,7 @@
 				<include>transition2</include>
 			</control>
 		</control>
-		<!-- LEFT SIDE HOME MENU -->
+		<!-- ORIGINAL LEFT SIDE HOME MENU -->
 		<control type="list" id="9000">
 			<posy>100</posy>
 			<width>1100</width>
@@ -188,6 +181,11 @@
 					<onclick>ActivateWindow(Favourites)</onclick>
 					<visible>Skin.HasSetting(homemenuFavourites)</visible>
 				</item>
+				<item id="2">
+					<label>iTunes</label>
+					<onclick>SetFocus(1130)</onclick>
+					<visible>Skin.HasSetting(iTunesHome)</visible>
+				</item>
 				<item id="99">
 					<label>31976</label>
 					<onclick>Plex.ActivateWindow(1,plex://localhost/system/appstore,return)</onclick>
@@ -197,11 +195,6 @@
 					<label>31914</label>
 					<onclick>SetFocus(1110)</onclick>
 				</item>
-				<!--<item id="2">
-					<label>iTunes</label>
-					<onclick>SetFocus(1120)</onclick>
-					<visible>Skin.HasSetting(iTunesHome)</visible>
-				</item>-->
 				<!--<item id="4">
 					<label>$LOCALIZE[31006]</label>
 					<onclick>SetFocus(1140)</onclick>
@@ -256,7 +249,7 @@
 					<label>$LOCALIZE[13350]</label>
 					<onclick>ActivateWindow(videoplaylist)</onclick>
 					<visible>Player.HasVideo + Skin.HasSetting(homemenuNP)</visible>
-					<label2>$INFO[VideoPlayer.TVShowTitle,,: ]$INFO[VideoPlayer.Artist,, - ]$INFO[VideoPlayer.Title]</label2>
+					<!--<label2>$INFO[VideoPlayer.TVShowTitle,,: ]$INFO[VideoPlayer.Artist,, - ]$INFO[VideoPlayer.Title]</label2>-->
 				</item>
 			</content>
 		</control>

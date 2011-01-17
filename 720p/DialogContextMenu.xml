@@ -8,6 +8,7 @@
 		<origin x="455" y="100" />
 	</coordinates>
 	<controls>
+		
 		<control type="image" id="997">
 			<description>background top image</description>
 			<posx>1</posx>
@@ -15,6 +16,7 @@
 			<width>368</width>
 			<height>39</height>
 			<texture border="29,29,29,0">dialogs/dialogtop.png</texture>
+			<animation effect="fade" start="0" end="95" time="250">WindowOpen</animation>
 		</control>
 
 		<control type="image" id="999">
@@ -23,6 +25,7 @@
 			<posy>-10</posy>
 			<width>368</width>
 			<texture border="29">dialogs/dialogmiddle.png</texture>
+			<animation effect="fade" start="0" end="95" time="250">WindowOpen</animation>
 		</control>
 		<control type="image" id="998">
 			<description>background bottom image</description>
@@ -31,6 +34,7 @@
 			<width>368</width>
 			<height>39</height>
 			<texture border="45,0,45,0">dialogs/dialogbottom.png</texture>
+			<animation effect="fade" start="0" end="95" time="250">WindowOpen</animation>
 		</control>
 		
 		<control type="image" id="1">

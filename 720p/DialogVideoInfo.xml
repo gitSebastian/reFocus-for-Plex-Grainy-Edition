@@ -145,7 +145,7 @@
 				<label/>
 				<include>infoDialogMeta</include>
 			</control>
-			<!-- MOD MIXED CASE FONT -->
+			<!-- PLOT MOD MIXED CASE FONT -->
 			<!-- small case -->
 			<control type="textbox" id="4">
 				<width>740</width>

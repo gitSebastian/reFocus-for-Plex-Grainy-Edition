@@ -37,6 +37,12 @@
 			<label>[COLOR=ffA1927F]$INFO[Container.FirstTitle][/COLOR]</label>
 			<include>videoPageLabel</include>
 			<visible>!Window.IsActive(2003)</visible>
+		</control>
+		<!-- music -->
+		<control type="label">
+			<label>[COLOR=ffA1927F]$INFO[Container.FirstTitle][/COLOR] $INFO[Container.SecondTitle]</label>
+			<include>videoPageLabel</include>
+			<visible>!Window.IsActive(502)</visible>
 		</control>	
 <!-- pictures -->		
         <control type="label">
@@ -52,7 +58,7 @@
 			<label>$INFO[Container.FirstTitle] [COLOR=ffA1927F]$INFO[Container.SecondTitle][/COLOR]</label>
 			<include>videoPageLabel</include>
 			<visible>!Window.IsActive(2003)</visible>
-		</control>	
+		</control>
 <!-- pictures -->		
         <control type="label">
             <description>programs</description>

@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <window id="0">
 	<defaultcontrol always="true">300</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
@@ -72,12 +71,12 @@
 			<include>fadeinout</include>
 			<visible>Window.IsActive(133) | Window.IsActive(112) | Window.IsActive(107)</visible>
 		</control>
+		<include condition="Player.HasMusicPlaylist + Skin.HasSetting(legacymenucopperfieldmode)">grainyeditionnowplayinghome</include>
 		<!-- TIME -->
 		<include condition="!Skin.HasSetting(homeTime) + ![Window.IsActive(10112) | Window.IsActive(10133) | Window.IsActive(107)]">libClock</include>
 		<!-- MOD CALL MENU GRAINY EDITION -->
 		<include condition="!Skin.HasSetting(originalhome)">HomeMenu</include>
-		<include condition="Skin.HasSetting(originalhome)">HomeMenu_Original</include>
-		<!-- MOD CALL MENU END -->
+		<include condition="Skin.HasSetting(originalhome)">HomeMenu_Original</include>		
 		<!-- RSS FEED -->
 		<control type="group">
 			<posy>685</posy>

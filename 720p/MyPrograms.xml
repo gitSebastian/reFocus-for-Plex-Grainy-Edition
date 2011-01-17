@@ -1,9 +1,8 @@
 <window id="1">
-	<defaultcontrol always="true">573</defaultcontrol>
+	<defaultcontrol always="false">555</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-	<previouswindow>Home</previouswindow>
-	
-	<views>573</views>
+	<previouswindow>Home</previouswindow>	
+	<views>555,573</views>
 	
 	<controls>
 
@@ -15,11 +14,11 @@
 		<!--include>view_EmuInfo</include-->
 		<include>allscreens</include>
 		<control type="label">
-			<label>$INFO[Container.FirstTitle] [COLOR=Color2]$INFO[Container.SecondTitle][/COLOR]</label>
+			<label>$INFO[Container.FirstTitle] [COLOR=ffA1927F]$INFO[Container.SecondTitle][/COLOR]</label>
 			<include>PageLabel</include>
 		</control>
 		<include>FilesMenu</include>
-
+		<include>view_List_GrainyEdition</include>
 		<control type="group">
 			<posx>220</posx>
 			<posy>500</posy>
@@ -54,6 +53,54 @@
 				<font>normalLow</font>
 			</control>
 		</control>
-
+		<!-- infos for new list -->
+		<control type="group">
+			<posx>120</posx>
+			<posy>0</posy>
+			<include>transition3</include>
+			<include>infoDialogHide</include>
+			<include>contextMenuHide</include>
+			<visible>Control.IsVisible(555)</visible>	
+			<!--<control type="label">
+				<width>1080</width>
+				<label>$INFO[ListItem.Title]</label>
+				<textcolor>title</textcolor>
+				<include>Heading</include>
+			</control>-->
+			<control type="label">
+				<posx>320</posx>
+				<posy>165</posy>
+				<width>300</width>
+				<label>$INFO[ListItem.Year]</label>
+				<align>right</align>
+				<font>small</font>
+				<include>grainybeigetext</include>
+				<visible>!IsEmpty(ListItem.Year)</visible>
+			</control>
+			<!-- small case -->
+			<control type="textbox" id="8">
+				<posy>570</posy>
+				<width>340</width>
+				<height>120</height>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>$INFO[ListItem.Plot]</label>
+				<textcolor>text</textcolor>
+				<font>smallsmallcase</font>
+				<visible>!Skin.HasSetting(usecapitalisation)</visible>
+			</control>
+			<!-- mixed case -->
+			<control type="textbox" id="8">
+				<posy>570</posy>
+				<width>340</width>
+				<height>110</height>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>$INFO[ListItem.Plot]</label>
+				<textcolor>text</textcolor>
+				<font>small</font>
+				<visible>Skin.HasSetting(usecapitalisation)</visible>
+			</control>
+		</control>
 	</controls>
 </window>

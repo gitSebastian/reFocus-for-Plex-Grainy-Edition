@@ -27,7 +27,7 @@
 				<onright>1</onright>
 				<itemgap>-125</itemgap>
 				<visible allowhiddenfocus="true">ControlGroup(40).HasFocus()</visible>
-				<!-- ? -->
+				<!-- LIST -->
 				<control type="button" id="41">
 					<label>$LOCALIZE[535]</label>
 					<onleft>1</onleft>
@@ -35,9 +35,19 @@
 					<onup>1</onup>
 					<onclick>Container.SetViewMode(50)</onclick>
 					<include>contextButton</include>
+					<visible>!Container.Content(plugincontent)</visible>
 				</control>
-				<!-- ? -->
+				<!-- LIST ALT -->
 				<control type="button" id="42">
+					<label>New List</label>
+					<onleft>1</onleft>
+					<onright>1</onright>
+					<onclick>Container.SetViewMode(555)</onclick>
+					<include>contextButton</include>
+					<visible>![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
+				</control>
+				<!-- BIG LIST -->
+				<control type="button" id="43">
 					<label>$LOCALIZE[537]</label>
 					<onleft>1</onleft>
 					<onright>1</onright>
@@ -46,7 +56,7 @@
 					<visible>Container.Content(episodes) | Container.Content(plugincontent)</visible>
 				</control>
 				<!-- SLIDE movies & tv shows & seasons -->
-				<control type="button" id="43">
+				<control type="button" id="44">
 					<label>$LOCALIZE[31003]</label>
 					<onleft>1</onleft>
 					<onright>1</onright>
@@ -55,7 +65,7 @@
 					<visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]</visible>
 				</control>
 				<!-- THUMBNAILS movies & tv shows -->
-				<control type="button" id="44">
+				<control type="button" id="45">
 					<label>$LOCALIZE[31014]</label>
 					<onleft>1</onleft>
 					<onright>1</onright>
@@ -179,7 +189,7 @@
 				<onclick>Skin.ToggleSetting(galleryFull)</onclick>
 				<onclick>Container.SetViewMode(53)</onclick>
 				<selected>!Skin.HasSetting(galleryFull)</selected>
-				<include>contextButtonExtraSettings</include>
+				<!--<include>contextButtonExtraSettings</include>-->
 				<visible>Control.IsVisible(56) + [Container.Content(movies) | Container.Content(tvshows)] + !ControlGroup(40).HasFocus()</visible>
 			</control>
 			<!-- gallery fullscreen mode deactivated, it's not usable as is -->

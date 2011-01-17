@@ -1,6 +1,6 @@
+<?xml version="1.0"?>
 <includes>
 	<include name="FilesMenu">
-	
 		<control type="group" id="300">
 			<posx>-275</posx>
 			<posy>20</posy>
@@ -8,10 +8,8 @@
 			<onright>50</onright>
 			<include>pagemenus</include>
 			<include>transition2</include>
-			
 			<control type="group">
 				<visible>Window.IsActive(2)</visible>
-				
 				<control type="button" id="1">
 					<description>Choose Viewtype</description>
 					<label>$LOCALIZE[31930]</label>
@@ -23,7 +21,6 @@
 					<include>contextButton</include>
 					<visible allowhiddenfocus="true">!ControlGroup(40).HasFocus()</visible>
 				</control>
-
 				<control type="grouplist" id="40">
 					<onup>40</onup>
 					<ondown>40</ondown>
@@ -31,7 +28,6 @@
 					<onright>1</onright>
 					<itemgap>-125</itemgap>
 					<visible allowhiddenfocus="true">ControlGroup(40).HasFocus()</visible>
-
 					<control type="button" id="41">
 						<label>$LOCALIZE[535]</label>
 						<onleft>1</onleft>
@@ -40,6 +36,13 @@
 						<onclick>Container.SetViewMode(50)</onclick>
 						<include>contextButton</include>
 					</control>
+					<control type="button" id="42">
+						<label>New List</label>
+						<onleft>1</onleft>
+						<onright>1</onright>
+						<onclick>Container.SetViewMode(555)</onclick>
+						<include>contextButton</include>
+				</control>
 					<control type="button" id="43">
 						<label>$LOCALIZE[31014]</label>
 						<onleft>1</onleft>
@@ -74,7 +77,6 @@
 					<include>contextButton</include>
 					<visible>![ControlGroup(40).HasFocus() | ControlGroup(80).HasFocus()]</visible>
 				</control>
-			
 				<control type="button" id="90">
 					<description>GALLERY: no fullscreen</description>
 					<label>$LOCALIZE[31063]</label>
@@ -104,14 +106,9 @@
 					<visible>Control.IsVisible(53) + ![ControlGroup(40).HasFocus() | ControlGroup(80).HasFocus()]</visible>
 				</control>
 			</control>
-
-
-
-
 			<control type="group">
 				<description>Slide Menu for Videos</description>
 				<visible>Window.IsActive(MyVideoFiles)</visible>
-				
 				<control type="button" id="1">
 					<description>Choose Viewtype</description>
 					<label>$LOCALIZE[31930]</label>
@@ -123,7 +120,6 @@
 					<include>contextButton</include>
 					<visible allowhiddenfocus="true">!ControlGroup(40).HasFocus()</visible>
 				</control>
-				
 				<control type="grouplist" id="40">
 					<onup>40</onup>
 					<ondown>40</ondown>
@@ -131,7 +127,6 @@
 					<onright>1</onright>
 					<itemgap>-125</itemgap>
 					<visible allowhiddenfocus="true">ControlGroup(40).HasFocus()</visible>
-	
 					<control type="button" id="41">
 						<label>$LOCALIZE[535]</label>
 						<onleft>1</onleft>
@@ -167,12 +162,10 @@
 					<include>contextButton</include>
 					<visible>!ControlGroup(40).HasFocus()</visible>
 				</control>
-			</control>			
-						
+			</control>
 			<control type="group">
 				<description>Slide Menu for Programs</description>
 				<visible>Window.IsActive(1)</visible>
-				
 				<control type="button" id="1">
 					<description>Choose Viewtype</description>
 					<label>$LOCALIZE[31930]</label>
@@ -184,7 +177,6 @@
 					<include>contextButton</include>
 					<visible allowhiddenfocus="true">!ControlGroup(40).HasFocus()</visible>
 				</control>
-				
 				<control type="grouplist" id="40">
 					<onup>40</onup>
 					<ondown>40</ondown>
@@ -192,7 +184,6 @@
 					<onright>1</onright>
 					<itemgap>-125</itemgap>
 					<visible allowhiddenfocus="true">ControlGroup(40).HasFocus()</visible>
-
 					<!--control type="button" id="41">
 						<label>App Panel</label>
 						<onleft>1</onleft>
@@ -202,14 +193,15 @@
 						<onclick>Container.SetViewMode(579)</onclick>
 						<include>contextButton</include>
 					</control-->
-					<control type="button" id="42">
-						<label>Plug-ins</label>
-						<onleft>1</onleft>
-						<onright>1</onright>
-						<onup>41</onup>
-						<onclick>Container.SetViewMode(573)</onclick>
-						<include>contextButton</include>
-					</control>
+					<!-- LIST ALT -->
+				<control type="button" id="42">
+					<label>New List</label>
+					<onleft>1</onleft>
+					<onright>1</onright>
+					<onclick>Container.SetViewMode(555)</onclick>
+					<include>contextButton</include>
+					<visible>![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
+				</control>
 					<control type="button" id="45">
 						<label>next</label>
 						<onleft>1</onleft>
@@ -218,7 +210,6 @@
 						<include>contextButton</include>
 					</control>
 				</control>
-				
 				<control type="button" id="3">
 					<description>Sort by button</description>
 					<posy>43</posy>
@@ -230,7 +221,6 @@
 					<include>contextButton</include>
 					<visible>!ControlGroup(40).HasFocus()</visible>
 				</control>
-
 				<control type="button" id="30">
 					<description>Favourites Button</description>
 					<posy>86</posy>
@@ -243,8 +233,7 @@
 					<include>contextButton</include>
 					<visible>!ControlGroup(40).HasFocus()</visible>
 				</control>
-			</control>	
-												
+			</control>
 		</control>
 	</include>
 </includes>

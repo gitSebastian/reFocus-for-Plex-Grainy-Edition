@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <includes>
 	<include name="DialogFullScreenInfo_GrainyEditionNew">
-		<include>clock</include>
+		<include condition ="!Skin.HasSetting(legacymenucopperfieldmode) + Window.IsActive(Home)">clock</include>
 		<!-- THIS DEFINES THE BG FOR THE VIDEO INFO SCREEN, A NEW BG IS DEFINED INSTEAD OF STRETCHING EXISTING ONES TO DIFFERENT SIZES -->
 		<!-- video player -->
 		<control type="image" id="1">
@@ -22,6 +22,7 @@
 			<height>230</height>
 			<texture flipy="false">OSD/fullscreenInfo1.png</texture>
 			<visible>VideoPlayer.Content(files) + ![Window.IsActive(2901)]</visible>
+			<animation effect="fade" start="0" end="90" time="250">WindowOpen</animation>
 			<include>videoFullScreenInfo</include>
 		</control>
 		<control type="image" id="1">
@@ -31,6 +32,7 @@
 			<height>230</height>
 			<texture flipy="false">osd/fullscreenInfo1.png</texture>
 			<visible>VideoPlayer.Content(musicvideos) + ![Window.IsActive(2901)]</visible>
+			<animation effect="fade" start="0" end="90" time="250">WindowOpen</animation>
 			<include>videoFullScreenInfo</include>
 		</control>
 		<!-- LIBRARY -->

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <window id="6">
-	<defaultcontrol always="false">50</defaultcontrol>
+	<defaultcontrol always="false">555</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-	<views>50,51,52,53,54,55,56,57,58,59,571</views>
+	<views>50,51,52,53,54,55,56,57,58,59,555,571</views>
 	<controls>
 		<include>themeBackground2</include>
 		<include>allscreens</include>
@@ -25,6 +25,8 @@
 			<width>500</width>
 			<visible allowhiddenfocus="true">false</visible>
 		</control>
+		<!-- LIST VIEW NEW -->
+		<include>view_List_GrainyEdition</include>
 		<!-- LIST VIEW FANART -->
 		<include>view_ListVideo</include>
 		<control type="group">
@@ -32,26 +34,6 @@
 			<include>transition2</include>
 			<include>contextMenuHide</include>
 			<visible>Control.IsVisible(50)</visible>
-			<control type="image">
-				<posx>671</posx>
-				<posy>173</posy>
-				<width>450</width>
-				<height>450</height>
-				<texture>frames/albumframe.png</texture>
-				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-				<include>thumbFadeTime</include>
-				<visible>Container.Content(plugincontent)</visible>
-			</control>
-			<control type="image">
-				<posx>698</posx>
-				<posy>200</posy>
-				<width>396</width>
-				<height>396</height>
-				<texture diffuse="frames/albumframemask.png" fallback="thumbs/actor.png">$INFO[ListItem.Thumb]</texture>
-				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-				<include>thumbFadeTime</include>
-				<visible>Container.Content(plugincontent)</visible>
-			</control>
 			<control type="group">
 				<posx>665</posx>
 				<posy>75</posy>
@@ -113,12 +95,12 @@
 					<include>thumbFadeTime</include>
 					<visible>Container.Content(musicvideos)</visible>
 				</control>
-				<!--<control type="image">
+				<control type="image">
 					<posx>510</posx>
 					<posy>286</posy>
 					<include>watchedOverlay</include>
 					<visible>[Container.Content(movies) + Skin.HasSetting(overlayMovies)] | [Container.Content(tvshows) + Skin.HasSetting(overlayTVShows)] | [Container.Content(episodes) + Skin.HasSetting(overlayEpisodes)]</visible>
-				</control>-->
+				</control>
 			</control>
 			<!-- hd flag movies -->
 			<control type="image">
@@ -305,7 +287,7 @@
 			<!-- studio flag on the left -->
 			<control type="group">
 				<posx>60</posx>
-				<posy>459</posy> 
+				<posy>459</posy>
 				<include>studioFlags52</include>
 				<visible>Skin.HasSetting(slidestudioshowleft)</visible>
 			</control>
@@ -484,7 +466,7 @@
 				<align>left</align>
 				<include>Heading3</include>
 				<visible>!IsEmpty(ListItem.Title)</visible>
-			</control>	
+			</control>
 			<control type="label">
 				<posy>35</posy>
 				<width>980</width>

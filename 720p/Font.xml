@@ -93,6 +93,16 @@
 
 <!-- general ------------------------------------------------------>
 		<font>
+			<name>small</name>
+			<filename>RegularOrg.ttf</filename>
+			<size>16</size>
+		</font>
+		<font>
+			<name>smallsmallcase</name>
+			<filename>RegularLow.ttf</filename>
+			<size>16</size>
+		</font>
+		<font>
 			<name>normal</name>
 			<filename>RegularOrg.ttf</filename>
 			<size>22</size>
