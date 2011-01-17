@@ -24,7 +24,6 @@
 					<item id="2">
 						<label>Music Plug-ins</label>
 						<onclick>ActivateWindow(MyMusic)</onclick>
-						<visible>!Skin.HasSetting(iTunesHome)</visible>
 					</item>
 					<item id="3">
 						<label>Picture Plug-ins</label>
