@@ -16,7 +16,7 @@
 				<posy>-20</posy>
 				<width>371</width>
 				<height>371</height>
-				<aspectratio>scale</aspectratio>
+				<aspectratio>stretch</aspectratio>
 				<texture>frames/albumFrame.png</texture>
 			</control>
 			<control type="image">
