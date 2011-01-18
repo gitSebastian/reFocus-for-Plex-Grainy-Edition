@@ -1,0 +1,988 @@
+<?xml version="1.0"?>
+<includes>
+	<!-- VIDEO VIEWS -->
+	<!-- VIDEO & PLUG-INS NEW LIST -->
+	<include name="view_List_GrainyEdition">
+		<!-- horiz bar -->
+		<control type="image">
+			<posx>-100</posx>
+			<posy>317</posy>
+			<width>1420</width>
+			<height>122</height>
+			<texture border="0,30,0,30">views/list-focus.png</texture>
+			<visible>!ControlGroup(300).HasFocus + Control.IsVisible(555)</visible>
+			<animation type="WindowOpen">
+				<!--<effect type="slide" start="0,-300" time="1000" delay="200" tween="cubic" easing="out"/>-->
+				<effect type="fade" start="5" end="15" time="1000" delay="500"/>
+				<effect type="rotatex" center="345" start="-180" end="0" time="500" delay="500" reversible="false"/>
+			</animation>
+			<animation type="WindowClose">
+				<!--<effect type="slide" start="0,0" end="0,-300" time="700" tween="cubic" easing="in"/>-->
+				<effect type="fade" start="50" end="0" time="700"/>
+			</animation>
+			<animation type="Visible">
+				<effect type="fade" start="5" end="15" time="1000"/>
+				<effect type="rotatex" center="378" start="-180" end="0" time="500" delay="1000" reversible="false"/>
+			</animation>
+			
+		</control>
+		<!-- menu -->
+		<control type="fixedlist" id="555">
+			<viewtype label="555">list</viewtype>
+			<posx>0</posx>
+			<posy>90</posy>
+			<height>545</height>
+			<width>1260</width>
+			<onup>555</onup>
+			<ondown>555</ondown>
+			<onleft>300</onleft>
+			<onright>300</onright>
+			<orientation>vertical</orientation>
+			<focusposition>4</focusposition>
+			<pagecontrol>23</pagecontrol>
+			<include>transition2</include>
+			<include>infoDialogHide</include>
+			<include>contextMenuHide</include>
+			<include>grainypagefade</include>
+			<itemlayout width="1240" height="46">
+				<!-- non-focused -->
+				<!-- small case -->
+				<control type="label">
+					<posx>560</posx>
+					<posy>43</posy>
+					<width>740</width>
+					<height>46</height>
+					<aligny>center</aligny>
+					<font>normalLow</font>
+					<label>$INFO[ListItem.Label]</label>
+					<visible>!Skin.HasSetting(usecapitalisation)</visible>
+				</control>
+				<!-- mixed case -->
+				<control type="label">
+					<posx>560</posx>
+					<posy>43</posy>
+					<width>740</width>
+					<height>46</height>
+					<aligny>center</aligny>
+					<font>special7</font>
+					<label>$INFO[ListItem.Label]</label>
+					<visible>Skin.HasSetting(usecapitalisation)</visible>
+				</control>
+			</itemlayout>
+			<!-- focused -->
+			<focusedlayout width="800" height="120">
+				<!-- caps title -->
+				<control type="label">
+					<posx>500</posx>
+					<posy>78</posy>
+					<width>730</width>
+					<height>50</height>
+					<aligny>center</aligny>
+					<font>osd1</font>
+					<textcolor>Color3</textcolor>
+					<include>grainywhitetext</include>
+					<label>$INFO[ListItem.Label]</label>
+					<scroll>true</scroll>
+				</control>
+			</focusedlayout>
+		</control>
+		<!-- faux frame -->
+		<control type="image">
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="20" time="1000" delay="3000"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="20" end="0" time="100"/>
+			</animation>
+			<animation type="Visible">
+				<effect type="fade" start="0" end="20" time="500" delay="2000"/>
+			</animation>
+			<posx>91</posx>
+			<posy>196</posy>
+			<width>373</width>
+			<height>368</height>
+			<fadetime>400</fadetime>
+			<include>transition2</include>
+			<include>infoDialogHide</include>
+			<include>contextMenuHide</include>
+			<include>grainypagefade</include>
+			<aspectratio align="right" aligny="center">keep</aspectratio>
+			<texture background="true" diffuse="frames/albumFrameMask.png">$INFO[Container(555).ListItem.Icon]</texture>
+			<visible>!ControlGroup(300).HasFocus + Control.IsVisible(555)</visible>
+		</control>
+		<!-- icon -->
+		<control type="image" id="5555">
+			<animation type="WindowOpen">
+				<!--<effect type="slide" start="0,-300" time="1000" delay="200" tween="cubic" easing="out"/>-->
+				<effect type="fade" start="20" end="100" time="1000" delay="500"/>
+				<effect type="rotatex" center="380" start="-180" end="0" time="500" delay="500" reversible="false"/>
+			</animation>
+			<animation type="WindowClose">
+				<!--<effect type="slide" start="0,0" end="0,-300" time="700" tween="cubic" easing="in"/>-->
+				<effect type="fade" start="50" end="0" time="700"/>
+			</animation>
+			<animation type="Visible">
+				<effect type="fade" start="10" end="100" time="2000" delay="0"/>
+				<effect type="rotatex" center="380" start="-180" end="0" time="500" delay="1000" reversible="false"/>
+			</animation>
+			<posx>100</posx>
+			<posy>200</posy>
+			<width>360</width>
+			<height>360</height>
+			<fadetime>400</fadetime>
+			<include>transition2</include>
+			<include>infoDialogHide</include>
+			<include>contextMenuHide</include>
+			<include>grainypagefade</include>
+			<aspectratio align="right" aligny="center">keep</aspectratio>
+			<texture background="true" diffuse="frames/albumFrameMask.png">$INFO[Container(555).ListItem.Icon]</texture>
+			<visible>!ControlGroup(300).HasFocus + Control.IsVisible(555)</visible>
+		</control>
+	</include>
+	<!-- BIG LIST NEW -->
+	<include name="view_BigList_GrainyEdition">
+		<control type="image">
+			<posy>195</posy>
+			<width>1260</width>
+			<height>305</height>
+			<texture border="0,30,0,0">views/list-focus.png</texture>
+			<visible>!ControlGroup(300).HasFocus()</visible>
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="80" time="1000" delay="200"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="80" end="0" time="200"/>
+			</animation>
+			<animation type="Visible">
+				<effect type="fade" start="0" end="80" time="1000"/>
+			</animation>
+			<visible>[[!Window.IsActive(progressdialog) + Container.Content(episodes)] | Container.Content(plugincontent)] + Control.IsVisible(51) + !ControlGroup(300).HasFocus()</visible>
+		</control>
+		<!-- separator -->
+		<control type="image">
+			<posx>250</posx>
+			<posy>300</posy>
+			<width>970</width>
+			<height>1</height>
+			<texture>dialogs/separator.png</texture>
+			<include>grainybiglisttextfade</include>
+			<visible>[[!Window.IsActive(progressdialog) + Container.Content(episodes)] | Container.Content(plugincontent)] + Control.IsVisible(51) + !ControlGroup(300).HasFocus()</visible>
+		</control>
+		<control type="fixedlist" id="51">
+			<viewtype label="537">biglist</viewtype>
+			<posy>75</posy>
+			<width>1400</width>
+			<height>610</height>
+			<onleft>300</onleft>
+			<onright>76</onright>
+			<onup>51</onup>
+			<ondown>51</ondown>
+			<scrolltime>150</scrolltime>
+			<focusposition>1</focusposition>
+			<wraparound>true</wraparound>
+			<movement>2</movement>
+			<pagecontrol>76</pagecontrol>
+			<orientation>vertical</orientation>
+			<include>transition2</include>
+			<include>infoDialogHide</include>
+			<include>contextMenuHide</include>
+			<include>grainypagefade</include>
+			<visible>[!Window.IsActive(progressdialog) + Container.Content(episodes)] | Container.Content(plugincontent)</visible>
+			<itemlayout width="625" height="120">
+				<!-- separator -->
+				<control type="image">
+					<posx>250</posx>
+					<posy>85</posy>
+					<width>750</width>
+					<height>1</height>
+					<texture>dialogs/separator.png</texture>
+				</control>
+				<control type="image">
+					<posx>25</posx>
+					<posy>24</posy>
+					<width>234</width>
+					<height>120</height>
+					<texture border="48">frames/albumFrameSmall.png</texture>
+					<aspectratio>stretch</aspectratio>
+					<include>thumbFadeTime</include>
+				</control>
+				<control type="image">
+					<posx>35</posx>
+					<posy>33</posy>
+					<width>215</width>
+					<height>102</height>
+					<texture diffuse="frames/wideFrameMask.png" fallback="backgrounds/library/TVShowsNoFanartSmall.png">$INFO[ListItem.Thumb]</texture>
+					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+				</control>
+				<control type="image">
+					<posx>224</posx>
+					<posy>109</posy>
+					<include>watchedOverlay</include>
+					<visible>Skin.HasSetting(overlayEpisodes)</visible>
+				</control>
+				<!--<control type="image">
+					<posx>34</posx>
+					<posy>111</posy>
+					<width>39</width>
+					<height>24</height>
+					<texture>$INFO[Listitem.Property(mediaTag-videoResolution),flags/biglistresolution/,.png]</texture>
+					<aspectratio align="right">keep</aspectratio>
+				</control>-->
+				<!-- Unfocused TITLE simple : small case -->
+				<control type="label" id="1">
+					<posx>270</posx>
+					<posy>40</posy>
+					<width>770</width>
+					<label>$INFO[ListItem.Title]</label>
+					<font>bigLow</font>
+					<textcolor>Color1</textcolor>
+					<visible>!Skin.HasSetting(usecapitalisation) + IsEmpty(Container.Property(mixedParents))</visible>
+				</control>
+				<!-- Unfocused TITLE simple : mixed case -->
+				<control type="label" id="1">
+					<posx>270</posx>
+					<posy>55</posy>
+					<width>770</width>
+					<label>$INFO[ListItem.Title]</label>
+					<font>special7</font>
+					<textcolor>Color1</textcolor>
+					<visible>Skin.HasSetting(usecapitalisation) + IsEmpty(Container.Property(mixedParents))</visible>
+				</control>
+				<!-- Unfocused TITLE with show name : small case -->
+				<control type="label" id="1">
+					<posx>270</posx>
+					<posy>40</posy>
+					<width>770</width>
+					<label>$INFO[ListItem.TVShowTitle] : $INFO[ListItem.Title]</label>
+					<font>bigLow</font>
+					<textcolor>Color1</textcolor>
+					<visible>!Skin.HasSetting(usecapitalisation) + !IsEmpty(Container.Property(mixedParents))</visible>
+				</control>
+				<!-- Unfocused TITLE with show name : mixed case -->
+				<control type="label" id="1">
+					<posx>270</posx>
+					<posy>55</posy>
+					<width>770</width>
+					<label>$INFO[ListItem.TVShowTitle] : $INFO[ListItem.Title]</label>
+					<font>special7</font>
+					<textcolor>Color1</textcolor>
+					<visible>Skin.HasSetting(usecapitalisation) + !IsEmpty(Container.Property(mixedParents))</visible>
+				</control>
+				<!-- Unfocused TITLE backup label : small case -->
+				<control type="label" id="1">
+					<posx>270</posx>
+					<posy>40</posy>
+					<width>770</width>
+					<label>$INFO[ListItem.Label]</label>
+					<font>bigLow</font>
+					<textcolor>Color1</textcolor>
+					<visible>IsEmpty(ListItem.Title) + !Skin.HasSetting(usecapitalisation)</visible>
+				</control>
+				<!-- Unfocused TITLE backup label : mixed case -->
+				<control type="label" id="1">
+					<posx>270</posx>
+					<posy>55</posy>
+					<width>770</width>
+					<label>$INFO[ListItem.Label]</label>
+					<font>special7</font>
+					<textcolor>Color1</textcolor>
+					<visible>IsEmpty(ListItem.Title) + Skin.HasSetting(usecapitalisation)</visible>
+				</control>
+				<!-- MOD TITLES : end -->
+				<control type="label" id="1">
+					<posx>270</posx>
+					<posy>88</posy>
+					<width>975</width>
+					<label>$LOCALIZE[31074,,]$INFO[ListItem.Date, &#xB7; ]</label>
+					<font>smallCaps</font>
+					<include>grainybeigetext</include>
+				</control>
+				<control type="label" id="1">
+					<posx>270</posx>
+					<posy>88</posy>
+					<width>975</width>
+					<label>$INFO[ListItem.Year]</label>
+					<font>smallCaps</font>
+					<include>grainybeigetext</include>
+					<visible>Container.Content(plugincontent) + IsEmpty(ListItem.Label2)</visible>
+				</control>
+				<control type="label" id="1">
+					<posx>270</posx>
+					<posy>88</posy>
+					<width>975</width>
+					<label>$INFO[ListItem.Label2]</label>
+					<font>smallCaps</font>
+					<include>grainybeigetext</include>
+					<visible>Container.Content(plugincontent) + IsEmpty(ListItem.Year)</visible>
+				</control>
+				<control type="image">
+					<posx>1090</posx>
+					<posy>64</posy>
+					<width>128</width>
+					<height>32</height>
+					<info>ListItem.StarRating</info>
+					<aspectratio align="right">keep</aspectratio>
+					<visible>!IsEmpty(ListItem.Title) + !Skin.HasSetting(hideratings)</visible>
+				</control>
+			</itemlayout>
+			<!-- FOCUSED BIG LIST ITEM -->
+			<focusedlayout width="625" height="225">
+				<!--<control type="image">
+					<posy>0</posy>
+					<width>1260</width>
+					<height>305</height>
+					<texture border="0,30,0,0">views/list-focus.png</texture>
+					<visible>!ControlGroup(300).HasFocus()</visible>
+				</control>-->
+				<!-- separator -->
+				<!--<control type="image">
+					<posx>250</posx>
+					<posy>105</posy>
+					<width>970</width>
+					<height>1</height>
+					<texture>dialogs/separator.png</texture>
+					<include>grainybiglisttextfade</include>
+				</control>-->
+				<!-- added a shadow under the photo -->
+				<control type="image">
+					<posx>0</posx>
+					<posy>29</posy>
+					<width>374</width>
+					<height>213</height>
+					<texture border="48">frames/albumFrameSmall.png</texture>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+					<posx>10</posx>
+					<posy>38</posy>
+					<width>357</width>
+					<height>195</height>
+					<texture diffuse="frames/wideFrameMask.png" fallback="backgrounds/library/TVShowsNoFanartSmall.png">$INFO[ListItem.Thumb]</texture>
+					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+				</control>
+				<control type="image">
+					<posx>339</posx>
+					<posy>205</posy>
+					<include>watchedOverlay</include>
+					<visible>Skin.HasSetting(overlayEpisodes)</visible>
+				</control>
+				<!--<control type="image">
+					<posx>12</posx>
+					<posy>206</posy>
+					<width>39</width>
+					<height>24</height>
+					<texture>$INFO[Listitem.Property(mediaTag-videoResolution),flags/biglistresolution/,.png]</texture>
+					<aspectratio align="right">keep</aspectratio>
+				</control>-->
+				<!-- Focused TITLE simple : small case -->
+				<control type="label" id="1">
+					<posx>380</posx>
+					<posy>40</posy>
+					<width>770</width>
+					<label>$INFO[ListItem.Title]</label>
+					<font>bigLow</font>
+					<textcolor>Focused</textcolor>
+					<include>grainybiglisttextfade</include>
+					<visible>!Skin.HasSetting(usecapitalisation) + IsEmpty(Container.Property(mixedParents))</visible>
+				</control>
+				<!-- Focused TITLE simple : mixed case -->
+				<control type="label" id="1">
+					<posx>380</posx>
+					<posy>40</posy>
+					<width>770</width>
+					<label>$INFO[ListItem.Title]</label>
+					<font>special7</font>
+					<textcolor>Focused</textcolor>
+					<include>grainybiglisttextfade</include>
+					<visible>Skin.HasSetting(usecapitalisation) + IsEmpty(Container.Property(mixedParents))</visible>
+				</control>
+				<!-- Focused TITLE with show name : small case -->
+				<control type="label" id="1">
+					<posx>380</posx>
+					<posy>40</posy>
+					<width>770</width>
+					<label>$INFO[ListItem.TVShowTitle] : $INFO[ListItem.Title]</label>
+					<font>bigLow</font>
+					<textcolor>Focused</textcolor>
+					<include>grainybiglisttextfade</include>
+					<visible>!Skin.HasSetting(usecapitalisation) + !IsEmpty(Container.Property(mixedParents))</visible>
+				</control>
+				<!-- Focused TITLE with show name : mixed case -->
+				<control type="label" id="1">
+					<posx>380</posx>
+					<posy>40</posy>
+					<width>770</width>
+					<label>$INFO[ListItem.TVShowTitle] : $INFO[ListItem.Title]</label>
+					<font>special7</font>
+					<textcolor>Focused</textcolor>
+					<include>grainybiglisttextfade</include>
+					<visible>Skin.HasSetting(usecapitalisation) + !IsEmpty(Container.Property(mixedParents))</visible>
+				</control>
+				<!-- Focused TITLE backup label : small case -->
+				<control type="label" id="1">
+					<posx>380</posx>
+					<posy>40</posy>
+					<width>770</width>
+					<label>$INFO[ListItem.Label]</label>
+					<font>bigLow</font>
+					<textcolor>Focused</textcolor>
+					<include>grainybiglisttextfade</include>
+					<visible>IsEmpty(ListItem.Title) + !Skin.HasSetting(usecapitalisation)</visible>
+				</control>
+				<!-- Focused TITLE backup label : mixed case -->
+				<control type="label" id="1">
+					<posx>380</posx>
+					<posy>40</posy>
+					<width>770</width>
+					<label>$INFO[ListItem.Label]</label>
+					<font>special7</font>
+					<textcolor>Focused</textcolor>
+					<visible>IsEmpty(ListItem.Title) + Skin.HasSetting(usecapitalisation)</visible>
+				</control>
+				<!-- MOD : end -->
+				<control type="label" id="1">
+					<posx>380</posx>
+					<posy>70</posy>
+					<width>975</width>
+					<label>$LOCALIZE[31074,,]$INFO[ListItem.date, &#xB7; ]</label>
+					<font>smallCaps</font>
+					<textcolor>Focused</textcolor>
+					<include>grainybiglisttextfade</include>
+				</control>
+				<control type="label" id="1">
+					<posx>380</posx>
+					<posy>70</posy>
+					<width>975</width>
+					<label>$INFO[ListItem.Year]</label>
+					<font>smallCaps</font>
+					<textcolor>Focused</textcolor>
+					<include>grainybiglisttextfade</include>
+					<visible>Container.Content(plugincontent) + IsEmpty(ListItem.Label2)</visible>
+				</control>
+				<control type="label" id="1">
+					<posx>380</posx>
+					<posy>70</posy>
+					<width>975</width>
+					<label>$INFO[ListItem.Label2]</label>
+					<font>smallCaps</font>
+					<textcolor>Focused</textcolor>
+					<include>grainybiglisttextfade</include>
+					<visible>Container.Content(plugincontent) + IsEmpty(ListItem.Year)</visible>
+				</control>
+				<control type="image">
+					<posx>1090</posx>
+					<posy>64</posy>
+					<width>128</width>
+					<height>32</height>
+					<info>ListItem.StarRating</info>
+					<include>grainybiglisttextfade</include>
+					<aspectratio align="right">keep</aspectratio>
+					<visible>!IsEmpty(ListItem.Title) + !Skin.HasSetting(hideratings)</visible>
+				</control>
+			</focusedlayout>
+		</control>
+		<!-- plot textbox -->
+		<control type="group" id="4000">
+			<visible>![Control.IsVisible(4001) | Control.IsVisible(4002)]</visible>
+			<include>transition2</include>
+			<include>infoDialogHide</include>
+			<include>contextMenuHide</include>
+			<!-- original small case -->
+			<control type="textbox" id="4">
+				<posx>380</posx>
+				<posy>301</posy>
+				<width>830</width>
+				<height>110</height>
+				<label>$INFO[ListItem(0).Plot]</label>
+				<autoscroll delay="10000" time="3000" repeat="5000">!Control.HasFocus(13)</autoscroll>
+				<font>mediumLow</font>
+				<textcolor>Focused</textcolor>
+				<include>textBox</include>
+				<visible>Control.IsVisible(51) + !Skin.HasSetting(usecapitalisation)</visible>
+			</control>
+			<!-- use mixed case -->
+			<control type="textbox" id="4">
+				<posx>380</posx>
+				<posy>301</posy>
+				<width>830</width>
+				<height>110</height>
+				<label>$INFO[ListItem(0).Plot]</label>
+				<autoscroll delay="10000" time="3000" repeat="5000">!Control.HasFocus(13)</autoscroll>
+				<font>medium</font>
+				<textcolor>Focused</textcolor>
+				<include>textBox</include>
+				<animation type="Visible">
+					<effect type="fade" start="0" end="100" delay="100" time="1200"/>
+				</animation>
+				<visible>Control.IsVisible(51) + Skin.HasSetting(usecapitalisation)</visible>
+			</control>
+		</control>
+	</include>
+	<!-- MUSIC VIEWS -->
+	<!-- MUSIC NEW LIST -->
+	<include name="view_ListMusic_GrainyEdition">
+		<!-- horiz bar -->
+		<control type="image">
+			<posx>-100</posx>
+			<posy>317</posy>
+			<width>1420</width>
+			<height>122</height>
+			<texture border="0,30,0,30">views/list-focus.png</texture>
+			<visible>!ControlGroup(300).HasFocus + Control.IsVisible(555) + !Window.IsActive(musicplaylist)</visible>
+			<animation type="WindowOpen">
+				<!--<effect type="slide" start="0,-300" time="1000" delay="200" tween="cubic" easing="out"/>-->
+				<effect type="fade" start="5" end="15" time="1000" delay="500"/>
+				<effect type="rotatex" center="345" start="-180" end="0" time="500" delay="500" reversible="false"/>
+			</animation>
+			<animation type="WindowClose">
+				<!--<effect type="slide" start="0,0" end="0,-300" time="700" tween="cubic" easing="in"/>-->
+				<effect type="fade" start="50" end="0" time="700"/>
+			</animation>
+			<animation type="Visible">
+				<effect type="fade" start="0" end="15" time="1000"/>
+			</animation>
+		</control>
+		<!-- menu -->
+		<control type="fixedlist" id="555">
+			<viewtype label="555">list</viewtype>
+			<posx>0</posx>
+			<posy>90</posy>
+			<height>545</height>
+			<width>1260</width>
+			<onup>555</onup>
+			<ondown>555</ondown>
+			<onleft>300</onleft>
+			<onright>300</onright>
+			<orientation>vertical</orientation>
+			<focusposition>4</focusposition>
+			<pagecontrol>23</pagecontrol>
+			<include>transition2</include>
+			<include>infoDialogHide</include>
+			<include>contextMenuHide</include>
+			<include>grainypagefade</include>
+			<itemlayout condition="!Window.IsActive(musicplaylist)" width="1240" height="46">
+				<!-- non-focused -->
+				<!-- small case -->
+				<control type="label">
+					<posx>560</posx>
+					<posy>43</posy>
+					<width>740</width>
+					<height>46</height>
+					<aligny>center</aligny>
+					<font>bigLow</font>
+					<label>$INFO[ListItem.Label]</label>
+					<selectedcolor>Color5</selectedcolor>
+					<visible>!Skin.HasSetting(usecapitalisation)</visible>
+				</control>
+				<!-- mixed case -->
+				<control type="label">
+					<posx>560</posx>
+					<posy>43</posy>
+					<width>740</width>
+					<height>46</height>
+					<aligny>center</aligny>
+					<font>special7</font>
+					<label>$INFO[ListItem.Label]</label>
+					<selectedcolor>Color5</selectedcolor>
+					<visible>Skin.HasSetting(usecapitalisation)</visible>
+				</control>
+			</itemlayout>
+			<!-- focused -->
+			<focusedlayout condition="!Window.IsActive(musicplaylist)" width="800" height="120">
+				<!-- caps title -->
+				<control type="label">
+					<posx>500</posx>
+					<posy>78</posy>
+					<width>730</width>
+					<height>50</height>
+					<aligny>center</aligny>
+					<font>osd1</font>
+					<include>grainywhitetext</include>
+					<label>$INFO[ListItem.Label]</label>
+					<selectedcolor>Color5</selectedcolor>
+					<scroll>true</scroll>
+				</control>
+				<control type="label">
+					<posx>120</posx>
+					<posy>-110</posy>
+					<width>340</width>
+					<font>small</font>
+					<include>grainybeigetext</include>
+					<label>$INFO[ListItem.Album]</label>
+					<selectedcolor>Color1</selectedcolor>
+					<align>left</align>
+					<visible>!IsEmpty(ListItem.Album)</visible>
+				</control>
+				<control type="label">
+					<posx>450</posx>
+					<posy>295</posy>
+					<width>340</width>
+					<font>small</font>
+					<include>grainybeigetext</include>
+					<label>$INFO[ListItem.Duration]</label>
+					<selectedcolor>Color1</selectedcolor>
+					<align>right</align>
+					<visible>!IsEmpty(ListItem.Duration)</visible>
+				</control>
+			</focusedlayout>
+		</control>
+		<!-- frame -->
+		<control type="image" id="5555">
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="90" time="2000" delay="3000"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="slide" start="0,0" end="0,-300" time="700" tween="cubic" easing="in"/>
+				<effect type="fade" start="50" end="0" time="700"/>
+			</animation>
+			<animation type="Visible">
+				<effect type="fade" start="0" end="90" time="1000" delay="300"/>
+			</animation>
+			<posx>84</posx>
+			<posy>185</posy>
+			<width>392</width>
+			<height>392</height>
+			<texture>dialogs/dialogWindow1.png</texture>
+			<visible>!ControlGroup(300).HasFocus + !Window.IsActive(progressdialog) + Control.IsVisible(555) + [Container.Content(albums) | Container.Content(artists) | Container.Content(singles) | Container.Content(songs) | !IsEmpty(Container(555).ListItem.Album]</visible>
+		</control>
+				
+					
+		<!-- iTunes icon -->
+		<control type="image">
+			<animation type="WindowOpen">
+				<!--<effect type="slide" start="0,-300" time="1000" delay="200" tween="cubic" easing="out"/>-->
+				<effect type="fade" start="5" end="100" time="1000" delay="500"/>
+				<effect type="rotatex" center="345" start="-180" end="0" time="500" delay="500" reversible="false"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="0"/>
+			</animation>
+			<animation type="Visible">
+				<effect type="fade" start="0" end="100" time="1000" delay="600"/>
+			</animation>
+			<posx>113</posx>
+			<posy>213</posy>
+			<width>330</width>
+			<height>330</height>
+			<texture>logos/itunes-icon.png</texture>
+			<visible>!ControlGroup(300).HasFocus + Control.IsVisible(555) + !Window.IsActive(musicplaylist) + ![Container.Content(albums) | Container.Content(artists) | Container.Content(singles) | Container.Content(songs)]</visible>
+		</control>
+		<!-- item image -->
+		<control type="image">
+			<animation type="WindowOpen">
+				<effect type="slide" start="0,-300" time="1000" delay="200" tween="cubic" easing="out"/>
+				<effect type="fade" start="20" end="100" time="1000" delay="2000"/>
+				<effect type="rotatex" center="380" start="-180" end="0" time="500" delay="2000" reversible="false"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="slide" start="0,0" end="0,-300" time="700" tween="cubic" easing="in"/>
+				<effect type="fade" start="50" end="0" time="700"/>
+			</animation>
+			<animation type="Visible">
+				<effect type="fade" start="0" end="100" time="2000" delay="300"/>
+			</animation>
+			<posx>100</posx>
+			<posy>200</posy>
+			<width>360</width>
+			<height>360</height>
+			<fadetime>400</fadetime>
+			<include>transition2</include>
+			<include>infoDialogHide</include>
+			<include>contextMenuHide</include>
+			<include>grainypagefade</include>
+			<aspectratio align="right" aligny="center">stretch</aspectratio>
+			<texture background="true" diffuse="frames/albumFrameMask.png">$INFO[Container(555).ListItem.Icon]</texture>
+			<visible>!ControlGroup(300).HasFocus + Control.IsVisible(555) + !Window.IsActive(musicplaylist)</visible>
+		</control>
+	</include>
+	<!-- PLAYLIST NOW -->
+	<include name="view_PlayListMusic_GrainyEdition">
+		<!-- Shadow -->
+		<control type="group">
+			<animation effect="fade" start="100" end="20" time="350" condition="Control.HasFocus(9000) | Control.HasFocus(1110) | Control.HasFocus(1140) | Control.HasFocus(1150) | Control.HasFocus(1160)">Conditional</animation>
+			<visible>Window.IsActive(musicplaylist)</visible>
+		</control>
+		<control type="list" id="50">
+			<viewtype label="535">List</viewtype>
+			<posx>100</posx>
+			<posy>110</posy>
+			<width>700</width>
+			<height>560</height>
+			<onleft>300</onleft>
+			<onright>23</onright>
+			<onup>50</onup>
+			<ondown>50</ondown>
+			<scrolltime>150</scrolltime>
+			<orientation>vertical</orientation>
+			<pagecontrol>23</pagecontrol>
+			<include>transition2</include>
+			<include>infoDialogHide</include>
+			<include>contextMenuHide</include>
+			
+			<visible>!Window.IsActive(progressdialog)</visible>
+			<itemlayout condition="Window.IsActive(musicplaylist)" width="625" height="40">
+				<!-- small case -->
+				<control type="label">
+					<posx>40</posx>
+					<width>500</width>
+					<label>$INFO[ListItem.Title,, ][COLOR=ffA1927F]&#xB7; $INFO[ListItem.Artist][/COLOR]</label>
+					<include>grainywhitetext</include>
+					<font>smallsmallcase</font>
+					<selectedcolor>Color5</selectedcolor>
+					<visible>!Skin.HasSetting(usecapitalisation)</visible>
+				</control>
+				<!-- mixed case -->
+				<control type="label">
+					<posx>40</posx>
+					<width>500</width>
+					<label>$INFO[ListItem.Title,, ][COLOR=ffA1927F]&#xB7; $INFO[ListItem.Artist][/COLOR]</label>
+					<include>grainywhitetext</include>
+					<font>small</font>
+					<selectedcolor>Color5</selectedcolor>
+					<visible>Skin.HasSetting(usecapitalisation)</visible>
+				</control>
+				<!--<control type="image">
+					<posy>-28</posy>
+					<width>600</width>
+					<height>100</height>
+					<texture border="0,30,0,30">1black.png</texture>
+				</control>-->
+				<control type="label">
+					<posx>40</posx>
+					<width>500</width>
+					<label>$INFO[ListItem.Label]</label>
+					<include>listMenu</include>
+					<selectedcolor>Color5</selectedcolor>
+					<visible>IsEmpty(ListItem.Title)</visible>
+				</control>
+				<control type="label">
+					<posx>600</posx>
+					<width>500</width>
+					<label>$INFO[ListItem.Duration]</label>
+					<align>right</align>
+					<font>small</font>
+					<selectedcolor>Color5</selectedcolor>
+					<visible>!IsEmpty(ListItem.Title)</visible>
+				</control>
+			</itemlayout>
+			<focusedlayout condition="Window.IsActive(musicplaylist)" width="625" height="40">
+				<control type="image">
+					<posy>-38</posy>
+					<posx>-151</posx>
+					<width>800</width>
+					<height>100</height>
+					<texture flipx="true" border="0,30,0,30">views/list-focus.png</texture>
+					<animation type="Conditional" condition="true">
+						<effect type="fade" start="0" end="50"/>
+					</animation>
+					<visible>!ControlGroup(300).HasFocus</visible>
+				</control>
+				<!-- small case -->
+				<control type="label">
+					<posx>40</posx>
+					<width>500</width>
+					<label>[COLOR=Color5]$INFO[ListItem.Title,, ][/COLOR][COLOR=ffA1927F]&#xB7; $INFO[ListItem.Artist][/COLOR]</label>
+					<font>smallsmallcase</font>
+					<visible>!Skin.HasSetting(usecapitalisation)</visible>
+				</control>
+				<!-- mixed case -->
+				<control type="label">
+					<posx>40</posx>
+					<width>500</width>
+					<label>[COLOR=Color5]$INFO[ListItem.Title,, ]&#xB7; $INFO[ListItem.Artist][/COLOR]</label>
+					<font>small</font>
+					<visible>Skin.HasSetting(usecapitalisation)</visible>
+				</control>
+				<!--<control type="label">
+					<posx>40</posx>
+					<width>500</width>
+					<label>$INFO[ListItem.Label]</label>
+					<include>listMenuFocus</include>
+					<visible>IsEmpty(ListItem.Title)</visible>
+				</control>-->
+				<control type="label">
+					<posx>600</posx>
+					<width>500</width>
+					<label>[COLOR=Color1]$INFO[ListItem.Duration][/COLOR]</label>
+					<align>right</align>
+					<font>small</font>
+					<visible>!IsEmpty(ListItem.Title)</visible>
+				</control>
+			</focusedlayout>
+		</control>
+		<!-- the entire now and next playing assembly -->
+		<control type="group">
+			<posy>0</posy>
+			<posx>50</posx>			
+			<!-- now playing progress bar and track information -->
+			<control type="group">
+				<posy>117</posy>
+				<posx>755</posx>
+				<animation type="WindowOpen">
+					<effect type="fade" start="0" end="90" time="1000" delay="1500"/>
+				</animation>
+				<animation type="WindowClose">
+					<effect type="fade" start="50" end="0" time="100"/>
+				</animation>
+				<animation type="Visible">
+					<effect type="fade" start="0" end="90" time="1000" delay="300"/>
+				</animation>
+				<!-- progress bar -->
+				<control type="progress" id="21">
+					<description>Progress bar</description>
+					<posy>0</posy>
+					<posx>0</posx>
+					<height>1</height>
+					<width>324</width>
+					<info>Player.Progress</info>
+					<animation effect="fade" start="0" end="100" time="1000">Visible</animation>
+					<animation effect="fade" start="100" end="0" time="1000">Hidden</animation>
+					<visible>Player.HasMusicPlaylist</visible>
+				</control>
+				<!-- now playing informations -->
+				<control type="group">
+					<posy>5</posy>
+					<posx>0</posx>
+					<visible>Player.HasMusicPlaylist</visible>
+					<control type="label">
+						<width>324</width>
+						<font>small</font>
+						<textcolor>Color0</textcolor>
+						<label>$INFO[MusicPlayer.Artist]</label>
+						<align>left</align>
+					</control>
+					<control type="label">
+						<posy>20</posy>
+						<width>324</width>
+						<font>small</font>
+						<include>grainybeigetext</include>
+						<label>$INFO[MusicPlayer.Title]</label>
+						<align>left</align>
+					</control>
+				</control>
+			</control>
+			<!-- frame -->
+			<control type="image">
+				<animation type="WindowOpen">
+					<effect type="fade" start="0" end="90" time="1000" delay="1500"/>
+				</animation>
+				<animation type="WindowClose">
+					<effect type="fade" start="50" end="0" time="100"/>
+				</animation>
+				<animation type="Visible">
+					<effect type="fade" start="0" end="90" time="1000" delay="300"/>
+				</animation>
+				<posx>741</posx>
+				<posy>159</posy>
+				<width>352</width>
+				<height>352</height>
+				<include>transition2</include>
+				<include>infoDialogHide</include>
+				
+				<include>grainypagefade</include>
+				<texture>dialogs/dialogWindow1.png</texture>
+				<visible>Window.IsActive(musicplaylist)</visible>
+			</control>
+			<!-- item image -->
+			<control type="image">
+				<animation type="WindowOpen">
+					<effect type="slide" start="0,-500" time="1000" delay="200" tween="cubic" easing="out"/>
+					<effect type="fade" start="20" end="100" time="2000" delay="500"/>
+					<!--<effect type="rotatex" center="380" start="-180" end="0" time="500" delay="2000" reversible="false"/>-->
+				</animation>
+				<animation type="WindowClose">
+					<effect type="slide" start="0,0" end="0,-500" time="700" tween="cubic" easing="in"/>
+					<effect type="fade" start="50" end="0" time="700"/>
+				</animation>
+				<animation type="Visible">
+					<effect type="fade" start="0" end="100" time="2000" delay="300"/>
+				</animation>
+				<posx>755</posx>
+				<posy>172</posy>
+				<width>324</width>
+				<height>324</height>
+				<fadetime>400</fadetime>
+				<include>transition2</include>
+				<include>infoDialogHide</include>
+				
+				<include>grainypagefade</include>
+				<info>MusicPlayer.Cover</info>
+				<aspectratio>scale</aspectratio>
+				<texture diffuse="frames/albumFrameMask.png"/>
+				<visible>Window.IsActive(musicplaylist)</visible>
+			</control>
+			<!-- separators -->
+			<control type="image">
+				<posx>670</posx>
+				<posy>20</posy>
+				<height>720</height>
+				<width>29</width>
+				<texture>settings/separator.png</texture>
+				<aspectratio align="right">stretch</aspectratio>
+				<include>transition2</include>
+				<include>infoDialogHide</include>
+				
+				<include>grainypagefade</include>
+			</control>
+			<!-- NEXT PLAYING -->
+			<control type="group">
+				<posx>740</posx>
+				<posy>524</posy>
+				<visible>Player.HasMusicPlaylist + MusicPlayer.HasNext</visible>
+				<!-- effects when closing/opening window -->
+				<animation type="WindowOpen">
+					<effect type="slide" start="0,500" time="1000" delay="100" tween="cubic" easing="out"/>
+					<effect type="fade" start="0" end="50" time="1000" delay="100"/>
+				</animation>
+				<animation type="WindowClose">
+					<effect type="slide" start="0,0" end="0,500" time="700" tween="cubic" easing="in"/>
+					<effect type="fade" start="50" end="0" time="700"/>
+				</animation>
+				<!-- next playing informations -->
+				<control type="group">
+					<posy>82</posy>
+					<posx>210</posx>
+					<control type="label">
+						<posy>-2</posy>
+						<width>220</width>
+						<font>small</font>
+						<textcolor>Color3</textcolor>
+						<label>$INFO[MusicPlayer.Offset(1).Artist]</label>
+						<align>right</align>
+					</control>
+					<control type="label">
+						<posy>21</posy>
+						<width>220</width>
+						<font>small</font>
+						<multilinewrap>true</multilinewrap>
+						<include>grainybeigetext</include>
+						<label>$INFO[MusicPlayer.Offset(1).Title]</label>
+						<align>right</align>
+					</control>
+				</control>
+				<!-- cover next playing -->
+				<control type="group">
+					<posx>220</posx>
+					<align>right</align>
+					<visible>MusicPlayer.HasNewCoverNext</visible>
+					<control type="image">
+						<posx>-10</posx>
+						<posy>-10</posy>
+						<width>140</width>
+						<height>140</height>
+						<texture>frames/albumFrame.png</texture>
+						<visible>MusicPlayer.HasNext</visible>
+					</control>
+					<control type="image">
+						<width>120</width>
+						<height>120</height>
+						<info>MusicPlayer.NextNewCover</info>
+						<aspectratio>scale</aspectratio>
+						<visible>MusicPlayer.HasNext</visible>
+						<texture diffuse="frames/albumFrameMaskSmall.png"/>
+					</control>
+				</control>
+			</control>
+		</control>
+	</include>
+</includes>

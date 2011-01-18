@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <window id="500">
 	<defaultcontrol always="false">50</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
@@ -7,12 +8,12 @@
 		<control type="label">
 			<label>$LOCALIZE[2] [COLOR=ffA1927F]$LOCALIZE[559][/COLOR]</label>
 			<posx>34</posx>
-		<posy>20</posy>
-		<width>950</width>
-		<aligny>center</aligny>
-		<font>special</font>
-		<textcolor>Color1</textcolor>
-		<include>transition3</include>
+			<posy>20</posy>
+			<width>950</width>
+			<aligny>center</aligny>
+			<font>PageLabelGrainy</font>
+			<textcolor>Color1</textcolor>
+			<include>transition3</include>
 			<visible>!Window.IsActive(2001)</visible>
 		</control>
 		<include>LibraryPlaylistMenu</include>

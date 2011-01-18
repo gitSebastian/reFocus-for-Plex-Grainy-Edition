@@ -3,6 +3,7 @@
 	<include file="Defaults.xml">-</include>
 	<include file="Includes_Plex.xml">-</include>
 	<include file="ViewsFiles.xml">-</include>
+	<include file="ViewsGrainy.xml">-</include>
 	<include file="ViewsMusic.xml">-</include>
 	<include file="ViewsVideo.xml">-</include>
 	<include file="ViewsPictures.xml">-</include>
@@ -178,8 +179,8 @@
 		<control type="image">
 			<description>music bg</description>
 			<include>screentype</include>
-			<texture background="true">backgrounds/library/musicVideoNoFanart.png</texture>
-			<visible>Skin.HasSetting(FanartGlobal) + IsEmpty(ListItem.Property(Fanart_Image)) + [Window.IsActive(501) | Window.IsActive(502)] + ![Player.HasVideo + Skin.HasSetting(backgroundVideoGlobal)]</visible>
+			<texture background="true">backgrounds/iTunes02.png</texture>
+			<visible>Skin.HasSetting(FanartGlobal) + [Window.IsActive(501) | Window.IsActive(502)] + ![Player.HasVideo + Skin.HasSetting(backgroundVideoGlobal)]</visible>
 			<include>transition2</include>
 		</control>
 		<control type="image">
@@ -208,6 +209,13 @@
 			<include>screentype</include>
 			<texture background="true">settings/programs.png</texture>
 			<visible>Skin.HasSetting(FanartGlobal) + Window.IsActive(programs) + ![Player.HasVideo + Skin.HasSetting(backgroundVideoGlobal)]</visible>
+			<include>transition2</include>
+		</control>
+		<control type="image">
+			<description>playlist now bg</description>
+			<include>screentype</include>
+			<texture background="true">backgrounds/iTunes01.png</texture>
+			<visible>Skin.HasSetting(FanartGlobal) + Window.IsActive(musicplaylist)</visible>
 			<include>transition2</include>
 		</control>
 		<!--<control type="videowindow">

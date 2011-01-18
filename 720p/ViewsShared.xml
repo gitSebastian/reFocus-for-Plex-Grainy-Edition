@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <includes>
 	<include name="view_List">
 		<control type="list" id="50">
@@ -9,14 +10,13 @@
 			<onright>23</onright>
 			<onup>50</onup>
 			<ondown>50</ondown>
-			<scrolltime>150</scrolltime>	
+			<scrolltime>150</scrolltime>
 			<focusposition>3</focusposition>
 			<pagecontrol>23</pagecontrol>
 			<include>transition2</include>
 			<include>infoDialogHide</include>
 			<include>contextMenuHide</include>
 			<visible>!Window.IsActive(progressdialog)</visible>
-	
 			<itemlayout width="625" height="40">
 				<control type="image">
 					<posy>-28</posy>
@@ -100,8 +100,6 @@
 			</focusedlayout>
 		</control>
 	</include>
-
-
 	<include name="view_Addons">
 		<control type="panel" id="573">
 			<viewtype label="Thumbnails">bigicons</viewtype>
@@ -119,7 +117,6 @@
 			<include>transition2</include>
 			<include>infoDialogHide</include>
 			<include>contextMenuHide</include>
-
 			<itemlayout height="185" width="185">
 				<control type="image">
 					<width>184</width>
@@ -135,7 +132,7 @@
 					<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
 					<texture background="true" diffuse="frames/albumFrameMaskSmall.png" fallback="thumbs/addon.png">$INFO[ListItem.Thumb]</texture>
 				</control>
-			</itemlayout>											
+			</itemlayout>
 			<focusedlayout height="185" width="185">
 				<control type="image">
 					<width>184</width>
@@ -156,145 +153,7 @@
 			</focusedlayout>
 		</control>
 	</include>
-	
-	<!--<include name="view_Addons">
-		<control type="panel" id="510">
-			<viewtype label="535">icons</viewtype>
-			<posx>55</posx>
-			<posy>95</posy>
-			<width>1280</width>
-			<height>600</height>
-			<onleft>300</onleft>
-			<onright>23</onright>
-			<onup>510</onup>
-			<ondown>510</ondown>
-			<scrolltime>200</scrolltime>	
-			<pagecontrol>23</pagecontrol>
-			<include>transition2</include>
-			<include>infoDialogHide</include>
-			<include>contextMenuHide</include>
-
-			<itemlayout width="600" height="150">
-				<control type="image">
-					<posy>0</posy>
-					<width>550</width>
-					<height>138</height>
-					<texture border="0">1black.png</texture>
-				</control>
-				
-				<control type="image">
-					<posx>2</posx>
-					<posy>2</posy>
-					<width>131</width>
-					<height>131</height>
-					<aspectratio align="center">stretch</aspectratio>
-					<texture>frames/squareFrame.png</texture>
-				</control>
-				<control type="image">
-					<posx>5</posx>
-					<posy>5</posy>
-					<width>128</width>
-					<height>128</height>
-					<aspectratio align="center">stretch</aspectratio>
-					<texture diffuse="frames/1squareFrameMask.png" fallback="addons/noIcon.png">$INFO[ListItem.Thumb]</texture>
-				</control>
-				<control type="image">
-					<posx>5</posx>
-					<posy>5</posy>
-					<width>100</width>
-					<height>128</height>
-					<aspectratio align="center">stretch</aspectratio>
-					<texture>frames/posterGloss.png</texture>
-				</control>
-				
-				<control type="label">
-					<posx>150</posx>
-					<posy>0</posy>
-					<width>570</width>
-					<label>$INFO[ListItem.Label]</label>
-					<font>special2</font>
-					<include>listMenu</include>
-				</control>
-				<control type="label">
-					<posx>150</posx>
-					<posy>30</posy>
-					<width>570</width>
-					<label>$INFO[ListItem.Property(Addon.Creator)]</label>
-					<textcolor>Color2</textcolor>
-					<include>listMenu</include>
-					<visible>![Window.IsActive(programs) | Window.IsActive(pictures)]</visible>
-				</control>
-				<control type="textbox">
-					<posx>150</posx>
-					<posy>74</posy>
-					<width>405</width>
-					<height>60</height>
-					<align>left</align>
-					<aligny>top</aligny>
-					<label>$INFO[ListItem.Property(Addon.Summary)]</label>
-					<textcolor>Color1</textcolor>
-					<font>mediumLow</font>
-				</control>
-			</itemlayout>
-			<focusedlayout width="600" height="150">
-				<control type="image">
-					<posy>0</posy>
-					<width>550</width>
-					<height>138</height>
-					<texture border="0">views/addonFocus.png</texture>
-				</control>
-
-				<control type="image">
-					<posx>2</posx>
-					<posy>2</posy>
-					<width>131</width>
-					<height>131</height>
-					<aspectratio align="center">stretch</aspectratio>
-					<texture>frames/squareFrame.png</texture>
-				</control>
-				<control type="image">
-					<posx>5</posx>
-					<posy>5</posy>
-					<width>128</width>
-					<height>128</height>
-					<aspectratio align="center">stretch</aspectratio>
-					<texture diffuse="frames/1squareFrameMask.png" fallback="addons/noIcon.png">$INFO[ListItem.Thumb]</texture>
-				</control>
-				
-				<control type="label">
-					<posx>150</posx>
-					<posy>0</posy>
-					<width>570</width>
-					<label>$INFO[ListItem.Label]</label>
-					<font>special2</font>
-					<include>listMenuFocus</include>
-				</control>
-				<control type="label">
-					<posx>150</posx>
-					<posy>30</posy>
-					<width>570</width>
-					<label>$INFO[ListItem.Property(Addon.Creator)]</label>
-					<include>listMenuFocus</include>
-					<visible>![Window.IsActive(programs) | Window.IsActive(pictures)]</visible>
-				</control>
-				<control type="textbox">
-					<posx>150</posx>
-					<posy>74</posy>
-					<width>405</width>
-					<height>60</height>
-					<align>left</align>
-					<aligny>top</aligny>
-					<label>$INFO[ListItem.Property(Addon.Summary)]</label>
-					<font>mediumLow</font>
-					<include>listMenuFocus</include>
-					
-				</control>
-			</focusedlayout>
-		</control>
-	</include>-->
-
-	
-<!--- THUMBS VIEW ---------->
+	<!-- THUMBS VIEW -->
 	<include name="view_Thumbs">
 		<control type="panel" id="572">
 			<viewtype label="Thumbnails">icons</viewtype>
@@ -313,7 +172,6 @@
 			<include>infoDialogHide</include>
 			<include>contextMenuHide</include>
 			<!--visible>!Window.IsActive(progressdialog)</visible-->
-			
 			<itemlayout height="168" width="168">
 				<control type="image">
 					<width>169</width>
@@ -337,7 +195,7 @@
 					<aspectratio>stretch</aspectratio>
 					<texture>frames/albumFrameGloss.png</texture>
 				</control>
-			</itemlayout>											
+			</itemlayout>
 			<focusedlayout height="168" width="168">
 				<control type="image">
 					<width>169</width>
@@ -367,8 +225,6 @@
 			</focusedlayout>
 		</control>
 	</include>
-	
-	
 	<include name="view_ThumbWide">
 		<control type="panel" id="572">
 			<viewtype label="Thumbnails">bigicons</viewtype>
@@ -387,7 +243,6 @@
 			<include>infoDialogHide</include>
 			<include>contextMenuHide</include>
 			<!--visible>!IsEmpty(Container.FolderPath) + !Window.IsActive(progressdialog)</visible-->
-
 			<itemlayout height="170" width="220">
 				<control type="image">
 					<width>219</width>
@@ -403,7 +258,7 @@
 					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 					<texture background="true" diffuse="frames/albumFrameMaskSmall.png" fallback="thumbs/pictureSmall.png">$INFO[ListItem.Thumb]</texture>
 				</control>
-			</itemlayout>											
+			</itemlayout>
 			<focusedlayout height="170" width="220">
 				<control type="image">
 					<width>219</width>
@@ -424,213 +279,8 @@
 			</focusedlayout>
 		</control>
 	</include>
-	
-	
-	
-	
-	<!--
-	<include name="view_ThumbWide">
-		<control type="panel" id="557">
-			<viewtype label="Thumbnails">webvideo</viewtype>
-			<posx>25</posx>
-			<posy>100</posy>
-			<width>1280</width>
-			<height>500</height>
-			<onleft>557</onleft>
-			<onright>557</onright>
-			<onup>300</onup>
-			<ondown>-</ondown>
-			<scrolltime>100</scrolltime>
-			<orientation>horizontal</orientation>
-			<pagecontrol>75</pagecontrol>
-			<include>transition2</include>
-			<include>infoDialogHide</include>
-			<include>contextMenuHide</include>
-			<visible>!Container.HasFolders + Window.IsActive(myvideolibrary)</visible>
-
-			<itemlayout width="290" height="250">
-				<control type="image">
-					<width>280</width>
-					<height>169</height>
-					<texture border="30">frames/albumFrameSmall.png</texture>
-					<aspectratio>stretch</aspectratio>
-				</control>
-				<control type="image">
-					<posx>10</posx>
-					<posy>10</posy>
-					<width>260</width>
-					<height>150</height>
-					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-					<texture background="true" diffuse="frames/albumFrameMaskSmall.png" fallback="pictureThumb.png">$INFO[ListItem.Thumb]</texture>
-				</control>
-				<control type="textbox">
-					<posx>10</posx>
-					<posy>170</posy>
-					<width>250</width>
-					<height>60</height>
-					<aligny>top</aligny>
-					<label>$INFO[ListItem.Label]</label>
-					<font>mediumLow</font>
-					<autoscroll delay="100000" time="1000" repeat="0">Control.HasFocus(557)</autoscroll>
-					<wrapmultiline>true</wrapmultiline>
-					<include>listMenu</include>
-				</control>
-			</itemlayout>											
-			<focusedlayout  width="290" height="250">
-				<control type="image">
-					<width>280</width>
-					<height>169</height>
-					<texture border="30">frames/albumFrameSmall.png</texture>
-					<aspectratio>stretch</aspectratio>
-				</control>
-				<control type="image">
-					<posx>10</posx>
-					<posy>10</posy>
-					<width>260</width>
-					<height>150</height>
-					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-					<texture background="true" diffuse="frames/albumFrameMaskSmall.png" fallback="pictureThumb.png">$INFO[ListItem.Thumb]</texture>
-				</control>
-				<control type="image">
-					<posx>98</posx>
-					<posy>43</posy>
-					<width>64</width>
-					<height>64</height>
-					<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
-					<texture>OSD/osd-button-play-focus.png</texture>
-				</control>
-				<control type="textbox">
-					<posx>10</posx>
-					<posy>170</posy>
-					<width>250</width>
-					<height>60</height>
-					<aligny>top</aligny>
-					<label>$INFO[ListItem.Label]</label>
-					<font>mediumLow</font>
-					<wrapmultiline>true</wrapmultiline>
-					<autoscroll delay="2000" time="3000" repeat="4">Control.HasFocus(557)</autoscroll>
-					<include>listMenu</include>
-				</control>
-			</focusedlayout>
-		</control>
-	</include>-->
-	
-	
-	<!--<include name="view_Addons">
-		<control type="list" id="558">
-			<viewtype label="535">list</viewtype> 	
-			<posy>80</posy>
-			<width>700</width>
-			<height>608</height>
-			<onup>50</onup>
-			<ondown>50</ondown>
-			<onleft>300</onleft>
-			<onright>23</onright>
-			<pagecontrol>23</pagecontrol>
-			<scrolltime>150</scrolltime>
-			<orientation>vertical</orientation>
-			<include>transition2</include>
-			<include>infoDialogHide</include>
-			<include>contextMenuHide</include>
-
-			<itemlayout width="625" height="124">
-				<control type="image">
-					<posx>40</posx>
-					<posy>2</posy>
-					<width>112</width>
-					<height>112</height>
-					<texture>white.png</texture>
-				</control>
-				<control type="image">
-					<posx>40</posx>
-					<posy>2</posy>
-					<width>112</width>
-					<height>112</height>
-					<texture>$INFO[ListItem.Thumb]</texture>
-				</control>
-				<control type="label">
-					<posx>180</posx>
-					<width>500</width>
-					<label>$INFO[ListItem.Label]</label>
-					<font>bigLow</font>
-					<include>listMenu</include>
-				</control>
-				<control type="label">
-					<posx>180</posx>
-					<posy>30</posy>
-					<width>500</width>
-					<label>version $INFO[ListItem.Property(Addon.Version)] by $INFO[ListItem.Property(Addon.Creator)]</label>
-					<align>left</align>
-					<font>mediumCaps</font>
-					<textcolor>Color2</textcolor>
-					<include>listMenu</include>
-				</control>
-				<control type="label">
-					<posx>180</posx>
-					<posy>60</posy>
-					<width>500</width>
-					<label>$INFO[ListItem.Property(Addon.Summary)]</label>
-					<align>left</align>
-					<font>normalLow</font>
-					<textcolor>Color2</textcolor>
-					<include>listMenu</include>
-				</control>
-			</itemlayout>
-			<focusedlayout width="625" height="124">
-				
-				<control type="image">
-					<posy>-28</posy>
-					<width>625</width>
-					<height>171</height>
-					<texture border="0,30,0,30">views/list-focus.png</texture>
-				</control>
-				<control type="image">
-					<posx>40</posx>
-					<posy>2</posy>
-					<width>112</width>
-					<height>112</height>
-					<texture>white.png</texture>
-				</control>
-				<control type="image">
-					<posx>40</posx>
-					<posy>2</posy>
-					<width>112</width>
-					<height>112</height>
-					<texture>$INFO[ListItem.Thumb]</texture>
-				</control>
-				<control type="label">
-					<posx>180</posx>
-					<width>500</width>
-					<label>$INFO[ListItem.Label]</label>
-					<font>bigLow</font>
-					<include>listMenuFocus</include>
-				</control>
-				<control type="label">
-					<posx>180</posx>
-					<posy>30</posy>
-					<width>500</width>
-					<label>version $INFO[ListItem.Property(Addon.Version)] by $INFO[ListItem.Property(Addon.Creator)]</label>
-					<align>left</align>
-					<font>mediumCaps</font>
-					<include>listMenuFocus</include>
-				</control>
-				<control type="label">
-					<posx>180</posx>
-					<posy>60</posy>
-					<width>500</width>
-					<label>$INFO[ListItem.Property(Addon.Summary)]</label>
-					<align>left</align>
-					<font>normalLow</font>
-					<include>listMenuFocus</include>
-				</control>
-			</focusedlayout>
-		</control>
-	</include>-->
-	
-	
-
-<!--- GALLERY VIEW --->	
-	<include name="view_Gallery">																					
+	<!-- GALLERY VIEW -->
+	<include name="view_Gallery">
 		<control type="group">
 			<visible>Control.IsVisible(53)</visible>
 			<include>transition2</include>
@@ -648,7 +298,6 @@
 				<include>infoDialogHide</include>
 			</control>
 		</control>
-	
 		<control type="wraplist" id="53">
 			<viewtype label="Gallery">bigwrap</viewtype>
 			<posx>-485</posx>
@@ -667,7 +316,6 @@
 			<include>transition2</include>
 			<include>contextMenuHide</include>
 			<include>infoDialogHide</include>
-	
 			<itemlayout height="800" width="749">
 				<control type="image">
 					<width>750</width>
@@ -732,8 +380,7 @@
 			</focusedlayout>
 		</control>
 	</include>
-
-	<include name="view_GalleryFull">																																																																
+	<include name="view_GalleryFull">
 		<control type="wraplist" id="56">
 			<viewtype label="Gallery">bigicons</viewtype>
 			<width>1280</width>
@@ -748,7 +395,6 @@
 			<visible>[Container.Content(movies) | Container.Content(tvshows) | Window.IsActive(2)] + !Window.IsActive(progressdialog) + !IsEmpty(Container.FolderPath)</visible>
 			<include>transition2</include>
 			<include>infoDialogHide</include>
-
 			<itemlayout height="720" width="1280">
 				<control type="image">
 					<include>screentype</include>
@@ -790,120 +436,5 @@
 				</control>
 			</focusedlayout>
 		</control>
-	</include>	
-
-	<!--<include name="view_EmuInfo">
-		<control type="panel" id="579">
-			<viewtype label="31009">bigicon</viewtype>	
-			<posx>40</posx>
-			<posy>105</posy>
-			<width>1200</width>
-			<height>600</height>
-			<onleft>300</onleft>
-			<onright>23</onright>
-			<onup>579</onup>
-			<ondown>579</ondown>
-			<scrolltime>150</scrolltime>
-			<pagecontrol>23</pagecontrol>
-			<orientation>vertical</orientation>
-			<preloaditems>4</preloaditems>
-			<include>transition2</include>
-			<include>contextMenuHide</include>
-			<include>infoDialogHide</include>	
-
-			<itemlayout height="200" width="600">
-				<control type="group">	
-				
-					<animation effect="fade" end="50" time="0" condition="True">Conditional</animation>
-				<control type="image">
-					<width>600</width>
-					<height>200</height>
-					<texture>frames/panel.png</texture>
-					<aspectratio>stretch</aspectratio>
-					<include>thumbFadeTime</include>
-				</control>
-				<control type="image">
-					<posx>35</posx>
-					<posy>35</posy>
-					<width>130</width>
-					<height>130</height>
-					<texture>$INFO[Listitem.Thumb]</texture>
-					<aspectratio>keep</aspectratio>
-					<include>thumbFadeTime</include>
-				</control>
-				<control type="label">
-					<posx>175</posx>
-					<posy>40</posy>
-					<width>400</width>
-					<height>20</height>
-					<info>Listitem.Label</info>
-					<font>dialog1</font>
-					<textcolor>Color4</textcolor>
-				</control>
-				<control type="label">
-					<posx>175</posx>
-					<posy>70</posy>
-					<width>400</width>
-					<height>20</height>
-					<info>Listitem.Label2</info>
-					<font>dialog1</font>
-					<textcolor>Color2</textcolor>
-				</control>
-				<!--control type="label">
-					<posx>175</posx>
-					<posy>75</posy>
-					<width>380</width>
-					<height>90</height>
-					<info>Listitem.Plot</info>
-				</control-->
-				<!--</control>
-				
-			</itemlayout>											
-			<focusedlayout height="200" width="600">
-				<control type="image">
-					<width>600</width>
-					<height>200</height>
-					<texture>frames/panel.png</texture>
-					<aspectratio>stretch</aspectratio>
-					<include>thumbFadeTime</include>
-				</control>
-				<control type="image">
-					<posx>35</posx>
-					<posy>35</posy>
-					<width>130</width>
-					<height>130</height>
-					<texture>$INFO[Listitem.Thumb]</texture>
-					<aspectratio>keep</aspectratio>
-					<include>thumbFadeTime</include>
-				</control>
-				<control type="label">
-					<posx>175</posx>
-					<posy>40</posy>
-					<width>400</width>
-					<height>20</height>
-					<info>Listitem.Label</info>
-					<font>dialog1</font>
-					<textcolor>Color4</textcolor>
-				</control>
-				<control type="label">
-					<posx>175</posx>
-					<posy>70</posy>
-					<width>400</width>
-					<height>20</height>
-					<info>Listitem.Label2</info>
-					<font>dialog1</font>
-					<textcolor>Color2</textcolor>
-				</control>
-				<!--control type="label">
-					<posx>175</posx>
-					<posy>75</posy>
-					<width>380</width>
-					<height>90</height>
-					 <wrapmultiline>true</wrapmultiline>
-					<info>Listitem.Plot</info>
-				</control-->
-			<!--</focusedlayout>
-		</control>
-	</include>-->
-
+	</include>
 </includes>
