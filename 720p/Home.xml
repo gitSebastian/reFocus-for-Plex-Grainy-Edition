@@ -100,7 +100,7 @@
 		<control type="group">
 			<posx>872</posx>
 			<posy>-65</posy>
-			<visible>!Skin.HasSetting(hideplexhomelogo) + Skin.HasSetting(originalhome)</visible>
+			<visible>Skin.HasSetting(originalhome)</visible>
 			<include condition="Player.HasMusicPlaylist + Skin.HasSetting(originalhome)">grainyeditionnowplayinghome</include>
 		</control>
 		<!-- TIME -->

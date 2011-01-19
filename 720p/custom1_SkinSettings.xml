@@ -147,13 +147,13 @@
 				<selected>Skin.HasSetting(hideplexhomelogo)</selected>
 				<include>settingsButton</include>
 			</control>
-			<control type="radiobutton" id="111">
+			<!--<control type="radiobutton" id="111">
 				<description>Disable now playing</description>
 				<label>Hide the "Now Playing" cover </label>
 				<onclick>Skin.ToggleSetting(hideplexhomelogo)</onclick>
 				<selected>Skin.HasSetting(hideplexhomelogo)</selected>
 				<include>settingsButton</include>
-			</control>
+			</control>-->
 		</control>
 		<!-- HOME MENU SETTINGS -->
 		<control type="grouplist" id="200">
