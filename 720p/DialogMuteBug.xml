@@ -2,21 +2,27 @@
 	<defaultcontrol>-</defaultcontrol>
 	<controls>
 		<control type="image">
-			<posx>60r</posx>
-			<posy>60</posy>
-            <width>35</width>
-			<height>35</height>
+			<posx>65r</posx>
+			<posy>65</posy>
+            <width>30</width>
+			<height>30</height>
 			<texture>dialogs/mutedicon.png</texture>
-            <include>notificationBottom</include>
+
+<animation effect="fade" start="0" end="100" time="2000" condition="true">Conditional</animation>
 		</control>
 		<control type="label" id="0">
 			<posx>70r</posx>
-            <posy>60</posy>
+            <posy>62</posy>
             <description>Label</description>
 			<label>MUTE</label>
             <height>35</height>
             <width>110</width>
-			<include>notificationBottom</include>
+			<align>right</align>
+		<font>smallCaps</font>
+		<height>40</height>
+		<aligny>center</aligny>
+		<include>grainybeigetext</include>
+			<animation effect="fade" start="0" end="100" time="2000" condition="true">Conditional</animation>
 		</control>
 	</controls>
 </window>

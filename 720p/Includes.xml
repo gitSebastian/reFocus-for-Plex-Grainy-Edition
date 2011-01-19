@@ -311,6 +311,19 @@
 		<align>left</align>
 		<font>normalLow</font>
 	</include>
+	<include name="scrollOffset">
+		<control type="group">
+			<visible>Container.Scrolling + !Skin.HasSetting(hidescrolloffset)</visible>
+			<control type="label">
+				<posx>34</posx>
+				<posy>24</posy>
+				<width>40</width>
+				<aligny>center</aligny>
+				<font>PageLabelGrainy</font>
+				<label>$INFO[ListItem.SortLetter]</label>
+			</control>
+		</control>
+	</include>
 	<!-- TYPE INCLUDES -->
 	<!-- custom grainy edition beige text color -->
 	<include name="grainybeigetext">
@@ -611,20 +624,7 @@
 		</control>
 	</include>
 	<!-- CONTROLS -->
-	<include name="scrollOffset">
-		<control type="group">
-			<visible>Container.Scrolling</visible>
-			<control type="label">
-				<posx>34</posx>
-				<posy>24</posy>
-				<width>950</width>
-				<aligny>center</aligny>
-				<font>special</font>
-				<textcolor>Color1</textcolor>
-				<label>[B]$INFO[ListItem.SortLetter][/B]</label>
-			</control>
-		</control>
-	</include>
+	
 	<include name="xScroller">
 		<showonepage>true</showonepage>
 		<orientation>horizontal</orientation>

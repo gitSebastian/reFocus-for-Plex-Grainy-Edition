@@ -1,5 +1,32 @@
 <?xml version="1.0"?>
 <includes>
+	<!-- shared "New List" animations -->
+	<include name="itemimageflipnfade">
+		<animation type="WindowOpen">
+			<effect type="fade" start="20" end="100" time="1000" delay="500"/>
+			<effect type="rotatex" center="380" start="-180" end="0" time="500" delay="500" reversible="false"/>
+		</animation>
+		<animation type="WindowClose">
+			<effect type="fade" start="50" end="0" time="700"/>
+		</animation>
+		<animation type="Visible">
+			<effect type="fade" start="0" end="100" time="1000" delay="0"/>
+			<effect type="rotatex" center="380" start="-180" end="0" time="500" delay="500" reversible="false"/>
+		</animation>
+	</include>
+	<include name="horizbarflipnfade">
+		<animation type="WindowOpen">
+			<effect type="fade" start="5" end="15" time="1000" delay="500"/>
+			<effect type="rotatex" center="378" start="-180" end="0" time="500" delay="500" reversible="false"/>
+		</animation>
+		<animation type="WindowClose">
+			<effect type="fade" start="50" end="0" time="700"/>
+		</animation>
+		<animation type="Visible">
+			<effect type="fade" start="0" end="15" time="1000"/>
+			<effect type="rotatex" center="378" start="-180" end="0" time="500" delay="500" reversible="false"/>
+		</animation>
+	</include>
 	<!-- VIDEO VIEWS -->
 	<!-- VIDEO & PLUG-INS NEW LIST -->
 	<include name="view_List_GrainyEdition">
@@ -11,20 +38,7 @@
 			<height>122</height>
 			<texture border="0,30,0,30">views/list-focus.png</texture>
 			<visible>!ControlGroup(300).HasFocus + Control.IsVisible(555)</visible>
-			<animation type="WindowOpen">
-				<!--<effect type="slide" start="0,-300" time="1000" delay="200" tween="cubic" easing="out"/>-->
-				<effect type="fade" start="5" end="15" time="1000" delay="500"/>
-				<effect type="rotatex" center="345" start="-180" end="0" time="500" delay="500" reversible="false"/>
-			</animation>
-			<animation type="WindowClose">
-				<!--<effect type="slide" start="0,0" end="0,-300" time="700" tween="cubic" easing="in"/>-->
-				<effect type="fade" start="50" end="0" time="700"/>
-			</animation>
-			<animation type="Visible">
-				<effect type="fade" start="5" end="15" time="1000"/>
-				<effect type="rotatex" center="378" start="-180" end="0" time="500" delay="1000" reversible="false"/>
-			</animation>
-			
+			<include>horizbarflipnfade</include>
 		</control>
 		<!-- menu -->
 		<control type="fixedlist" id="555">
@@ -112,19 +126,7 @@
 		</control>
 		<!-- icon -->
 		<control type="image" id="5555">
-			<animation type="WindowOpen">
-				<!--<effect type="slide" start="0,-300" time="1000" delay="200" tween="cubic" easing="out"/>-->
-				<effect type="fade" start="20" end="100" time="1000" delay="500"/>
-				<effect type="rotatex" center="380" start="-180" end="0" time="500" delay="500" reversible="false"/>
-			</animation>
-			<animation type="WindowClose">
-				<!--<effect type="slide" start="0,0" end="0,-300" time="700" tween="cubic" easing="in"/>-->
-				<effect type="fade" start="50" end="0" time="700"/>
-			</animation>
-			<animation type="Visible">
-				<effect type="fade" start="10" end="100" time="2000" delay="0"/>
-				<effect type="rotatex" center="380" start="-180" end="0" time="500" delay="1000" reversible="false"/>
-			</animation>
+			<include>itemimageflipnfade</include>
 			<posx>100</posx>
 			<posy>200</posy>
 			<width>360</width>
@@ -141,12 +143,8 @@
 	</include>
 	<!-- BIG LIST NEW -->
 	<include name="view_BigList_GrainyEdition">
-		<control type="image">
-			<posy>195</posy>
-			<width>1260</width>
-			<height>305</height>
-			<texture border="0,30,0,0">views/list-focus.png</texture>
-			<visible>!ControlGroup(300).HasFocus()</visible>
+		<!-- fixed focused bg -->
+		<control type="group">
 			<animation type="WindowOpen">
 				<effect type="fade" start="0" end="80" time="1000" delay="200"/>
 			</animation>
@@ -156,18 +154,30 @@
 			<animation type="Visible">
 				<effect type="fade" start="0" end="80" time="1000"/>
 			</animation>
+			<include>transition2</include>
+			<include>infoDialogHide</include>
+			<include>contextMenuHide</include>
+			<include>grainypagefade</include>
 			<visible>[[!Window.IsActive(progressdialog) + Container.Content(episodes)] | Container.Content(plugincontent)] + Control.IsVisible(51) + !ControlGroup(300).HasFocus()</visible>
+			<!-- focused background -->
+			<control type="image">
+				<posy>195</posy>
+				<width>1260</width>
+				<height>305</height>
+				<texture border="0,30,0,0">views/list-focus.png</texture>
+				<visible>!ControlGroup(300).HasFocus()</visible>
+			</control>
+			<!-- separator -->
+			<control type="image">
+				<posx>250</posx>
+				<posy>300</posy>
+				<width>970</width>
+				<height>1</height>
+				<texture>dialogs/separator.png</texture>
+				<include>grainybiglisttextfade</include>
+			</control>
 		</control>
-		<!-- separator -->
-		<control type="image">
-			<posx>250</posx>
-			<posy>300</posy>
-			<width>970</width>
-			<height>1</height>
-			<texture>dialogs/separator.png</texture>
-			<include>grainybiglisttextfade</include>
-			<visible>[[!Window.IsActive(progressdialog) + Container.Content(episodes)] | Container.Content(plugincontent)] + Control.IsVisible(51) + !ControlGroup(300).HasFocus()</visible>
-		</control>
+		<!-- list -->
 		<control type="fixedlist" id="51">
 			<viewtype label="537">biglist</viewtype>
 			<posy>75</posy>
@@ -220,14 +230,6 @@
 					<include>watchedOverlay</include>
 					<visible>Skin.HasSetting(overlayEpisodes)</visible>
 				</control>
-				<!--<control type="image">
-					<posx>34</posx>
-					<posy>111</posy>
-					<width>39</width>
-					<height>24</height>
-					<texture>$INFO[Listitem.Property(mediaTag-videoResolution),flags/biglistresolution/,.png]</texture>
-					<aspectratio align="right">keep</aspectratio>
-				</control>-->
 				<!-- Unfocused TITLE simple : small case -->
 				<control type="label" id="1">
 					<posx>270</posx>
@@ -366,14 +368,6 @@
 					<include>watchedOverlay</include>
 					<visible>Skin.HasSetting(overlayEpisodes)</visible>
 				</control>
-				<!--<control type="image">
-					<posx>12</posx>
-					<posy>206</posy>
-					<width>39</width>
-					<height>24</height>
-					<texture>$INFO[Listitem.Property(mediaTag-videoResolution),flags/biglistresolution/,.png]</texture>
-					<aspectratio align="right">keep</aspectratio>
-				</control>-->
 				<!-- Focused TITLE simple : small case -->
 				<control type="label" id="1">
 					<posx>380</posx>
@@ -487,7 +481,7 @@
 			<include>transition2</include>
 			<include>infoDialogHide</include>
 			<include>contextMenuHide</include>
-			<!-- original small case -->
+			<!-- small case -->
 			<control type="textbox" id="4">
 				<posx>380</posx>
 				<posy>301</posy>
@@ -500,7 +494,7 @@
 				<include>textBox</include>
 				<visible>Control.IsVisible(51) + !Skin.HasSetting(usecapitalisation)</visible>
 			</control>
-			<!-- use mixed case -->
+			<!-- mixed case -->
 			<control type="textbox" id="4">
 				<posx>380</posx>
 				<posy>301</posy>
@@ -528,19 +522,8 @@
 			<width>1420</width>
 			<height>122</height>
 			<texture border="0,30,0,30">views/list-focus.png</texture>
+			<include>horizbarflipnfade</include>
 			<visible>!ControlGroup(300).HasFocus + Control.IsVisible(555) + !Window.IsActive(musicplaylist)</visible>
-			<animation type="WindowOpen">
-				<!--<effect type="slide" start="0,-300" time="1000" delay="200" tween="cubic" easing="out"/>-->
-				<effect type="fade" start="5" end="15" time="1000" delay="500"/>
-				<effect type="rotatex" center="345" start="-180" end="0" time="500" delay="500" reversible="false"/>
-			</animation>
-			<animation type="WindowClose">
-				<!--<effect type="slide" start="0,0" end="0,-300" time="700" tween="cubic" easing="in"/>-->
-				<effect type="fade" start="50" end="0" time="700"/>
-			</animation>
-			<animation type="Visible">
-				<effect type="fade" start="0" end="15" time="1000"/>
-			</animation>
 		</control>
 		<!-- menu -->
 		<control type="fixedlist" id="555">
@@ -603,9 +586,9 @@
 					<scroll>true</scroll>
 				</control>
 				<control type="label">
-					<posx>120</posx>
+					<posx>115</posx>
 					<posy>-110</posy>
-					<width>340</width>
+					<width>345</width>
 					<font>small</font>
 					<include>grainybeigetext</include>
 					<label>$INFO[ListItem.Album]</label>
@@ -629,63 +612,50 @@
 		<!-- frame -->
 		<control type="image" id="5555">
 			<animation type="WindowOpen">
-				<effect type="fade" start="0" end="90" time="2000" delay="3000"/>
+				<effect type="fade" start="0" end="90" time="2000" delay="1000"/>
 			</animation>
 			<animation type="WindowClose">
-				<effect type="slide" start="0,0" end="0,-300" time="700" tween="cubic" easing="in"/>
 				<effect type="fade" start="50" end="0" time="700"/>
 			</animation>
 			<animation type="Visible">
-				<effect type="fade" start="0" end="90" time="1000" delay="300"/>
+				<effect type="fade" start="0" end="90" time="1000" delay="1000"/>
+				<!--<effect type="rotatex" center="380" start="-180" end="0" time="500" delay="1000" reversible="false"/>-->
 			</animation>
 			<posx>84</posx>
 			<posy>185</posy>
 			<width>392</width>
 			<height>392</height>
+			<include>transition2</include>
+			<include>infoDialogHide</include>
+			<include>contextMenuHide</include>
+			<include>grainypagefade</include>
+			<aspectratio align="right" aligny="center">stretch</aspectratio>
 			<texture>dialogs/dialogWindow1.png</texture>
 			<visible>!ControlGroup(300).HasFocus + !Window.IsActive(progressdialog) + Control.IsVisible(555) + [Container.Content(albums) | Container.Content(artists) | Container.Content(singles) | Container.Content(songs) | !IsEmpty(Container(555).ListItem.Album]</visible>
 		</control>
-				
-					
-		<!-- iTunes icon -->
+		<!-- iTunes icon hack -->
 		<control type="image">
-			<animation type="WindowOpen">
-				<!--<effect type="slide" start="0,-300" time="1000" delay="200" tween="cubic" easing="out"/>-->
-				<effect type="fade" start="5" end="100" time="1000" delay="500"/>
-				<effect type="rotatex" center="345" start="-180" end="0" time="500" delay="500" reversible="false"/>
-			</animation>
-			<animation type="WindowClose">
-				<effect type="fade" start="100" end="0" time="0"/>
-			</animation>
-			<animation type="Visible">
-				<effect type="fade" start="0" end="100" time="1000" delay="600"/>
-			</animation>
-			<posx>113</posx>
-			<posy>213</posy>
-			<width>330</width>
-			<height>330</height>
+			<posx>100</posx>
+			<posy>200</posy>
+			<width>360</width>
+			<height>360</height>
+			<include>itemimageflipnfade</include>
+			<include>transition2</include>
+			<include>infoDialogHide</include>
+			<include>contextMenuHide</include>
+			<include>grainypagefade</include>
+			<aspectratio align="right" aligny="center">stretch</aspectratio>
 			<texture>logos/itunes-icon.png</texture>
 			<visible>!ControlGroup(300).HasFocus + Control.IsVisible(555) + !Window.IsActive(musicplaylist) + ![Container.Content(albums) | Container.Content(artists) | Container.Content(singles) | Container.Content(songs)]</visible>
 		</control>
 		<!-- item image -->
 		<control type="image">
-			<animation type="WindowOpen">
-				<effect type="slide" start="0,-300" time="1000" delay="200" tween="cubic" easing="out"/>
-				<effect type="fade" start="20" end="100" time="1000" delay="2000"/>
-				<effect type="rotatex" center="380" start="-180" end="0" time="500" delay="2000" reversible="false"/>
-			</animation>
-			<animation type="WindowClose">
-				<effect type="slide" start="0,0" end="0,-300" time="700" tween="cubic" easing="in"/>
-				<effect type="fade" start="50" end="0" time="700"/>
-			</animation>
-			<animation type="Visible">
-				<effect type="fade" start="0" end="100" time="2000" delay="300"/>
-			</animation>
 			<posx>100</posx>
 			<posy>200</posy>
 			<width>360</width>
 			<height>360</height>
 			<fadetime>400</fadetime>
+			<include>itemimageflipnfade</include>
 			<include>transition2</include>
 			<include>infoDialogHide</include>
 			<include>contextMenuHide</include>
@@ -718,7 +688,6 @@
 			<include>transition2</include>
 			<include>infoDialogHide</include>
 			<include>contextMenuHide</include>
-			
 			<visible>!Window.IsActive(progressdialog)</visible>
 			<itemlayout condition="Window.IsActive(musicplaylist)" width="625" height="40">
 				<!-- small case -->
@@ -813,7 +782,7 @@
 		<!-- the entire now and next playing assembly -->
 		<control type="group">
 			<posy>0</posy>
-			<posx>50</posx>			
+			<posx>50</posx>
 			<!-- now playing progress bar and track information -->
 			<control type="group">
 				<posy>117</posy>
@@ -878,7 +847,6 @@
 				<height>352</height>
 				<include>transition2</include>
 				<include>infoDialogHide</include>
-				
 				<include>grainypagefade</include>
 				<texture>dialogs/dialogWindow1.png</texture>
 				<visible>Window.IsActive(musicplaylist)</visible>
@@ -904,7 +872,6 @@
 				<fadetime>400</fadetime>
 				<include>transition2</include>
 				<include>infoDialogHide</include>
-				
 				<include>grainypagefade</include>
 				<info>MusicPlayer.Cover</info>
 				<aspectratio>scale</aspectratio>
@@ -921,7 +888,6 @@
 				<aspectratio align="right">stretch</aspectratio>
 				<include>transition2</include>
 				<include>infoDialogHide</include>
-				
 				<include>grainypagefade</include>
 			</control>
 			<!-- NEXT PLAYING -->

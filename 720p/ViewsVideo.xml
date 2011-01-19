@@ -1877,8 +1877,10 @@
 				</control>
 			</itemlayout>
 			<!-- FOCUSED POSTER -->
+			<!-- the effects are deactivated, change the "visibility" conditional to get them back on -->
 			<focusedlayout height="260" width="200">
-				<control type="image">
+				<!-- with effect -->
+				<!--<control type="image">
 					<width>171</width>
 					<height>257</height>
 					<texture border="48">frames/posterFrameSmall.png</texture>
@@ -1886,10 +1888,22 @@
 					<include>thumbFadeTime</include>
 					<include>fadeinout</include>
 					<include>focus_ThumbPoster</include>
+					<visible>!Skin.HasSetting(givegrainyfadenolove)</visible>
+				</control>-->
+				<!-- no effect -->
+				<control type="image">
+					<width>171</width>
+					<height>257</height>
+					<texture border="48">frames/posterFrameSmall.png</texture>
+					<aspectratio>stretch</aspectratio>
+					<include>thumbFadeTime</include>
+					<include>fadeinout</include>
+					<include>focus_PosterNoEffect_GrainyEdition</include>
+					<!--<visible>Skin.HasSetting(givegrainyfadenolove)</visible>-->
 				</control>
 				<!-- use scaled focused poster (like it should) -->
-				<!-- with fade -->
-				<control type="image">
+				<!-- with effect -->
+				<!--<control type="image">
 					<posx>12</posx>
 					<posy>12</posy>
 					<width>155</width>
@@ -1908,8 +1922,8 @@
 					<texture fallback="thumbs/movieSmall.png" diffuse="frames/posterFrameMaskSmall.png">$INFO[ListItem.Thumb]</texture>
 					<include>focus_Poster_GrainyEdition</include>
 					<visible>Container.Content(movies) + !Skin.HasSetting(grainystretchthemposters) + !Skin.HasSetting(givegrainyfadenolove)</visible>
-				</control>
-				<!-- no fade -->
+				</control>-->
+				<!-- no effect -->
 				<control type="image">
 					<posx>12</posx>
 					<posy>12</posy>
@@ -1917,8 +1931,9 @@
 					<height>233</height>
 					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 					<texture fallback="thumbs/tvshowSmall.png" diffuse="frames/posterFrameMaskSmall.png">$INFO[ListItem.Thumb]</texture>
-					<include>focus_PosterNoFade_GrainyEdition</include>
-					<visible>[Container.Content(tvshows) | Container.Content(seasons)] + !Skin.HasSetting(grainystretchthemposters) + Skin.HasSetting(givegrainyfadenolove)</visible>
+					<include>focus_PosterNoEffect_GrainyEdition</include>
+					<!--<visible>[Container.Content(tvshows) | Container.Content(seasons)] + !Skin.HasSetting(grainystretchthemposters) + Skin.HasSetting(givegrainyfadenolove)</visible>-->
+					<visible>[Container.Content(tvshows) | Container.Content(seasons)] + !Skin.HasSetting(grainystretchthemposters)</visible>
 				</control>
 				<control type="image">
 					<posx>12</posx>
@@ -1927,12 +1942,13 @@
 					<height>233</height>
 					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 					<texture fallback="thumbs/movieSmall.png" diffuse="frames/posterFrameMaskSmall.png">$INFO[ListItem.Thumb]</texture>
-					<include>focus_PosterNoFade_GrainyEdition</include>
-					<visible>Container.Content(movies) + !Skin.HasSetting(grainystretchthemposters) + Skin.HasSetting(givegrainyfadenolove)</visible>
+					<include>focus_PosterNoEffect_GrainyEdition</include>
+					<!--<visible>Container.Content(movies) + !Skin.HasSetting(grainystretchthemposters) + Skin.HasSetting(givegrainyfadenolove)</visible>-->
+					<visible>Container.Content(movies) + !Skin.HasSetting(grainystretchthemposters)</visible>
 				</control>
 				<!-- use stretched focused poster (yeah, well...) -->
-				<!-- with fade -->
-				<control type="image">
+				<!-- with effect -->
+				<!--<control type="image">
 					<posx>12</posx>
 					<posy>12</posy>
 					<width>155</width>
@@ -1951,8 +1967,8 @@
 					<texture fallback="thumbs/movieSmall.png" diffuse="frames/posterFrameMaskSmall.png">$INFO[ListItem.Thumb]</texture>
 					<include>focus_Poster_GrainyEdition</include>
 					<visible>Container.Content(movies) + Skin.HasSetting(grainystretchthemposters) + !Skin.HasSetting(givegrainyfadenolove)</visible>
-				</control>
-				<!-- no fade -->
+				</control>-->
+				<!-- no effect -->
 				<control type="image">
 					<posx>12</posx>
 					<posy>12</posy>
@@ -1960,8 +1976,9 @@
 					<height>233</height>
 					<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
 					<texture fallback="thumbs/tvshowSmall.png" diffuse="frames/posterFrameMaskSmall.png">$INFO[ListItem.Thumb]</texture>
-					<include>focus_PosterNoFade_GrainyEdition</include>
-					<visible>[Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(grainystretchthemposters) + Skin.HasSetting(givegrainyfadenolove)</visible>
+					<include>focus_PosterNoEffect_GrainyEdition</include>
+					<!--<visible>[Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(grainystretchthemposters) + Skin.HasSetting(givegrainyfadenolove)</visible>-->
+					<visible>[Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(grainystretchthemposters)</visible>
 				</control>
 				<control type="image">
 					<posx>12</posx>
@@ -1970,19 +1987,32 @@
 					<height>233</height>
 					<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
 					<texture fallback="thumbs/movieSmall.png" diffuse="frames/posterFrameMaskSmall.png">$INFO[ListItem.Thumb]</texture>
-					<include>focus_PosterNoFade_GrainyEdition</include>
-					<visible>Container.Content(movies) + Skin.HasSetting(grainystretchthemposters) + Skin.HasSetting(givegrainyfadenolove)</visible>
+					<include>focus_PosterNoEffect_GrainyEdition</include>
+					<!--<visible>Container.Content(movies) + Skin.HasSetting(grainystretchthemposters) + Skin.HasSetting(givegrainyfadenolove)</visible>-->
+					<visible>Container.Content(movies) + Skin.HasSetting(grainystretchthemposters)</visible>
 				</control>
 				<!-- end poster scaling -->
 				<!-- unwatched movies & shows -->
+				<!-- with effect -->
+				<!--<control type="image">
+					<posx>146</posx>
+					<posy>223</posy>
+					<width>20</width>
+					<height>20</height>
+					<include>watchedOverlay</include>
+					<visible>[Container.Content(movies) + Skin.HasSetting(overlayMovies)] | [Container.Content(tvshows) + Skin.HasSetting(overlayTVShows)] + !Skin.HasSetting(givegrainyfadenolove)</visible>
+					<include>focus_ThumbPoster</include>
+				</control>-->
+				<!-- no effect -->
 				<control type="image">
 					<posx>146</posx>
 					<posy>223</posy>
 					<width>20</width>
 					<height>20</height>
 					<include>watchedOverlay</include>
+					<!--<visible>[Container.Content(movies) + Skin.HasSetting(overlayMovies)] | [Container.Content(tvshows) + Skin.HasSetting(overlayTVShows)] + Skin.HasSetting(givegrainyfadenolove)</visible>-->
 					<visible>[Container.Content(movies) + Skin.HasSetting(overlayMovies)] | [Container.Content(tvshows) + Skin.HasSetting(overlayTVShows)]</visible>
-					<include>focus_ThumbPoster</include>
+					<include>focus_PosterFlagsNoEffect_GrainyEdition</include>
 				</control>
 				<!-- unwatched show seasons -->
 				<!--<control type="image">
@@ -1995,6 +2025,18 @@
 					<include>focus_ThumbPoster</include>
 				</control>-->
 				<!-- HD flag -->
+				<!-- with effect -->
+				<!--<control type="image">
+					<posx>12</posx>
+					<posy>220</posy>
+					<width>39</width>
+					<height>24</height>
+					<texture>$INFO[Listitem.Property(mediaTag-videoResolution),flags/biglistresolution/,.png]</texture>
+					<aspectratio align="right">keep</aspectratio>
+					<include>focus_PosterHDFlagEffect_GrainyEdition</include>
+					<visible>[Skin.HasSetting(onlyfocusflagpanel) | Skin.HasSetting(enablehdflags)] + !Skin.HasSetting(givegrainyfadenolove)</visible>
+				</control>-->
+				<!-- no effect -->
 				<control type="image">
 					<posx>12</posx>
 					<posy>220</posy>
@@ -2002,8 +2044,9 @@
 					<height>24</height>
 					<texture>$INFO[Listitem.Property(mediaTag-videoResolution),flags/biglistresolution/,.png]</texture>
 					<aspectratio align="right">keep</aspectratio>
-					<include>focus_ThumbPoster</include>
-					<visible>Skin.HasSetting(onlyfocusflagpanel) | Skin.HasSetting(enablehdflags)</visible>
+					<include>focus_PosterFlagsNoEffect_GrainyEdition</include>
+					<!--<visible>[Skin.HasSetting(onlyfocusflagpanel) | Skin.HasSetting(enablehdflags)] + Skin.HasSetting(givegrainyfadenolove)</visible>-->
+					<visible>[Skin.HasSetting(onlyfocusflagpanel) | Skin.HasSetting(enablehdflags)]</visible>
 				</control>
 			</focusedlayout>
 		</control>
@@ -2119,11 +2162,11 @@
 					<texture border="0">frames/posterframe.png</texture>
 					<aspectratio>keep</aspectratio>
 					<include>thumbFadeTime</include>
-					<include>focus_ThumbPosterInfo</include>
+					<include>focus_PosterWithInfoNoEffect_GrainyEdition</include>
 				</control>
 				<!-- scale poster -->
 				<!-- with fade -->
-				<control type="image">
+				<!--<control type="image">
 					<posx>5</posx>
 					<posy>5</posy>
 					<width>113</width>
@@ -2142,7 +2185,7 @@
 					<texture fallback="thumbs/movie.png" diffuse="frames/posterFrameMask.png">$INFO[ListItem.Thumb]</texture>
 					<include>focus_PosterWithInfo_GrainyEdition</include>
 					<visible>Container.Content(movies) + !Skin.HasSetting(grainystretchthemposters) + Window.IsActive(24) + !Skin.HasSetting(givegrainyfadenolove)</visible>
-				</control>
+				</control>-->
 				<!-- no fade -->
 				<control type="image">
 					<posx>5</posx>
@@ -2151,8 +2194,9 @@
 					<height>170</height>
 					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 					<texture fallback="thumbs/tvshow.png" diffuse="frames/posterFrameMask.png">$INFO[ListItem.Thumb]</texture>
-					<include>focus_PosterWithInfoNoFade_GrainyEdition</include>
-					<visible>Container.Content(tvshows) + !Skin.HasSetting(grainystretchthemposters) + Skin.HasSetting(givegrainyfadenolove)</visible>
+					<include>focus_PosterWithInfoNoEffect_GrainyEdition</include>
+					<!--<visible>Container.Content(tvshows) + !Skin.HasSetting(grainystretchthemposters) + Skin.HasSetting(givegrainyfadenolove)</visible>-->
+					<visible>Container.Content(tvshows) + !Skin.HasSetting(grainystretchthemposters)</visible>
 				</control>
 				<control type="image" id="1">
 					<posx>5</posx>
@@ -2161,12 +2205,13 @@
 					<height>170</height>
 					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 					<texture fallback="thumbs/movie.png" diffuse="frames/posterFrameMask.png">$INFO[ListItem.Thumb]</texture>
-					<include>focus_PosterWithInfoNoFade_GrainyEdition</include>
-					<visible>Container.Content(movies) + !Skin.HasSetting(grainystretchthemposters) + Window.IsActive(24) + Skin.HasSetting(givegrainyfadenolove)</visible>
+					<include>focus_PosterWithInfoNoEffect_GrainyEdition</include>
+					<!--<visible>Container.Content(movies) + !Skin.HasSetting(grainystretchthemposters) + Window.IsActive(24) + Skin.HasSetting(givegrainyfadenolove)</visible>-->
+					<visible>Container.Content(movies) + !Skin.HasSetting(grainystretchthemposters) + Window.IsActive(24)</visible>
 				</control>
 				<!-- stretch poster -->
 				<!-- with fade -->
-				<control type="image">
+				<!--<control type="image">
 					<posx>5</posx>
 					<posy>5</posy>
 					<width>113</width>
@@ -2185,7 +2230,7 @@
 					<texture fallback="thumbs/movie.png" diffuse="frames/posterFrameMask.png">$INFO[ListItem.Thumb]</texture>
 					<include>focus_PosterWithInfo_GrainyEdition</include>
 					<visible>Container.Content(movies) + Skin.HasSetting(grainystretchthemposters) + !Skin.HasSetting(givegrainyfadenolove)</visible>
-				</control>
+				</control>-->
 				<!-- no fade -->
 				<control type="image">
 					<posx>5</posx>
@@ -2194,8 +2239,9 @@
 					<height>170</height>
 					<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
 					<texture fallback="thumbs/tvshow.png" diffuse="frames/posterFrameMask.png">$INFO[ListItem.Thumb]</texture>
-					<include>focus_PosterWithInfoNoFade_GrainyEdition</include>
-					<visible>Container.Content(tvshows) + Skin.HasSetting(grainystretchthemposters) + Skin.HasSetting(givegrainyfadenolove)</visible>
+					<include>focus_PosterWithInfoNoEffect_GrainyEdition</include>
+					<!--<visible>Container.Content(tvshows) + Skin.HasSetting(grainystretchthemposters) + Skin.HasSetting(givegrainyfadenolove)</visible>-->
+					<visible>Container.Content(tvshows) + Skin.HasSetting(grainystretchthemposters)</visible>
 				</control>
 				<control type="image">
 					<posx>5</posx>
@@ -2204,8 +2250,9 @@
 					<height>170</height>
 					<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
 					<texture fallback="thumbs/movie.png" diffuse="frames/posterFrameMask.png">$INFO[ListItem.Thumb]</texture>
-					<include>focus_PosterWithInfoNoFade_GrainyEdition</include>
-					<visible>Container.Content(movies) + Skin.HasSetting(grainystretchthemposters) + Skin.HasSetting(givegrainyfadenolove)</visible>
+					<include>focus_PosterWithInfoNoEffect_GrainyEdition</include>
+					<!--<visible>Container.Content(movies) + Skin.HasSetting(grainystretchthemposters) + Skin.HasSetting(givegrainyfadenolove)</visible>-->
+					<visible>Container.Content(movies) + Skin.HasSetting(grainystretchthemposters)</visible>
 				</control>
 				<control type="image">
 					<posx>98</posx>
@@ -2213,7 +2260,7 @@
 					<width>20</width>
 					<height>20</height>
 					<include>watchedOverlay</include>
-					<include>focus_ThumbPosterInfo</include>
+					<include>focus_PosterWithInfoFlagsNoEffect_GrainyEdition</include>
 					<visible>[Container.Content(movies) + Skin.HasSetting(overlayMovies)] | [Container.Content(tvshows) + Skin.HasSetting(overlayTVShows)]</visible>
 				</control>
 				<control type="image">
@@ -2223,7 +2270,7 @@
 					<height>20</height>
 					<texture>$INFO[Listitem.Property(mediaTag-videoResolution),flags/biglistresolution/,.png]</texture>
 					<aspectratio align="right">keep</aspectratio>
-					<include>focus_ThumbPosterInfo</include>
+					<include>focus_PosterWithInfoFlagsNoEffect_GrainyEdition</include>
 					<visible>Skin.HasSetting(onlyfocusflagpanel) | Skin.HasSetting(enablehdflags)</visible>
 				</control>
 			</focusedlayout>

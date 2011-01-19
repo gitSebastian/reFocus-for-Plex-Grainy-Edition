@@ -31,50 +31,6 @@
 			<width>200</width>
 			<visible allowhiddenfocus="true">false</visible>
 		</control>
-		<!-- PAGELABELS -->
-		<control type="label">
-			<label>$INFO[ListItem.Title]</label>
-			<include>videoPageLabel</include>
-			<visible>Container.Content(movies)</visible>
-		</control>
-		<control type="label">
-			<description>tv shows</description>
-			<label>$INFO[ListItem.TVShowTitle]</label>
-			<include>videoPageLabel</include>
-			<visible>Container.Content(tvshows)</visible>
-		</control>
-		<control type="label">
-			<description>episodes</description>
-			<label>$INFO[ListItem.TVShowTitle]</label>
-			<include>videoPageLabel</include>
-			<visible>Container.Content(episodes)</visible>
-		</control>
-		<!-- this seemed to cause overlapping stuff to appear -->
-		<!--<control type="group">
-			<posx>470</posx>
-			<posy>107</posy>
-			<include>transition2</include>
-			<include>contextMenuHide</include>
-			<visible>!Container.Content(episodes) + !Window.IsActive(101)</visible>
-			<control type="label">
-				<width>780</width>
-				<label>$INFO[ListItem.Tagline]</label>
-				<include>Heading</include>
-				<visible>Container.Content(movies)</visible>
-			</control>
-			<control type="label">
-				<width>750</width>
-				<label>$INFO[ListItem.Plot]</label>
-				<include>Heading</include>
-				<visible>Container.Content(movies) + [IsEmpty(ListItem.Tagline) + IsEmpty(ListItem.PlotOutline) + IsEmpty(ListItem.Property(ReleaseDate))]</visible>
-			</control>
-			<control type="label">
-				<width>780</width>
-				<include>Heading</include>
-				<label>$INFO[ListItem.Property(ReleaseDate)]</label>
-				<visible>Container.Content(movies)</visible>
-			</control>
-		</control>-->
 		<!-- MOVIES -->
 		<control type="grouplist" id="1000">
 			<visible>Container.Content(movies) + !Window.IsActive(101)</visible>

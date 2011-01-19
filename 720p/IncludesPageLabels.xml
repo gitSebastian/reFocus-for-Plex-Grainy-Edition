@@ -1,4 +1,5 @@
-<includes>	
+<?xml version="1.0"?>
+<includes>
 	<include name="PageLabel">
 		<posx>34</posx>
 		<posy>20</posy>
@@ -8,8 +9,19 @@
 		<textcolor>Color1</textcolor>
 		<include>transition3</include>
 	</include>
-<!-- VIDEO PAGELABELS -->			
+	<!-- VIDEO PAGELABELS -->
 	<include name="videoPageLabel">
+		<!-- scrolloffset visible -->
+		<posx>84</posx>
+		<posy>25</posy>
+		<width>1000</width>
+		<aligny>center</aligny>
+		<font>PageLabelGrainy</font>
+		<textcolor>Color1</textcolor>
+		<include>transition3</include>		
+	</include>
+	<include name="videoPageLabel2">
+		<!-- scrolloffset hidden -->
 		<posx>34</posx>
 		<posy>25</posy>
 		<width>1000</width>
@@ -17,11 +29,10 @@
 		<font>PageLabelGrainy</font>
 		<textcolor>Color1</textcolor>
 		<include>transition3</include>
-		<visible>!Container.Scrolling</visible>
 	</include>
-<!-- Copied From "videoPageLabel" -->
-    <include name="videoFanartPageLabels">
-        <posx>34</posx>
+	<!-- Copied From "videoPageLabel" -->
+	<include name="videoFanartPageLabels">
+		<posx>34</posx>
 		<posy>25</posy>
 		<width>950</width>
 		<aligny>center</aligny>
@@ -29,42 +40,68 @@
 		<textcolor>Color1</textcolor>
 		<include>transition3</include>
 		<visible>!Container.Scrolling</visible>
-    </include>
-
-    <include name="videoLibPageLabels">       
-<!-- video -->
-		<control type="label">
-			<label>[COLOR=ffA1927F]$INFO[Container.FirstTitle][/COLOR]</label>
-			<include>videoPageLabel</include>
-			<visible>!Window.IsActive(2003)</visible>
-		</control>
-		<!-- music -->
+	</include>
+	<include name="videoLibPageLabels">
+		<!-- page titles with or without scrolloffset visible -->
 		<control type="label">
 			<label>[COLOR=ffA1927F]$INFO[Container.FirstTitle][/COLOR] $INFO[Container.SecondTitle]</label>
 			<include>videoPageLabel</include>
+			<include>infoDialogHide</include>
+			<visible>!Window.IsActive(502) + Container.Scrolling + !Skin.HasSetting(hidescrolloffset)</visible>
+		</control>
+		<control type="label">
+			<label>[COLOR=ffA1927F]$INFO[Container.FirstTitle][/COLOR] $INFO[Container.SecondTitle]</label>
+			<include>videoPageLabel2</include>
+			<include>infoDialogHide</include>
+			<visible>!Window.IsActive(502) + [!Container.Scrolling | [Container.Scrolling + Skin.HasSetting(hidescrolloffset)]]</visible>
+		</control>
+		<!-- full info screen movies -->
+		<control type="label">
+			<label>$INFO[ListItem.Title]</label>
+			<include>videoPageLabel2</include>
+			<visible>Window.IsActive(2003) + Container.Content(movies)</visible>
+		</control>
+		<!-- full info screen tv shows -->
+		<control type="label">
+			<description>tv shows</description>
+			<label>$INFO[ListItem.TVShowTitle]</label>
+			<include>videoPageLabel2</include>
+			<visible>Window.IsActive(2003) + Container.Content(tvshows)</visible>
+		</control>
+		<!-- full info screen episodes -->
+		<control type="label">
+			<description>episodes</description>
+			<label>$INFO[ListItem.TVShowTitle]</label>
+			<include>videoPageLabel2</include>
+			<visible>Window.IsActive(2003) + Container.Content(episodes)</visible>
+		</control>
+		<!-- music -->
+		<!--<control type="label">
+			<label>[COLOR=ffA1927F]$INFO[Container.FirstTitle][/COLOR] $INFO[Container.SecondTitle]</label>
+			<include>videoPageLabel</include>
 			<visible>!Window.IsActive(502)</visible>
-		</control>	
-<!-- pictures -->		
-        <control type="label">
-            <description>programs</description>
-            <label>[UPPERCASE]$LOCALIZE[1][/UPPERCASE]</label>
-            <include>videoFanartPageLabels</include>
-            <visible>Control.IsVisible(50) + Window.IsActive(10002)</visible>
-        </control>
+		</control>-->
+		<!-- pictures -->
+		<control type="label">
+			<description>programs</description>
+			<label>[UPPERCASE]$LOCALIZE[1][/UPPERCASE]</label>
+			<include>videoFanartPageLabels</include>
+			<visible>Control.IsVisible(50) + Window.IsActive(10002)</visible>
+		</control>
 	</include>
-	<include name="videoLibPageLabels2">       
-<!-- video -->
+	<include name="videoLibPageLabels2">
+		<!-- video -->
 		<control type="label">
 			<label>$INFO[Container.FirstTitle] [COLOR=ffA1927F]$INFO[Container.SecondTitle][/COLOR]</label>
 			<include>videoPageLabel</include>
 			<visible>!Window.IsActive(2003)</visible>
 		</control>
-<!-- pictures -->		
-        <control type="label">
-            <description>programs</description>
-            <label>[UPPERCASE]$LOCALIZE[1][/UPPERCASE]</label>
-            <include>videoFanartPageLabels</include>
-            <visible>Control.IsVisible(50) + Window.IsActive(10002)</visible>
-        </control>
+		<!-- pictures -->
+		<control type="label">
+			<description>programs</description>
+			<label>[UPPERCASE]$LOCALIZE[1][/UPPERCASE]</label>
+			<include>videoFanartPageLabels</include>
+			<visible>Control.IsVisible(50) + Window.IsActive(10002)</visible>
+		</control>
 	</include>
 </includes>

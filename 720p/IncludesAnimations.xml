@@ -29,32 +29,53 @@
 	</include>
 	<!-- VIEWTYPE -->
 	<!-- CUSTOM GRAINY EDITION ANIMATIONS -->
-	<include name="focus_Poster_GrainyEdition">
+	<!-- with "effects" -->
+	<!-- deactivated, remain to be reworked -->
+	<!-- remember to re-activate the conditionals in "ViewsVideo" and "Extra Options" menu when re-using these -->
+	<!--<include name="focus_Poster_GrainyEdition">
 		<animation type="Focus" reversible="false">
 			<effect type="zoom" center="auto" start="100" end="130" time="400" tween="back" easing="out" />
 			<effect type="fade" start="80" end="100" time="400" />
 		</animation>
-	</include>
-	<include name="focus_PosterNoFade_GrainyEdition">
-		<animation type="Focus" reversible="false">
-			<effect type="zoom" center="auto" start="100" end="130" time="400" tween="back" easing="out" />
-		</animation>
-	</include>
+	</include>	
 	<include name="focus_PosterWithInfo_GrainyEdition">
 		<animation type="Focus" reversible="false">
 			<effect type="zoom" center="auto" start="100" end="150" time="400" tween="back" easing="out" />
 			<effect type="fade" start="80" end="100" time="400" />
 		</animation>
-	</include>
-	<include name="focus_PosterWithInfoNoFade_GrainyEdition">
-		<animation type="Focus" reversible="false">
-			<effect type="zoom" center="auto" start="100" end="150" time="400" tween="back" easing="out" />
-		</animation>
-	</include>
+	</include>	
 	<include name="focus_PosterHDFlagFade_GrainyEdition">
 		<animation type="Unfocus" reversible="false">
 			<effect type="fade" start="50" end="0" time="300" />
 		</animation>
+	</include>
+	<include name="focus_PosterHDFlagEffect_GrainyEdition">
+		<animation effect="zoom" tween="cubic" easing="inout" start="100" end="130" center="90,125" time="300">Focus</animation>
+	</include>-->
+		
+	<!-- option "no effects" -->
+	<!-- THUMBNAILS BIG -->
+	<include name="focus_PosterNoEffect_GrainyEdition">
+		<animation type="Focus" reversible="false">
+			<effect type="zoom" center="auto" start="100" end="130" time="400" tween="back" easing="out" />
+		</animation>
+		<animation type="UnFocus" reversible="false">
+			<effect type="zoom" center="auto" start="130" end="100" time="0" tween="back" easing="out" />
+		</animation>
+	</include>
+	<include name="focus_PosterFlagsNoEffect_GrainyEdition">
+		<animation effect="fade" start="100" end="0" time="0" reversible="false">UnFocus</animation>
+		<animation effect="zoom" start="100" end="130" center="90,125" time="400" tween="back" easing="out" reversible="false">Focus</animation>		
+	</include>
+	<!-- THUMBNAILS WITH INFO -->
+	<include name="focus_PosterWithInfoNoEffect_GrainyEdition">
+		<animation type="Focus" reversible="false">
+			<effect type="zoom" center="auto" start="100" end="150" time="400" tween="back" easing="out" />
+		</animation>
+	</include>
+	<include name="focus_PosterWithInfoFlagsNoEffect_GrainyEdition">
+		<animation effect="fade" start="100" end="0" time="0" reversible="false">UnFocus</animation>
+		<animation effect="zoom" start="100" end="150" center="65,90" time="400" tween="back" easing="out" reversible="false">Focus</animation>		
 	</include>
 	<!-- END CUSTOM GRAINY EDITION ANIMATIONS -->
 	<include name="homeRecentThumb">

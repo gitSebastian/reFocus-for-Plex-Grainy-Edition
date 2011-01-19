@@ -400,13 +400,13 @@
 				<itemgap>0</itemgap>
 				<visible>[Control.HasFocus(91) | ControlGroup(200).HasFocus()] + Control.IsVisible(57) + [Container.Content(movies) | Container.Content(tvshows)] + !ControlGroup(40).HasFocus()</visible>
 				<include>transition2</include>
-				<control type="radiobutton" id="201">
+				<!--<control type="radiobutton" id="201">
 					<label>deactivate the extra "fade" effect on focused poster</label>
 					<onclick>Container.SetViewMode(57)</onclick>
 					<onclick>Skin.ToggleSetting(givegrainyfadenolove)</onclick>
 					<selected>Skin.HasSetting(givegrainyfadenolove)</selected>
 					<include>settingsButtonExtra</include>
-				</control>
+				</control>-->
 				<control type="radiobutton" id="202">
 					<label>show studio logo on right bottom corner</label>
 					<onclick>Container.SetViewMode(57)</onclick>

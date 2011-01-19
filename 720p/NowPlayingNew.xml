@@ -59,7 +59,7 @@
 					<control type="group">
 						<posx>220</posx>
 						<align>right</align>
-						<visible>MusicPlayer.HasNewCoverNext</visible>
+						<!-- frame -->
 						<control type="image">
 							<posx>-10</posx>
 							<posy>-10</posy>
@@ -68,12 +68,22 @@
 							<texture>frames/albumFrame.png</texture>
 							<visible>MusicPlayer.HasNext</visible>
 						</control>
+						<!-- new cover -->
 						<control type="image">
 							<width>120</width>
 							<height>120</height>
 							<info>MusicPlayer.NextNewCover</info>
 							<aspectratio>scale</aspectratio>
-							<visible>MusicPlayer.HasNext</visible>
+							<visible>MusicPlayer.HasNewCoverNext</visible>
+							<texture diffuse="frames/albumFrameMaskSmall.png"/>
+						</control>
+						<!-- if no new cover, then same cover -->
+						<control type="image">
+							<width>120</width>
+							<height>120</height>
+							<info>MusicPlayer.Cover</info>
+							<aspectratio>scale</aspectratio>
+							<visible>!MusicPlayer.HasNewCoverNext</visible>
 							<texture diffuse="frames/albumFrameMaskSmall.png"/>
 						</control>
 					</control>

@@ -6,9 +6,32 @@
 		<include>slideshows</include>
 		<!-- GRAINY BACKGROUND FOR THE HOME SCREEN ONLY, IS CALLED FROM Includes.xml -->
 		<include>grainyeditionthemeoverlay</include>
-		<!-- Plex Logo, positioned underneath the home overlay for a little softness -->
+		<!-- reFocus logo positioned underneath the home overlay for a little softness -->
 		<control type="group">
 			<visible>![Skin.HasSetting(originalhome) | Skin.HasSetting(hideplexhomelogo)]</visible>
+			<control type="image">
+				<posx>20</posx>
+				<posy>16</posy>
+				<width>224</width>
+				<texture>logos/refocuslogo.png</texture>
+				<aspectratio align="right">keep</aspectratio>
+				<include>transition2</include>
+			</control>
+			<control type="image">
+				<posx>50</posx>
+				<posy>46</posy>
+				<width>193</width>
+				<height>70</height>
+				<texture>home/forplexlogo.png</texture>
+				<aspectratio align="right">keep</aspectratio>
+				<include>transition2</include>
+			</control>
+		</control>
+		<!-- reFocus logo for legacy home screen -->
+		<control type="group">
+			<posx>1010</posx>
+			<posy>600</posy>
+			<visible>!Skin.HasSetting(hideplexhomelogo) + Skin.HasSetting(originalhome)</visible>
 			<control type="image">
 				<posx>20</posx>
 				<posy>16</posy>
@@ -71,7 +94,15 @@
 			<include>fadeinout</include>
 			<visible>Window.IsActive(133) | Window.IsActive(112) | Window.IsActive(107)</visible>
 		</control>
-		<include condition="Player.HasMusicPlaylist + Skin.HasSetting(legacymenucopperfieldmode)">grainyeditionnowplayinghome</include>
+		<!-- now playing for home screen with Copperfield mode -->
+		<include condition="Player.HasMusicPlaylist + Skin.HasSetting(legacymenucopperfieldmode) + !Skin.HasSetting(originalhome)">grainyeditionnowplayinghome</include>
+		<!-- now playing for home screen with legacy mode -->
+		<control type="group">
+			<posx>872</posx>
+			<posy>-65</posy>
+			<visible>!Skin.HasSetting(hideplexhomelogo) + Skin.HasSetting(originalhome)</visible>
+			<include condition="Player.HasMusicPlaylist + Skin.HasSetting(originalhome)">grainyeditionnowplayinghome</include>
+		</control>
 		<!-- TIME -->
 		<include condition="!Skin.HasSetting(homeTime) + ![Window.IsActive(10112) | Window.IsActive(10133) | Window.IsActive(107)]">libClock</include>
 		<!-- MOD CALL MENU GRAINY EDITION -->

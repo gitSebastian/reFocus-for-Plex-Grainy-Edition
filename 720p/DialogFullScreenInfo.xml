@@ -15,35 +15,60 @@
 			<include>videoFullScreenInfo</include>
 		</control>
 		<!-- MOVIES & EPISODES & FILES -->
-		<control type="group" id="1">
+		<control type="grouplist" id="1">
+			<orientation>horizontal</orientation>
 			<posx>30</posx>
-			<posy>545</posy>
+			<posy>675</posy>
 			<visible>[VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(files)] + ![Window.IsActive(2901)]</visible>
 			<include>videoFullScreenInfo</include>
 			<!-- movies & files -->
-			<control type="label" id="1">
-				<width>1060</width>
-				<posy>130</posy>
-				<label>$INFO[Player.Time] &#xB7; $INFO[VideoPlayer.Title]</label>
-				<align>left</align>
+			<control type="grouplist">
+				<width>1220</width>
+				<height>40</height>
+				<aligny>center</aligny>
+				<orientation>horizontal</orientation>
 				<textcolor>Color4</textcolor>
 				<font>osd1</font>
 				<visible>VideoPlayer.Content(movies) | VideoPlayer.Content(files)</visible>
+				<control type="label" id="1">
+					<label>$INFO[Player.Time] &#xB7;</label>
+					<width min="29" max="150">auto</width>
+					<textcolor>Color4</textcolor>
+					<font>osd1</font>
+				</control>
+				<control type="label" id="1">
+					<label>$INFO[VideoPlayer.Title]</label>
+					<width min="29" max="1000">auto</width>
+					<textcolor>Color4</textcolor>
+					<font>osd1</font>
+					<scroll>true</scroll>
+				</control>
 			</control>
 			<!-- episodes -->
-			<control type="label" id="1">
-				<width>1060</width>
-				<posy>130</posy>
-				<label>$INFO[Player.Time] &#xB7; $LOCALIZE[31096] &#xB7; $INFO[VideoPlayer.Title]</label>
-				<align>left</align>
+			<control type="grouplist">
+				<width>1220</width>
+				<aligny>center</aligny>
+				<orientation>horizontal</orientation>
 				<textcolor>Color4</textcolor>
 				<font>osd1</font>
 				<visible>VideoPlayer.Content(episodes)</visible>
+				<control type="label" id="1">
+					<label>$INFO[Player.Time] &#xB7;</label>
+					<width min="29" max="150">auto</width>
+					<textcolor>Color4</textcolor>
+					<font>osd1</font>
+				</control>
+				<control type="label" id="1">
+					<label>$LOCALIZE[31096] &#xB7; $INFO[VideoPlayer.Title]</label>
+					<width min="29" max="1000">auto</width>
+					<textcolor>Color4</textcolor>
+					<font>osd1</font>
+					<scroll>true</scroll>
+				</control>
 			</control>
 			<!-- duration, shared -->
 			<control type="label" id="1">
 				<posy>130</posy>
-				<posx>30r</posx>
 				<width>150</width>
 				<align>right</align>
 				<label>&#xB7; $INFO[Player.Duration]</label>
@@ -51,14 +76,16 @@
 				<font>osd1</font>
 				<visible>VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(files)</visible>
 			</control>
-			<!-- progress bar -->
-			<control type="progress" id="1">
-				<description>Progressbar</description>
-				<posy>165</posy>
-				<width>1220</width>
-				<height>1</height>
-				<info>Player.Progress</info>
-			</control>
+		</control>
+		<!-- progress bar -->
+		<control type="progress" id="1">
+			<description>Progressbar</description>
+			<posx>30</posx>
+			<posy>710</posy>
+			<width>1220</width>
+			<height>1</height>
+			<info>Player.Progress</info>
+			<visible>[VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(files)] + ![Window.IsActive(2901)]</visible>
 		</control>
 	</controls>
 </window>
