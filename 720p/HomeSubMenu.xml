@@ -2,7 +2,7 @@
 <includes>
 	<include name="homeSubMenu">
 		<control type="group" id="1100">
-			<posy>100</posy>
+			<posy>150</posy>
 			<!-- PLUG-IN SUBMENU -->
 			<control type="list" id="1110">
 				<posx>-800</posx>
@@ -62,15 +62,15 @@
 					</item>
 					<item id="4">
 						<label>Playlists</label>
-						<onclick>ActivateWindow(10501,plex://localhost./music/iTunes/Playlists,return)</onclick>
+						<onclick>ActivateWindow(10501,plex://127.0.0.1:32400/music/iTunes/Playlists,return)</onclick>
 					</item>
 					<item id="5">
 						<label>Artists</label>
-						<onclick>ActivateWindow(10501,plex://localhost./music/iTunes/Artists,return)</onclick>
+						<onclick>ActivateWindow(10501,plex://127.0.0.1:32400/music/iTunes/Artists,return)</onclick>
 					</item>
 					<item id="6">
 						<label>Main</label>
-						<onclick>ActivateWindow(10501,plex://localhost./music/iTunes,return)</onclick>
+						<onclick>ActivateWindow(10501,plex://127.0.0.1:32400/music/iTunes,return)</onclick>
 					</item>
 				</content>
 			</control>

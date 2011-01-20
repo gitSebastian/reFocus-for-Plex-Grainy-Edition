@@ -174,17 +174,6 @@
 				<onclick>Skin.ToggleSetting(iTunesHome)</onclick>
 				<selected>Skin.HasSetting(iTunesHome)</selected>
 				<include>settingsButton</include>
-				<enable>!Skin.HasSetting(originalhome)</enable>
-				<visible>!Skin.HasSetting(originalhome)</visible>
-			</control>
-			<control type="radiobutton" id="299">
-				<description>show iTunes shortcuts</description>
-				<label>Show iTunes Shortcuts (doesn't work yet for legacy menu)</label>
-				<onclick>Skin.ToggleSetting(iTunesHome)</onclick>
-				<selected>Skin.HasSetting(iTunesHome)</selected>
-				<include>settingsButton</include>
-				<enable>!Skin.HasSetting(originalhome)</enable>
-				<visible>Skin.HasSetting(originalhome)</visible>
 			</control>
 			<control type="radiobutton" id="202">
 				<description>show favourites entry</description>
@@ -220,6 +209,7 @@
 				<onclick>Skin.ToggleSetting(homemenuExit)</onclick>
 				<selected>!Skin.HasSetting(homemenuExit)</selected>
 				<include>settingsButton</include>
+				<visible>!Skin.HasSetting(originalhome)</visible>
 			</control>
 			<control type="radiobutton" id="208">
 				<description>settings screen toggle</description>
@@ -227,6 +217,7 @@
 				<onclick>Skin.ToggleSetting(homemenuSettings)</onclick>
 				<selected>Skin.HasSetting(homemenuSettings)</selected>
 				<include>settingsButton</include>
+				<visible>!Skin.HasSetting(originalhome)</visible>
 			</control>
 			<control type="radiobutton" id="209">
 				<description>Plex Online Accessories</description>
@@ -234,6 +225,7 @@
 				<onclick>Skin.ToggleSetting(plexonlineaccessories)</onclick>
 				<selected>Skin.HasSetting(plexonlineaccessories)</selected>
 				<include>settingsButton</include>
+				<visible>!Skin.HasSetting(originalhome)</visible>
 			</control>
 			<!-- MOD SKIN SETTING EXPERIMENTAL TESTING -->
 			<control type="radiobutton" id="210">

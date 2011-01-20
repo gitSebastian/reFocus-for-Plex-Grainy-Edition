@@ -667,7 +667,6 @@
 	</include>
 	<!-- PLAYLIST NOW -->
 	<include name="view_PlayListMusic_GrainyEdition">
-		<!-- Shadow -->
 		<control type="group">
 			<animation effect="fade" start="100" end="20" time="350" condition="Control.HasFocus(9000) | Control.HasFocus(1110) | Control.HasFocus(1140) | Control.HasFocus(1150) | Control.HasFocus(1160)">Conditional</animation>
 			<visible>Window.IsActive(musicplaylist)</visible>

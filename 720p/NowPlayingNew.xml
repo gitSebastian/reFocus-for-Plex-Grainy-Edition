@@ -9,7 +9,7 @@
 				<posy>23</posy>
 				<visible>Player.HasMusicPlaylist</visible>
 				<!-- fade when focus moves to left side menu -->
-				<animation effect="fade" start="100" end="10" time="200" condition="Control.HasFocus(9000) | Control.HasFocus(1110) | Control.HasFocus(1130) | Control.HasFocus(1140) | Control.HasFocus(1150) | Control.HasFocus(1160)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="200" condition="Control.HasFocus(9000) | Control.HasFocus(1110) | Control.HasFocus(1130) | Control.HasFocus(1140) | Control.HasFocus(1150) | Control.HasFocus(1160)">Conditional</animation>
 				<!-- pause animations -->
 				<animation condition="!Player.Paused" type="Conditional">
 					<effect type="rotatey" center="200" start="-180" end="0" time="500" easing="out" reversible="false"/>

@@ -402,12 +402,19 @@
 		<include>grainybeigetext</include>
 	</include>
 	<!-- HOMESCREEN INCLUDES -->
+	<!-- dynamic legacy menu vertical position if logo is shown or not -->
+	<include name="legacyMenuPositionWithLogo">
+		<posy>150</posy>
+	</include>
+	<include name="legacyMenuPositionWithoutLogo">
+		<posy>100</posy>
+	</include>	
 	<include name="homeMenusLayout">
-		<itemlayout width="375" height="55">
+		<include condition="Skin.HasSetting(hideplexhomelogo)">legacyMenuPositionWithoutLogo</include>
+		<include condition="!Skin.HasSetting(hideplexhomelogo)">legacyMenuPositionWithLogo</include>
+		<itemlayout width="375" height="50">
 			<control type="label">
 				<posx>20</posx>
-				<posy>70</posy>
-				<posy>100</posy>
 				<width>375</width>
 				<height>52</height>
 				<font>homeMenu</font>
@@ -416,35 +423,45 @@
 				<textcolor>Color7</textcolor>
 			</control>
 		</itemlayout>
-		<focusedlayout width="375" height="55">
+		<focusedlayout width="375" height="50">
+			<!-- normal focus background -->
 			<control type="image">
-				<posy>0</posy>
-				<width>375</width>
-				<height>209</height>
+				<posx>-150</posx>
+				<posy>-51</posy>
+				<width>600</width>
+				<height>163</height>
 				<aspectratio align="left">stretch</aspectratio>
 				<texture border="1">home/menuSelect.png</texture>
 				<include>homeListScroll</include>
+				<animation type="Conditional" condition="true">
+					<effect type="fade" start="0" end="70"/>
+				</animation>
+				<visible allowhiddenfocus="true">![Container(300).HasFocus(7) | Container(300).HasFocus(12)  | Container(300).HasFocus(13)]</visible>
 			</control>
+			<!-- weather stretched focus background -->
 			<control type="image">
-				<posy>0</posy>
-				<width>950</width>
-				<height>209</height>
+				<posx>-150</posx>
+				<posy>-51</posy>
+				<width>1100</width>
+				<height>163</height>
 				<aspectratio align="left">stretch</aspectratio>
 				<texture border="80,0,0,0">home/menuSelect.png</texture>
 				<include>homeListScroll</include>
-				<visible allowhiddenfocus="true">[Container(300).HasFocus(6) | Container(300).HasFocus(12)  | Container(300).HasFocus(13)]</visible>
+				<animation type="Conditional" condition="true">
+					<effect type="fade" start="0" end="70"/>
+				</animation>
+				<visible allowhiddenfocus="true">[Container(300).HasFocus(7) | Container(300).HasFocus(12)  | Container(300).HasFocus(13)]</visible>
 			</control>
-			<control type="image">
+			<!--<control type="image">
 				<posy>0</posy>
 				<width>1200</width>
-				<height>209</height>
+				<height>195</height>
 				<aspectratio align="left">stretch</aspectratio>
 				<texture border="80,0,0,0">home/menuSelect.png</texture>
 				<include>homeListScroll</include>
 				<visible allowhiddenfocus="true">[Container(2110).HasFocus(0)]</visible>
-			</control>
+			</control>-->
 			<control type="label">
-				<posy>70</posy>
 				<posx>20</posx>
 				<width>375</width>
 				<height>52</height>
@@ -456,7 +473,6 @@
 				<visible>IsEmpty(Listitem.Label2)</visible>
 			</control>
 			<control type="label">
-				<posy>70</posy>
 				<posx>20</posx>
 				<width>1200</width>
 				<height>52</height>
@@ -468,6 +484,7 @@
 				<visible>!IsEmpty(Listitem.Label2)</visible>
 			</control>
 		</focusedlayout>
+		
 	</include>
 	<!-- CLOCK IN VIDEO INFO SCREEN -->
 	<include name="clock">
@@ -623,8 +640,7 @@
 			</control>
 		</control>
 	</include>
-	<!-- CONTROLS -->
-	
+	<!-- CONTROLS -->	
 	<include name="xScroller">
 		<showonepage>true</showonepage>
 		<orientation>horizontal</orientation>

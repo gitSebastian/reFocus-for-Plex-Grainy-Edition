@@ -2,19 +2,19 @@
 	<include name="HomeMenu_Original">
 		<control type="list" id="300">
             <width>1100</width>
-			<height>675</height>
+			<height>500</height>
             <onup>300</onup>
 			<ondown>300</ondown>
-			<onright>8001</onright>
-			<onleft>300</onleft>
+			<onright>300</onright>
+			<onleft>301</onleft>
 			<orientation>vertical</orientation>
 			<scrolltime>150</scrolltime>
-			<visible allowhiddenfocus="true">![ControlGroup(1100).HasFocus() | ControlGroup(4000).HasFocus() | ControlGroup(2100).HasFocus()]</visible>
-            <animation effect="fade" start="100" end="20" time="350" condition="Control.HasFocus(8001)">Conditional</animation>		
+			<visible allowhiddenfocus="true">![ControlGroup(1100).HasFocus() | ControlGroup(4000).HasFocus() | ControlGroup(2100).HasFocus() | ControlGroup(301).HasFocus()]</visible>
+            <animation effect="fade" start="100" end="0" time="0" condition="Control.HasFocus(301)">Conditional</animation>		
 			<include>homeMenuToggle</include>
 			<include>homeMenusLayout</include>
 			<content>
-                <item id="9">
+				<item id="1">
 					<label>$LOCALIZE[1036]</label>
 					<onclick>ActivateWindow(Favourites)</onclick>
 					<visible>Skin.HasSetting(homemenuFavourites)</visible>
@@ -24,36 +24,32 @@
 					<onclick>Plex.ActivateWindow(1,plex://localhost/system/appstore,return)</onclick>
 				<visible>!Skin.HasSetting(plexonlineaccessories)</visible>
 				</item>
-				<item id="1">
-					<label>31914</label>
-					<onclick>SetFocus(1110)</onclick>
-				</item>
-                <!--<item id="2">
+                <item id="2">
 					<label>iTunes</label>
 					<onclick>SetFocus(1120)</onclick>
 					<visible>Skin.HasSetting(iTunesHome)</visible>
-				</item>-->
+				</item>
 				<!--<item id="4">
                     <label>$LOCALIZE[31006]</label>
 					<onclick>SetFocus(1140)</onclick>
 					<visible>!Skin.HasSetting(homemenuAccessories)</visible>
 				</item>-->
-                <item id="4">
+                <!--<item id="4">
 					<label>$LOCALIZE[0]</label>
 						<onclick>ActivateWindow(Programs)</onclick>
 						<onclick>Dialog.Close(shutdownmenu)</onclick>
 						<visible>Skin.HasSetting(homemenuPrograms)</visible>
-				</item>
+				</item>-->
 				<!--<item id="5">
 					<label>$LOCALIZE[5]</label>
 					<onclick>ActivateWindow(4)</onclick>
 					<visible>Skin.HasSetting(homemenuSettings)</visible>
 				</item>-->
-				<item id="5">
+				<!--<item id="5">
 					<label>$LOCALIZE[5]</label>
 					<onclick>SetFocus(1150)</onclick>
-					<!--<visible>!Skin.HasSetting(homemenuSettings)</visible>-->
-				</item>
+					<visible>!Skin.HasSetting(homemenuSettings)</visible>
+				</item>-->
 				<!--<item id="6">
 					<label>$LOCALIZE[8]</label>
 					<label2>$INFO[Weather.Conditions], $INFO[Weather.Temperature]</label2>
@@ -67,21 +63,17 @@
 					<onclick>ActivateWindow(weather)</onclick>
 					<visible>Skin.HasSetting(homemenuWeather)</visible>
 				</item>
-				<!--<item id="9">
-					<label>$LOCALIZE[1036]</label>
-					<onclick>ActivateWindow(Favourites)</onclick>
-					<visible>Skin.HasSetting(homemenuFavourites) + !Skin.HasSetting(FavouritesonTop)</visible>
-				</item>-->
+				
 				<item id="10">
 					<label>$LOCALIZE[341]</label>
 					<onclick>XBMC.PlayDVD</onclick>
 					<visible>System.HasMediadvd</visible>
 				</item>
-				<item id="11">
+				<!--<item id="11">
 					<label>$LOCALIZE[31013]</label>
 					<onclick>SetFocus(1160)</onclick>
 					<visible>!Skin.HasSetting(homemenuExit)</visible>
-				</item>
+				</item>-->
 				<item id="12">
 					<label>$LOCALIZE[13350]</label>
 					<onclick>ActivateWindow(musicplaylist)</onclick>
@@ -97,5 +89,73 @@
 			</content>
 		</control>
 		<include>homeSubMenu_Original</include>
+		<control type="list" id="301">
+            <width>1100</width>
+			<height>555</height>
+            <onup>301</onup>
+			<ondown>301</ondown>
+			<onright>300</onright>
+			<onleft>301</onleft>
+			<orientation>vertical</orientation>
+			<scrolltime>150</scrolltime>
+			<visible allowhiddenfocus="true">![ControlGroup(1100).HasFocus() | ControlGroup(4000).HasFocus() | ControlGroup(2100).HasFocus() | ControlGroup(300).HasFocus()]</visible>
+            <animation effect="fade" start="100" end="0" time="0" condition="Control.HasFocus(300)">Conditional</animation>		
+			<include>homeMenuToggle</include>
+			<include>homeMenusLayout</include>
+			<content>
+                <item id="1">
+					<label>$LOCALIZE[0]</label>
+						<onclick>ActivateWindow(Programs)</onclick>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+						<visible>-</visible>
+				</item>
+				<item id="11">
+					<label>$LOCALIZE[31013]</label>
+					<onclick>SetFocus(1160)</onclick>
+					<visible>-</visible>
+				</item>
+				<item id="2">
+					<label>$LOCALIZE[5] :</label>
+					<onclick>-</onclick>
+					<!--<visible>!Skin.HasSetting(homemenuSettings)</visible>-->
+				</item>
+				<item id="3">
+						<label>&#xB7; $LOCALIZE[166]</label>
+						<onclick>ActivateWindow(59)</onclick>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+					</item>
+					<item id="4">
+						<label>&#xB7; $LOCALIZE[480]</label>
+						<onclick>ActivateWindow(appearancesettings)</onclick>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+					</item>
+					<item id="5">
+						<label>&#xB7; $LOCALIZE[1212]</label>
+						<onclick>ActivateWindow(videossettings)</onclick>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+					</item>
+					<item id="6">
+						<label>&#xB7; $LOCALIZE[10005]</label>
+						<onclick>ActivateWindow(musicsettings)</onclick>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+					</item>
+					<item id="7">
+						<label>&#xB7; $LOCALIZE[10002]</label>
+						<onclick>ActivateWindow(picturessettings)</onclick>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+					</item>
+					<item id="8">
+						<label>&#xB7; $LOCALIZE[8]</label>
+						<onclick>ActivateWindow(weathersettings)</onclick>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+					</item>
+					<item id="9">
+						<label>&#xB7; $LOCALIZE[13000]</label>
+						<onclick>ActivateWindow(systemsettings)</onclick>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+					</item>
+				
+			</content>
+		</control>
 	</include>
 </includes>

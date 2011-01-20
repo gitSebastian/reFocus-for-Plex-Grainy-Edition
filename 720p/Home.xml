@@ -29,8 +29,8 @@
 		</control>
 		<!-- reFocus logo for legacy home screen -->
 		<control type="group">
-			<posx>1010</posx>
-			<posy>600</posy>
+			<posx>0</posx>
+			<posy>0</posy>
 			<visible>!Skin.HasSetting(hideplexhomelogo) + Skin.HasSetting(originalhome)</visible>
 			<control type="image">
 				<posx>20</posx>
@@ -99,12 +99,24 @@
 		<!-- now playing for home screen with legacy mode -->
 		<control type="group">
 			<posx>872</posx>
-			<posy>-65</posy>
+			<posy>20</posy>
 			<visible>Skin.HasSetting(originalhome)</visible>
 			<include condition="Player.HasMusicPlaylist + Skin.HasSetting(originalhome)">grainyeditionnowplayinghome</include>
 		</control>
 		<!-- TIME -->
 		<include condition="!Skin.HasSetting(homeTime) + ![Window.IsActive(10112) | Window.IsActive(10133) | Window.IsActive(107)]">libClock</include>
+		<!-- separators -->
+			<control type="image">
+				<posx>0</posx>
+				<posy>20</posy>
+				<height>720</height>
+				<width>29</width>
+				<texture flipx="true">settings/separator.png</texture>
+				<aspectratio align="right">stretch</aspectratio>
+				<include>transition2</include>
+				<include>infoDialogHide</include>
+				<include>grainypagefade</include>
+			</control>
 		<!-- MOD CALL MENU GRAINY EDITION -->
 		<include condition="!Skin.HasSetting(originalhome)">HomeMenu</include>
 		<include condition="Skin.HasSetting(originalhome)">HomeMenu_Original</include>		

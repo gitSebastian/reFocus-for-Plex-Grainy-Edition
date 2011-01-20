@@ -306,8 +306,8 @@
 		</animation>
 	</include>
 	<include name="homeListScroll">
-		<animation effect="slide" start="0,-45" end="0,0" time="100" reversible="false" tween="quadratic" easing="out" condition="Container(300).OnNext | Container(1110).OnNext | Container(1120).OnNext | Container(1130).OnNext | Container(1140).OnNext | Container(1150).OnNext | Container(1160).OnNext">focus</animation>
-		<animation effect="slide" start="0,45" end="0,0" time="100" reversible="false" tween="quadratic" easing="out" condition="Container(300).OnPrevious | Container(1110).OnPrevious | Container(1120).OnPrevious | Container(1130).OnPrevious | Container(1140).OnPrevious | Container(1150).OnPrevious | Container(1160).OnPrevious">focus</animation>
+		<!--<animation effect="slide" start="0,-45" end="0,0" time="100" reversible="false" tween="quadratic" easing="out" condition="Container(300).OnNext | Container(1110).OnNext | Container(1120).OnNext | Container(1130).OnNext | Container(1140).OnNext | Container(1150).OnNext | Container(1160).OnNext">focus</animation>
+		<animation effect="slide" start="0,45" end="0,0" time="100" reversible="false" tween="quadratic" easing="out" condition="Container(300).OnPrevious | Container(1110).OnPrevious | Container(1120).OnPrevious | Container(1130).OnPrevious | Container(1140).OnPrevious | Container(1150).OnPrevious | Container(1160).OnPrevious">focus</animation>-->
 	</include>
 	<!-- OSD -->
 	<include name="state_OSD">

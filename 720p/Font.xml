@@ -1,17 +1,7 @@
 <fonts>
 	<fontset id="Default" unicode="true">
 <!-- CUSTOM GRAINY EDITION FONTS -->
-		<font>
-			<name>smallGrainy</name>
-			<filename>Vegur-R0602.otf</filename>
-			<size>18</size>
-			
-		</font>
-		<font>
-			<name>normalGrainy</name>
-			<filename>RNS_Camelia.ttf</filename>
-			<size>22</size>
-		</font>
+		
 
 <!-- pagelabels ----------------------------------------------------->
 		<font>
@@ -93,8 +83,8 @@
 <!-- home screen menu --------------------------------------------->	
 		<font>
 			<name>homeMenu</name>
-			<filename>Light.ttf</filename>
-			<size>55</size>
+			<filename>ZegoeLight-U-L.ttf</filename>
+			<size>44</size>
 		</font>
 		<!--<font>
 			<name>homeMenuFocus</name>

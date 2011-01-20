@@ -38,7 +38,7 @@
 				</content>
 			</control>
 
-<!-- PLUG-IN SUBMENU ----------------------------------------------------------------------------------------------->	
+<!-- ITUNES SUBMENU -->
 			<control type="list" id="1120">
 				<posx>-800</posx>
 				<width>900</width>
@@ -48,25 +48,31 @@
 				<onleft>300</onleft>
 				<orientation>vertical</orientation>
 				<scrolltime>150</scrolltime>
+				<visible allowhiddenfocus="true">Container(300).HasFocus(2)</visible>
 				<include>homeSubFocus</include>
 				<include>homeMenusLayout</include>
-				<visible allowhiddenfocus="true">Container(300).HasFocus(2)</visible>
 				<content>
 					<item id="1">
-						<label>Artists</label>
-						<onclick>ActivateWindow(10501,plex://localhost./music/iTunes/Artists,return)</onclick>
+						<label>Playlist now</label>
+						<onclick>ActivateWindow(MusicPlaylist)</onclick>
+						<visible>Player.HasAudio</visible>
 					</item>
 					<item id="2">
-						<label>Compilations</label>
-						<onclick>ActivateWindow(10501,plex://localhost./music/iTunes/Compilations,return)</onclick>
+						<label>Now Playing</label>
+						<onclick>ActivateWindow(NowPlaying)</onclick>
+						<visible>Player.HasAudio</visible>
 					</item>
-					<item id="3">
-						<label>Tracks</label>
-						<onclick>ActivateWindow(10501,plex://localhost./music/iTunes/Tracks,return)</onclick>
-					</item>
-					<item id="3">
+					<item id="4">
 						<label>Playlists</label>
-						<onclick>ActivateWindow(10501,plex://localhost./music/iTunes/Playlists,return)</onclick>
+						<onclick>ActivateWindow(10501,plex://127.0.0.1:32400/music/iTunes/Playlists,return)</onclick>
+					</item>
+					<item id="5">
+						<label>Artists</label>
+						<onclick>ActivateWindow(10501,plex://127.0.0.1:32400/music/iTunes/Artists,return)</onclick>
+					</item>
+					<item id="6">
+						<label>Main</label>
+						<onclick>ActivateWindow(10501,plex://127.0.0.1:32400/music/iTunes,return)</onclick>
 					</item>
 				</content>
 			</control>		
@@ -108,9 +114,8 @@
 		-->
 		
 <!-- SETTINGS SUBMENU ----------------------------------------------------------------------------------------------->	
-			<control type="list" id="1150">
+			<!--<control type="list" id="1150">
 				<posx>-800</posx>
-				<posy>-0</posy>
 				<width>900</width>
 				<height>800</height>
 				<onup>1150</onup>
@@ -118,7 +123,7 @@
 				<onleft>300</onleft>
 				<orientation>vertical</orientation>
 				<scrolltime>150</scrolltime>
-				<visible allowhiddenfocus="true">Container(300).HasFocus(5)</visible>
+				<visible allowhiddenfocus="true">Container(300).HasFocus(5) | Container(301).HasFocus(5)</visible>
 				<include>homeSubFocus</include>
 				<include>homeMenusLayout</include>
 				<content>
@@ -147,11 +152,6 @@
 						<onclick>ActivateWindow(picturessettings)</onclick>
 						<onclick>Dialog.Close(shutdownmenu)</onclick>
 					</item>
-					<!--item id="7">
-						<label>Update Plex</label>
-						<onclick>ActivateWindow(networksettings)</onclick>
-						<onclick>Dialog.Close(shutdownmenu)</onclick>
-					</item-->
 					<item id="8">
 						<label>$LOCALIZE[8]</label>
 						<onclick>ActivateWindow(weathersettings)</onclick>
@@ -163,7 +163,7 @@
 						<onclick>Dialog.Close(shutdownmenu)</onclick>
 					</item>
 				</content>
-			</control>
+			</control>-->
 
 
 <!-- EXIT SUBMENU ----------------------------------------------------------------------------------------------->	
@@ -176,7 +176,7 @@
 				<onleft>300</onleft>
 				<orientation>vertical</orientation>
 				<scrolltime>150</scrolltime>
-				<visible allowhiddenfocus="true">Container(300).HasFocus(11)</visible>
+				<visible allowhiddenfocus="true">Container(300).HasFocus(11) | Container(301).HasFocus(11)</visible>
 				<include>homeSubFocus</include>
 				<include>homeMenusLayout</include>
 				<content>
