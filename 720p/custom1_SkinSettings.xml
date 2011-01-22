@@ -225,7 +225,6 @@
 				<onclick>Skin.ToggleSetting(plexonlineaccessories)</onclick>
 				<selected>Skin.HasSetting(plexonlineaccessories)</selected>
 				<include>settingsButton</include>
-				<visible>!Skin.HasSetting(originalhome)</visible>
 			</control>
 			<!-- MOD SKIN SETTING EXPERIMENTAL TESTING -->
 			<control type="radiobutton" id="210">

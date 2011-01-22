@@ -755,7 +755,7 @@
 			<posy>235r</posy>
 			<include>videoFullScreenInfo</include>
 			<include>transition2</include>
-			<visible>Player.ShowInfo + ![Window.IsActive(2000) | Window.IsVisible(script-XBMC_Lyrics-main.xml)]</visible>
+			<visible>Player.HasMusicPlaylist + Player.ShowInfo + ![Window.IsActive(2000) | Window.IsVisible(script-XBMC_Lyrics-main.xml)]</visible>
 			<control type="group">
 				<control type="image">
 					<width>1265</width>
