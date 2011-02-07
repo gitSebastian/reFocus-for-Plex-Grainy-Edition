@@ -221,7 +221,7 @@
 			<label>$INFO[ListItem.Plot]</label>
 			<textcolor>text</textcolor>
 			<font>smallsmallcase</font>
-			<visible>Skin.HasSetting(usesmallcase)</visible>
+			<visible>Skin.HasSetting(usesmallcase) + Control.IsVisible(555) + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
 		</control>
 		<!-- mixed case -->
 		<control type="textbox" id="8">
@@ -238,7 +238,7 @@
 			<label>$INFO[ListItem.Plot]</label>
 			<textcolor>text</textcolor>
 			<font>small</font>
-			<visible>!Skin.HasSetting(usesmallcase)</visible>
+			<visible>!Skin.HasSetting(usesmallcase) + Control.IsVisible(555) + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
 		</control>
 		<!-- faux frame non-library -->
 		<control type="image">
