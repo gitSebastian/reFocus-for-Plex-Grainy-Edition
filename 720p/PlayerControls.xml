@@ -1,205 +1,157 @@
+<?xml version="1.0"?>
 <window type="dialog" id="114">
-	<defaultcontrol always="true">15</defaultcontrol>
-	<visible>Player.HasMedia + Window.IsActive(PlayerControls) + !Window.IsActive(FullscreenVideo)</visible>
+	<defaultcontrol always="true">3</defaultcontrol>
+	<visible>Player.HasMedia + Window.IsActive(PlayerControls) + !Window.IsActive(FullscreenVideo) + !Window.IsActive(Visualisation)</visible>
 	<controls>
-
-<!---------- INFO IS ACTIVE -------------------->
-	
-		<control type="group" id="213">
-			<posx>328</posx>
-			<posy>635</posy>
-			<include>open_PlayerControls</include>
+		<control type="group">
+			<posx>0</posx>
+			<posy>70</posy>
+			<visible>Player.HasMusicPlaylist</visible>
 			<control type="image" id="1">
-				<width>568</width>
-				<height>72</height>
-				<texture border="48,33,48,33">OSD/playerControlsPanel.png</texture>>
+				<posx>325</posx>
+				<posy>530</posy>
+				<width>650</width>
+				<height>79</height>
+				<texture border="35,0,35,0">osd/background_slim.png</texture>
+				<include>open_PlayerControls</include>
 			</control>
-			<control type="image" id="1">
-				<width>568</width>
-				<height>72</height>
-				<texture border="48,33,48,33">OSD/playerControlsPanel.png</texture>
-			</control>
-		
-			<control type="group">
-				<posx>13</posx>
-				<posy>12</posy>
-				<control type="button" id="11">
-					<posx>0</posx>
-					<width>48</width>
-					<height>48</height>
-					<onleft>407</onleft>
-					<onright>12</onright>
-					<texturefocus>OSD/osd-button-ban-focus.png</texturefocus>
-					<texturenofocus>OSD/osd-button-ban.png</texturenofocus>
-					<onclick>XBMC.LastFM.Ban</onclick>
-					<include>osdButtonsd</include>
-					<enable>LastFM.RadioPlaying</enable>
-					<animation effect="fade" start="100" end="50" time="100" condition="!LastFM.RadioPlaying">Conditional</animation>
-				</control>
-				<control type="button" id="12">
-					<posx>55</posx>
-					<width>48</width>
-					<height>48</height>
-					<onleft>11</onleft>
-					<onright>13</onright>
-					<texturefocus>OSD/osd-button-love-focus.png</texturefocus>
-					<texturenofocus>OSD/osd-button-love.png</texturenofocus>
-					<onclick>XBMC.LastFM.Love</onclick>
-					<include>osdButtonsd</include>
-					<enable>LastFM.RadioPlaying</enable>
-					<animation effect="fade" start="100" end="50" time="100" condition="!LastFM.RadioPlaying">Conditional</animation>
-				</control>
-				<control type="button" id="13">
-					<posx>110</posx>
-					<width>48</width>
-					<height>48</height>
-					<onleft>12</onleft>
-					<onright>14</onright>
+			<control type="group" id="213">
+				<posx>341</posx>
+				<posy>549</posy>
+				<include>open_PlayerControls</include>
+				<control type="button" id="1">
+					<posx>195</posx>
+					<width>40</width>
+					<height>40</height>
+					<onleft>8</onleft>
+					<onright>2</onright>
 					<texturefocus>OSD/osd-button-prev-focus.png</texturefocus>
 					<texturenofocus>OSD/osd-button-prev.png</texturenofocus>
 					<onclick>XBMC.PlayerControl(Previous)</onclick>
-					<include>osdButtonsd</include>
 				</control>
-				<control type="button" id="14">
-					<posx>165</posx>
-					<width>48</width>
-					<height>48</height>
-					<onleft>13</onleft>
-					<onright>15</onright>
+				<control type="button" id="2">
+					<posx>235</posx>
+					<width>40</width>
+					<height>40</height>
+					<onleft>1</onleft>
+					<onright>3</onright>
 					<texturefocus>OSD/osd-button-rwd-focus.png</texturefocus>
 					<texturenofocus>OSD/osd-button-rwd.png</texturenofocus>
 					<onclick>XBMC.PlayerControl(Rewind)</onclick>
-					<include>osdButtonsd</include>
 				</control>
-				<control type="button" id="15">
-					<posx>220</posx>
-					<width>48</width>
-					<height>48</height>
-					<onleft>14</onleft>
-					<onright>16</onright>
-					<texturefocus>OSD/osd-button-play-focus.png</texturefocus>
-					<texturenofocus>OSD/osd-button-play.png</texturenofocus>
-					<onclick>XBMC.PlayerControl(Play)</onclick>
-					<visible>!Player.Paused</visible>
-					<include>osdButtonsd</include>
-				</control>
-				<control type="button" id="15">
-					<posx>220</posx>
-					<width>48</width>
-					<height>48</height>
-					<onleft>14</onleft>
-					<onright>16</onright>
-					<texturefocus>OSD/osd-button-play-focus.png</texturefocus>
-					<texturenofocus>OSD/osd-button-play.png</texturenofocus>
-					<onclick>XBMC.PlayerControl(Play)</onclick>
-					<visible>Player.Paused</visible>
-					<include>osdButtonsd</include>
-				</control>
-				<control type="button" id="16">
+				<control type="button" id="3">
 					<posx>275</posx>
-					<width>48</width>
-					<height>48</height>
-					<onleft>15</onleft>
-					<onright>17</onright>
+					<width>40</width>
+					<height>40</height>
+					<onleft>2</onleft>
+					<onright>4</onright>
+					<texturefocus>OSD/osd-button-play-focus.png</texturefocus>
+					<texturenofocus>OSD/osd-button-play.png</texturenofocus>
+					<onclick>XBMC.PlayerControl(Play)</onclick>
+				</control>
+				<control type="button" id="4">
+					<posx>315</posx>
+					<width>40</width>
+					<height>40</height>
+					<onleft>3</onleft>
+					<onright>5</onright>
 					<texturefocus>OSD/osd-button-fwd-focus.png</texturefocus>
 					<texturenofocus>OSD/osd-button-fwd.png</texturenofocus>
 					<onclick>XBMC.PlayerControl(Forward)</onclick>
-					<include>osdButtonsd</include>
 				</control>
-				<control type="button" id="17">
-					<posx>330</posx>
-					<width>48</width>
-					<height>48</height>
-					<onleft>16</onleft>
-					<onright>606</onright>
+				<control type="button" id="5">
+					<posx>355</posx>
+					<width>40</width>
+					<height>40</height>
+					<onleft>4</onleft>
+					<onright>6</onright>
 					<texturefocus>OSD/osd-button-next-focus.png</texturefocus>
 					<texturenofocus>OSD/osd-button-next.png</texturenofocus>
 					<onclick>XBMC.PlayerControl(Next)</onclick>
-					<include>osdButtonsd</include>
 				</control>
-				<control type="button" id="606">
-					<posx>385</posx>
-					<width>48</width>
-					<height>48</height>
+				<control type="button" id="6">
+					<posx>395</posx>
+					<width>40</width>
+					<height>40</height>
 					<texturefocus>OSD/osd-button-stop-focus.png</texturefocus>
 					<texturenofocus>OSD/osd-button-stop.png</texturenofocus>
-					<onleft>17</onleft>
-					<onright>406</onright>
-					<ondown>11</ondown>
-					<onleft>107</onleft>
+					<onleft>5</onleft>
+					<onright>7</onright>
 					<onclick>PlayerControl(Stop)</onclick>
 				</control>
-				<control type="button" id="406">
-					<posx>440</posx>
+				<!-- repeat -->
+				<control type="button" id="7">
+					<posy>-10</posy>
+					<posx>430</posx>
 					<width>48</width>
 					<height>48</height>
-					<onleft>606</onleft>
-					<onright>407</onright>
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
+					<onleft>6</onleft>
+					<onright>8</onright>
+					<label>repeat</label>
+					<textcolor>Color4</textcolor>
+					<focusedcolor>Color1</focusedcolor>
 					<onclick>XBMC.PlayerControl(Repeat)</onclick>
-					<include>osdButtonsd</include>
 				</control>
-				<control type="image" id="1">
-					<posx>440</posx>
+				<control type="group">
+					<posy>-18</posy>
+					<posx>490</posx>
+					<control type="label">
+						<width>48</width>
+						<height>48</height>
+						<label>off</label>
+						<font>smallsmallcase</font>
+						<textcolor>Color1</textcolor>
+						<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
+					</control>
+					<control type="label">
+						<width>48</width>
+						<height>48</height>
+						<label>one</label>
+						<font>smallsmallcase</font>
+						<textcolor>Color1</textcolor>
+						<visible>Playlist.IsRepeatOne</visible>
+					</control>
+					<control type="label">
+						<width>48</width>
+						<height>48</height>
+						<label>all</label>
+						<font>smallsmallcase</font>
+						<textcolor>Color1</textcolor>
+						<visible>Playlist.IsRepeat</visible>
+					</control>
+				</control>
+				<!-- shuffle -->
+				<control type="button" id="8">
+					<posy>-10</posy>
+					<posx>516</posx>
 					<width>48</width>
 					<height>48</height>
-					<texture>OSD/osd-button-repeat.png</texture>
-					<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
-					<visible>!Control.HasFocus(406)</visible>
-				</control>
-				<control type="image" id="1">
-					<posx>440</posx>
-					<width>48</width>
-					<height>48</height>
-					<texture>OSD/osd-button-repeat-focus.png</texture>
-					<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
-					<visible>Control.HasFocus(406)</visible>
-				</control>
-				<control type="image" id="1">
-					<posx>440</posx>
-					<width>48</width>
-					<height>48</height>
-					<texture>OSD/osd-button-repeatone.png</texture>
-					<visible>Playlist.IsRepeatOne</visible>
-					<visible>!Control.HasFocus(406)</visible>
-				</control>
-				<control type="image" id="1">
-					<posx>440</posx>
-					<width>48</width>
-					<height>48</height>
-					<texture>OSD/osd-button-repeatone-focus.png</texture>
-					<visible>Playlist.IsRepeatOne</visible>
-					<visible>Control.HasFocus(406)</visible>
-				</control>
-				<control type="image" id="1">
-					<posx>440</posx>
-					<width>48</width>
-					<height>48</height>
-					<texture>OSD/osd-button-repeatall.png</texture>
-					<visible>Playlist.IsRepeat</visible>
-					<visible>!Control.HasFocus(406)</visible>
-				</control>
-				<control type="image" id="1">
-					<posx>440</posx>
-					<width>48</width>
-					<height>48</height>
-					<texture>OSD/osd-button-repeatall-focus.png</texture>
-					<visible>Playlist.IsRepeat</visible>
-					<visible>Control.HasFocus(406)</visible>
-				</control>
-				<control type="togglebutton" id="407">
-					<posx>495</posx>
-					<width>48</width>
-					<height>48</height>
-					<onleft>406</onleft>
-					<onright>11</onright>
-					<texturefocus>OSD/osd-button-norandom-focus.png</texturefocus>
-					<texturenofocus>OSD/osd-button-norandom.png</texturenofocus>
-					<usealttexture>Playlist.IsRandom</usealttexture>
-					<alttexturefocus>OSD/osd-button-random-focus.png</alttexturefocus>
-					<alttexturenofocus>OSD/osd-button-random.png</alttexturenofocus>
+					<onleft>7</onleft>
+					<onright>1</onright>
+					<label>shuffle</label>
+					<textcolor>Color4</textcolor>
+					<focusedcolor>Color1</focusedcolor>
 					<onclick>XBMC.PlayerControl(Random)</onclick>
+				</control>
+				<control type="group">
+					<posy>-18</posy>
+					<posx>580</posx>
+					<control type="label">
+						<width>48</width>
+						<height>48</height>
+						<label>off</label>
+						<font>smallsmallcase</font>
+						<textcolor>Color1</textcolor>
+						<visible>!Playlist.IsRandom</visible>
+					</control>
+					<control type="label">
+						<width>48</width>
+						<height>48</height>
+						<label>on</label>
+						<font>smallsmallcase</font>
+						<textcolor>Color1</textcolor>
+						<visible>Playlist.IsRandom</visible>
+					</control>
 				</control>
 			</control>
 		</control>

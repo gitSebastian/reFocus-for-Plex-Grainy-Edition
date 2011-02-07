@@ -27,256 +27,6 @@
 		</control>
 		<!-- LIST VIEW NEW -->
 		<include>view_List_GrainyEdition</include>
-		<!-- LIST VIEW FANART -->
-		<include>view_ListVideo</include>
-		<control type="group">
-			<include>infoDialogHide</include>
-			<include>transition2</include>
-			<include>contextMenuHide</include>
-			<visible>Control.IsVisible(50)</visible>
-			<control type="group">
-				<posx>665</posx>
-				<posy>75</posy>
-				<visible>[[Container.Content(movies) | Container.Content(tvshows)] + Skin.HasSetting(ListViewFanart)] | Container.Content(artists) | Container.Content(musicvideos) | Container.Content(episodes)</visible>
-				<control type="image">
-					<width>562</width>
-					<height>340</height>
-					<texture border="48">frames/wideFrame.png</texture>
-					<aspectratio>stretch</aspectratio>
-					<include>thumbFadeTime</include>
-				</control>
-				<control type="largeimage">
-					<posx>26</posx>
-					<posy>27</posy>
-					<width>510</width>
-					<height>287</height>
-					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-					<texture fallback="backgrounds/library/moviesNoFanart.png" background="true" diffuse="frames/wideFrameMask.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
-					<include>thumbFadeTime</include>
-					<visible>Container.Content(movies)</visible>
-				</control>
-				<control type="largeimage">
-					<posx>26</posx>
-					<posy>27</posy>
-					<width>510</width>
-					<height>287</height>
-					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-					<texture fallback="backgrounds/library/TVShowsNoFanart.png" background="true" diffuse="frames/wideFrameMask.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
-					<include>thumbFadeTime</include>
-					<visible>Container.Content(tvshows)</visible>
-				</control>
-				<control type="largeimage">
-					<posx>26</posx>
-					<posy>27</posy>
-					<width>510</width>
-					<height>287</height>
-					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-					<texture fallback="backgrounds/library/artistNoFanart.png" background="true" diffuse="frames/wideFrameMask.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
-					<include>thumbFadeTime</include>
-					<visible>Container.Content(artists)</visible>
-				</control>
-				<control type="image">
-					<posx>26</posx>
-					<posy>27</posy>
-					<width>510</width>
-					<height>287</height>
-					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-					<texture background="true" fallback="backgrounds/library/TVShowsNoFanart.png" diffuse="frames/wideFrameMask.png">$INFO[ListItem.Thumb]</texture>
-					<include>thumbFadeTime</include>
-					<visible>IsEmpty(ListItem.Property(Fanart_Image)) | Container.Content(episodes)</visible>
-				</control>
-				<control type="image">
-					<posx>26</posx>
-					<posy>27</posy>
-					<width>510</width>
-					<height>287</height>
-					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-					<texture background="true" fallback="backgrounds/library/musicVideoNoFanart.png" diffuse="frames/wideFrameMask.png">$INFO[ListItem.Thumb]</texture>
-					<include>thumbFadeTime</include>
-					<visible>Container.Content(musicvideos)</visible>
-				</control>
-				<control type="image">
-					<posx>510</posx>
-					<posy>286</posy>
-					<include>watchedOverlay</include>
-					<visible>[Container.Content(movies) + Skin.HasSetting(overlayMovies)] | [Container.Content(tvshows) + Skin.HasSetting(overlayTVShows)] | [Container.Content(episodes) + Skin.HasSetting(overlayEpisodes)]</visible>
-				</control>
-			</control>
-			<!-- hd flag movies -->
-			<control type="image">
-				<posx>692</posx>
-				<posy>363</posy>
-				<width>39</width>
-				<height>24</height>
-				<texture>$INFO[Listitem.Property(mediaTag-videoResolution),flags/biglistresolution/,.png]</texture>
-				<aspectratio align="right">keep</aspectratio>
-				<visible>Control.IsVisible(50) + Container.Content(movies) + Skin.HasSetting(ListViewFanart) + [Skin.HasSetting(onlyfocusflagpanel) | Skin.HasSetting(enablehdflags)]</visible>
-				<include>infoDialogHide</include>
-				<include>transition2</include>
-				<include>contextMenuHide</include>
-			</control>
-			<!-- fanart view plot -->
-			<!-- plot separators -->
-			<control type="image">
-				<posx>550</posx>
-				<posy>414</posy>
-				<width>700</width>
-				<height>1</height>
-				<texture>views/separatorFaded.png</texture>
-				<colordiffuse>Color4</colordiffuse>
-				<visible>Control.IsVisible(50) + [[Container.Content(movies) + Skin.HasSetting(ListViewFanart)] | [Container.Content(tvshows) + Skin.HasSetting(ListViewFanart)] | Container.Content(episodes)]</visible>
-			</control>
-			<control type="image">
-				<posx>550</posx>
-				<posy>655</posy>
-				<width>700</width>
-				<height>1</height>
-				<texture>views/separatorFaded.png</texture>
-				<colordiffuse>Color4</colordiffuse>
-				<visible>Control.IsVisible(50) + [[Container.Content(movies) + Skin.HasSetting(ListViewFanart)] | [Container.Content(tvshows) + Skin.HasSetting(ListViewFanart)] | Container.Content(episodes)]</visible>
-			</control>
-			<control type="group">
-				<posx>700</posx>
-				<posy>415</posy>
-				<visible>Control.IsVisible(50) + [[Container.Content(movies) + Skin.HasSetting(ListViewFanart)] | [Container.Content(tvshows) + Skin.HasSetting(ListViewFanart)] | Container.Content(episodes)]</visible>
-				<include>transition2</include>
-				<!-- original small caps -->
-				<control type="textbox" id="8">
-					<width>485</width>
-					<height>240</height>
-					<align>left</align>
-					<aligny>top</aligny>
-					<label>$INFO[ListItem.Plot]</label>
-					<textcolor>Color7</textcolor>
-					<font>normalLow</font>
-					<visible>!Skin.HasSetting(usecapitalisation)</visible>
-				</control>
-				<!-- use capitalisation -->
-				<control type="textbox" id="8">
-					<width>485</width>
-					<height>240</height>
-					<align>left</align>
-					<aligny>top</aligny>
-					<label>$INFO[ListItem.Plot]</label>
-					<textcolor>Color7</textcolor>
-					<font>normal</font>
-					<visible>Skin.HasSetting(usecapitalisation)</visible>
-				</control>
-			</control>
-		</control>
-		<!-- LIST VIEW POSTER -->
-		<control type="group">
-			<posx>740</posx>
-			<posy>54</posy>
-			<visible>[Control.IsVisible(50) + [Container.Content(movies) | Container.Content(tvshows)] + !Skin.HasSetting(ListViewFanart)] | Control.IsVisible(50) + [Container.Content(seasons) | Container.Content(actors)]</visible>
-			<include>infoDialogHide</include>
-			<include>transition2</include>
-			<include>contextMenuHide</include>
-			<control type="image">
-				<width>475</width>
-				<height>641</height>
-				<texture border="48">frames/posterFrame3.png</texture>
-				<aspectratio>stretch</aspectratio>
-				<include>thumbFadeTime</include>
-			</control>
-			<!-- scale -->
-			<control type="image">
-				<posx>33</posx>
-				<posy>32</posy>
-				<width>390</width>
-				<height>585</height>
-				<texture diffuse="frames/posterFrameMask.png" fallback="thumbs/movie.png">$INFO[ListItem.Thumb]</texture>
-				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-				<include>thumbFadeTime</include>
-				<visible>Container.Content(movies) + !Skin.HasSetting(grainystretchthemposters)</visible>
-			</control>
-			<control type="image">
-				<posx>33</posx>
-				<posy>32</posy>
-				<width>390</width>
-				<height>585</height>
-				<texture diffuse="frames/posterFrameMask.png" fallback="thumbs/tvshow.png">$INFO[ListItem.Thumb]</texture>
-				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-				<include>thumbFadeTime</include>
-				<visible>Container.Content(tvshows) | Container.Content(seasons) + !Skin.HasSetting(grainystretchthemposters)</visible>
-			</control>
-			<control type="image">
-				<posx>33</posx>
-				<posy>32</posy>
-				<width>390</width>
-				<height>585</height>
-				<texture diffuse="frames/posterFrameMask.png" fallback="thumbs/tvshow.png">$INFO[Container.TVShowThumb]</texture>
-				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-				<include>thumbFadeTime</include>
-				<visible>Container.Content(seasons) + IsEmpty(ListItem.Title) + !Skin.HasSetting(grainystretchthemposters)</visible>
-			</control>
-			<control type="image">
-				<posx>33</posx>
-				<posy>32</posy>
-				<width>390</width>
-				<height>585</height>
-				<texture diffuse="frames/posterFrameMask.png" fallback="thumbs/actor.png">$INFO[ListItem.Thumb]</texture>
-				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-				<include>thumbFadeTime</include>
-				<visible>Container.Content(actors) + !Skin.HasSetting(grainystretchthemposters)</visible>
-			</control>
-			<!-- stretch -->
-			<control type="image">
-				<posx>33</posx>
-				<posy>32</posy>
-				<width>390</width>
-				<height>585</height>
-				<texture diffuse="frames/posterFrameMask.png" fallback="thumbs/movie.png">$INFO[ListItem.Thumb]</texture>
-				<aspectratio scalediffuse="false" align="center">strecth</aspectratio>
-				<include>thumbFadeTime</include>
-				<visible>Container.Content(movies) + Skin.HasSetting(grainystretchthemposters)</visible>
-			</control>
-			<control type="image">
-				<posx>33</posx>
-				<posy>32</posy>
-				<width>390</width>
-				<height>585</height>
-				<texture diffuse="frames/posterFrameMask.png" fallback="thumbs/tvshow.png">$INFO[ListItem.Thumb]</texture>
-				<aspectratio scalediffuse="false" align="center">strecth</aspectratio>
-				<include>thumbFadeTime</include>
-				<visible>Container.Content(tvshows) | Container.Content(seasons) + Skin.HasSetting(grainystretchthemposters)</visible>
-			</control>
-			<control type="image">
-				<posx>33</posx>
-				<posy>32</posy>
-				<width>390</width>
-				<height>585</height>
-				<texture diffuse="frames/posterFrameMask.png" fallback="thumbs/tvshow.png">$INFO[Container.TVShowThumb]</texture>
-				<aspectratio scalediffuse="false" align="center">strecth</aspectratio>
-				<include>thumbFadeTime</include>
-				<visible>Container.Content(seasons) + IsEmpty(ListItem.Title) + Skin.HasSetting(grainystretchthemposters)</visible>
-			</control>
-			<control type="image">
-				<posx>33</posx>
-				<posy>32</posy>
-				<width>390</width>
-				<height>585</height>
-				<texture diffuse="frames/posterFrameMask.png" fallback="thumbs/actor.png">$INFO[ListItem.Thumb]</texture>
-				<aspectratio scalediffuse="false" align="center">strecth</aspectratio>
-				<include>thumbFadeTime</include>
-				<visible>Container.Content(actors) + Skin.HasSetting(grainystretchthemposters)</visible>
-			</control>
-			<!--<control type="image">
-				<posx>403</posx>
-				<posy>589</posy>
-				<include>watchedOverlay</include>
-				<visible>[Container.Content(movies) + Skin.HasSetting(overlayMovies)] | [Container.Content(tvshows) + Skin.HasSetting(overlayTVShows)]</visible>
-			</control>-->
-			<control type="image">
-				<posx>35</posx>
-				<posy>585</posy>
-				<width>64</width>
-				<height>28</height>
-				<texture>$INFO[Listitem.Property(mediaTag-videoResolution),flags/listviewposter/,.png]</texture>
-				<aspectratio align="left">keep</aspectratio>
-				<visible>Container.Content(movies) + [Skin.HasSetting(enablehdflags) | Skin.HasSetting(onlyfocusflagpanel)]</visible>
-			</control>
-		</control>
 		<!-- SLIDE VIEW MOVIES & TVSHOWS -->
 		<!-- media flags -->
 		<control type="group">
@@ -286,10 +36,9 @@
 			<visible>!IsEmpty(ListItem.Title) + [Control.IsVisible(52) | Control.IsVisible(55)] + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]</visible>
 			<!-- studio flag on the left -->
 			<control type="group">
-				<posx>60</posx>
+				<posx>20</posx>
 				<posy>459</posy>
 				<include>studioFlags52</include>
-				<visible>Skin.HasSetting(slidestudioshowleft)</visible>
 			</control>
 			<!-- mod : the typeflags has been changed to one more complete, can be found in IncludesFlags.xml -->
 			<!-- conditional, visibility can be controlled via menu -->
@@ -399,7 +148,7 @@
 				<label>$INFO[ListItem.PlotOutline]</label>
 				<textcolor>text</textcolor>
 				<font>normalLow</font>
-				<visible>!IsEmpty(ListItem.Plotoutline) + !Skin.HasSetting(usecapitalisation)</visible>
+				<visible>!IsEmpty(ListItem.Plotoutline) + Skin.HasSetting(usesmallcase)</visible>
 			</control>
 			<control type="textbox" id="8">
 				<posy>60</posy>
@@ -410,7 +159,7 @@
 				<label>$INFO[ListItem.Plot]</label>
 				<textcolor>text</textcolor>
 				<font>normalLow</font>
-				<visible>IsEmpty(ListItem.Plotoutline) + !Skin.HasSetting(usecapitalisation)</visible>
+				<visible>IsEmpty(ListItem.Plotoutline) + Skin.HasSetting(usesmallcase)</visible>
 			</control>
 			<!-- use capitalisation -->
 			<control type="textbox" id="8">
@@ -422,7 +171,7 @@
 				<label>$INFO[ListItem.PlotOutline]</label>
 				<textcolor>text</textcolor>
 				<font>normal</font>
-				<visible>!IsEmpty(ListItem.Plotoutline) + Skin.HasSetting(usecapitalisation)</visible>
+				<visible>!IsEmpty(ListItem.Plotoutline) + !Skin.HasSetting(usesmallcase)</visible>
 			</control>
 			<control type="textbox" id="8">
 				<posy>60</posy>
@@ -433,7 +182,7 @@
 				<label>$INFO[ListItem.Plot]</label>
 				<textcolor>text</textcolor>
 				<font>normal</font>
-				<visible>IsEmpty(ListItem.Plotoutline) + Skin.HasSetting(usecapitalisation)</visible>
+				<visible>IsEmpty(ListItem.Plotoutline) + !Skin.HasSetting(usesmallcase)</visible>
 			</control>
 		</control>
 		<include>view_SlideWide</include>
@@ -462,7 +211,7 @@
 			<control type="label">
 				<posy>35</posy>
 				<width>980</width>
-				<label>$LOCALIZE[31087] $INFO[ListItem.Season] &#xB7; $LOCALIZE[31088] $INFO[ListItem.Episode] &#xB7; $INFO[ListItem.Date]</label>
+				<label>$LOCALIZE[31087] $INFO[ListItem.Season] &#xB7; $LOCALIZE[31088] $INFO[ListItem.Episode] &#xB7; $INFO[ListItem.Date] &#xB7; $INFO[ListItem.Duration,, ]</label>
 				<align>left</align>
 				<include>Heading3</include>
 				<visible>!IsEmpty(ListItem.Title)</visible>
@@ -504,7 +253,7 @@
 				<label>$INFO[ListItem.Plot]</label>
 				<textcolor>Color7</textcolor>
 				<font>normalLow</font>
-				<visible>!Skin.HasSetting(usecapitalisation)</visible>
+				<visible>Skin.HasSetting(usesmallcase)</visible>
 			</control>
 			<!-- use capitalisation -->
 			<control type="textbox" id="8">
@@ -516,7 +265,7 @@
 				<label>$INFO[ListItem.Plot]</label>
 				<textcolor>Color7</textcolor>
 				<font>normal</font>
-				<visible>Skin.HasSetting(usecapitalisation)</visible>
+				<visible>!Skin.HasSetting(usesmallcase)</visible>
 			</control>
 		</control>
 		<!-- media flags, optional -->
@@ -660,7 +409,7 @@
 				<label>$INFO[ListItem.Plot]</label>
 				<textcolor>Color1</textcolor>
 				<font>normalLow</font>
-				<visible>!Skin.HasSetting(usecapitalisation)</visible>
+				<visible>Skin.HasSetting(usesmallcase)</visible>
 			</control>
 			<!-- use capitalisation -->
 			<control type="textbox" id="4">
@@ -671,7 +420,7 @@
 				<label>$INFO[ListItem.Plot]</label>
 				<textcolor>Color1</textcolor>
 				<font>normal</font>
-				<visible>Skin.HasSetting(usecapitalisation)</visible>
+				<visible>!Skin.HasSetting(usesmallcase)</visible>
 			</control>
 		</control>
 		<!-- GALLERY VIEW -->
@@ -944,7 +693,7 @@
 				<label>$INFO[ListItem.Plot]</label>
 				<font>normalLow</font>
 				<textcolor>Color6</textcolor>
-				<visible>!Skin.HasSetting(usecapitalisation)</visible>
+				<visible>Skin.HasSetting(usesmallcase)</visible>
 			</control>
 			<!-- use mixed case -->
 			<control type="textbox" id="4">
@@ -956,7 +705,7 @@
 				<label>$INFO[ListItem.Plot]</label>
 				<font>normal</font>
 				<textcolor>Color6</textcolor>
-				<visible>Skin.HasSetting(usecapitalisation)</visible>
+				<visible>!Skin.HasSetting(usesmallcase)</visible>
 			</control>
 		</control>
 		<!-- ICONVIEW ADD-ONS -->

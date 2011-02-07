@@ -76,7 +76,7 @@
 				<include>infoDialogMeta</include>
 				<visible>!IsEmpty(ListItem.Duration)</visible>
 			</control>
-			<control type="label" id="1">
+			<!--<control type="label" id="1">
 				<width>740</width>
 				<label>$LOCALIZE[248] [COLOR=Color1]$INFO[ListItem.AudioLanguage][/COLOR]</label>
 				<scroll>true</scroll>
@@ -89,7 +89,7 @@
 				<scroll>true</scroll>
 				<include>infoDialogMeta</include>
 				<visible>!IsEmpty(ListItem.SubtitleLanguage)</visible>
-			</control>
+			</control>-->
 			<control type="label" id="1">
 				<width>740</width>
 				<label>$LOCALIZE[563] [COLOR=Color1]$INFO[ListItem.MPAA][/COLOR]</label>
@@ -429,8 +429,26 @@
 				<posx>33</posx>
 				<posy>32</posy>
 				<width>395</width>
-				<height>569</height>
+				<height>585</height>
 				<texture diffuse="frames/posterFrameMask.png" fallback="thumbs/movie.png" scalediffuse="false">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+				<visible>Container.Content(movies) + !Skin.HasSetting(grainystretchthemposters)</visible>
+			</control>
+			<control type="largeimage">
+				<posx>33</posx>
+				<posy>32</posy>
+				<width>395</width>
+				<height>585</height>
+				<texture diffuse="frames/posterFrameMask.png" scalediffuse="false">$INFO[listitem.path]poster.png</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+				<visible>Container.Content(movies) + !Skin.HasSetting(grainystretchthemposters)</visible>
+			</control>
+			<control type="largeimage">
+				<posx>33</posx>
+				<posy>32</posy>
+				<width>395</width>
+				<height>585</height>
+				<texture diffuse="frames/posterFrameMask.png" scalediffuse="false">$INFO[listitem.path]poster.jpg</texture>
 				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 				<visible>Container.Content(movies) + !Skin.HasSetting(grainystretchthemposters)</visible>
 			</control>
@@ -439,8 +457,26 @@
 				<posx>33</posx>
 				<posy>32</posy>
 				<width>395</width>
-				<height>569</height>
+				<height>585</height>
 				<texture diffuse="frames/posterFrameMask.png" fallback="thumbs/movie.png" scalediffuse="false">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
+				<visible>Container.Content(movies) + Skin.HasSetting(grainystretchthemposters)</visible>
+			</control>
+			<control type="largeimage">
+				<posx>33</posx>
+				<posy>32</posy>
+				<width>395</width>
+				<height>585</height>
+				<texture diffuse="frames/posterFrameMask.png" scalediffuse="false">$INFO[listitem.path]poster.png</texture>
+				<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
+				<visible>Container.Content(movies) + Skin.HasSetting(grainystretchthemposters)</visible>
+			</control>
+			<control type="largeimage">
+				<posx>33</posx>
+				<posy>32</posy>
+				<width>395</width>
+				<height>585</height>
+				<texture diffuse="frames/posterFrameMask.png" scalediffuse="false">$INFO[listitem.path]poster.jpg</texture>
 				<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
 				<visible>Container.Content(movies) + Skin.HasSetting(grainystretchthemposters)</visible>
 			</control>
@@ -449,8 +485,26 @@
 				<posx>33</posx>
 				<posy>32</posy>
 				<width>395</width>
-				<height>569</height>
+				<height>585</height>
 				<texture diffuse="frames/posterFrameMask.png" fallback="thumbs/tvshow.png" scalediffuse="false">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+				<visible>[Container.Content(tvshows) | Container.Content(seasons)] + !Skin.HasSetting(grainystretchthemposters)</visible>
+			</control>
+			<control type="largeimage">
+				<posx>33</posx>
+				<posy>32</posy>
+				<width>395</width>
+				<height>585</height>
+				<texture diffuse="frames/posterFrameMask.png" scalediffuse="false">$INFO[listitem.path]poster.png</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+				<visible>[Container.Content(tvshows) | Container.Content(seasons)] + !Skin.HasSetting(grainystretchthemposters)</visible>
+			</control>
+			<control type="largeimage">
+				<posx>33</posx>
+				<posy>32</posy>
+				<width>395</width>
+				<height>585</height>
+				<texture diffuse="frames/posterFrameMask.png" scalediffuse="false">$INFO[listitem.path]poster.jpg</texture>
 				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 				<visible>[Container.Content(tvshows) | Container.Content(seasons)] + !Skin.HasSetting(grainystretchthemposters)</visible>
 			</control>
@@ -459,9 +513,27 @@
 				<posx>33</posx>
 				<posy>32</posy>
 				<width>395</width>
-				<height>569</height>
+				<height>585</height>
 				<texture diffuse="frames/posterFrameMask.png" fallback="thumbs/tvshow.png" scalediffuse="false">$INFO[ListItem.Thumb]</texture>
 				<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
+				<visible>[Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(grainystretchthemposters)</visible>
+			</control>
+			<control type="largeimage">
+				<posx>33</posx>
+				<posy>32</posy>
+				<width>395</width>
+				<height>585</height>
+				<texture diffuse="frames/posterFrameMask.png" scalediffuse="false">$INFO[listitem.path]poster.png</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+				<visible>[Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(grainystretchthemposters)</visible>
+			</control>
+			<control type="largeimage">
+				<posx>33</posx>
+				<posy>32</posy>
+				<width>395</width>
+				<height>585</height>
+				<texture diffuse="frames/posterFrameMask.png" scalediffuse="false">$INFO[listitem.path]poster.jpg</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 				<visible>[Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(grainystretchthemposters)</visible>
 			</control>
 			<!-- scale mugshot -->

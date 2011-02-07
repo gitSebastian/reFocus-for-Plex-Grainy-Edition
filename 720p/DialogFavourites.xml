@@ -56,8 +56,8 @@
 					<font>mediumLow</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>Color4</textcolor>
-					<selectedcolor>Color2</selectedcolor>
+					<textcolor>Color1</textcolor>
+					<selectedcolor>Color6</selectedcolor>
 					<info>ListItem.Label</info>
 				</control>
 			</itemlayout>
@@ -81,8 +81,8 @@
 					<font>mediumLow</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>Color1</textcolor>
-					<selectedcolor>Color2</selectedcolor>
+					<textcolor>Color6</textcolor>
+					<selectedcolor>Color6</selectedcolor>
 					<info>ListItem.Label</info>
 				</control>
 			</focusedlayout>
@@ -98,8 +98,7 @@
 			<font>medium</font>
 			<label>$INFO[Container(450).CurrentPage]/$INFO[Container(450).NumPages]</label>
 			<visible>!Control.IsVisible(451)</visible>
-			<textcolor>Color4</textcolor>
-			<shadowcolor>fff4f4f4</shadowcolor>
+			<textcolor>Color1</textcolor>
 		</control>
 
 	</controls>

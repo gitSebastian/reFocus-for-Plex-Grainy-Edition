@@ -21,13 +21,13 @@
 				<include>contextMenuHide</include>
 	
 				<itemlayout width="560" height="40">
-					<control type="label">
-						<posx>40</posx>
-						<width>700</width>
-						<label>[UPPERCASE]$INFO[ListItem.Label,, ][COLOR=Color2]($INFO[ListItem.Property(Addon.Status)])[/COLOR][/UPPERCASE]</label>
-						<include>listMenu</include>
-						<visible>!IsEmpty(ListItem.Property(Addon.Status))</visible>
-					</control>
+						<control type="label">
+							<posx>40</posx>
+							<width>700</width>
+							<label>[UPPERCASE]$INFO[ListItem.Label,, ][COLOR=Color2]($INFO[ListItem.Property(Addon.Status)])[/COLOR][/UPPERCASE]</label>
+							<include>listMenu</include>
+							<visible>!IsEmpty(ListItem.Property(Addon.Status))</visible>
+						</control>
 					<control type="label">
 						<posx>40</posx>
 						<width>700</width>

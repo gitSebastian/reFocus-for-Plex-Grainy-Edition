@@ -14,6 +14,7 @@
 			<include>homeMenuToggle</include>
 			<include>homeMenusLayout</include>
 			<content>
+				
 				<item id="1">
 					<label>$LOCALIZE[1036]</label>
 					<onclick>ActivateWindow(Favourites)</onclick>
@@ -29,7 +30,11 @@
 					<onclick>SetFocus(1120)</onclick>
 					<visible>Skin.HasSetting(iTunesHome)</visible>
 				</item>
-				
+				<!--<item id="4">
+                    <label>$LOCALIZE[31006]</label>
+					<onclick>SetFocus(1140)</onclick>
+					<visible>!Skin.HasSetting(homemenuAccessories)</visible>
+				</item>-->
                 <!--<item id="4">
 					<label>$LOCALIZE[0]</label>
 						<onclick>ActivateWindow(Programs)</onclick>
@@ -153,7 +158,8 @@
 						<label>&#xB7; $LOCALIZE[13000]</label>
 						<onclick>ActivateWindow(systemsettings)</onclick>
 						<onclick>Dialog.Close(shutdownmenu)</onclick>
-					</item>				
+					</item>
+				
 			</content>
 		</control>
 	</include>

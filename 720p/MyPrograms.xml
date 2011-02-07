@@ -67,40 +67,7 @@
 				<textcolor>title</textcolor>
 				<include>Heading</include>
 			</control>-->
-			<control type="label">
-				<posx>320</posx>
-				<posy>165</posy>
-				<width>300</width>
-				<label>$INFO[ListItem.Year]</label>
-				<align>right</align>
-				<font>small</font>
-				<include>grainybeigetext</include>
-				<visible>!IsEmpty(ListItem.Year)</visible>
-			</control>
-			<!-- small case -->
-			<control type="textbox" id="8">
-				<posy>570</posy>
-				<width>340</width>
-				<height>120</height>
-				<align>left</align>
-				<aligny>top</aligny>
-				<label>$INFO[ListItem.Plot]</label>
-				<textcolor>text</textcolor>
-				<font>smallsmallcase</font>
-				<visible>!Skin.HasSetting(usecapitalisation)</visible>
-			</control>
-			<!-- mixed case -->
-			<control type="textbox" id="8">
-				<posy>570</posy>
-				<width>340</width>
-				<height>110</height>
-				<align>left</align>
-				<aligny>top</aligny>
-				<label>$INFO[ListItem.Plot]</label>
-				<textcolor>text</textcolor>
-				<font>small</font>
-				<visible>Skin.HasSetting(usecapitalisation)</visible>
-			</control>
+			
 		</control>
 	</controls>
 </window>

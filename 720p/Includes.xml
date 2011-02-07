@@ -10,8 +10,10 @@
 	<include file="ViewsAddons.xml">-</include>
 	<include file="ViewsShared.xml">-</include>
 	<include file="HomeMenu.xml">-</include>
+	<include file="HomeMenuNew.xml">-</include>
 	<include file="HomeMenu_Original.xml">-</include>
 	<include file="HomeSubMenu.xml">-</include>
+	<include file="HomeSubMenuNew.xml">-</include>
 	<include file="HomeSubMenu_Original.xml">-</include>
 	<include file="HomeMusicMenu.xml">-</include>
 	<include file="HomeVideoMenu.xml">-</include>
@@ -33,6 +35,59 @@
 	<include file="IncludesAnimations.xml">-</include>
 	<include file="IncludesDialogs.xml">-</include>
 	<include file="IncludesPageControl.xml">-</include>
+	
+	<!-- go home button -->
+	<include name="goHome">
+		<control type="button" id="72">
+			<onfocus>ReplaceWindow(Home)</onfocus>
+			<texturenofocus>-</texturenofocus>
+			<texturefocus>-</texturefocus>
+		</control>
+	</include>
+	<!-- new type logo -->
+	<include name="newtypelogo">
+		<control type="group">
+			<posx>20</posx>
+			<posy>27</posy>
+			<include>transition2</include>
+			<!-- reFOCUS -->
+			<control type="group">
+				<control type="label" id="200">
+					<font>logoRe</font>
+					<label>re</label>
+				</control>
+				<control type="label" id="200">
+					<posx>50</posx>
+					<posy>-2</posy>
+					<font>logoFocus</font>
+					<label>FOCUS</label>
+				</control>
+			</control>
+			<!-- for PLEX -->
+			<control type="group">
+				<posx>40</posx>
+				<posy>37</posy>
+				<control type="label" id="200">
+					<posx>10</posx>
+					<posy>4</posy>
+					<font>logoFor</font>
+					<label>for</label>
+				</control>
+				<control type="label" id="200">
+					<posx>51</posx>
+					<font>logoPlex</font>
+					<label>PLEX</label>
+				</control>
+			</control>
+			<!-- Grainy Edition -->
+			<control type="label" id="200">
+				<posx>140</posx>
+				<posy>65</posy>
+				<font>small</font>
+				<label>Grainy Edition</label>
+			</control>
+		</control>
+	</include>
 	<!-- new big list focused title fade-in -->
 	<include name="grainybiglisttextfade">
 		<animation type="Focus" condition="Container.OnNext">
@@ -274,7 +329,6 @@
 		<font>mediumCaps</font>
 		<aligny>center</aligny>
 		<textcolor>Color1</textcolor>
-		<animation effect="slide" start="0" end="-45" time="100" tween="Cubic" condition="Window.IsActive(107)">Conditional</animation>
 		<include>transition3</include>
 	</include>
 	<include name="notificationBottom">
@@ -285,7 +339,6 @@
 		<height>40</height>
 		<aligny>center</aligny>
 		<include>grainybeigetext</include>
-		<animation effect="slide" start="0" end="-45" time="100" tween="Cubic" condition="Window.IsActive(107)">Conditional</animation>
 		<include>transition3</include>
 	</include>
 	<include name="notificationSide">
@@ -313,7 +366,7 @@
 	</include>
 	<include name="scrollOffset">
 		<control type="group">
-			<visible>Container.Scrolling + !Skin.HasSetting(hidescrolloffset)</visible>
+			<visible>Container.Scrolling + Skin.HasSetting(hidescrolloffset)</visible>
 			<control type="label">
 				<posx>34</posx>
 				<posy>24</posy>
@@ -402,22 +455,14 @@
 		<include>grainybeigetext</include>
 	</include>
 	<!-- HOMESCREEN INCLUDES -->
-	<!-- dynamic legacy menu vertical position if logo is shown or not -->
-	<include name="legacyMenuPositionWithLogo">
-		<posy>150</posy>
-	</include>
-	<include name="legacyMenuPositionWithoutLogo">
-		<posy>100</posy>
-	</include>	
 	<include name="homeMenusLayout">
-		<include condition="Skin.HasSetting(hideplexhomelogo)">legacyMenuPositionWithoutLogo</include>
-		<include condition="!Skin.HasSetting(hideplexhomelogo)">legacyMenuPositionWithLogo</include>
+		<posy>120</posy>
 		<itemlayout width="375" height="50">
 			<control type="label">
 				<posx>20</posx>
 				<width>375</width>
-				<height>52</height>
-				<font>homeMenu</font>
+				<height>50</height>
+				<font>homeMenuNew</font>
 				<align>left</align>
 				<label>$INFO[ListItem.Label]</label>
 				<textcolor>Color7</textcolor>
@@ -427,7 +472,7 @@
 			<!-- normal focus background -->
 			<control type="image">
 				<posx>-150</posx>
-				<posy>-51</posy>
+				<posy>-52</posy>
 				<width>600</width>
 				<height>163</height>
 				<aspectratio align="left">stretch</aspectratio>
@@ -441,7 +486,7 @@
 			<!-- weather stretched focus background -->
 			<control type="image">
 				<posx>-150</posx>
-				<posy>-51</posy>
+				<posy>-52</posy>
 				<width>1100</width>
 				<height>163</height>
 				<aspectratio align="left">stretch</aspectratio>
@@ -464,8 +509,8 @@
 			<control type="label">
 				<posx>20</posx>
 				<width>375</width>
-				<height>52</height>
-				<font>homeMenu</font>
+				<height>50</height>
+				<font>homeMenuNew</font>
 				<align>left</align>
 				<textcolor>ff000000</textcolor>
 				<label>$INFO[ListItem.Label]</label>
@@ -475,8 +520,8 @@
 			<control type="label">
 				<posx>20</posx>
 				<width>1200</width>
-				<height>52</height>
-				<font>homeMenu</font>
+				<height>50</height>
+				<font>homeMenuNew</font>
 				<align>left</align>
 				<textcolor>ff000000</textcolor>
 				<label>[LOWERCASE]$INFO[ListItem.Label2][/LOWERCASE] [COLOR 99000000]$INFO[ListItem.Label][COLOR]</label>
@@ -484,44 +529,42 @@
 				<visible>!IsEmpty(Listitem.Label2)</visible>
 			</control>
 		</focusedlayout>
-		
 	</include>
 	<!-- CLOCK IN VIDEO INFO SCREEN -->
 	<include name="clock">
-		<control type="group">
-			<include>fadeinout</include>
-			<posx>1160</posx>
-			<posy>10</posy>
-			<control type="label" id="200">
+		<control type="label" id="200">
 				<posy>0</posy>
 				<width>110</width>
 				<height>34</height>
-				<label>[B]$INFO[System.Time][/B]</label>
-				<align>center</align>
+				<label>$INFO[System.Time]</label>
+				<align>right</align>
 				<font>medium</font>
-				<include>grainybeigetext</include>
+				<textcolor>Color1</textcolor>
 			</control>
-		</control>
 	</include>
 	<!-- global clock & date -->
 	<include name="libClock">
 		<include>transition2</include>
-		<control type="label" id="200">
-			<posx>33r</posx>
-			<posy>9</posy>
-			<label>$INFO[System.Time]</label>
-			<include>notificationTop</include>
-			<visible>![Player.HasMedia + !Skin.HasSetting(overlay) + (!Skin.HasSetting(legacymenucopperfieldmode) + Window.IsActive(Home)] + ![Control.IsVisible(56)] + ![Window.IsActive(133) | Window.IsActive(112) | Window.IsActive(107) | Window.IsActive(2004) | Window.IsActive(12600)] + ![Window.IsActive(2) + Control.IsVisible(52)] | Window.IsActive(111)</visible>
-		</control>
-		<!-- date under the clock -->
-		<control type="label" id="200">
-			<posx>33r</posx>
-			<posy>29</posy>
-			<label>$INFO[System.Date]</label>
-			<include>grainybeigetext</include>
-			<font>medium</font>
-			<include>notificationBottom</include>
-			<visible>![Player.HasMedia + !Skin.HasSetting(overlay) + (!Skin.HasSetting(legacymenucopperfieldmode) + Window.IsActive(Home)] + ![Control.IsVisible(56)] + ![Window.IsActive(133) | Window.IsActive(112) | Window.IsActive(107) | Window.IsActive(2004) | Window.IsActive(12600)] + ![Window.IsActive(2) + Control.IsVisible(52)]</visible>
+		<control type="group">
+			<visible>!Skin.HasSetting(homeTime)</visible>
+			<control type="label" id="200">
+				<posx>33r</posx>
+				<posy>9</posy>
+				<font>homeClock</font>
+				<label>$INFO[System.Time]</label>
+				<include>notificationTop</include>
+				<visible>!Skin.HasSetting(homeTime) | ![Player.HasMedia + !Skin.HasSetting(overlay) + !Window.IsActive(Home)] + ![Control.IsVisible(56)] + ![Window.IsActive(133) | Window.IsActive(112) | Window.IsActive(2004) | Window.IsActive(12600)] + ![Window.IsActive(2) + Control.IsVisible(52)] | Window.IsActive(111)]</visible>
+			</control>
+			<!-- date under the clock -->
+			<control type="label" id="200">
+				<posx>33r</posx>
+				<posy>29</posy>
+				<label>$INFO[System.Date]</label>
+				<include>grainybeigetextsansshadow</include>
+				<font>homeDate</font>
+				<include>notificationBottom</include>
+				<visible>![Player.HasMedia + !Skin.HasSetting(overlay) + !Window.IsActive(Home)] + ![Control.IsVisible(56)] + ![Window.IsActive(133) | Window.IsActive(112) | Window.IsActive(2004) | Window.IsActive(12600)] + ![Window.IsActive(2) + Control.IsVisible(52)]</visible>
+			</control>
 		</control>
 	</include>
 	<!-- SLIDESHOWS -->
@@ -640,7 +683,7 @@
 			</control>
 		</control>
 	</include>
-	<!-- CONTROLS -->	
+	<!-- CONTROLS -->
 	<include name="xScroller">
 		<showonepage>true</showonepage>
 		<orientation>horizontal</orientation>
@@ -720,7 +763,7 @@
 		<texturefocus border="13,6,13,6">settings/list-focusRev.png</texturefocus>
 		<texturenofocus>-</texturenofocus>
 		<textoffsety>3</textoffsety>
-		<textoffsetx>25</textoffsetx>
+		<textoffsetx>30</textoffsetx>
 		<font>category</font>
 		<height>50</height>
 		<textcolor>Color1</textcolor>
@@ -728,6 +771,57 @@
 		<align>right</align>
 		<width>325</width>
 	</include>
+	<!-- new home menu formatting -->
+	<!-- categories -->
+	<include name="newHomeMenuCategoryButton">
+		<animation type="Conditional" condition="true">
+			<effect type="fade" start="0" end="80"/>
+		</animation>
+		<texturefocus border="13,6,13,6">settings/list-focusRev.png</texturefocus>
+		<textoffsety>-5</textoffsety>
+		<textoffsetx>30</textoffsetx>
+		<font>homeMenuNew</font>
+		<height>50</height>
+		<textcolor>Color1</textcolor>
+		<aspectratio align="right">stretch</aspectratio>
+		<align>right</align>
+		<width>325</width>
+	</include>
+	<include name="newHomeMenuCategoryNoFocusBg">
+		<texturenofocus>settings/list-focusRev.png</texturenofocus>
+	</include>
+	<!-- sub-menus -->
+	<include name="newHomeMenuSubCategoryButton">
+		<animation type="Conditional" condition="true">
+			<effect type="fade" start="0" end="80"/>
+		</animation>
+		<texturefocus border="13,6,13,6" flipx="true">settings/list-focusRev.png</texturefocus>
+		<texturenofocus>-</texturenofocus>
+		<textoffsety>3</textoffsety>
+		<textoffsetx>30</textoffsetx>
+		<font>category</font>
+		<height>50</height>
+		<textcolor>Color1</textcolor>
+		<aspectratio align="right">stretch</aspectratio>
+		<align>left</align>
+		<width>325</width>
+	</include>
+	<include name="newHomeMenuSubSettingsButton">
+		<animation type="Conditional" condition="true">
+			<effect type="fade" start="0" end="80"/>
+		</animation>
+		<texturefocus border="13,6,13,6" flipx="true">settings/list-focusRev.png</texturefocus>
+		<texturenofocus>-</texturenofocus>
+		<textoffsety>3</textoffsety>
+		<textoffsetx>30</textoffsetx>
+		<font>category</font>
+		<height>50</height>
+		<textcolor>Color1</textcolor>
+		<aspectratio align="right">stretch</aspectratio>
+		<align>left</align>
+		<width>850</width>
+	</include>
+	<!-- END new home menu formatting -->
 	<include name="settingsButton">
 		<texturefocus border="13,6,13,6">settings/list-focus.png</texturefocus>
 		<texturenofocus>-</texturenofocus>
@@ -755,7 +849,7 @@
 			<posy>235r</posy>
 			<include>videoFullScreenInfo</include>
 			<include>transition2</include>
-			<visible>Player.HasMusicPlaylist + Player.ShowInfo + ![Window.IsActive(2000) | Window.IsVisible(script-XBMC_Lyrics-main.xml)]</visible>
+			<visible>Player.ShowInfo + ![Window.IsActive(2000) | Window.IsVisible(script-XBMC_Lyrics-main.xml)]</visible>
 			<control type="group">
 				<control type="image">
 					<width>1265</width>

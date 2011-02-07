@@ -4,52 +4,14 @@
 	<controls>
 		<!-- BACKGROUND MEDIA -->
 		<include>slideshows</include>
-		<!-- GRAINY BACKGROUND FOR THE HOME SCREEN ONLY, IS CALLED FROM Includes.xml -->
+		<!-- grainy bg for home screen only -->
 		<include>grainyeditionthemeoverlay</include>
 		<!-- reFocus logo positioned underneath the home overlay for a little softness -->
 		<control type="group">
-			<visible>![Skin.HasSetting(originalhome) | Skin.HasSetting(hideplexhomelogo)]</visible>
-			<control type="image">
-				<posx>20</posx>
-				<posy>16</posy>
-				<width>224</width>
-				<texture>logos/refocuslogo.png</texture>
-				<aspectratio align="right">keep</aspectratio>
-				<include>transition2</include>
-			</control>
-			<control type="image">
-				<posx>50</posx>
-				<posy>46</posy>
-				<width>193</width>
-				<height>70</height>
-				<texture>home/forplexlogo.png</texture>
-				<aspectratio align="right">keep</aspectratio>
-				<include>transition2</include>
-			</control>
+			<include>newtypelogo</include>
+			<visible>!Skin.HasSetting(hideplexhomelogo)</visible>
 		</control>
-		<!-- reFocus logo for legacy home screen -->
-		<control type="group">
-			<posx>0</posx>
-			<posy>0</posy>
-			<visible>!Skin.HasSetting(hideplexhomelogo) + Skin.HasSetting(originalhome)</visible>
-			<control type="image">
-				<posx>20</posx>
-				<posy>16</posy>
-				<width>224</width>
-				<texture>logos/refocuslogo.png</texture>
-				<aspectratio align="right">keep</aspectratio>
-				<include>transition2</include>
-			</control>
-			<control type="image">
-				<posx>50</posx>
-				<posy>46</posy>
-				<width>193</width>
-				<height>70</height>
-				<texture>home/forplexlogo.png</texture>
-				<aspectratio align="right">keep</aspectratio>
-				<include>transition2</include>
-			</control>
-		</control>
+		<!-- fanart slides and other overlays -->
 		<control type="multiimage" id="1">
 			<include>screentype</include>
 			<aspectratio>scale</aspectratio>
@@ -94,18 +56,29 @@
 			<include>fadeinout</include>
 			<visible>Window.IsActive(133) | Window.IsActive(112) | Window.IsActive(107)</visible>
 		</control>
-		<!-- now playing for home screen with Copperfield mode -->
-		<include condition="Player.HasMusicPlaylist + Skin.HasSetting(legacymenucopperfieldmode) + !Skin.HasSetting(originalhome)">grainyeditionnowplayinghome</include>
-		<!-- now playing for home screen with legacy mode -->
+		<!-- now playing for new home screen -->
 		<control type="group">
-			<posx>872</posx>
-			<posy>20</posy>
-			<visible>Skin.HasSetting(originalhome)</visible>
-			<include condition="Player.HasMusicPlaylist + Skin.HasSetting(originalhome)">grainyeditionnowplayinghome</include>
+		<include>grainyeditionnowplayinghome</include>
+		<visible>!Skin.HasSetting(originalhome) + Skin.HasSetting(legacymenucopperfieldmode)</visible>
 		</control>
-		<!-- TIME -->
-		<include condition="!Skin.HasSetting(homeTime) + ![Window.IsActive(10112) | Window.IsActive(10133) | Window.IsActive(107)]">libClock</include>
-		<!-- separators -->
+		<!-- now playing for legcy home screen -->
+		<!-- without RSS -->
+		<control type="group">
+			<posx>905</posx>
+			<posy>20</posy>
+			<visible>Skin.HasSetting(originalhome) + Skin.HasSetting(enableRSSFeed)</visible>
+			<include>grainyeditionnowplayinghome</include>
+		</control>
+		<!-- with RSS -->
+		<control type="group">
+			<posx>905</posx>
+			<posy>-15</posy>
+			<visible>Skin.HasSetting(originalhome) + !Skin.HasSetting(enableRSSFeed)</visible>
+			<include>grainyeditionnowplayinghome</include>
+		</control>
+		<!-- time and date -->
+		<include condition="![Window.IsActive(10112) | Window.IsActive(10133) | Window.IsActive(107)]">libClock</include>
+		<!-- left screen edge shadow -->
 			<control type="image">
 				<posx>0</posx>
 				<posy>20</posy>
@@ -116,29 +89,33 @@
 				<include>transition2</include>
 				<include>infoDialogHide</include>
 				<include>grainypagefade</include>
+				<visible>Skin.HasSetting(originalhome)</visible>
 			</control>
 		<!-- MOD CALL MENU GRAINY EDITION -->
-		<include condition="!Skin.HasSetting(originalhome)">HomeMenu</include>
+		<!--<include condition="!Skin.HasSetting(originalhome)">HomeMenu</include>-->
+		<include condition="!Skin.HasSetting(originalhome)">HomeMenuNew</include>
 		<include condition="Skin.HasSetting(originalhome)">HomeMenu_Original</include>		
 		<!-- RSS FEED -->
 		<control type="group">
-			<posy>685</posy>
+			<posy>687</posy>
 			<visible>!Skin.HasSetting(enableRSSFeed) + ![Window.IsActive(10133) | Window.IsActive(10112)]</visible>
+			
 			<animation effect="slide" start="0,100" end="0,0" time="200" tween="Quadratic" easing="In">WindowOpen</animation>
 			<animation effect="slide" start="0,0" end="0,100" time="200" tween="Quadratic" easing="Out">WindowClose</animation>
 			<control type="image">
+				<animation effect="fade" start="0" end="50" time="250" delay="0" condition="true">Conditional</animation>
 				<height>38</height>
 				<texture border="9">home/rssBackground.png</texture>
 				<include>screenwidth</include>
 				<visible>!Skin.HasSetting(enableRSSFeed)</visible>
 			</control>
 			<control type="rss" id="1">
-				<posy>1</posy>
+				<posy>4</posy>
 				<include>screenwidth</include>
-				<font>normalLow</font>
+				<font>small</font>
 				<urlset>1</urlset>
 				<height>32</height>
-				<aligny>center</aligny>
+				<aligny>bottom</aligny>
 				<textcolor>Color1</textcolor>
 				<titlecolor>ffA1927F</titlecolor>
 				<headlinecolor>Color1</headlinecolor>

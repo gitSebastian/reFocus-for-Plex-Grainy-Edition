@@ -205,9 +205,9 @@
 	</default>
 <!-- MOD : DEACTIVATED GREEN COLOR OVERLAY FOR PROGRESS BAR IN SEEK CONTROLS  -->
 	<default type="progress">
-		<texturebg border="0">dialogs/progressBackground.png</texturebg>
+		<texturebg>dialogs/progressBackground.png</texturebg>
 		<lefttexture>-</lefttexture>
-		<midtexture border="0">dialogs/progressSlider.png</midtexture>
+		<midtexture border="3">dialogs/progressSlider.png</midtexture>
 		<righttexture>-</righttexture>
 	</default>
 	

@@ -47,13 +47,13 @@
 			<label>[COLOR=ffA1927F]$INFO[Container.FirstTitle][/COLOR] $INFO[Container.SecondTitle]</label>
 			<include>videoPageLabel</include>
 			<include>infoDialogHide</include>
-			<visible>!Window.IsActive(502) + Container.Scrolling + !Skin.HasSetting(hidescrolloffset)</visible>
+			<visible>!Window.IsActive(502) + Container.Scrolling + Skin.HasSetting(hidescrolloffset)</visible>
 		</control>
 		<control type="label">
 			<label>[COLOR=ffA1927F]$INFO[Container.FirstTitle][/COLOR] $INFO[Container.SecondTitle]</label>
 			<include>videoPageLabel2</include>
 			<include>infoDialogHide</include>
-			<visible>!Window.IsActive(502) + [!Container.Scrolling | [Container.Scrolling + Skin.HasSetting(hidescrolloffset)]]</visible>
+			<visible>!Window.IsActive(502) + [!Container.Scrolling | [Container.Scrolling + !Skin.HasSetting(hidescrolloffset)]]</visible>
 		</control>
 		<!-- full info screen movies -->
 		<control type="label">

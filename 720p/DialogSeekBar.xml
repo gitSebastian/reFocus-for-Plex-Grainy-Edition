@@ -1,40 +1,52 @@
 <window id="115">
 	<defaultcontrol>901</defaultcontrol>
-	<visible>![Window.IsVisible(script-XBMC-Subtitles-main.xml) | Window.IsActive(101) | Window.IsActive(2901) | Window.IsActive(142) ] + [Player.Caching | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding]</visible>
+	<visible>![Window.IsActive(120) | Window.IsActive(101) | Window.IsActive(2901) | Window.IsActive(142) ] + [Player.Caching | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding]</visible>
 
 	<controls>
 		<control type="group" id="213">
 			<posx>0</posx>
-			<posy>625</posy>
+			<posy>0</posy>
 			<!-- fix to glitch when this window sometimes showed while opening and -->
 			<!-- caching the video : is hidden while caching -->
 			<visible>!Player.Caching</visible>
-			<!-- mod for including the info window together with the seek window -->
 			<control type="group">
-				<posy>-625</posy>
-				<include>DialogFullScreenInfo_GrainyEditionNew</include>
-			</control>
-			<!-- MOD : THIS IS THE SEEK CONTROL WINDOW, THE HEIGHT IS SET TO 100 PIXELS INSTEAD OF 230 WHICH WAS USELESS AND NOT PRETTY (and the new image is 100 pixels in height anyway)  -->
-			<!-- deactivated now that everything is integrated in the same window -->
-			<!-- <control type="image" id="1">
-				<include>screenwidth</include>
-				<posy>13</posy>
-				<height>100</height>
-				<texture flipy="false">osd/fullscreenInfo.png</texture>
-			</control>  -->
-			<!-- progressbar -->
-			<control type="progress" id="1">
-				<description>Progressbar</description>
-				<posx>180</posx>
-				<posy>62</posy>
-				<width>920</width>
-				<height>18</height>
-				<info>Player.Progress</info>
-				<animation effect="fade" start="0" end="100" time="450">WindowOpen</animation>
+				<control type="image" id="1">
+					<posx>325</posx>
+					<posy>530</posy>
+					<width>650</width>				
+					<height>79</height>
+					<texture border="35,0,35,0">osd/background_slim.png</texture>
+				</control>
+				<control type="label" id="1">
+					<posx>360</posx>
+					<posy>574</posy>
+					<width>200</width>
+					<align>left</align>
+					<font>small</font>
+					<label>$INFO[Player.Time]</label>
+					<textcolor>Color1</textcolor>
+				</control>
+				<control type="progress" id="1">
+					<description>Progressbar</description>
+					<posx>440</posx>
+					<posy>585</posy>
+					<width>410</width>
+					<height>6</height>
+					<info>Player.Progress</info>
+				</control>
+				<control type="label" id="1">
+					<posx>940</posx>
+					<posy>574</posy>
+					<width>200</width>
+					<align>right</align>
+					<font>small</font>
+					<label>$INFO[Player.Duration]</label>
+					<textcolor>Color1</textcolor>
+				</control>
 			</control>
 			<control type="group" id="901">
-				<posx>30</posx>
-				<posy>58</posy>
+				<posx>360</posx>
+				<posy>541</posy>
 				<include>fadeinout</include>
 				<!-- "searching" dialog -->
 				<control type="label" id="24">
@@ -48,7 +60,7 @@
 				<control type="label" id="24">
 					<align>left</align>
 					<label>$LOCALIZE[15107]</label>
-					<textcolor>Color4</textcolor>
+					<textcolor>Color1</textcolor>
 					<include>screenwidth</include>
 					<include>Heading3</include>
 					<visible>Player.Caching</visible>
@@ -58,7 +70,7 @@
 					<align>left</align>
 					<label>$LOCALIZE[31040]</label>
 					<visible>Player.Paused + !Control.IsVisible(24)</visible>
-					<textcolor>Color4</textcolor>
+					<textcolor>Color1</textcolor>
 					<include>screenwidth</include>
 					<include>Heading4</include>
 				</control>
@@ -143,31 +155,7 @@
 					<include>Heading3</include>
 				</control>
 			</control>
-			<!-- MOD : LEFT AND RIGHT INFOS ARE MORE PLACED TOWARDS OUTSIDE TO BETTER CENTER EVERYTHING  -->
-			<control type="group" id="901">
-				<posx>0</posx>
-				<posy>58</posy>
-				<include>fadeinout</include>
-				<control type="label" id="22">
-					<posx>1233</posx>
-					<description>seek time</description>
-					<width>300</width>
-					<align>right</align>
-					<label>$INFO[Player.Time]</label>
-					<textcolor>Color1</textcolor>
-					<include>Heading4</include>
-				</control>
-				<!-- "seek time" dialog -->
-				<control type="label" id="22">
-					<description>duration</description>
-					<posx>1340</posx>
-					<width>300</width>
-					<align>left</align>
-					<label>$INFO[Player.Duration]</label>
-					<textcolor>Color4</textcolor>
-					<include>Heading3</include>
-				</control>
-			</control>
+			
 		</control>
 	</controls>
 </window>

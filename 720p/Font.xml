@@ -80,7 +80,44 @@
 		</font>
 
 
-<!-- home screen menu --------------------------------------------->	
+<!-- home screen --------------------------------------------->	
+		<!-- type logo fonts -->
+		<font>
+			<name>logoRe</name>
+			<filename>LightCaps</filename>
+			<size>50</size>
+		</font>
+		<font>
+			<name>logoFocus</name>
+			<filename>BoldCaps</filename>
+			<size>50</size>
+		</font>
+		<font>
+			<name>logoFor</name>
+			<filename>ZegoeLight-U-L.ttf</filename>
+			<size>30</size>
+		</font>
+		<font>
+			<name>logoPlex</name>
+			<filename>BoldCaps</filename>
+			<size>40</size>
+		</font>
+		<!-- end logo -->
+		<font>
+			<name>homeMenuNew</name>
+			<filename>ZegoeLight-U-L.ttf</filename>
+			<size>38</size>
+		</font>
+		<font>
+			<name>homeClock</name>
+			<filename>ZegoeLight-U-L.ttf</filename>
+			<size>20</size>
+		</font>
+		<font>
+			<name>homeDate</name>
+			<filename>ZegoeLight-U-L.ttf</filename>
+			<size>18</size>
+		</font>
 		<font>
 			<name>homeMenu</name>
 			<filename>ZegoeLight-U-L.ttf</filename>

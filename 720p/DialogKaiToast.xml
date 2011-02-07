@@ -1,25 +1,43 @@
+<?xml version="1.0"?>
 <window id="107">
 	<controls>
 		<control type="group">
-			<visible>![Window.IsActive(12999) | Window.IsActive(107) | Window.IsActive(script-XBMC_Lyrics-main.xml)]</visible>
-			<control type="label" id="401">
-				<posx>25r</posx>
-				<width>800</width>
-				<include>notificationTop</include>
-			</control>
-			<control type="label" id="402">	
-				<posx>25r</posx>
-				<width>800</width>
-				<include>notificationBottom</include>
-			</control>
+			<posx>0</posx>
+			<posy>0</posy>
 			<control type="image">
-				<posx>55r</posx>
-				<posy>19</posy>
-				<width>38</width>
-				<height>38</height>
-				<texture>dialogs/notificationIcon.png</texture>
+				<posx>20</posx>
+				<posy>20</posy>
+				<width>600</width>
+				<height>79</height>
+				<texture border="20">osd/background_slim.png</texture>
 				<include>fadeinout</include>
 			</control>
-        </control>
-    </controls>
+			<control type="group">
+				<posx>35</posx>
+				<posy>28</posy>
+				<include>dialogWindow</include>
+				<visible>!Window.IsActive(12999)</visible>
+				<control type="label" id="401">
+					<posx>10</posx>
+					<posy>0</posy>
+					<width>550</width>
+					<align>left</align>
+					<height>30</height>
+					<font>smallCaps</font>
+					<aligny>center</aligny>
+					<textcolor>Color1</textcolor>
+				</control>
+				<control type="label" id="402">
+					<posx>5</posx>
+					<posy>28</posy>
+					<width>550</width>
+					<align>left</align>
+					<font>smallCaps</font>
+					<height>40</height>
+					<aligny>center</aligny>
+					<include>grainybeigetextsansshadow</include>
+				</control>
+			</control>
+		</control>
+	</controls>
 </window>

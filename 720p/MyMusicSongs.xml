@@ -2,12 +2,12 @@
 <window id="502">
 	<defaultcontrol always="false">555</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-	<views>50,52,53,55,555,572</views>
+	<views>555</views>
 	<controls>
 		<include>themeBackground2</include>
 		<include>allscreens</include>
 		<include>AllViewCommonPageControls</include>
-		<include>view_ListMusic_GrainyEdition</include>
+		<include>view_List_GrainyEdition</include>
 		<include>view_SlideMusic</include>
 		<include>view_Thumbs</include>
 		<include>view_SlideWideMusic</include>
@@ -24,57 +24,9 @@
 		</control>
 		<!-- LIST VIEW (ALBUMS & SONGS) -->
 		<!--<include>view_ListMusic</include>-->
-		<include>info_MusicList</include>
-		<!-- LIST VIEW (ARTISTS) -->
-		<!--control type="group">
-				<visible>Control.IsVisible(50) + Container.Content(artists)</visible>
-				<include>transition2</include>
-				<include>infoDialogHide</include>
-				<include>contextMenuHide</include>
-				<control type="group">
-					<posx>665</posx>
-					<posy>185</posy>
-					<control type="image">
-						<width>563</width>
-						<height>340</height>
-						<texture border="48">frames/wideFrame.png</texture>
-						<aspectratio>stretch</aspectratio>
-						<include>thumbFadeTime</include>
-					</control>
-					<control type="image">
-						<posx>26</posx>
-						<posy>27</posy>
-						<width>510</width>
-						<height>287</height>
-						<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
-						<texture background="true" diffuse="frames/wideFrameMask.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
-						<include>thumbFadeTime</include>
-						<visible>!IsEmpty(ListItem.Property(Fanart_Image))</visible>
-					</control>
-					<control type="image">
-						<posx>26</posx>
-						<posy>27</posy>
-						<width>510</width>
-						<height>287</height>
-						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture background="true" diffuse="frames/wideFrameMask.png">$INFO[ListItem.Thumb]</texture>
-						<include>thumbFadeTime</include>
-						<visible>IsEmpty(ListItem.Property(Fanart_Image))</visible>
-					</control>
-					<control type="image">
-						<posx>26</posx>
-						<posy>27</posy>
-						<width>510</width>
-						<height>287</height>
-						<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
-						<texture background="true" diffuse="frames/wideFrameMask.png">special://skin/backgrounds/library/artistNoFanartSmall.png</texture>
-						<include>thumbFadeTime</include>
-						<visible>IsEmpty(ListItem.Property(Fanart_Image)) + IsEmpty(ListItem.Thumb)</visible>
-					</control>
-				</control>
-			</control-->
+		<!--<include>info_MusicList</include>-->
 		<!-- SLIDE VIEW -->
-		<control type="group">
+		<!--<control type="group">
 			<visible>Control.IsVisible(52) | Control.IsVisible(55)</visible>
 			<include>transition3</include>
 			<include>infoDialogHide</include>
@@ -178,8 +130,8 @@
 				<include>textBox</include>
 				<visible>Container.Content(albums)</visible>
 			</control>
-		</control>
-		<control type="group">
+		</control>-->
+		<!--<control type="group">
 			<posx>75</posx>
 			<posy>442</posy>
 			<include>labelFlags52</include>
@@ -187,9 +139,9 @@
 			<include>transition3</include>
 			<include>infoDialogHide</include>
 			<include>contextMenuHide</include>
-		</control>
+		</control>-->
 		<!-- THUMBNAILS VIEW -->
-		<control type="group">
+		<!--<control type="group">
 			<visible>Control.IsVisible(572)</visible>
 			<include>transition3</include>
 			<include>contextMenuHide</include>
@@ -218,15 +170,15 @@
 				<include>Heading3</include>
 				<visible>Container.Content(albums)</visible>
 			</control>
-		</control>
-		<control type="group">
+		</control>-->
+		<!--<control type="group">
 			<posx>1090</posx>
 			<posy>632</posy>
 			<include>labelFlags57</include>
 			<visible>Control.IsVisible(572) + Container.Content(albums)</visible>
 			<include>contextMenuHide</include>
 			<include>infoDialogHide</include>
-		</control>
+		</control>-->
 		<include>videoFanartPageLabels</include>
 		<!--<include>musicOverlay</include>-->
 		<!--<include>indicatorScrolling</include>-->
