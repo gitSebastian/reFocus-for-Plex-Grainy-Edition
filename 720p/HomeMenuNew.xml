@@ -350,6 +350,17 @@
 					<visible>!Skin.HasSetting(originalhome)</visible>
 				</control>
 			</control>
+			<!-- favorites -->
+			<control type="group">
+				<visible>!Control.HasFocus(300) + ControlGroup(9100).HasFocus(9004)</visible>
+				<animation effect="fade" start="0" end="100" time="250" delay="250" condition="!Control.HasFocus(300) + ControlGroup(9100).HasFocus(9004)">Conditional</animation>
+				<include>transition2</include>
+				<control type="button" id="221">
+					<label>click on the menu item to open the favorites window</label>
+					<include>newHomeMenuSubSettingsButton</include>
+					<enable>dummy</enable>
+				</control>
+			</control>
 			<!-- iTunes shortcuts -->
 			<control type="grouplist" id="200">
 				<onleft>9005</onleft>

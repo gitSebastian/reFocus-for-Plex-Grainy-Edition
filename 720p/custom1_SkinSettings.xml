@@ -82,23 +82,25 @@
 					<label>$LOCALIZE[31961]</label>
 					<include>newHomeMenuCategoryButton</include>
 					<visible allowhiddenfocus="true">![Control.HasFocus(291) | Control.HasFocus(292) | Control.HasFocus(293) | Control.HasFocus(294) | Control.HasFocus(295)]</visible>
+					<visible>Skin.HasSetting(originalhome)</visible>
+					<enable>Skin.HasSetting(originalhome)</enable>
 				</control>
 				<control type="button" id="9020">
 					<label>$LOCALIZE[31961]</label>
 					<include>newHomeMenuCategoryButton</include>
 					<include>newHomeMenuCategoryNoFocusBg</include>
 					<visible>!Control.IsVisible(9019)</visible>
+					<visible>Skin.HasSetting(originalhome)</visible>
+					<enable>Skin.HasSetting(originalhome)</enable>
 				</control>
 				<!-- fanart -->
 				<control type="button" id="9005">
 					<label>fanart settings</label>
-					<onclick>ActivateWindow(10501,plex://127.0.0.1:32400/music/iTunes,return)</onclick>
 					<include>newHomeMenuCategoryButton</include>
 					<visible allowhiddenfocus="true">![Control.HasFocus(221) | Control.HasFocus(222) | Control.HasFocus(223) | Control.HasFocus(224) | Control.HasFocus(225) | Control.HasFocus(226)]</visible>
 				</control>
 				<control type="button" id="9006">
 					<label>fanart settings</label>
-					<onclick>ActivateWindow(10501,plex://127.0.0.1:32400/music/iTunes,return)</onclick>
 					<include>newHomeMenuCategoryButton</include>
 					<include>newHomeMenuCategoryNoFocusBg</include>
 					<visible>!Control.IsVisible(9005)</visible>
@@ -248,11 +250,10 @@
 				<animation effect="fade" start="0" end="100" time="250" delay="250" condition="!Control.HasFocus(300) + ControlGroup(9100).HasFocus(9005)">Conditional</animation>
 				<include>transition2</include>
 				<control type="radiobutton" id="221">
-					<label>deactivate fanart in library views</label>
+					<label>activate fanart in library views</label>
 					<onclick>Skin.ToggleSetting(FanartGlobal)</onclick>
 					<selected>Skin.HasSetting(FanartGlobal)</selected>
 					<include>newHomeMenuSubSettingsButton</include>
-					<visible>Skin.HasSetting(originalhome)</visible>
 				</control>
 				<control type="radiobutton" id="222">
 					<label>Use Fanart in Music Visualisation Screen</label>
@@ -260,7 +261,6 @@
 					<onclick>Skin.ToggleSetting(musicVisBlend)</onclick>
 					<selected>Skin.HasSetting(musicVis)</selected>
 					<include>newHomeMenuSubSettingsButton</include>
-					<visible>Skin.HasSetting(originalhome)</visible>
 				</control>
 				<control type="radiobutton" id="223">
 					<label>Blend Music Visualisation and Fanart</label>
@@ -268,7 +268,6 @@
 					<selected>Skin.HasSetting(musicVisBlend)</selected>
 					<enable>Skin.HasSetting(musicVis)</enable>
 					<include>newHomeMenuSubSettingsButton</include>
-					<visible>Skin.HasSetting(originalhome)</visible>
 				</control>
 				<!--<control type="button" id="224">
 					<description>go to Artists</description>
@@ -462,6 +461,14 @@
 				<visible>!Control.HasFocus(300) + ControlGroup(9100).HasFocus(9019)</visible>
 				<animation effect="fade" start="0" end="100" time="250" delay="250" condition="!Control.HasFocus(300) + ControlGroup(9100).HasFocus(9019)">Conditional</animation>
 				<include>transition2</include>
+				<control type="radiobutton" id="291">
+					<description>show iTunes shortcuts</description>
+					<label>Show iTunes Shortcuts in main menu</label>
+					<onclick>Skin.ToggleSetting(iTunesHome)</onclick>
+					<selected>Skin.HasSetting(iTunesHome)</selected>
+					<include>newHomeMenuSubSettingsButton</include>
+					<visible>Skin.HasSetting(originalhome)</visible>
+				</control>
 				<!-- iTunes shortcuts -->
 				<control type="radiobutton" id="291">
 					<description>show iTunes shortcuts</description>

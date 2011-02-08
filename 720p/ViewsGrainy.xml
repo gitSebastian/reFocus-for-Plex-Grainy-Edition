@@ -386,6 +386,24 @@
 			<visible>Control.IsVisible(555) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]</visible>
 		</control>
 		<!-- item HD image library -->
+		<!-- .tbn -->
+		<control type="largeimage">
+			<posx>230</posx>
+			<posy>80</posy>
+			<width>240</width>
+			<height>360</height>
+			<fadetime>400</fadetime>
+			<include>itemimageflipnfade</include>
+			<include>transition2</include>
+			<include>infoDialogHide</include>
+			<include>contextMenuHide</include>
+			<include>grainypagefade</include>
+			<texture diffuse="frames/posterFrameMask.png" background="true">$INFO[listitem.path]poster.tbn</texture>
+			<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			<include>thumbFadeTime</include>
+			<visible>Control.IsVisible(555) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]</visible>
+		</control>
+		<!-- .png -->
 		<control type="largeimage">
 			<posx>230</posx>
 			<posy>80</posy>
@@ -402,6 +420,7 @@
 			<include>thumbFadeTime</include>
 			<visible>Control.IsVisible(555) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]</visible>
 		</control>
+		<!-- .jpg -->
 		<control type="largeimage">
 			<posx>230</posx>
 			<posy>80</posy>

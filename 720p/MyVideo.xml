@@ -43,7 +43,7 @@
 			<!-- mod : the typeflags has been changed to one more complete, can be found in IncludesFlags.xml -->
 			<!-- conditional, visibility can be controlled via menu -->
 			<control type="group">
-				<posx>222</posx>
+				<posx>205</posx>
 				<posy>645</posy>
 				<include>typeFlagsInfoSlides</include>
 			</control>
@@ -273,7 +273,7 @@
 			<include>transition3</include>
 			<include>infoDialogHide</include>
 			<include>contextMenuHide</include>
-			<posx>232</posx>
+			<posx>205</posx>
 			<posy>645</posy>
 			<include>typeFlagsInfoSlides</include>
 			<visible>Control.IsVisible(58)</visible>
@@ -714,5 +714,6 @@
 		<!-- PAGE INCLUDES -->
 		<include>LibraryVideoMenu</include>
 		<include>videoLibPageLabels</include>
+		<include>debugInfos</include>
 	</controls>
 </window>

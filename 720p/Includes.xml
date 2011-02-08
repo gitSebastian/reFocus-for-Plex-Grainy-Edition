@@ -842,6 +842,39 @@
 		<textcolor>Color1</textcolor>
 		<width>650</width>
 	</include>
+	<include name="debugInfos">
+		<control type="group">
+		<include>transition2</include>
+		<include>infoDialogHide</include>
+		<include>contextMenuHide</include>
+		<include>grainypagefade</include>
+		<visible>Skin.HasSetting(showdebug)</visible>
+		<control type="image" id="21">
+			<posx>150</posx>
+			<posy>100</posy>
+			<width>900</width>
+			<height>500</height>
+			<animation type="Conditional" condition="true">
+				<effect type="fade" start="0" end="100"/>
+			</animation>
+			<aspectratio>stretch</aspectratio>
+			<texture border="20">dialogs/square_dialog_background.png</texture>
+		</control>
+		<!-- debug infos -->
+		<control type="label">
+			<posx>200</posx>
+			<posy>150</posy>
+			<width>800</width>
+			<height>400</height>
+			<aligny>top</aligny>
+			<font>smallsmallcase</font>
+			<label>current xml : $INFO[Window.Property(xmlfile)] / $INFO[System.Screenresolution] / $LOCALIZE[158] : $INFO[System.FreeMemory] / currentwindow : $INFO[System.CurrentWindow] / currentcontrol : $INFO[System.CurrentControl] / first title : $INFO[Container.FirstTitle] / second title : $INFO[Container.SecondTitle] / list item name and path : $INFO[ListItem.FileNameAndPath] / list item name : $INFO[ListItem.FileName] / list item path : $INFO[ListItem.Path] / list item folder name : $INFO[ListItem.FolderName]</label>
+			<wrapmultiline>true</wrapmultiline>
+			<textcolor>Color1</textcolor>
+			<align>left</align>
+		</control>
+		</control>
+	</include>
 	<!-- MUSIC OSD / SLIDESHOW -->
 	<include name="musicOSDInfo">
 		<control type="group">
