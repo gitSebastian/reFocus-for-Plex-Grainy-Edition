@@ -170,6 +170,10 @@
 						<aligny>center</aligny>
 						<width>372</width>
 						<info>Player.Progress</info>
+						<texturebg>dialogs/progressBackground_.png</texturebg>
+						<lefttexture>-</lefttexture>
+						<midtexture border="0">dialogs/progressSlider_.png</midtexture>
+						<righttexture>-</righttexture>
 						<animation effect="fade" start="0" end="100" time="1000">Visible</animation>
 						<animation effect="fade" start="100" end="0" time="1000">Hidden</animation>
 						<visible>Player.HasMusicPlaylist</visible>
