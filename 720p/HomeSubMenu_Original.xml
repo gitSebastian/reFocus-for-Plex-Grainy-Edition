@@ -16,7 +16,7 @@
 				<scrolltime>150</scrolltime>
 				<include>homeSubFocus</include>
 				<include>homeMenusLayout</include>
-				<visible allowhiddenfocus="true">Container(300).HasFocus(1)</visible>
+				<visible allowhiddenfocus="true">Container(300).HasFocus(10) | Container(301).HasFocus(10)</visible>
 				<content>
 					<item id="1">
 						<label>Video Plug-ins</label>
@@ -30,10 +30,6 @@
 						<label>Picture Plug-ins</label>
 						<onclick>ActivateWindow(2)</onclick>
 					</item>
-					<item id="99">
-					<label>31976</label>
-					<onclick>Plex.ActivateWindow(1,plex://localhost/system/appstore,return)</onclick>
-				</item>
 				</content>
 			</control>
 
@@ -75,95 +71,6 @@
 					</item>
 				</content>
 			</control>		
-		
-<!-- ACCESSORIES SUBMENU ----------------------------------------------------------------------------------------------->	
-	<!--		<control type="list" id="1140">
-				<posx>-800</posx>
-				<width>900</width>
-				<height>800</height>
-				<onup>1140</onup>
-				<ondown>1140</ondown>
-				<onleft>300</onleft>
-				<orientation>vertical</orientation>
-				<scrolltime>150</scrolltime>
-				<visible allowhiddenfocus="true">Container(300).HasFocus(4)</visible>
-				<include>homeSubFocus</include>
-				<include>homeMenusLayout</include>
-				<content>
-					<item id="1">
-						<label>$LOCALIZE[1036]</label>
-						<onclick>ActivateWindow(Favourites)</onclick>
-						<onclick>Dialog.Close(shutdownmenu)</onclick>
-						<visible>!Skin.HasSetting(homemenuFavourites)</visible>
-					</item>
-					<item id="2">
-						<label>$LOCALIZE[0]</label>
-						<onclick>ActivateWindow(Programs,Addons,return)</onclick>
-						<onclick>Dialog.Close(shutdownmenu)</onclick>
-						<visible>!Skin.HasSetting(homemenuPrograms)</visible>
-					</item>
-					<item id="3">
-						<label>$LOCALIZE[8]</label>
-						<onclick>ActivateWindow(2600)</onclick>
-						<onclick>Dialog.Close(shutdownmenu)</onclick>
-						<visible>!Skin.HasSetting(homemenuWeather)</visible>
-					</item>
-				</content>
-			</control>
-		-->
-		
-<!-- SETTINGS SUBMENU ----------------------------------------------------------------------------------------------->	
-			<!--<control type="list" id="1150">
-				<posx>-800</posx>
-				<width>900</width>
-				<height>800</height>
-				<onup>1150</onup>
-				<ondown>1150</ondown>
-				<onleft>300</onleft>
-				<orientation>vertical</orientation>
-				<scrolltime>150</scrolltime>
-				<visible allowhiddenfocus="true">Container(300).HasFocus(5) | Container(301).HasFocus(5)</visible>
-				<include>homeSubFocus</include>
-				<include>homeMenusLayout</include>
-				<content>
-					<item id="0">
-						<label>$LOCALIZE[166]</label>
-						<onclick>ActivateWindow(59)</onclick>
-						<onclick>Dialog.Close(shutdownmenu)</onclick>
-					</item>
-					<item id="1">
-						<label>$LOCALIZE[480]</label>
-						<onclick>ActivateWindow(appearancesettings)</onclick>
-						<onclick>Dialog.Close(shutdownmenu)</onclick>
-					</item>
-					<item id="2">
-						<label>$LOCALIZE[1212]</label>
-						<onclick>ActivateWindow(videossettings)</onclick>
-						<onclick>Dialog.Close(shutdownmenu)</onclick>
-					</item>
-					<item id="4">
-						<label>$LOCALIZE[10005]</label>
-						<onclick>ActivateWindow(musicsettings)</onclick>
-						<onclick>Dialog.Close(shutdownmenu)</onclick>
-					</item>
-					<item id="5">
-						<label>$LOCALIZE[10002]</label>
-						<onclick>ActivateWindow(picturessettings)</onclick>
-						<onclick>Dialog.Close(shutdownmenu)</onclick>
-					</item>
-					<item id="8">
-						<label>$LOCALIZE[8]</label>
-						<onclick>ActivateWindow(weathersettings)</onclick>
-						<onclick>Dialog.Close(shutdownmenu)</onclick>
-					</item>
-					<item id="9">
-						<label>$LOCALIZE[13000]</label>
-						<onclick>ActivateWindow(systemsettings)</onclick>
-						<onclick>Dialog.Close(shutdownmenu)</onclick>
-					</item>
-				</content>
-			</control>-->
-
 
 <!-- EXIT SUBMENU ----------------------------------------------------------------------------------------------->	
 			<control type="list" id="1160">

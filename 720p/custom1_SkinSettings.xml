@@ -461,14 +461,6 @@
 				<visible>!Control.HasFocus(300) + ControlGroup(9100).HasFocus(9019)</visible>
 				<animation effect="fade" start="0" end="100" time="250" delay="250" condition="!Control.HasFocus(300) + ControlGroup(9100).HasFocus(9019)">Conditional</animation>
 				<include>transition2</include>
-				<control type="radiobutton" id="291">
-					<description>show iTunes shortcuts</description>
-					<label>Show iTunes Shortcuts in main menu</label>
-					<onclick>Skin.ToggleSetting(iTunesHome)</onclick>
-					<selected>Skin.HasSetting(iTunesHome)</selected>
-					<include>newHomeMenuSubSettingsButton</include>
-					<visible>Skin.HasSetting(originalhome)</visible>
-				</control>
 				<!-- iTunes shortcuts -->
 				<control type="radiobutton" id="291">
 					<description>show iTunes shortcuts</description>

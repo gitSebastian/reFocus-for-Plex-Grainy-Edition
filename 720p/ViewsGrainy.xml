@@ -97,7 +97,7 @@
 					<height>50</height>
 					<aligny>center</aligny>
 					<font>osd1</font>
-					<textcolor>Color3</textcolor>
+					<textcolor>Color1</textcolor>
 					<include>grainywhitetext</include>
 					<label>$INFO[ListItem.Label]</label>
 					<scroll>true</scroll>
@@ -112,7 +112,7 @@
 					<label>$INFO[ListItem.Year]</label>
 					<textcolor>Color1</textcolor>
 					<align>left</align>
-					<visible>![Container.Content(singles) | Container.Content(songs)]</visible>
+					<visible>![Container.Content(singles) | Container.Content(songs) | Container.Content(albums)]</visible>
 				</control>	
 				<!-- caps title songs -->
 				<control type="label">
@@ -122,7 +122,7 @@
 					<height>50</height>
 					<aligny>center</aligny>
 					<font>osd1</font>
-					<textcolor>Color3</textcolor>
+					<textcolor>Color1</textcolor>
 					<include>grainywhitetext</include>
 					<label>$INFO[ListItem.Title]</label>
 					<scroll>true</scroll>
