@@ -862,7 +862,7 @@
 			<include>transition2</include>
 			<include>contextMenuHide</include>
 			<include>infoDialogHide</include>
-			<include>grainypagefade</include>
+			<!--<include>grainypagefade2</include>-->
 			<animation effect="slide" end="-30" time="150" condition="Container(57).OnNext">Conditional</animation>
 			<itemlayout height="257" width="200">
 				<control type="image">
@@ -870,8 +870,8 @@
 					<height>257</height>
 					<texture border="48" background="true">frames/posterFrameSmall.png</texture>
 					<aspectratio>stretch</aspectratio>
-					<include>thumbFadeTime</include>
 					<include>fadeinout</include>
+					<include>thumbFadeTime</include>
 				</control>
 				<!-- use scaled posters (like it should) -->
 				<control type="image">

@@ -11,7 +11,7 @@
 			<include>infoDialogHide</include>
 			<include>contextMenuHide</include>
 			<include>fadeinout</include>
-			<visible allowhiddenfocus="true">Control.IsVisible(50) + [Skin.HasSetting(scrollbar) + !Skin.HasSetting(scrollbarHide)] | [Skin.HasSetting(scrollbarHide) + Control.HasFocus(23)]</visible>
+			<visible allowhiddenfocus="true">Control.IsVisible(555) + [Skin.HasSetting(scrollbar) + !Skin.HasSetting(scrollbarHide)] | [Skin.HasSetting(scrollbarHide) + Control.HasFocus(23)]</visible>
 			<enable>Skin.HasSetting(scrollbar)</enable>
 		</control>
 		<!--<control type="scrollbar" id="23">

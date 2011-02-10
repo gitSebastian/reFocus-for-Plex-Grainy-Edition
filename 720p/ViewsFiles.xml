@@ -386,7 +386,7 @@
 					<posx>0</posx>
 					<posy>45</posy>
 					<width>600</width>
-					<label>$INFO[ListItem.Year,, • ]$INFO[ListItem.Duration]</label>
+					<label>$INFO[ListItem.Year,, Ã¯ ]$INFO[ListItem.Duration]</label>
 					<font>smallCaps</font>
 					<include>listMenuFocus</include>
 					<visible>!VideoPlayer.Content(episodes)</visible>

@@ -168,23 +168,12 @@
 				<onleft>300</onleft>
 				<onright>200</onright>
 				<itemgap>0</itemgap>
-				<!-- menu options -->
-				<control type="button" id="9001">
-					<label>view options</label>
-					<include>newHomeMenuCategoryButton</include>
-					<visible allowhiddenfocus="true">![Control.HasFocus(201) | Control.HasFocus(202) | Control.HasFocus(203) | Control.HasFocus(204) | Control.HasFocus(205) | Control.HasFocus(206) | Control.HasFocus(207) | Control.HasFocus(208) | Control.HasFocus(209) | Control.HasFocus(210) | Control.HasFocus(211) | Control.HasFocus(212)]</visible>
-				</control>
-				<control type="button" id="9002">
-					<label>view options</label>
-					<include>newHomeMenuCategoryButton</include>
-					<include>newHomeMenuCategoryNoFocusBg</include>
-					<visible>!Control.IsVisible(9001)</visible>
-				</control>
 				<!-- favorites-->
 				<control type="button" id="9004">
 					<label>$LOCALIZE[1036]</label>
 					<onclick>ActivateWindow(Favourites)</onclick>
 					<include>newHomeMenuCategoryButton</include>
+					<visible>!Skin.HasSetting(hidefavourites)</visible>
 				</control>
 				<!-- iTunes shortcuts -->
 				<control type="button" id="9005">
@@ -217,6 +206,7 @@
 					<label>31976</label>
 					<onclick>Plex.ActivateWindow(1,plex://localhost/system/appstore,return)</onclick>
 					<include>newHomeMenuCategoryButton</include>
+					<visible>!Skin.HasSetting(hideplexonline)</visible>
 				</control>
 				<!-- Programs -->
 				<control type="button" id="9012">
@@ -224,13 +214,14 @@
 					<onclick>ActivateWindow(Programs)</onclick>
 					<onclick>Dialog.Close(shutdownmenu)</onclick>
 					<include>newHomeMenuCategoryButton</include>
+					<visible>!Skin.HasSetting(hideprograms)</visible>
 				</control>
 				<!-- Weather -->
 				<control type="button" id="9013">
 					<label>$LOCALIZE[8]</label>
 					<onclick>ActivateWindow(weather)</onclick>
 					<include>newHomeMenuCategoryButton</include>
-					<visible allowhiddenfocus="true">![Control.HasFocus(241) | Control.HasFocus(242)]</visible>
+					<visible allowhiddenfocus="true">![Control.HasFocus(241)]</visible>
 				</control>
 				<control type="button" id="9014">
 					<label>$LOCALIZE[8]</label>
@@ -239,7 +230,7 @@
 					<include>newHomeMenuCategoryNoFocusBg</include>
 					<visible>!Control.IsVisible(9013)</visible>
 				</control>
-				<!-- Settings window "screen" -->
+				<!-- Settings -->
 				<control type="button" id="9017">
 					<label>$LOCALIZE[5]</label>
 					<include>newHomeMenuCategoryButton</include>
@@ -264,6 +255,19 @@
 					<include>newHomeMenuCategoryNoFocusBg</include>
 					<visible>!Control.IsVisible(9019)</visible>
 				</control>
+				<!-- menu options -->
+				<control type="button" id="9001">
+					<label>view options</label>
+					<include>newHomeMenuCategoryButton</include>
+					<visible allowhiddenfocus="true">![Control.HasFocus(201) | Control.HasFocus(202) | Control.HasFocus(203) | Control.HasFocus(204) | Control.HasFocus(205) | Control.HasFocus(206) | Control.HasFocus(207) | Control.HasFocus(208) | Control.HasFocus(209) | Control.HasFocus(210) | Control.HasFocus(211) | Control.HasFocus(212) | Control.HasFocus(213) | Control.HasFocus(214) | Control.HasFocus(215)]</visible>
+				</control>
+				<control type="button" id="9002">
+					<label>view options</label>
+					<include>newHomeMenuCategoryButton</include>
+					<include>newHomeMenuCategoryNoFocusBg</include>
+					<visible>!Control.IsVisible(9001)</visible>
+				</control>
+				
 			</control>
 		</control>
 		<!-- Shadow layer to darken options bg -->
@@ -346,6 +350,30 @@
 					<onclick>Skin.SetPath(SlideShow)</onclick>
 					<label2>[COLOR=Label-alt]$INFO[Skin.String(SlideShow)][/COLOR]</label2>
 					<enable>!Skin.HasSetting(FanartSlideShow)</enable>
+					<include>newHomeMenuSubSettingsButton</include>
+					<visible>!Skin.HasSetting(originalhome)</visible>
+				</control>
+				<control type="radiobutton" id="213">
+					<description>hide favourites</description>
+					<label>hide favourites from the menu</label>
+					<onclick>Skin.ToggleSetting(hidefavourites)</onclick>
+					<selected>Skin.HasSetting(hidefavourites)</selected>
+					<include>newHomeMenuSubSettingsButton</include>
+					<visible>!Skin.HasSetting(originalhome)</visible>
+				</control>
+				<control type="radiobutton" id="214">
+					<description>hide plex online</description>
+					<label>hide plex online from the menu</label>
+					<onclick>Skin.ToggleSetting(hideplexonline)</onclick>
+					<selected>Skin.HasSetting(hideplexonline)</selected>
+					<include>newHomeMenuSubSettingsButton</include>
+					<visible>!Skin.HasSetting(originalhome)</visible>
+				</control>
+				<control type="radiobutton" id="215">
+					<description>hide programs</description>
+					<label>hide programs from the menu</label>
+					<onclick>Skin.ToggleSetting(hideprograms)</onclick>
+					<selected>Skin.HasSetting(hideprograms)</selected>
 					<include>newHomeMenuSubSettingsButton</include>
 					<visible>!Skin.HasSetting(originalhome)</visible>
 				</control>
@@ -480,12 +508,6 @@
 				<animation effect="fade" start="0" end="100" time="250" delay="250" condition="!Control.HasFocus(300) + ControlGroup(9100).HasFocus(9013)">Conditional</animation>
 				<include>transition2</include>
 				<control type="button" id="241">
-					<description>go to Weather Settings</description>
-					<label>go to Weather Settings</label>
-					<onclick>ActivateWindow(weathersettings)</onclick>
-					<include>newHomeMenuSubSettingsButton</include>
-				</control>
-				<control type="button" id="242">
 					<description>go to Weather Window</description>
 					<label>go to full 4-day weather Window</label>
 					<onclick>ActivateWindow(weather)</onclick>
@@ -501,7 +523,7 @@
 				<!-- separator between current description and temperature -->
 				<control type="image">
 					<posx>256</posx>
-					<posy>275</posy>
+					<posy>235</posy>
 					<height>10</height>
 					<width>580</width>
 					<texture>dialogs/sliderBackground_.png</texture>
@@ -515,7 +537,7 @@
 				<!-- weather bg -->
 				<control type="image" id="21">
 					<posx>10</posx>
-					<posy>140</posy>
+					<posy>100</posy>
 					<width>870</width>
 					<height>300</height>
 					<animation type="Conditional" condition="true">
@@ -527,7 +549,7 @@
 				<control type="grouplist">
 					<orientation>horizontal</orientation>
 					<posx>50</posx>
-					<posy>200</posy>
+					<posy>160</posy>
 					<width min="29" max="800">auto</width>
 					<height>300</height>
 					<font>mediumLow</font>
@@ -587,8 +609,7 @@
 				<itemgap>0</itemgap>
 				<visible>!Control.HasFocus(300) + ControlGroup(9100).HasFocus(9017)</visible>
 				<animation effect="fade" start="0" end="100" time="250" delay="250" condition="!Control.HasFocus(300) + ControlGroup(9100).HasFocus(9017)">Conditional</animation>
-				<include>transition2</include>
-				
+				<include>transition2</include>				
 				<control type="button" id="261">
 					<description>go to Grainy Edition Global Settings</description>
 					<label>go to Grainy Edition Global Settings</label>
@@ -623,6 +644,12 @@
 					<description>go to Plex System Settings</description>
 					<label>go to Plex System Settings</label>
 					<onclick>ActivateWindow(systemsettings)</onclick>
+					<include>newHomeMenuSubSettingsButton</include>
+				</control>
+				<control type="button" id="267">
+					<description>go to Weather Settings</description>
+					<label>go to Weather Settings</label>
+					<onclick>ActivateWindow(weathersettings)</onclick>
 					<include>newHomeMenuSubSettingsButton</include>
 				</control>
 			</control>
