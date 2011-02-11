@@ -52,7 +52,7 @@
 			<onup>555</onup>
 			<ondown>555</ondown>
 			<onleft>300</onleft>
-			<onright>300</onright>
+			<onright>23</onright>
 			<orientation>vertical</orientation>
 			<focusposition>5</focusposition>
 			<pagecontrol>23</pagecontrol>

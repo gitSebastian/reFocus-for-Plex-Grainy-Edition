@@ -9,14 +9,14 @@
 			<width>1400</width>
 			<height>610</height>
 			<onleft>300</onleft>
-			<onright>76</onright>
+			<onright>78</onright>
 			<onup>51</onup>
 			<ondown>51</ondown>
 			<scrolltime>150</scrolltime>
 			<focusposition>1</focusposition>
 			<wraparound>true</wraparound>
 			<movement>2</movement>
-			<pagecontrol>76</pagecontrol>
+			<pagecontrol>78</pagecontrol>
 			<orientation>vertical</orientation>
 			<include>transition2</include>
 			<include>infoDialogHide</include>
@@ -1034,11 +1034,11 @@
 			<width>700</width>
 			<height>572</height>
 			<onleft>300</onleft>
-			<onright>23</onright>
+			<onright>77</onright>
 			<onup>571</onup>
 			<ondown>571</ondown>
 			<scrolltime>150</scrolltime>
-			<pagecontrol>23</pagecontrol>
+			<pagecontrol>77</pagecontrol>
 			<orientation>vertical</orientation>
 			<preloaditems>4</preloaditems>
 			<visible>!Window.IsActive(progressdialog) + [Container.Content(movies) | Container.Content(tvshows)]</visible>
