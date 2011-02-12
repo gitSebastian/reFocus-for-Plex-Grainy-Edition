@@ -128,6 +128,7 @@
 	<include name="allscreens">
 		<include>libClock</include>
 		<include>scrollOffset</include>
+		<include>debugInfos</include>
 	</include>
 	<!-- BACKGROUNDS / FANART -->
 	<!-- GRAINY EDITION BACKGROUND -->

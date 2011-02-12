@@ -50,10 +50,10 @@
 						<posx>20</posx>
 						<width>600</width>
 						<height>35</height>
-						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<label>$INFO[ListItem.Label]</label>
 						<font>mediumLow</font>
 						<aligny>center</aligny>
-						<textcolor>Color4</textcolor>
+						<textcolor>Color1</textcolor>
 					</control>
 					<control type="label">
 						<posx>693</posx>
@@ -63,7 +63,7 @@
 						<font>mediumLow</font>
 						<align>right</align>
 						<aligny>center</aligny>
-						<textcolor>Color4</textcolor>
+						<textcolor>Color1</textcolor>
 					</control>
 				</itemlayout>
 				<focusedlayout height="40">
@@ -78,8 +78,8 @@
 						<height>35</height>
 						<font>mediumLow</font>
 						<aligny>center</aligny>
-						<textcolor>Color1</textcolor>
-						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<textcolor>Color5</textcolor>
+						<label>$INFO[ListItem.Label]</label>
 					</control>
 					<control type="label">
 						<posx>693</posx>
@@ -89,7 +89,7 @@
 						<font>mediumLow</font>
 						<align>right</align>
 						<aligny>center</aligny>
-						<textcolor>Color1</textcolor>
+						<textcolor>Color5</textcolor>
 					</control>
 				</focusedlayout>
 			</control>
@@ -103,8 +103,7 @@
 				<aligny>center</aligny>
 				<font>medium</font>
 				<label>$INFO[Container(5).CurrentPage]/$INFO[Container(5).NumPages]</label>
-				<textcolor>Color4</textcolor>
-				<shadowcolor>fff4f4f4</shadowcolor>
+				<textcolor>Color1</textcolor>
 			</control>
 		</control>
 	</controls>

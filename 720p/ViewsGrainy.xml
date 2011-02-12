@@ -1,32 +1,5 @@
 <?xml version="1.0"?>
 <includes>
-	<!-- shared "New List" animations -->
-	<include name="itemimageflipnfade">
-		<animation type="WindowOpen">
-			<effect type="fade" start="20" end="100" time="1000" delay="500"/>
-			<effect type="rotatex" center="380" start="-180" end="0" time="500" delay="500" reversible="false"/>
-		</animation>
-		<animation type="WindowClose">
-			<effect type="fade" start="50" end="0" time="700"/>
-		</animation>
-		<animation type="Visible">
-			<effect type="fade" start="0" end="100" time="1000" delay="0"/>
-			<effect type="rotatex" center="380" start="-180" end="0" time="500" delay="500" reversible="false"/>
-		</animation>
-	</include>
-	<include name="horizbarflipnfade">
-		<animation type="WindowOpen">
-			<effect type="fade" start="5" end="15" time="1000" delay="500"/>
-			<effect type="rotatex" center="378" start="-180" end="0" time="500" delay="500" reversible="false"/>
-		</animation>
-		<animation type="WindowClose">
-			<effect type="fade" start="50" end="0" time="700"/>
-		</animation>
-		<animation type="Visible">
-			<effect type="fade" start="0" end="15" time="1000"/>
-			<effect type="rotatex" center="378" start="-180" end="0" time="500" delay="500" reversible="false"/>
-		</animation>
-	</include>
 	<!-- LIST NEW -->
 	<include name="view_List_GrainyEdition">
 		<!-- horiz bar -->
@@ -35,12 +8,13 @@
 			<posy>317</posy>
 			<width>1420</width>
 			<height>122</height>
+			<include>transition2</include>
 			<include>infoDialogHide</include>
 			<include>contextMenuHide</include>
 			<include>grainypagefade</include>
 			<texture border="0,30,0,30">views/list-focus.png</texture>
+			<animation effect="fade" start="15" end="15" time="0" condition="true">Conditional</animation>
 			<visible>!ControlGroup(300).HasFocus + Control.IsVisible(555)</visible>
-			<include>horizbarflipnfade</include>
 		</control>
 		<!-- menu -->
 		<control type="fixedlist" id="555">
@@ -238,18 +212,18 @@
 			<label>$INFO[ListItem.Plot]</label>
 			<textcolor>text</textcolor>
 			<font>small</font>
-			<visible>!Skin.HasSetting(usesmallcase) + Control.IsVisible(555) + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
+			<visible>!Skin.HasSetting(usesmallcase) + Control.IsVisible(555) + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !Window.IsActive(2)</visible>
 		</control>
 		<!-- faux frame non-library -->
 		<control type="image">
 			<animation type="WindowOpen">
-				<effect type="fade" start="0" end="20" time="1000" delay="3000"/>
+				<effect type="fade" start="0" end="20" time="2000" delay="300"/>
 			</animation>
 			<animation type="WindowClose">
-				<effect type="fade" start="20" end="0" time="100"/>
+				<effect type="fade" start="20" end="0" time="700"/>
 			</animation>
 			<animation type="Visible">
-				<effect type="fade" start="0" end="20" time="500" delay="2000"/>
+				<effect type="fade" start="0" end="20" time="1000" delay="300"/>
 			</animation>
 			<posx>91</posx>
 			<posy>196</posy>
@@ -266,7 +240,6 @@
 		</control>
 		<!-- icon non-library -->
 		<control type="image" id="5555">
-			<include>itemimageflipnfade</include>
 			<posx>100</posx>
 			<posy>200</posy>
 			<width>360</width>
@@ -348,13 +321,13 @@
 		<!-- frame library -->
 		<control type="image" id="5555">
 			<animation type="WindowOpen">
-				<effect type="fade" start="0" end="90" time="2000" delay="1000"/>
+				<effect type="fade" start="0" end="90" time="2000" delay="300"/>
 			</animation>
 			<animation type="WindowClose">
 				<effect type="fade" start="50" end="0" time="700"/>
 			</animation>
 			<animation type="Visible">
-				<effect type="fade" start="0" end="90" time="1000" delay="1000"/>
+				<effect type="fade" start="0" end="90" time="1000" delay="300"/>
 			</animation>
 			<posx>220</posx>
 			<posy>70</posy>
@@ -375,7 +348,6 @@
 			<width>240</width>
 			<height>360</height>
 			<fadetime>400</fadetime>
-			<include>itemimageflipnfade</include>
 			<include>transition2</include>
 			<include>infoDialogHide</include>
 			<include>contextMenuHide</include>
@@ -393,7 +365,6 @@
 			<width>240</width>
 			<height>360</height>
 			<fadetime>400</fadetime>
-			<include>itemimageflipnfade</include>
 			<include>transition2</include>
 			<include>infoDialogHide</include>
 			<include>contextMenuHide</include>
@@ -410,7 +381,6 @@
 			<width>240</width>
 			<height>360</height>
 			<fadetime>400</fadetime>
-			<include>itemimageflipnfade</include>
 			<include>transition2</include>
 			<include>infoDialogHide</include>
 			<include>contextMenuHide</include>
@@ -427,7 +397,6 @@
 			<width>240</width>
 			<height>360</height>
 			<fadetime>400</fadetime>
-			<include>itemimageflipnfade</include>
 			<include>transition2</include>
 			<include>infoDialogHide</include>
 			<include>contextMenuHide</include>
@@ -441,7 +410,6 @@
 		<control type="image">
 			<posx>445</posx>
 			<posy>415</posy>
-			<include>itemimageflipnfade</include>
 			<include>transition2</include>
 			<include>infoDialogHide</include>
 			<include>contextMenuHide</include>
@@ -455,7 +423,6 @@
 			<posy>416</posy>
 			<width>39</width>
 			<height>24</height>
-			<include>itemimageflipnfade</include>
 			<include>transition2</include>
 			<include>infoDialogHide</include>
 			<include>contextMenuHide</include>
@@ -497,7 +464,6 @@
 			<width>360</width>
 			<height>360</height>
 			<fadetime>400</fadetime>
-			<include>itemimageflipnfade</include>
 			<include>transition2</include>
 			<include>infoDialogHide</include>
 			<include>contextMenuHide</include>

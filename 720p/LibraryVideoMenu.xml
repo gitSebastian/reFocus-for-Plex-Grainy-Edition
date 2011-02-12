@@ -50,7 +50,7 @@
 					<label>$LOCALIZE[537]</label>
 					<onclick>Container.SetViewMode(51)</onclick>
 					<include>newHomeMenuCategoryButton</include>
-					<visible>Container.Content(episodes) | Container.Content(plugincontent)</visible>
+					<visible>[Container.Content(episodes) | Container.Content(plugincontent)] + !Window.IsActive(2)</visible>
 				</control>
 				<!-- slide (movies, tv shows & seasons) -->
 				<control type="button" id="9005">
@@ -79,6 +79,13 @@
 					<onclick>Container.SetViewMode(571)</onclick>
 					<include>newHomeMenuCategoryButton</include>
 					<visible>[Container.Content(movies) | Container.Content(tvshows)]</visible>
+				</control>
+				<!-- thumbnails photo -->
+				<control type="button" id="9009">
+					<label>thumbnails</label>
+					<onclick>Container.SetViewMode(572)</onclick>
+					<include>newHomeMenuCategoryButton</include>
+					<visible>Window.IsActive(2)</visible>
 				</control>
 				<!-- banners (tv shows) -->
 				<control type="button" id="9010">

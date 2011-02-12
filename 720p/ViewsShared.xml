@@ -171,7 +171,7 @@
 			<include>transition2</include>
 			<include>infoDialogHide</include>
 			<include>contextMenuHide</include>
-			<!--visible>!Window.IsActive(progressdialog)</visible-->
+			<visible>!Window.IsActive(2) + !Window.IsActive(progressdialog)</visible>
 			<itemlayout height="168" width="168">
 				<control type="image">
 					<width>169</width>
@@ -225,7 +225,108 @@
 			</focusedlayout>
 		</control>
 	</include>
+	<!-- iPhoto -->
 	<include name="view_ThumbWide">
+		<!--<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1300</width>
+			<height>800</height>
+			<texture border="10">frames/black.png</texture>
+			<aspectratio>stretch</aspectratio>
+			<visible>Window.IsActive(2) + !IsEmpty(Container.FolderPath) + !Window.IsActive(progressdialog) + Control.IsVisible(572) + !IsEmpty(Container.SecondTitle)</visible>
+		</control>-->
+		<control type="panel" id="572">
+			<viewtype label="Thumbnails">bigicons</viewtype>
+			<posx>5</posx>
+			<posy>70</posy>
+			<width>1280</width>
+			<height>548</height>
+			<onleft>300</onleft>
+			<onright>572</onright>
+			<onup>572</onup>
+			<ondown>572</ondown>
+			<preloaditems>4</preloaditems>
+			<scrolltime>200</scrolltime>
+			<!--<pagecontrol>75</pagecontrol>-->
+			<include>transition2</include>
+			<include>infoDialogHide</include>
+			<include>contextMenuHide</include>
+			<visible>!IsEmpty(Container.FolderPath) + !Window.IsActive(progressdialog)</visible>
+			<itemlayout height="180" width="210">
+				<control type="image">
+					<posx>-6</posx>
+					<posy>10</posy>
+					<width>230</width>
+					<height>185</height>
+					<texture border="10">frames/albumframe.png</texture>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+					<posx>8</posx>
+					<posy>8</posy>
+					<width>204</width>
+					<height>174</height>
+					<texture border="10">frames/white.png</texture>
+					<aspectratio>stretch</aspectratio>
+					<!--<include>focus_WideThumbs</include>-->
+				</control>
+				<control type="image">
+					<posx>9</posx>
+					<posy>9</posy>
+					<width>202</width>
+					<height>172</height>
+					<texture border="10">frames/black.png</texture>
+					<aspectratio>stretch</aspectratio>
+					<!--<include>focus_WideThumbs</include>-->
+				</control>
+				<control type="image">
+					<posx>10</posx>
+					<posy>10</posy>
+					<width>200</width>
+					<height>170</height>
+					<aspectratio scalediffuse="false" align="center" aligny="top">scale</aspectratio>
+					<texture background="true" diffuse="frames/white.png" fallback="thumbs/pictureSmall.png">$INFO[ListItem.Thumb]</texture>
+				</control>
+			</itemlayout>
+			<focusedlayout height="180" width="210">
+				<control type="image">
+					<posx>-16</posx>
+					<posy>-16</posy>
+					<width>252</width>
+					<height>222</height>
+					<texture border="10">frames/albumframe.png</texture>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+					<width>220</width>
+					<height>190</height>
+					<texture border="10">frames/white.png</texture>
+					<aspectratio>stretch</aspectratio>
+					<!--<include>focus_WideThumbs</include>-->
+				</control>
+				<control type="image">
+					<posx>9</posx>
+					<posy>9</posy>
+					<width>202</width>
+					<height>172</height>
+					<texture border="10">frames/black.png</texture>
+					<aspectratio>stretch</aspectratio>
+					<!--<include>focus_WideThumbs</include>-->
+				</control>
+				<control type="image">
+					<posx>10</posx>
+					<posy>10</posy>
+					<width>200</width>
+					<height>170</height>
+					<aspectratio scalediffuse="false" align="center" aligny="top">scale</aspectratio>
+					<texture background="true" diffuse="frames/white.png" fallback="thumbs/pictureSmall.png">$INFO[ListItem.Thumb]</texture>
+					<!--<include>focus_WideThumbs</include>-->
+				</control>
+			</focusedlayout>
+		</control>
+	</include>
+	<!--<include name="view_ThumbWide">
 		<control type="panel" id="572">
 			<viewtype label="Thumbnails">bigicons</viewtype>
 			<posx>75</posx>
@@ -242,7 +343,7 @@
 			<include>transition2</include>
 			<include>infoDialogHide</include>
 			<include>contextMenuHide</include>
-			<!--visible>!IsEmpty(Container.FolderPath) + !Window.IsActive(progressdialog)</visible-->
+			<visible>!IsEmpty(Container.FolderPath) + !Window.IsActive(progressdialog)</visible>
 			<itemlayout height="170" width="220">
 				<control type="image">
 					<width>219</width>
@@ -278,7 +379,7 @@
 				</control>
 			</focusedlayout>
 		</control>
-	</include>
+	</include>-->
 	<!-- GALLERY VIEW -->
 	<include name="view_Gallery">
 		<control type="group">
