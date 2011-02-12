@@ -88,9 +88,9 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<info>ListItem.Label</info>
-					<textcolor>Color4</textcolor>
-					<focusedcolor>Color1</focusedcolor>
-					<selectedcolor>Selected</selectedcolor>
+					<textcolor>Color1</textcolor>
+					<focusedcolor>Color5</focusedcolor>
+					<selectedcolor>Color5</selectedcolor>
 				</control>
 			</itemlayout>
 			<focusedlayout height="40">
@@ -109,8 +109,8 @@
 					<aligny>center</aligny>
 					<info>ListItem.Label</info>
 					<textcolor>Color4</textcolor>
-					<selectedcolor>Selected</selectedcolor>
-					<focusedcolor>Color1</focusedcolor>
+					<selectedcolor>Color5</selectedcolor>
+					<focusedcolor>Color5</focusedcolor>
 				</control>
 			</focusedlayout>
 		</control>
@@ -136,7 +136,7 @@
 			<aligny>center</aligny>
 			<font>normalLow</font>
 			<label>1022</label>
-			<textcolor>Color4</textcolor>
+			<textcolor>Color5</textcolor>
 		</control>
 
 	
