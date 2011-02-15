@@ -344,6 +344,14 @@
 						<include>newHomeMenuSubSettingsButton</include>
 						<visible>Control.IsVisible(57) + Container.Content(movies)</visible>
 					</control>
+					<control type="radiobutton" id="214">
+						<label>hide "genre" description</label>
+						<onclick>Container.SetViewMode(57)</onclick>
+						<onclick>Skin.ToggleSetting(hidepostergenre)</onclick>
+						<selected>Skin.HasSetting(hidepostergenre)</selected>
+						<include>newHomeMenuSubSettingsButton</include>
+						<visible>Control.IsVisible(57) + Container.Content(movies)</visible>
+					</control>
 				</control>
 			</control>
 		</control>

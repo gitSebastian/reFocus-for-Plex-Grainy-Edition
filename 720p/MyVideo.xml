@@ -318,7 +318,7 @@
 				<include>grainybeigetext</include>
 				<align>left</align>
 				<width>750</width>
-				<visible>Container.Content(movies)</visible>
+				<visible>Container.Content(movies) + !Skin.HasSetting(hidepostergenre)</visible>
 			</control>
 			<control type="label">
 				<posy>25</posy>
