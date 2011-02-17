@@ -94,7 +94,7 @@
 				<height>270</height>
 				<label>$INFO[ListItem.PlotOutline]</label>
 				<include>textBox</include>
-				<visible>!Skin.HasSetting(usecapitalisation)</visible>
+				<visible>Skin.HasSetting(usesmallcase)</visible>
 			</control>
 			<!-- mixed case -->
 			<control type="textbox" id="4">
@@ -102,7 +102,7 @@
 				<height>270</height>
 				<label>$INFO[ListItem.PlotOutline]</label>
 				<font>normal</font>
-				<visible>Skin.HasSetting(usecapitalisation)</visible>
+				<visible>!Skin.HasSetting(usesmallcase)</visible>
 			</control>
 			<!-- END MOD -->
 		</control>
@@ -171,7 +171,7 @@
 				<height>270</height>
 				<label>$INFO[ListItem.Plot]</label>
 				<include>textBox</include>
-				<visible>!Skin.HasSetting(usecapitalisation)</visible>
+				<visible>Skin.HasSetting(usesmallcase)</visible>
 			</control>
 			<!-- mixed case -->
 			<control type="textbox" id="4">
@@ -179,7 +179,7 @@
 				<height>270</height>
 				<label>$INFO[ListItem.Plot]</label>
 				<font>normal</font>
-				<visible>Skin.HasSetting(usecapitalisation)</visible>
+				<visible>!Skin.HasSetting(usesmallcase)</visible>
 			</control>
 			<!-- END MOD -->
 		</control>
@@ -251,7 +251,7 @@
 					<height>300</height>
 					<label>$INFO[ListItem.Plot]</label>
 					<include>textBox</include>
-					<visible>!Skin.HasSetting(usecapitalisation)</visible>
+					<visible>Skin.HasSetting(usesmallcase)</visible>
 				</control>
 				<!-- mixed case -->
 				<control type="textbox" id="4">
@@ -259,7 +259,7 @@
 					<height>300</height>
 					<label>$INFO[ListItem.Plot]</label>
 					<font>normal</font>
-					<visible>Skin.HasSetting(usecapitalisation)</visible>
+					<visible>!Skin.HasSetting(usesmallcase)</visible>
 				</control>
 				<!-- END MOD -->
 			</control>

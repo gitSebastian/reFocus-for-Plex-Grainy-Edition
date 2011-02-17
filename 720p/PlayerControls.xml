@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <window type="dialog" id="114">
 	<defaultcontrol always="true">3</defaultcontrol>
-	<visible>Player.HasMedia + Window.IsActive(PlayerControls) + !Window.IsActive(FullscreenVideo) + !Window.IsActive(Visualisation)</visible>
+	<visible>Player.HasMedia + Window.IsActive(PlayerControls) + !Window.IsActive(FullscreenVideo) + !Window.IsActive(Visualisation) + !Window.IsActive(2901)</visible>
 	<controls>
 		<control type="group">
 			<posx>0</posx>
 			<posy>70</posy>
-			<visible>Player.HasMusicPlaylist</visible>
+			<include>open_PlayerControls</include>
+			<visible>Player.HasMedia + Window.IsActive(PlayerControls) + !Window.IsActive(FullscreenVideo) + !Window.IsActive(Visualisation) + !Window.IsActive(2901)</visible>
 			<control type="image" id="1">
 				<posx>325</posx>
 				<posy>530</posy>
 				<width>650</width>
 				<height>79</height>
-				<texture border="35,0,35,0">osd/background_slim.png</texture>
-				<include>open_PlayerControls</include>
+				<texture border="35,0,35,0">osd/background_slim.png</texture>				
 			</control>
 			<control type="group" id="213">
 				<posx>341</posx>

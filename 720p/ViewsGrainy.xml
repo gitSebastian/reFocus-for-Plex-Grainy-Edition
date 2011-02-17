@@ -114,7 +114,7 @@
 				</control>
 			</focusedlayout>
 			<!-- video non-focused -->
-			<itemlayout condition="Control.IsVisible(555) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]" width="1240" height="46">
+			<itemlayout condition="Control.IsVisible(555) + [Container.Content(movies) | Container.Content(tvshows)]" width="1240" height="46">
 				<!-- non-focused -->
 				<!-- small case -->
 				<control type="label">
@@ -142,7 +142,7 @@
 				</control>
 			</itemlayout>
 			<!-- video focused -->
-			<focusedlayout condition="Control.IsVisible(555) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]" width="800" height="120">
+			<focusedlayout condition="Control.IsVisible(555) + [Container.Content(movies) | Container.Content(tvshows)]" width="800" height="120">
 				<!-- caps title -->
 				<control type="label">
 					<posx>500</posx>

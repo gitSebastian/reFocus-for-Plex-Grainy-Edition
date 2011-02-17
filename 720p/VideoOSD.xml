@@ -5,9 +5,9 @@
 		<control type="group">
 			<posx>0</posx>
 			<posy>-100</posy>
+			<include>state_OSD</include>
 		<control type="group">
 			<visible>![Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
-			<include>state_OSD</include>
 			<control type="image" id="1">
 				<posx>325</posx>
 				<posy>630</posy>

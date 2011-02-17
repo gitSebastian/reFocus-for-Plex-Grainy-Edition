@@ -5,11 +5,11 @@
 		<control type="group">
 			<animation effect="fade" start="100" end="20" time="350" condition="Control.HasFocus(300) | Control.HasFocus(1110) | Control.HasFocus(1140) | Control.HasFocus(1150) | Control.HasFocus(1160)">Conditional</animation>
 			<control type="image">
-				<posx>-383</posx>
+				<posx>383</posx>
 				<posy>121</posy>
 				<height>509</height>
 				<width>2000</width>
-				<texture flipx="true">dialogs/square_dialog_background.png</texture>
+				<texture flipx="true">dialogs/square_menu_background.png</texture>
 				<aspectratio align="right">stretch</aspectratio>
 				<include>transition2</include>
 				<animation type="Conditional" condition="true">
@@ -31,6 +31,33 @@
 			<visible allowhiddenfocus="true">ControlGroup(300).HasFocus</visible>
 			<include>homeMenuToggle</include>
 			<include>homeMenusLayout</include>
+			<!-- white separators top and bottom sub-menu -->
+			<control type="image">
+				<posx>356</posx>
+				<posy>-18</posy>
+				<height>10</height>
+				<width>1000</width>
+				<texture>dialogs/sliderBackground_.png</texture>
+				<aspectratio align="right">stretch</aspectratio>
+				<include>transition2</include>
+				<animation type="Conditional" condition="true">
+					<effect type="fade" start="0" end="80"/>
+				</animation>
+				<!--<visible>!Control.HasFocus(300) + [ControlGroup(9100).HasFocus() | ControlGroup(200).HasFocus()]</visible>-->
+			</control>
+			<control type="image">
+				<posx>356</posx>
+				<posy>460</posy>
+				<height>10</height>
+				<width>1000</width>
+				<texture>dialogs/sliderBackground_.png</texture>
+				<aspectratio align="right">stretch</aspectratio>
+				<include>transition2</include>
+				<animation type="Conditional" condition="true">
+					<effect type="fade" start="0" end="80"/>
+				</animation>
+				<!--<visible>!Control.HasFocus(300) + [ControlGroup(9100).HasFocus() | ControlGroup(200).HasFocus()]</visible>-->
+			</control>
 			<!-- LEFT -->
 			<control type="grouplist" id="9100">
 				<onup>9100</onup>
@@ -43,7 +70,7 @@
 					<label>$LOCALIZE[535]</label>
 					<onclick>Container.SetViewMode(555)</onclick>
 					<include>newHomeMenuCategoryButton</include>
-					<visible>![Container.Content(episodes)]</visible>
+					<visible>![Container.Content(episodes) | Container.Content(seasons)]</visible>
 				</control>
 				<!-- big list (tv show episodes) -->
 				<control type="button" id="9004">
@@ -134,7 +161,7 @@
 				<control type="button" id="9001">
 					<label>view options</label>
 					<include>newHomeMenuCategoryButton</include>
-					<visible allowhiddenfocus="true">![Control.HasFocus(201) | Control.HasFocus(202) | Control.HasFocus(203) | Control.HasFocus(204) | Control.HasFocus(205) | Control.HasFocus(206) | Control.HasFocus(207) | Control.HasFocus(208) | Control.HasFocus(209) | Control.HasFocus(210) | Control.HasFocus(211) | Control.HasFocus(212)]</visible>
+					<visible allowhiddenfocus="true">![Control.HasFocus(201) | Control.HasFocus(202) | Control.HasFocus(203) | Control.HasFocus(204) | Control.HasFocus(205) | Control.HasFocus(206) | Control.HasFocus(207) | Control.HasFocus(208) | Control.HasFocus(209) | Control.HasFocus(210) | Control.HasFocus(211) | Control.HasFocus(212) | Control.HasFocus(213) | Control.HasFocus(214)]</visible>
 				</control>
 				<control type="button" id="9002">
 					<label>view options</label>

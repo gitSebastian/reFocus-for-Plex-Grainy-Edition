@@ -41,6 +41,20 @@
 			<effect type="fade" start="100" end="0" time="100"/>
 		</animation>
 	</include>
+	<include name="fadeinout3">
+		<animation type="WindowOpen">
+			<effect type="fade" start="0" end="100" time="350"/>
+		</animation>
+		<animation type="WindowClose">
+			<effect type="fade" start="100" end="0" time="200"/>
+		</animation>
+		<animation type="Visible">
+			<effect type="fade" start="0" end="100" time="350"/>
+		</animation>
+		<animation type="Hidden">
+			<effect type="fade" start="100" end="0" time="200"/>
+		</animation>
+	</include>
 	<!-- VIEWTYPE -->
 	<!-- CUSTOM GRAINY EDITION ANIMATIONS -->
 	<!-- with "effects" -->
@@ -329,13 +343,13 @@
 			<effect type="slide" start="0,75" end="0,0" tween="Cubic" easing="Out" time="250"/>
 		</animation>
 		<animation type="WindowClose">
-			<effect type="slide" start="0,0" end="0,75" tween="Cubic" easing="In" time="250"/>
+			<effect type="slide" start="0,0" end="0,75" tween="Cubic" easing="In" time="150"/>
 		</animation>
 		<animation type="Visible">
 			<effect type="slide" start="0,75" end="0,0" tween="Cubic" easing="Out" time="250"/>
 		</animation>
 		<animation type="Hidden">
-			<effect type="slide" start="0,0" end="0,75" tween="Cubic" easing="In" time="250"/>
+			<effect type="slide" start="0,0" end="0,75" tween="Cubic" easing="In" time="150"/>
 		</animation>
 	</include>
 	<include name="open_PlayerControls">

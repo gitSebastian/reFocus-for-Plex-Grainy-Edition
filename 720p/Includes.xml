@@ -772,6 +772,24 @@
 		<align>right</align>
 		<width>325</width>
 	</include>
+	<!-- settings categories -->
+	<include name="newSettingsCategoryButton">
+		<animation type="Conditional" condition="true">
+			<effect type="fade" start="0" end="80"/>
+		</animation>
+		<texturefocus border="13,6,13,6">settings/list-focusRev.png</texturefocus>
+		<textoffsety>-5</textoffsety>
+		<textoffsetx>30</textoffsetx>
+		<font>homeMenuNew</font>
+		<height>50</height>
+		<textcolor>Color1</textcolor>
+		<aspectratio align="right">stretch</aspectratio>
+		<align>right</align>
+		<width>345</width>
+	</include>
+	<include name="newHomeMenuCategoryNoFocusBg">
+		<texturenofocus>settings/list-focusRev.png</texturenofocus>
+	</include>
 	<!-- new home menu formatting -->
 	<!-- categories -->
 	<include name="newHomeMenuCategoryButton">

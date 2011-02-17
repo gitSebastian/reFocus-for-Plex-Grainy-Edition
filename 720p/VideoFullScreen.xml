@@ -7,9 +7,10 @@
 			<visible>Control.IsVisible(10)</visible>
 			<include>codecInfo</include>
 			<control type="image" id="1">
-				<include>screenwidth</include>
-				<height>134</height>
-				<texture flipy="false">OSD/controlsFrame.png</texture>
+				<posx>-50</posx>
+				<width>1500</width>
+				<height>120</height>
+				<texture flipy="false">dialogs/square_dialog_background.png</texture>
 				<visible>Control.IsVisible(10)</visible>
 			</control>
 			<control type="label" id="10">

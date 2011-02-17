@@ -10,7 +10,7 @@
 			<onup>300</onup>
 			<ondown>300</ondown>
 			<onleft>9000</onleft>
-			<onright>9000</onright>
+			<onright>300</onright>
 			<wraparound>true</wraparound>
 			<orientation>vertical</orientation>
 			<focusposition>1</focusposition>
@@ -161,6 +161,33 @@
 			<animation effect="fade" start="100" end="15" time="350" condition="Control.HasFocus(300) + !Skin.HasSetting(legacymenucopperfieldmode)">Conditional</animation>
 			<include>homeMenuToggle</include>
 			<include>homeMenusLayout</include>
+			<!-- white separators top and bottom sub-menu -->
+			<control type="image">
+				<posx>356</posx>
+				<posy>-18</posy>
+				<height>10</height>
+				<width>1000</width>
+				<texture>dialogs/sliderBackground_.png</texture>
+				<aspectratio align="right">stretch</aspectratio>
+				<include>transition2</include>
+				<animation type="Conditional" condition="true">
+					<effect type="fade" start="0" end="80"/>
+				</animation>
+				<!--<visible>!Control.HasFocus(300) + [ControlGroup(9100).HasFocus() | ControlGroup(200).HasFocus()]</visible>-->
+			</control>
+			<control type="image">
+				<posx>356</posx>
+				<posy>460</posy>
+				<height>10</height>
+				<width>1000</width>
+				<texture>dialogs/sliderBackground_.png</texture>
+				<aspectratio align="right">stretch</aspectratio>
+				<include>transition2</include>
+				<animation type="Conditional" condition="true">
+					<effect type="fade" start="0" end="80"/>
+				</animation>
+				<!--<visible>!Control.HasFocus(300) + [ControlGroup(9100).HasFocus() | ControlGroup(200).HasFocus()]</visible>-->
+			</control>
 			<!-- MAIN LEVEL -->
 			<control type="grouplist" id="9100">
 				<onup>9100</onup>
@@ -243,18 +270,6 @@
 					<include>newHomeMenuCategoryNoFocusBg</include>
 					<visible>!Control.IsVisible(9017)</visible>					
 				</control>
-				<!-- Exit -->
-				<control type="button" id="9019">
-					<label>$LOCALIZE[31013]</label>
-					<include>newHomeMenuCategoryButton</include>
-					<visible allowhiddenfocus="true">![Control.HasFocus(291) | Control.HasFocus(292) | Control.HasFocus(293)]</visible>
-				</control>
-				<control type="button" id="9020">
-					<label>$LOCALIZE[31013]</label>
-					<include>newHomeMenuCategoryButton</include>
-					<include>newHomeMenuCategoryNoFocusBg</include>
-					<visible>!Control.IsVisible(9019)</visible>
-				</control>
 				<!-- menu options -->
 				<control type="button" id="9001">
 					<label>view options</label>
@@ -267,18 +282,29 @@
 					<include>newHomeMenuCategoryNoFocusBg</include>
 					<visible>!Control.IsVisible(9001)</visible>
 				</control>
-				
+				<!-- Exit -->
+				<control type="button" id="9019">
+					<label>$LOCALIZE[31013]</label>
+					<include>newHomeMenuCategoryButton</include>
+					<visible allowhiddenfocus="true">![Control.HasFocus(291) | Control.HasFocus(292) | Control.HasFocus(293) | Control.HasFocus(294)]</visible>
+				</control>
+				<control type="button" id="9020">
+					<label>$LOCALIZE[31013]</label>
+					<include>newHomeMenuCategoryButton</include>
+					<include>newHomeMenuCategoryNoFocusBg</include>
+					<visible>!Control.IsVisible(9019)</visible>
+				</control>
 			</control>
 		</control>
 		<!-- Shadow layer to darken options bg -->
 		<control type="group">
 			<animation effect="fade" start="100" end="60" time="350" condition="Control.HasFocus(300) | Control.HasFocus(1110) | Control.HasFocus(1140) | Control.HasFocus(1150) | Control.HasFocus(1160)">Conditional</animation>
 			<control type="image">
-				<posx>-383</posx>
+				<posx>383</posx>
 				<posy>121</posy>
 				<height>509</height>
 				<width>2000</width>
-				<texture flipx="true">dialogs/square_dialog_background.png</texture>
+				<texture flipx="true">dialogs/square_menu_background.png</texture>
 				<aspectratio align="right">stretch</aspectratio>
 				<include>transition2</include>
 				<animation type="Conditional" condition="true">
@@ -296,7 +322,7 @@
 			<!-- view options -->
 			<control type="grouplist" id="200">
 				<onleft>9001</onleft>
-				<onright>300</onright>
+				<onright>-</onright>
 				<onup>200</onup>
 				<ondown>200</ondown>
 				<itemgap>0</itemgap>
@@ -394,7 +420,7 @@
 			<!-- iTunes shortcuts -->
 			<control type="grouplist" id="200">
 				<onleft>9005</onleft>
-				<onright>300</onright>
+				<onright>-</onright>
 				<onup>200</onup>
 				<ondown>200</ondown>
 				<itemgap>0</itemgap>
@@ -443,7 +469,7 @@
 			<!-- Plug-Ins sub-menu -->
 			<control type="grouplist" id="200">
 				<onleft>9007</onleft>
-				<onright>300</onright>
+				<onright>-</onright>
 				<onup>200</onup>
 				<ondown>200</ondown>
 				<itemgap>0</itemgap>
@@ -469,40 +495,32 @@
 					<include>newHomeMenuSubSettingsButton</include>
 				</control>
 			</control>
-			<!-- Plex Online & Programs -->
+			<!-- Plex Online -->
 			<control type="group">
-				<posx>100</posx>
-				<posy>30</posy>
-			<!-- frame -->
-			<control type="image">
-				<posx>-10</posx>
-				<posy>-10</posy>
-				<height>410</height>
-				<width>718</width>
-				<texture border="20" background="true">dialogs/square_dialog_background.png</texture>
-				<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
-				<include>transition2</include>
-				<visible>!Control.HasFocus(300) + [ControlGroup(9100).HasFocus(9010) | ControlGroup(9100).HasFocus(9012)]</visible>
-			</control>
-			<!-- Plex Online -->
-			<control type="image">
-				<texture border="10" diffuse="frames/episodeframemask.png">views/plexonline.jpg</texture>
-				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-				<include>transition2</include>
 				<visible>!Control.HasFocus(300) + ControlGroup(9100).HasFocus(9010)</visible>
-			</control>
-			<!-- Plex Online -->
-			<control type="image">
-				<texture border="10" diffuse="frames/episodeframemask.png">views/programs.jpg</texture>
-				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+				<animation effect="fade" start="0" end="100" time="250" delay="250" condition="!Control.HasFocus(300) + ControlGroup(9100).HasFocus(9010)">Conditional</animation>
 				<include>transition2</include>
-				<visible>!Control.HasFocus(300) + ControlGroup(9100).HasFocus(9012)</visible>
+				<control type="button" id="221">
+					<label>click on the menu item to open Plex Online</label>
+					<include>newHomeMenuSubSettingsButton</include>
+					<enable>dummy</enable>
+				</control>
 			</control>
+			<!-- Programs -->
+			<control type="group">
+				<visible>!Control.HasFocus(300) + ControlGroup(9100).HasFocus(9012)</visible>
+				<animation effect="fade" start="0" end="100" time="250" delay="250" condition="!Control.HasFocus(300) + ControlGroup(9100).HasFocus(9012)">Conditional</animation>
+				<include>transition2</include>
+				<control type="button" id="221">
+					<label>click on the menu item to open Applications</label>
+					<include>newHomeMenuSubSettingsButton</include>
+					<enable>dummy</enable>
+				</control>
 			</control>
 			<!-- Weather sub-menu -->
 			<control type="grouplist" id="200">
 				<onleft>9013</onleft>
-				<onright>300</onright>
+				<onright>-</onright>
 				<onup>200</onup>
 				<ondown>200</ondown>
 				<itemgap>0</itemgap>
@@ -605,7 +623,7 @@
 			<!-- Settings shortcuts -->
 			<control type="grouplist" id="200">
 				<onleft>9017</onleft>
-				<onright>300</onright>
+				<onright>-</onright>
 				<onup>200</onup>
 				<ondown>200</ondown>
 				<itemgap>0</itemgap>
@@ -658,7 +676,7 @@
 			<!-- Exit sub-menu -->
 			<control type="grouplist" id="200">
 				<onleft>9019</onleft>
-				<onright>300</onright>
+				<onright>-</onright>
 				<onup>200</onup>
 				<ondown>200</ondown>
 				<itemgap>0</itemgap>

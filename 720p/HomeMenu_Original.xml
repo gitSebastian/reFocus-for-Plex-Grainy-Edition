@@ -57,14 +57,20 @@
 					<onclick>ActivateWindow(weather)</onclick>
 					<visible>Skin.HasSetting(homemenuWeather) + Weather.IsFetched</visible>
 				</item>-->
+				<item id="6">
+					<label>$LOCALIZE[8]</label>
+					<label2>$INFO[Weather.Conditions], $INFO[Weather.Temperature]</label2>
+					<!--<label2>$LOCALIZE[412]</label2>-->
+					<onclick>ActivateWindow(weather)</onclick>
+					<visible>Skin.HasSetting(homemenuWeather) + !Weather.IsFetched</visible>
+				</item>
 				<item id="7">
 					<label>$LOCALIZE[8]</label>
 					<label2>$INFO[Weather.Conditions], $INFO[Weather.Temperature]</label2>
 					<!--<label2>$LOCALIZE[412]</label2>-->
 					<onclick>ActivateWindow(weather)</onclick>
-					<visible>Skin.HasSetting(homemenuWeather)</visible>
+					<visible>Skin.HasSetting(homemenuWeather) + Weather.IsFetched</visible>
 				</item>
-				
 				<item id="10">
 					<label>$LOCALIZE[341]</label>
 					<onclick>XBMC.PlayDVD</onclick>
