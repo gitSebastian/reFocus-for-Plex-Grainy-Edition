@@ -1316,7 +1316,6 @@
 			<include>grainypagefade</include>
 			<visible>!Window.IsActive(progressdialog) + Container.Content(tvshows)</visible>
 			<itemlayout condition="Container.Content(tvshows)" width="560" height="65">
-				<!-- MOD : Home Menu item name with optional capitalisation defined in Settings -->
 				<!-- original small caps -->
 				<control type="label">
 					<posx>75</posx>

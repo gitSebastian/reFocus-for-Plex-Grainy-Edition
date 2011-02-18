@@ -1,5 +1,14 @@
 <includes>
 	<include name="HomeMenu_Original">
+		<!-- weather widget -->
+		<control type="label">
+			<posx>33r</posx>
+			<posy>59</posy>
+			<font>homeClock</font>
+			<label>$INFO[Weather.Conditions], $INFO[Weather.Temperature]</label>
+			<include>notificationTop</include>
+			<visible>Skin.HasSetting(homemenuWeather) + Weather.IsFetched</visible>
+		</control>
 		<control type="list" id="300">
             <width>1100</width>
 			<height>500</height>
@@ -20,11 +29,16 @@
 					<onclick>ActivateWindow(Favourites)</onclick>
 					<visible>Skin.HasSetting(homemenuFavourites)</visible>
 				</item>
-				<item id="99">
+				<item id="10">
+                    <label>31914</label>
+					<onclick>SetFocus(1110)</onclick>
+					<visible>!Skin.HasSetting(hideplugins)</visible>
+				</item>
+				<!--<item id="99">
 					<label>31976</label>
 					<onclick>Plex.ActivateWindow(1,plex://localhost/system/appstore,return)</onclick>
 				<visible>!Skin.HasSetting(plexonlineaccessories)</visible>
-				</item>
+				</item>-->
                 <item id="2">
 					<label>iTunes</label>
 					<onclick>SetFocus(1120)</onclick>
@@ -57,19 +71,10 @@
 					<onclick>ActivateWindow(weather)</onclick>
 					<visible>Skin.HasSetting(homemenuWeather) + Weather.IsFetched</visible>
 				</item>-->
-				<item id="6">
+				<item id="8">
 					<label>$LOCALIZE[8]</label>
-					<label2>$INFO[Weather.Conditions], $INFO[Weather.Temperature]</label2>
-					<!--<label2>$LOCALIZE[412]</label2>-->
 					<onclick>ActivateWindow(weather)</onclick>
-					<visible>Skin.HasSetting(homemenuWeather) + !Weather.IsFetched</visible>
-				</item>
-				<item id="7">
-					<label>$LOCALIZE[8]</label>
-					<label2>$INFO[Weather.Conditions], $INFO[Weather.Temperature]</label2>
-					<!--<label2>$LOCALIZE[412]</label2>-->
-					<onclick>ActivateWindow(weather)</onclick>
-					<visible>Skin.HasSetting(homemenuWeather) + Weather.IsFetched</visible>
+					<visible>Skin.HasSetting(homemenuWeather)</visible>
 				</item>
 				<item id="10">
 					<label>$LOCALIZE[341]</label>
@@ -110,10 +115,11 @@
 			<include>homeMenuToggle</include>
 			<include>homeMenusLayout</include>
 			<content>
-				<item id="10">
-                    <label>31914</label>
-					<onclick>SetFocus(1110)</onclick>
+				<item id="99">
+					<label>31976</label>
+					<onclick>Plex.ActivateWindow(1,plex://localhost/system/appstore,return)</onclick>
 				</item>
+				
                 <item id="1">
 					<label>$LOCALIZE[0]</label>
 						<onclick>ActivateWindow(Programs)</onclick>

@@ -632,43 +632,43 @@
 				<include>transition2</include>				
 				<control type="button" id="261">
 					<description>go to Grainy Edition Global Settings</description>
-					<label>go to Grainy Edition Global Settings</label>
+					<label>Grainy Edition Global Settings (skin-wide options)</label>
 					<onclick>ActivateWindow(59)</onclick>
 					<include>newHomeMenuSubSettingsButton</include>
 				</control>
 				<control type="button" id="262">
 					<description>go to Plex Appearence Settings</description>
-					<label>go to Plex Appearence Settings</label>
+					<label>Plex Appearence Settings (change skin / set region / etc.)</label>
 					<onclick>ActivateWindow(appearancesettings)</onclick>
 					<include>newHomeMenuSubSettingsButton</include>
 				</control>
 				<control type="button" id="263">
 					<description>go to Plex Video Settings</description>
-					<label>go to Plex Video Settings</label>
+					<label>Plex Video Settings (video player / subtitles options)</label>
 					<onclick>ActivateWindow(videossettings)</onclick>
 					<include>newHomeMenuSubSettingsButton</include>
 				</control>
 				<control type="button" id="264">
 					<description>go to Plex Audio Settings</description>
-					<label>go to Plex Audio Settings</label>
+					<label>Plex Audio Settings (music player options)</label>
 					<onclick>ActivateWindow(musicsettings)</onclick>
 					<include>newHomeMenuSubSettingsButton</include>
 				</control>
 				<control type="button" id="265">
 					<description>go to Plex Picture Settings</description>
-					<label>go to Plex Picture Settings</label>
+					<label>Plex Picture Settings (photo viewer options)</label>
 					<onclick>ActivateWindow(picturessettings)</onclick>
 					<include>newHomeMenuSubSettingsButton</include>
 				</control>
 				<control type="button" id="266">
 					<description>go to Plex System Settings</description>
-					<label>go to Plex System Settings</label>
+					<label>Plex System Settings (sleep / media server / etc. options)</label>
 					<onclick>ActivateWindow(systemsettings)</onclick>
 					<include>newHomeMenuSubSettingsButton</include>
 				</control>
 				<control type="button" id="267">
 					<description>go to Weather Settings</description>
-					<label>go to Weather Settings</label>
+					<label>Weather Settings (set the city)</label>
 					<onclick>ActivateWindow(weathersettings)</onclick>
 					<include>newHomeMenuSubSettingsButton</include>
 				</control>

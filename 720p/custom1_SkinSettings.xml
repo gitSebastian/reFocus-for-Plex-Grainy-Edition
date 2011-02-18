@@ -122,7 +122,7 @@
 				<control type="button" id="9007">
 					<label>grainy settings</label>
 					<include>newHomeMenuCategoryButton</include>
-					<visible allowhiddenfocus="true">![Control.HasFocus(281) | Control.HasFocus(282) | Control.HasFocus(283)]</visible>
+					<visible allowhiddenfocus="true">![Control.HasFocus(281) | Control.HasFocus(282) | Control.HasFocus(283) | Control.HasFocus(286)]</visible>
 				</control>
 				<control type="button" id="9008">
 					<label>grainy settings</label>
@@ -320,6 +320,24 @@
 					<selected>Skin.HasSetting(hidescrolloffset)</selected>
 					<include>newHomeMenuSubSettingsButton</include>
 				</control>
+				<control type="button" id="284">
+					<description>title</description>
+					<include>newHomeMenuSubSettingsButton</include>
+					<enable>Skin.HasSetting(dummy)</enable>
+				</control>
+				<control type="button" id="285">
+					<description>title</description>
+					<label>debug setting (don't activate unless knowing what for) :</label>
+					<include>newHomeMenuSubSettingsButton</include>
+					<enable>Skin.HasSetting(dummy)</enable>
+				</control>
+				<control type="radiobutton" id="286">
+					<description>Studio Flags Debug</description>
+					<label>debug studio flags in "List" view</label>
+					<onclick>Skin.ToggleSetting(debugstudioflags)</onclick>
+					<selected>Skin.HasSetting(debugstudioflags)</selected>
+					<include>newHomeMenuSubSettingsButton</include>
+				</control>
 			</control>
 			<!-- about reFocus -->
 			<control type="group" id="5000">
@@ -496,9 +514,9 @@
 				</control>
 				<!-- plex online -->
 				<control type="radiobutton" id="295">
-					<label>Hide Plex Online from Main Menu</label>
-					<onclick>Skin.ToggleSetting(plexonlineaccessories)</onclick>
-					<selected>Skin.HasSetting(plexonlineaccessories)</selected>
+					<label>Hide Plug-Ins from Main Menu</label>
+					<onclick>Skin.ToggleSetting(hideplugins)</onclick>
+					<selected>Skin.HasSetting(hideplugins)</selected>
 					<include>newHomeMenuSubSettingsButton</include>
 					<visible>Skin.HasSetting(originalhome)</visible>
 				</control>

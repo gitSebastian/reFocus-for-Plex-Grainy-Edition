@@ -46,6 +46,7 @@
 					<height>46</height>
 					<aligny>center</aligny>
 					<font>normalLow</font>
+					<selectedcolor>Color5</selectedcolor>
 					<label>$INFO[ListItem.Label]</label>
 					<visible>Skin.HasSetting(usesmallcase)</visible>
 				</control>
@@ -57,25 +58,38 @@
 					<height>46</height>
 					<aligny>center</aligny>
 					<font>special7</font>
+					<selectedcolor>Color5</selectedcolor>
 					<label>$INFO[ListItem.Label]</label>
 					<visible>!Skin.HasSetting(usesmallcase)</visible>
 				</control>
 			</itemlayout>
 			<!-- non-video focused -->
 			<focusedlayout width="800" height="120" condition="Control.IsVisible(555) + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">
-				<!-- caps title non-music -->
+				<!-- title non-music small case -->
 				<control type="label" id="1">
 					<posx>500</posx>
 					<posy>32</posy>
 					<width>730</width>
 					<height>50</height>
 					<aligny>center</aligny>
-					<font>osd1</font>
+					<font>bigLow</font>
 					<textcolor>Color1</textcolor>
-					<include>grainywhitetext</include>
 					<label>$INFO[ListItem.Label]</label>
 					<scroll>true</scroll>
-					<visible>![Container.Content(singles) | Container.Content(songs)]</visible>
+					<visible>Skin.HasSetting(usesmallcase) + ![Container.Content(singles) | Container.Content(songs)]</visible>
+				</control>
+				<!-- title non-music mixed case -->
+				<control type="label" id="1">
+					<posx>500</posx>
+					<posy>32</posy>
+					<width>730</width>
+					<height>50</height>
+					<aligny>center</aligny>
+					<font>special8</font>
+					<textcolor>Color1</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+					<scroll>true</scroll>
+					<visible>!Skin.HasSetting(usesmallcase) + ![Container.Content(singles) | Container.Content(songs)]</visible>
 				</control>
 				<!-- infos -->
 				<control type="label" id="2">
@@ -85,22 +99,37 @@
 					<font>smallCaps</font>
 					<label>$INFO[ListItem.Year]</label>
 					<textcolor>Color1</textcolor>
+					<selectedcolor>Color1</selectedcolor>
 					<align>left</align>
 					<visible>![Container.Content(singles) | Container.Content(songs) | Container.Content(albums)]</visible>
-				</control>	
-				<!-- caps title songs -->
+				</control>
+				<!-- title songs small case -->
 				<control type="label">
 					<posx>500</posx>
-					<posy>22</posy>
+					<posy>19</posy>
 					<width>730</width>
 					<height>50</height>
 					<aligny>center</aligny>
-					<font>osd1</font>
+					<font>bigLow</font>
 					<textcolor>Color1</textcolor>
-					<include>grainywhitetext</include>
+					<selectedcolor>Color6</selectedcolor>
 					<label>$INFO[ListItem.Title]</label>
 					<scroll>true</scroll>
-					<visible>[Container.Content(singles) | Container.Content(songs)]</visible>
+					<visible>Skin.HasSetting(usesmallcase) + [Container.Content(singles) | Container.Content(songs)]</visible>
+				</control>	
+				<!-- title songs mixed case -->
+				<control type="label">
+					<posx>500</posx>
+					<posy>19</posy>
+					<width>730</width>
+					<height>50</height>
+					<aligny>center</aligny>
+					<font>special8</font>
+					<textcolor>Color1</textcolor>
+					<selectedcolor>Color6</selectedcolor>
+					<label>$INFO[ListItem.Title]</label>
+					<scroll>true</scroll>
+					<visible>!Skin.HasSetting(usesmallcase) + [Container.Content(singles) | Container.Content(songs)]</visible>
 				</control>
 				<control type="label">
 					<posx>500</posx>
@@ -108,14 +137,14 @@
 					<width>600</width>
 					<font>smallCaps</font>
 					<label>$INFO[ListItem.Artist]</label>
-					<textcolor>Color5</textcolor>
+					<textcolor>Color1</textcolor>
+					<selectedcolor>Color1</selectedcolor>
 					<align>left</align>
 					<visible>[Container.Content(singles) | Container.Content(songs)]</visible>
 				</control>
 			</focusedlayout>
 			<!-- video non-focused -->
 			<itemlayout condition="Control.IsVisible(555) + [Container.Content(movies) | Container.Content(tvshows)]" width="1240" height="46">
-				<!-- non-focused -->
 				<!-- small case -->
 				<control type="label">
 					<posx>560</posx>
@@ -143,26 +172,40 @@
 			</itemlayout>
 			<!-- video focused -->
 			<focusedlayout condition="Control.IsVisible(555) + [Container.Content(movies) | Container.Content(tvshows)]" width="800" height="120">
-				<!-- caps title -->
+				<!-- small case -->
 				<control type="label">
 					<posx>500</posx>
-					<posy>22</posy>
+					<posy>19</posy>
 					<width>730</width>
 					<height>50</height>
 					<aligny>center</aligny>
-					<font>osd1</font>
-					<include>grainywhitetext</include>
+					<font>bigLow</font>
 					<label>$INFO[ListItem.Label]</label>
 					<selectedcolor>Color5</selectedcolor>
 					<scroll>true</scroll>
+					<visible>Skin.HasSetting(usesmallcase)</visible>
+				</control>
+				<!-- mixed case -->
+				<control type="label">
+					<posx>500</posx>
+					<posy>19</posy>
+					<width>730</width>
+					<height>50</height>
+					<aligny>center</aligny>
+					<font>special8</font>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>Color1</textcolor>
+					<selectedcolor>Color5</selectedcolor>
+					<scroll>true</scroll>					
+					<visible>!Skin.HasSetting(usesmallcase)</visible>
 				</control>
 				<control type="label">
 					<posx>500</posx>
 					<posy>65</posy>
 					<width>600</width>
 					<font>smallCaps</font>
-					<label>$INFO[ListItem.Genre] &#xB7; $INFO[ListItem.Year,, ]&#xB7; $INFO[ListItem.Duration,, ]</label>
-					<textcolor>Color5</textcolor>
+					<label> &#xB7; $INFO[ListItem.Genre] &#xB7; $INFO[ListItem.Year,, ]&#xB7; $INFO[ListItem.Duration,, ]</label>
+					<textcolor>Color1</textcolor>					
 					<align>left</align>
 					<visible>Container.Content(movies)</visible>
 				</control>
@@ -501,6 +544,52 @@
 			<include>grainypagefade</include>
 			<visible>[Container.Content(albums) | Container.Content(artists) | Container.Content(singles) | Container.Content(songs)]</visible>
 		</control>
+		<!-- STUDIO FLAGS DEBUG DIALOG -->
+			<control type="group">
+				<posx>340</posx>
+				<posy>640</posy>
+				<include>transition2</include>
+				<include>infoDialogHide</include>
+				<include>contextMenuHide</include>
+				<include>grainypagefade</include>
+				<visible>Skin.HasSetting(debugstudioflags) + [Container.Content(movies) | Container.Content(tvshows)] + !IsEmpty(Listitem.Property(mediaTag-Studio))</visible>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>600</width>
+					<height>79</height>
+					<texture border="20">osd/background_slim.png</texture>
+					<include>fadeinout</include>
+				</control>
+				<control type="group">
+					<posx>15</posx>
+					<posy>7</posy>
+					<include>dialogWindow</include>
+					<visible>!Window.IsActive(12999)</visible>
+					<control type="label">
+						<posx>10</posx>
+						<posy>0</posy>
+						<width>550</width>
+						<align>left</align>
+						<label>Studio Flag image name needs to be :</label>
+						<height>30</height>
+						<font>normal</font>
+						<aligny>center</aligny>
+						<textcolor>Color1</textcolor>
+					</control>
+					<control type="label">
+						<posx>10</posx>
+						<posy>28</posy>
+						<width>550</width>
+						<align>left</align>
+						<label>$INFO[Listitem.Property(mediaTag-Studio)].png</label>
+						<font>normal</font>
+						<height>40</height>
+						<aligny>center</aligny>
+						<include>grainybeigetextsansshadow</include>
+					</control>
+				</control>
+			</control>
 	</include>
 	<!-- BIG LIST NEW -->
 	<include name="view_BigList_GrainyEdition">
@@ -1133,4 +1222,5 @@
 			</control>
 		</control>
 	</include>
+	
 </includes>

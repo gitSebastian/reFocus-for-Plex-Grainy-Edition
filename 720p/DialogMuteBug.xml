@@ -3,7 +3,7 @@
 	<controls>
 		<control type="image">
 			<posx>65r</posx>
-			<posy>65</posy>
+			<posy>100</posy>
             <width>30</width>
 			<height>30</height>
 			<texture>dialogs/mutedicon.png</texture>
@@ -12,7 +12,7 @@
 		</control>
 		<control type="label" id="0">
 			<posx>70r</posx>
-            <posy>62</posy>
+            <posy>97</posy>
             <description>Label</description>
 			<label>MUTE</label>
             <height>35</height>
