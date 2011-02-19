@@ -137,12 +137,6 @@
 						<thumb>settings/skin.png</thumb>
 						<onclick>ActivateWindow(59)</onclick>
 					</item>
-					<item id="11">
-						<label>DONE</label>
-						<label2>Exit settings</label2>
-						<thumb>-</thumb>
-						<onclick>ActivateWindow(0)</onclick>
-					</item>
 				</content>
 			</control>
 		</control>

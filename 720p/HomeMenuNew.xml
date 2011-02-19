@@ -260,16 +260,17 @@
 				<!-- Settings -->
 				<control type="button" id="9017">
 					<label>$LOCALIZE[5]</label>
+					<onclick>ActivateWindow(Settings)</onclick>
 					<include>newHomeMenuCategoryButton</include>
 					<visible allowhiddenfocus="true">![Control.HasFocus(261) | Control.HasFocus(262) | Control.HasFocus(263) | Control.HasFocus(264) | Control.HasFocus(265) | Control.HasFocus(266) | Control.HasFocus(267) | Control.HasFocus(268) | Control.HasFocus(269)]</visible>
 				</control>
-				<control type="button" id="9018">
+				<!--<control type="button" id="9018">
 					<label>$LOCALIZE[5]</label>
 					<onclick>SetFocus(1150)</onclick>
 					<include>newHomeMenuCategoryButton</include>
 					<include>newHomeMenuCategoryNoFocusBg</include>
 					<visible>!Control.IsVisible(9017)</visible>					
-				</control>
+				</control>-->
 				<!-- menu options -->
 				<control type="button" id="9001">
 					<label>view options</label>
@@ -412,7 +413,7 @@
 				<animation effect="fade" start="0" end="100" time="250" delay="250" condition="!Control.HasFocus(300) + ControlGroup(9100).HasFocus(9004)">Conditional</animation>
 				<include>transition2</include>
 				<control type="button" id="221">
-					<label>click on the menu item to open the favorites window</label>
+					<label>click on the menu item to open the favourites window</label>
 					<include>newHomeMenuSubSettingsButton</include>
 					<enable>dummy</enable>
 				</control>
@@ -620,57 +621,15 @@
 					</control>	
 				</control>
 			</control>
-			<!-- Settings shortcuts -->
-			<control type="grouplist" id="200">
-				<onleft>9017</onleft>
-				<onright>-</onright>
-				<onup>200</onup>
-				<ondown>200</ondown>
-				<itemgap>0</itemgap>
+			<!-- Settings -->
+			<control type="group">
 				<visible>!Control.HasFocus(300) + ControlGroup(9100).HasFocus(9017)</visible>
 				<animation effect="fade" start="0" end="100" time="250" delay="250" condition="!Control.HasFocus(300) + ControlGroup(9100).HasFocus(9017)">Conditional</animation>
-				<include>transition2</include>				
-				<control type="button" id="261">
-					<description>go to Grainy Edition Global Settings</description>
-					<label>Grainy Edition Global Settings (skin-wide options)</label>
-					<onclick>ActivateWindow(59)</onclick>
+				<include>transition2</include>
+				<control type="button" id="221">
+					<label>click on the menu item to open the global settings window.[CR][CR]there you can set the global preferences for Plex and the skin,[CR]notably for audio/video, subtitles, screensaver, photo viewer,[CR]localisation, media server and weather.</label>
 					<include>newHomeMenuSubSettingsButton</include>
-				</control>
-				<control type="button" id="262">
-					<description>go to Plex Appearence Settings</description>
-					<label>Plex Appearence Settings (change skin / set region / etc.)</label>
-					<onclick>ActivateWindow(appearancesettings)</onclick>
-					<include>newHomeMenuSubSettingsButton</include>
-				</control>
-				<control type="button" id="263">
-					<description>go to Plex Video Settings</description>
-					<label>Plex Video Settings (video player / subtitles options)</label>
-					<onclick>ActivateWindow(videossettings)</onclick>
-					<include>newHomeMenuSubSettingsButton</include>
-				</control>
-				<control type="button" id="264">
-					<description>go to Plex Audio Settings</description>
-					<label>Plex Audio Settings (music player options)</label>
-					<onclick>ActivateWindow(musicsettings)</onclick>
-					<include>newHomeMenuSubSettingsButton</include>
-				</control>
-				<control type="button" id="265">
-					<description>go to Plex Picture Settings</description>
-					<label>Plex Picture Settings (photo viewer options)</label>
-					<onclick>ActivateWindow(picturessettings)</onclick>
-					<include>newHomeMenuSubSettingsButton</include>
-				</control>
-				<control type="button" id="266">
-					<description>go to Plex System Settings</description>
-					<label>Plex System Settings (sleep / media server / etc. options)</label>
-					<onclick>ActivateWindow(systemsettings)</onclick>
-					<include>newHomeMenuSubSettingsButton</include>
-				</control>
-				<control type="button" id="267">
-					<description>go to Weather Settings</description>
-					<label>Weather Settings (set the city)</label>
-					<onclick>ActivateWindow(weathersettings)</onclick>
-					<include>newHomeMenuSubSettingsButton</include>
+					<enable>dummy</enable>
 				</control>
 			</control>
 			<!-- Exit sub-menu -->

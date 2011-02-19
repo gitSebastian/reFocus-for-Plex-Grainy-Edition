@@ -163,53 +163,6 @@
 			</animation>
 		</control>
 	</include>
-	<!-- Theme overlays -->
-	<!--<include name="bluethemeoverlay">
-		<control type="group">
-			<visible>!Skin.HasSetting(originalhome) | [Skin.HasSetting(originalhome) + Skin.HasSetting(blueoriginalhome)]</visible>
-			<control type="image">
-				<aspectratio>scale</aspectratio>
-				<include>screentype</include>
-				<texture background="true">backgrounds/background.png</texture>
-				<animation type="Conditional" condition="True">
-					<effect type="fade" start="0" end="50" time="2000" delay="100"/>
-				</animation>
-				<visible>!Skin.HasSetting(FanartGlobalAlt)</visible>
-			</control>
-			<control type="image">
-				<aspectratio>scale</aspectratio>
-				<include>screentype</include>
-				<texture background="true">backgrounds/background2.png</texture>
-				<animation type="Conditional" condition="True">
-					<effect type="fade" start="0" end="80" time="2000" delay="100"/>
-				</animation>
-				<visible>Skin.HasSetting(FanartGlobalAlt)</visible>
-			</control>
-		</control>
-	</include>
-	<include name="plexthemeoverlay">
-		<control type="group">
-			<visible>!Skin.HasSetting(originalhome) | [Skin.HasSetting(originalhome) + Skin.HasSetting(blueoriginalhome)]</visible>
-			<control type="image">
-				<aspectratio>scale</aspectratio>
-				<include>screentype</include>
-				<texture background="true">backgrounds/background_plex.png</texture>
-				<animation type="Conditional" condition="True">
-					<effect type="fade" start="0" end="50" time="2000" delay="100"/>
-				</animation>
-				<visible>!Skin.HasSetting(FanartGlobalAlt)</visible>
-			</control>
-			<control type="image">
-				<aspectratio>scale</aspectratio>
-				<include>screentype</include>
-				<texture background="true">backgrounds/background2_plex.png</texture>
-				<animation type="Conditional" condition="True">
-					<effect type="fade" start="0" end="80" time="2000" delay="100"/>
-				</animation>
-				<visible>Skin.HasSetting(FanartGlobalAlt)</visible>
-			</control>
-		</control>
-	</include>-->
 	<include name="themeBackground2">
 		<control type="largeimage">
 			<include>screentype</include>
@@ -282,38 +235,6 @@
 		<!--<include condition="!Skin.HasSetting(plex)">bluethemeback</include>
 		<include condition="Skin.HasSetting(plex)">blackthemeback</include>-->
 	</include>
-	<!--<include name="bluethemeback">
-		<control type="image">
-			<aspectratio>scale</aspectratio>
-			<include>screentype</include>
-			<texture background="true">backgrounds/background.png</texture>
-			<visible>[![Window.IsActive(2) + Control.IsVisible(52)] + !Window.IsActive(2006)] + !Skin.HasSetting(FanartGlobalAlt)</visible>
-			<include>transition2.5</include>
-		</control>
-		<control type="image">
-			<aspectratio>scale</aspectratio>
-			<include>screentype</include>
-			<texture background="true">backgrounds/background2.png</texture>
-			<visible>[![Window.IsActive(2) + Control.IsVisible(52)] + !Window.IsActive(2006)] + Skin.HasSetting(FanartGlobalAlt)</visible>
-			<include>transition2.5</include>
-		</control>
-	</include>
-	<include name="blackthemeback">
-		<control type="image">
-			<aspectratio>scale</aspectratio>
-			<include>screentype</include>
-			<texture background="true">backgrounds/background_plex.png</texture>
-			<visible>[![Window.IsActive(2) + Control.IsVisible(52)] + !Window.IsActive(2006)] + !Skin.HasSetting(FanartGlobalAlt)</visible>
-			<include>transition2.5</include>
-		</control>
-		<control type="image">
-			<aspectratio>scale</aspectratio>
-			<include>screentype</include>
-			<texture background="true">backgrounds/background2_plex.png</texture>
-			<visible>[![Window.IsActive(2) + Control.IsVisible(52)] + !Window.IsActive(2006)] + Skin.HasSetting(FanartGlobalAlt)</visible>
-			<include>transition2.5</include>
-		</control>
-	</include>-->
 	<!-- PAGE ELEMENTS -->
 	<include name="startupBackground">
 		<aspectratio>scale</aspectratio>

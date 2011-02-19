@@ -514,9 +514,9 @@
 				</control>
 				<!-- plex online -->
 				<control type="radiobutton" id="295">
-					<label>Hide Plug-Ins from Main Menu</label>
-					<onclick>Skin.ToggleSetting(hideplugins)</onclick>
-					<selected>Skin.HasSetting(hideplugins)</selected>
+					<label>Show Plug-Ins in Main Menu</label>
+					<onclick>Skin.ToggleSetting(homeMenuPlugins)</onclick>
+					<selected>Skin.HasSetting(homeMenuPlugins)</selected>
 					<include>newHomeMenuSubSettingsButton</include>
 					<visible>Skin.HasSetting(originalhome)</visible>
 				</control>
