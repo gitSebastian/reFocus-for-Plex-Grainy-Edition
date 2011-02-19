@@ -173,7 +173,7 @@
 				<animation type="Conditional" condition="true">
 					<effect type="fade" start="0" end="80"/>
 				</animation>
-				<!--<visible>!Control.HasFocus(300) + [ControlGroup(9100).HasFocus() | ControlGroup(200).HasFocus()]</visible>-->
+				<visible>!Control.HasFocus(300) + [ControlGroup(9100).HasFocus() | ControlGroup(200).HasFocus()]</visible>
 			</control>
 			<control type="image">
 				<posx>356</posx>
@@ -186,7 +186,7 @@
 				<animation type="Conditional" condition="true">
 					<effect type="fade" start="0" end="80"/>
 				</animation>
-				<!--<visible>!Control.HasFocus(300) + [ControlGroup(9100).HasFocus() | ControlGroup(200).HasFocus()]</visible>-->
+				<visible>!Control.HasFocus(300) + [ControlGroup(9100).HasFocus() | ControlGroup(200).HasFocus()]</visible>
 			</control>
 			<!-- MAIN LEVEL -->
 			<control type="grouplist" id="9100">
