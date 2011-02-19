@@ -332,7 +332,7 @@
 						<visible>[Control.IsVisible(52) | Control.IsVisible(55)] + !Container.Content(seasons)</visible>
 					</control>					
 					<control type="radiobutton" id="209">
-						<label>hide audio codec</label>
+						<label>hide audio codec + channels</label>
 						<onclick>Container.SetViewMode(52)</onclick>
 						<onclick>Skin.ToggleSetting(slidehideaudioinfo)</onclick>
 						<selected>Skin.HasSetting(slidehideaudioinfo)</selected>

@@ -352,7 +352,7 @@
 		<control type="group">
 			<posx>470</posx>
 			<posy>630</posy>
-			<include>typeFlagsInfoSlides</include>
+			<include>typeFlagsFullInfo</include>
 			<include>transition2</include>
 			<include>contextMenuHide</include>
 			<animation effect="slide" start="0" end="50" time="0" condition="Container.Content(episodes) | Container.Content(musicvideos)">Conditional</animation>

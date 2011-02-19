@@ -256,14 +256,14 @@
 				<colordiffuse>Color7</colordiffuse>
 				<visible>[Container.Content(movies) | Container.Content(episodes)] + [!Skin.HasSetting(slidehideaspectratio) | Window.IsActive(2003)]</visible>
 			</control>
-			<!--<control type="image">
+			<control type="image">
 				<width>52</width>
 				<height>64</height>
-				<texture>$INFO[Listitem.Property(mediaTag::videoFrameRate)]</texture>
+				<texture>$INFO[Listitem.Property(mediaTag-videoFrameRate),flags/videoframerate/,.png]</texture>
 				<aspectratio align="center">keep</aspectratio>
 				<colordiffuse>Color7</colordiffuse>
 				<visible>[Container.Content(movies) | Container.Content(episodes)] + !Skin.HasSetting(slidehideframerate)</visible>
-			</control>-->
+			</control>
 			<control type="image">
 				<width>96</width>
 				<height>64</height>
@@ -280,10 +280,10 @@
 				<colordiffuse>Color7</colordiffuse>
 				<visible>[Container.Content(movies) | Container.Content(episodes)] + [!Skin.HasSetting(slidehideaudioinfo) | Window.IsActive(2003)]</visible>
 			</control>
-			<!--<control type="image">
-				<width>46</width>
+			<control type="image">
+				<width>56</width>
 				<height>64</height>
-				<texture>$INFO[Listitem.Property(mediaTag::audioChannels)]</texture>
+				<texture>$INFO[Listitem.Property(mediaTag-audioChannels),flags/audiochannels/,.png]</texture>
 				<aspectratio align="center">keep</aspectratio>
 				<colordiffuse>Color7</colordiffuse>
 				<visible>[Container.Content(movies) | Container.Content(episodes)] + !Skin.HasSetting(slidehideaudioinfo)</visible>
@@ -291,10 +291,10 @@
 			<control type="image">
 				<width>96</width>
 				<height>64</height>
-				<texture>$INFO[Listitem.Property(mediaTag::contentRating)]</texture>
+				<texture>$INFO[Listitem.Property(mediaTag-contentRating),flags/contentrating/,.png]</texture>
 				<aspectratio align="center">keep</aspectratio>
 				<visible>Container.Content(movies) + !Skin.HasSetting(slidehidecontentrating)</visible>
-			</control>-->
+			</control>
 		</control>
 	</include>
 	<!-- custom flag list for new list video -->
@@ -355,8 +355,8 @@
 				</control>
 				<control type="image">
 					<width>70</width>
-					<height>25</height>
-					<texture>$INFO[Listitem.Property(mediaTag::audioChannels)]</texture>
+					<height>22</height>
+					<texture>$INFO[Listitem.Property(mediaTag-audioChannels),flags/audiochannels/,.png]</texture>
 					<aspectratio align="center">keep</aspectratio>
 					<colordiffuse>Color7</colordiffuse>
 					<visible>Container.Content(movies)</visible>
@@ -370,7 +370,7 @@
 				<control type="image">
 					<width>70</width>
 					<height>25</height>
-					<texture>$INFO[Listitem.Property(mediaTag::videoFrameRate)]</texture>
+					<texture>$INFO[Listitem.Property(mediaTag-videoFrameRate),flags/videoframerate/,.png]</texture>
 					<aspectratio align="center">keep</aspectratio>
 					<colordiffuse>Color7</colordiffuse>
 					<visible>Container.Content(movies)</visible>
@@ -409,78 +409,77 @@
 		</control>
 	</include>
 	<!-- custom flag list for "full info" window -->
-	<include name="typeFlagsInfo">
+	<include name="typeFlagsFullInfo">
 		<control type="grouplist" id="100">
 			<width>900</width>
 			<height>64</height>
-			<itemgap>10</itemgap>
+			<itemgap>20</itemgap>
 			<orientation>horizontal</orientation>
 			<control type="image">
-				<width>138</width>
+				<width>110</width>
 				<height>60</height>
 				<info>ListItem.StarRating</info>
 				<colordiffuse>Color7</colordiffuse>
 				<aspectratio align="center">keep</aspectratio>
-				<visible>!IsEmpty(ListItem.StarRating)</visible>
+				<visible>!IsEmpty(ListItem.StarRating) + Window.IsActive(2003)]</visible>
 			</control>
 			<!-- resolution -->
 			<control type="image">
-				<width>86</width>
+				<width>76</width>
 				<height>64</height>
 				<texture>$INFO[Listitem.Property(mediaTag-videoResolution),flags/resolution/,.png]</texture>
 				<aspectratio align="center">keep</aspectratio>
-				<visible>Container.Content(movies)</visible>
+				<visible>Container.Content(movies) + Window.IsActive(2003)</visible>
 			</control>
 			<control type="image">
-				<width>86</width>
+				<width>76</width>
 				<height>64</height>
 				<texture>$INFO[Listitem.Property(mediaTag-aspectRatio),flags/aspect/,.png]</texture>
 				<aspectratio align="center">keep</aspectratio>
 				<colordiffuse>Color7</colordiffuse>
-				<visible>[Container.Content(movies) | Container.Content(episodes)]</visible>
+				<visible>[Container.Content(movies) | Container.Content(episodes)] + Window.IsActive(2003)</visible>
 			</control>
 			<control type="image">
-				<width>42</width>
+				<width>45</width>
 				<height>64</height>
-				<texture>$INFO[Listitem.Property(mediaTag::videoFrameRate)]</texture>
+				<texture>$INFO[Listitem.Property(mediaTag-videoFrameRate),flags/videoframerate/,.png]</texture>
 				<aspectratio align="center">keep</aspectratio>
 				<colordiffuse>Color7</colordiffuse>
-				<visible>[Container.Content(movies) | Container.Content(episodes)]</visible>
+				<visible>[Container.Content(movies) | Container.Content(episodes)] + Window.IsActive(2003)</visible>
 			</control>
 			<control type="image">
-				<width>86</width>
+				<width>76</width>
 				<height>64</height>
 				<texture>$INFO[Listitem.Property(mediaTag-videoCodec),flags/type/,.png]</texture>
 				<aspectratio align="center">keep</aspectratio>
 				<colordiffuse>Color7</colordiffuse>
-				<visible>[Container.Content(movies) | Container.Content(episodes)]</visible>
+				<visible>[Container.Content(movies) | Container.Content(episodes)] + Window.IsActive(2003)</visible>
 			</control>
 			<control type="image">
-				<width>86</width>
+				<width>76</width>
 				<height>64</height>
 				<texture>$INFO[Listitem.Property(mediaTag-audioCodec),flags/type/,.png]</texture>
 				<aspectratio align="center">keep</aspectratio>
 				<colordiffuse>Color7</colordiffuse>
-				<visible>[Container.Content(movies) | Container.Content(episodes)]</visible>
+				<visible>[Container.Content(movies) | Container.Content(episodes)] + Window.IsActive(2003)</visible>
 			</control>
 			<control type="image">
-				<width>36</width>
+				<width>50</width>
 				<height>64</height>
-				<texture>$INFO[Listitem.Property(mediaTag::audioChannels)]</texture>
+				<texture>$INFO[Listitem.Property(mediaTag-audioChannels),flags/audiochannels/,.png]</texture>
 				<aspectratio align="center">keep</aspectratio>
 				<colordiffuse>Color7</colordiffuse>
-				<visible>[Container.Content(movies) | Container.Content(episodes)]</visible>
+				<visible>[Container.Content(movies) | Container.Content(episodes)] + Window.IsActive(2003)</visible>
 			</control>
 			<control type="image">
-				<width>86</width>
+				<width>80</width>
 				<height>64</height>
-				<texture>$INFO[Listitem.Property(mediaTag::contentRating)]</texture>
+				<texture>$INFO[Listitem.Property(mediaTag-contentRating),flags/contentrating/,.png]</texture>
 				<aspectratio align="center">keep</aspectratio>
-				<visible>Container.Content(movies)</visible>
+				<visible>Container.Content(movies) + Window.IsActive(2003)</visible>
 			</control>
 		</control>
 	</include>
-	
 	<include name="typeFlagsInfoX">
 		<control type="grouplist" id="100">
 			<width>900</width>
