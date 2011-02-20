@@ -808,7 +808,7 @@
 			<height>400</height>
 			<aligny>top</aligny>
 			<font>smallsmallcase</font>
-			<label>current xml : $INFO[Window.Property(xmlfile)] / $INFO[System.Screenresolution] / $LOCALIZE[158] : $INFO[System.FreeMemory] / currentwindow : $INFO[System.CurrentWindow] / currentcontrol : $INFO[System.CurrentControl] / first title : $INFO[Container.FirstTitle] / second title : $INFO[Container.SecondTitle] / list item name and path : $INFO[ListItem.FileNameAndPath] / list item name : $INFO[ListItem.FileName] / list item path : $INFO[ListItem.Path] / list item folder name : $INFO[ListItem.FolderName]</label>
+			<label>current xml : $INFO[Window.Property(xmlfile)] / $INFO[System.Screenresolution] / $LOCALIZE[158] : $INFO[System.FreeMemory] / currentwindow : $INFO[System.CurrentWindow] / currentcontrol : $INFO[System.CurrentControl] / first title : $INFO[Container.FirstTitle] / second title : $INFO[Container.SecondTitle] / list item name and path : $INFO[ListItem.FileNameAndPath] / list item name : $INFO[ListItem.FileName] / list item path : $INFO[ListItem.Path] / list item folder name : $INFO[ListItem.FolderName] / contentrating flag : $INFO[Listitem.Property(mediaTag-contentRating),flags/contentrating/,.png] / $INFO[Listitem.MPAA,flags/contentrating/,.png]</label>
 			<wrapmultiline>true</wrapmultiline>
 			<textcolor>Color1</textcolor>
 			<align>left</align>
