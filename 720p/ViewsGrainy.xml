@@ -552,7 +552,7 @@
 				<include>infoDialogHide</include>
 				<include>contextMenuHide</include>
 				<include>grainypagefade</include>
-				<visible>Skin.HasSetting(debugstudioflags) + [Container.Content(movies) | Container.Content(tvshows)] + !IsEmpty(Listitem.Property(mediaTag-Studio))</visible>
+				<visible>Control.IsVisible(555) + Skin.HasSetting(debugstudioflags) + [Container.Content(movies) | Container.Content(tvshows)] + !IsEmpty(Listitem.Property(mediaTag-Studio))</visible>
 				<control type="image">
 					<posx>0</posx>
 					<posy>0</posy>
