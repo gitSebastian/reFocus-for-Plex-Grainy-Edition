@@ -274,6 +274,14 @@
 						<onclick>ActivateWindow(Favourites)</onclick>
 						<include>newHomeMenuSubSettingsButton</include>
 					</control>
+					<control type="radiobutton" id="220">
+						<label>hide rating</label>
+						<onclick>Container.SetViewMode(51)</onclick>
+						<onclick>Skin.ToggleSetting(episodehiderating)</onclick>
+						<selected>Skin.HasSetting(episodehiderating)</selected>
+						<include>newHomeMenuSubSettingsButton</include>
+						<visible>Control.IsVisible(51) + Container.Content(episodes)</visible>
+					</control>
 					<!-- slide -->
 					<control type="button" id="202">
 						<description>SLIDE: use posters</description>

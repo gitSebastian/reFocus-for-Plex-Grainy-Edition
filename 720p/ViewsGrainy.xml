@@ -612,7 +612,7 @@
 			<!-- focused background -->
 			<control type="image">
 				<posy>195</posy>
-				<width>1260</width>
+				<width>1360</width>
 				<height>305</height>
 				<texture border="0,30,0,0">views/list-focus.png</texture>
 				<visible>!ControlGroup(300).HasFocus()</visible>
@@ -774,7 +774,7 @@
 					<height>32</height>
 					<info>ListItem.StarRating</info>
 					<aspectratio align="right">keep</aspectratio>
-					<visible>!IsEmpty(ListItem.Title) + !Skin.HasSetting(hideratings)</visible>
+					<visible>!IsEmpty(ListItem.Title) + ![Skin.HasSetting(hideratings) | Skin.HasSetting(episodehiderating)]</visible>
 				</control>
 			</itemlayout>
 			<!-- FOCUSED BIG LIST ITEM -->
@@ -905,7 +905,7 @@
 					<info>ListItem.StarRating</info>
 					<include>grainybiglisttextfade</include>
 					<aspectratio align="right">keep</aspectratio>
-					<visible>!IsEmpty(ListItem.Title) + !Skin.HasSetting(hideratings)</visible>
+					<visible>!IsEmpty(ListItem.Title) + ![Skin.HasSetting(hideratings) | Skin.HasSetting(episodehiderating)]</visible>
 				</control>
 			</focusedlayout>
 		</control>

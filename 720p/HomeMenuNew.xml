@@ -286,6 +286,9 @@
 				<!-- Exit -->
 				<control type="button" id="9019">
 					<label>$LOCALIZE[31013]</label>
+					<onclick>Dialog.Close(shutdownmenu)</onclick>
+					<onclick>dialog.close(all,true)</onclick>
+					<onclick>Plex.Shutdown()</onclick>
 					<include>newHomeMenuCategoryButton</include>
 					<visible allowhiddenfocus="true">![Control.HasFocus(291) | Control.HasFocus(292) | Control.HasFocus(293) | Control.HasFocus(294)]</visible>
 				</control>
