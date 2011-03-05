@@ -182,18 +182,19 @@
 				<animation effect="fade" start="0" end="100" time="250" delay="250" condition="!Control.HasFocus(300) + ControlGroup(9100).HasFocus(9001)">Conditional</animation>
 				<control type="radiobutton" id="211">
 					<description>deactivate fanart slideshow on home screen</description>
-					<label>turn off fanart slideshow on home screen</label>
+					<label>turn off slideshows on home screen</label>
 					<onclick>Skin.ToggleSetting(FanartSlideShow)</onclick>
 					<selected>Skin.HasSetting(FanartSlideShow)</selected>
 					<include>newHomeMenuSubSettingsButton</include>
 					<visible>Skin.HasSetting(originalhome)</visible>
 				</control>
-				<control type="button" id="212">
+				<control type="radiobutton" id="212">
 					<description>set personalised slideshow folder</description>
 					<label>set your own slideshow folder for home screen</label>
 					<onclick>Skin.SetPath(SlideShow)</onclick>
-					<label2>[COLOR=Label-alt]$INFO[Skin.String(SlideShow)][/COLOR]</label2>
-					<enable>Skin.HasSetting(FanartSlideShow)</enable>
+					<onclick>Skin.ToggleSetting(personalSlideShow)</onclick>
+					<selected>Skin.HasSetting(personalSlideShow)</selected>
+					<enable>!Skin.HasSetting(FanartSlideShow)</enable>
 					<include>newHomeMenuSubSettingsButton</include>
 					<visible>Skin.HasSetting(originalhome)</visible>
 				</control>

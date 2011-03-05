@@ -242,14 +242,14 @@
 			</control>
 			<!-- resolution -->
 			<control type="image">
-				<width>96</width>
+				<width>76</width>
 				<height>64</height>
 				<texture>$INFO[Listitem.Property(mediaTag-videoResolution),flags/resolution/,.png]</texture>
 				<aspectratio align="center">keep</aspectratio>
 				<visible>Container.Content(movies) + [!Skin.HasSetting(slidehideresolution) | Window.IsActive(2003)]</visible>
 			</control>
 			<control type="image">
-				<width>96</width>
+				<width>76</width>
 				<height>64</height>
 				<texture>$INFO[Listitem.Property(mediaTag-aspectRatio),flags/aspect/,.png]</texture>
 				<aspectratio align="center">keep</aspectratio>
@@ -257,7 +257,7 @@
 				<visible>[Container.Content(movies) | Container.Content(episodes)] + [!Skin.HasSetting(slidehideaspectratio) | Window.IsActive(2003)]</visible>
 			</control>
 			<control type="image">
-				<width>52</width>
+				<width>76</width>
 				<height>64</height>
 				<texture>$INFO[Listitem.Property(mediaTag-videoFrameRate),flags/videoframerate/,.png]</texture>
 				<aspectratio align="center">keep</aspectratio>
@@ -281,7 +281,7 @@
 				<visible>[Container.Content(movies) | Container.Content(episodes)] + [!Skin.HasSetting(slidehideaudioinfo) | Window.IsActive(2003)]</visible>
 			</control>
 			<control type="image">
-				<width>56</width>
+				<width>76</width>
 				<height>64</height>
 				<texture>$INFO[Listitem.Property(mediaTag-audioChannels),flags/audiochannels/,.png]</texture>
 				<aspectratio align="center">keep</aspectratio>
@@ -355,7 +355,7 @@
 				</control>
 				<control type="image">
 					<width>70</width>
-					<height>22</height>
+					<height>30</height>
 					<texture>$INFO[Listitem.Property(mediaTag-audioChannels),flags/audiochannels/,.png]</texture>
 					<aspectratio align="center">keep</aspectratio>
 					<colordiffuse>Color7</colordiffuse>
@@ -369,7 +369,7 @@
 				<orientation>horizontal</orientation>
 				<control type="image">
 					<width>70</width>
-					<height>25</height>
+					<height>30</height>
 					<texture>$INFO[Listitem.Property(mediaTag-videoFrameRate),flags/videoframerate/,.png]</texture>
 					<aspectratio align="center">keep</aspectratio>
 					<colordiffuse>Color7</colordiffuse>
@@ -425,14 +425,14 @@
 			</control>
 			<!-- resolution -->
 			<control type="image">
-				<width>76</width>
+				<width>56</width>
 				<height>64</height>
 				<texture>$INFO[Listitem.Property(mediaTag-videoResolution),flags/resolution/,.png]</texture>
 				<aspectratio align="center">keep</aspectratio>
 				<visible>Container.Content(movies) + Window.IsActive(2003)</visible>
 			</control>
 			<control type="image">
-				<width>76</width>
+				<width>56</width>
 				<height>64</height>
 				<texture>$INFO[Listitem.Property(mediaTag-aspectRatio),flags/aspect/,.png]</texture>
 				<aspectratio align="center">keep</aspectratio>
@@ -440,7 +440,7 @@
 				<visible>[Container.Content(movies) | Container.Content(episodes)] + Window.IsActive(2003)</visible>
 			</control>
 			<control type="image">
-				<width>45</width>
+				<width>56</width>
 				<height>64</height>
 				<texture>$INFO[Listitem.Property(mediaTag-videoFrameRate),flags/videoframerate/,.png]</texture>
 				<aspectratio align="center">keep</aspectratio>
@@ -464,7 +464,7 @@
 				<visible>[Container.Content(movies) | Container.Content(episodes)] + Window.IsActive(2003)</visible>
 			</control>
 			<control type="image">
-				<width>50</width>
+				<width>56</width>
 				<height>64</height>
 				<texture>$INFO[Listitem.Property(mediaTag-audioChannels),flags/audiochannels/,.png]</texture>
 				<aspectratio align="center">keep</aspectratio>
@@ -472,9 +472,9 @@
 				<visible>[Container.Content(movies) | Container.Content(episodes)] + Window.IsActive(2003)</visible>
 			</control>
 			<control type="image">
-				<width>80</width>
+				<width>76</width>
 				<height>64</height>
-				<texture>$INFO[Listitem.Property(mediaTag-contentRating),flags/contentrating/,.png]</texture>
+				<texture>$INFO[Listitem.MPAA,flags/contentrating/,.png]</texture>
 				<aspectratio align="center">keep</aspectratio>
 				<visible>Container.Content(movies) + Window.IsActive(2003)</visible>
 			</control>

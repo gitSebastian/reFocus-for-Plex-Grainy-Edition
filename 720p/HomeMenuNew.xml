@@ -368,7 +368,7 @@
 				</control>
 				<control type="radiobutton" id="211">
 					<description>deactivate fanart slideshow on home screen</description>
-					<label>turn off fanart slideshow on home screen</label>
+					<label>turn off slideshows on home screen</label>
 					<onclick>Skin.ToggleSetting(FanartSlideShow)</onclick>
 					<selected>Skin.HasSetting(FanartSlideShow)</selected>
 					<include>newHomeMenuSubSettingsButton</include>
